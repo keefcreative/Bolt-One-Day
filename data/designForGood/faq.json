@@ -1,0 +1,26 @@
+{
+  "faq": {
+    "eyebrow": "Common Questions",
+    "title": "What You Might Be Wondering About the Design for Good Initiative",
+    "description": "We know this model is new — so here are a few quick answers. If you have more, we'd love to chat.",
+    "questions": [
+      {
+        "question": "How does the 40% discount work?",
+        "answer": "Founding members get 40% off their first year of membership, then 20% off for life. This means you pay £1,499/month in year one, then £1,999/month thereafter — compared to our standard £2,499/month rate."
+      },
+      {
+        "question": "What types of design work do you handle?",
+        "answer": "Everything your nonprofit needs: fundraising materials, social media graphics, newsletters, annual reports, event materials, website graphics, print materials, and more. If it's design-related, we can help."
+      },
+      {
+        "question": "How fast do you deliver designs?",
+        "answer": "Most requests are completed within 72 hours. Complex projects may take longer, but we'll always communicate timelines upfront and keep you updated throughout the process."
+      },
+      {
+        "question": "Is there a limit to design requests?",
+        "answer": "No limits! Submit as many requests as you need. We work on them one at a time to ensure quality, and you can have multiple requests in your queue."
+      }
+    ],
+    "contactCta": "Still have questions? Reach out here"
+  }
+}

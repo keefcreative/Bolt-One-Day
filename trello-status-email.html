@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Status Update | DesignWorks Bureau</title>
+  <style>
+    /* Email-safe CSS for maximum compatibility */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #FBFBFB;
+      color: #2C2C2C;
+      line-height: 1.6;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #EAEAEA;
+    }
+
+    /* Header with board info */
+    .board-header {
+      background-color: #2C2C2C;
+      padding: 30px;
+      border-bottom: 4px solid #FF5733;
+    }
+
+    .board-title {
+      margin: 0 0 20px 0;
+    }
+
+    .board-title a {
+      color: #FBFBFB;
+      font-size: 28px;
+      font-weight: 300;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .board-title a:hover {
+      color: #FF5733;
+    }
+
+    .date-range {
+      font-size: 12px;
+      color: #8F8F8F;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    /* Mini metrics grid */
+    .metrics-mini {
+      display: table;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 1px;
+      background-color: #1A1A1A;
+      margin-top: 20px;
+    }
+
+    .metric-mini {
+      display: table-cell;
+      background-color: #2C2C2C;
+      padding: 15px 10px;
+      text-align: center;
+      width: 20%;
+    }
+
+    .metric-mini-number {
+      font-size: 24px;
+      font-weight: 300;
+      color: #FBFBFB;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .metric-mini-label {
+      font-size: 10px;
+      color: #8F8F8F;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    /* Metric colors */
+    .metric-done .metric-mini-number { color: #4CAF50; }
+    .metric-progress .metric-mini-number { color: #FF8C42; }
+    .metric-next .metric-mini-number { color: #2196F3; }
+    .metric-withyou .metric-mini-number { color: #9C27B0; }
+    .metric-blocked .metric-mini-number { color: #FF5733; }
+
+    /* Highlights section */
+    .highlights-section {
+      background-color: #FBFBFB;
+      padding: 30px;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .highlights-title {
+      font-size: 18px;
+      font-weight: 400;
+      color: #2C2C2C;
+      margin: 0 0 15px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .highlight-item {
+      font-size: 14px;
+      color: #5A5A5A;
+      padding: 8px 0;
+      border-left: 3px solid #FF5733;
+      padding-left: 15px;
+      margin: 10px 0;
+    }
+
+    /* Status sections */
+    .status-section {
+      padding: 30px;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .status-section:last-child {
+      border-bottom: none;
+    }
+
+    .status-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #2C2C2C;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #EAEAEA;
+    }
+
+    /* Status section colors */
+    .status-done .status-title { border-color: #4CAF50; }
+    .status-progress .status-title { border-color: #FF8C42; }
+    .status-next .status-title { border-color: #2196F3; }
+    .status-withyou .status-title { border-color: #9C27B0; }
+    .status-blocked .status-title { border-color: #FF5733; }
+
+    /* Card table */
+    .card-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .card-item {
+      border-bottom: 1px solid #EAEAEA;
+      padding: 15px 0;
+    }
+
+    .card-item:last-child {
+      border-bottom: none;
+    }
+
+    .card-header {
+      display: table;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      display: table-cell;
+      font-size: 14px;
+      font-weight: 400;
+      vertical-align: middle;
+      width: 60%;
+    }
+
+    .card-title a {
+      color: #2C2C2C;
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      color: #FF5733;
+      text-decoration: underline;
+    }
+
+    .card-meta {
+      display: table-cell;
+      text-align: right;
+      vertical-align: middle;
+      width: 40%;
+      white-space: nowrap;
+    }
+
+    /* Latest comment styling */
+    .latest-comment {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background-color: #FBFBFB;
+      border-left: 2px solid #EAEAEA;
+      font-size: 12px;
+      color: #5A5A5A;
+      line-height: 1.5;
+    }
+
+    .comment-author {
+      font-weight: 500;
+      color: #2C2C2C;
+      margin-right: 5px;
+    }
+
+    .comment-date {
+      font-size: 10px;
+      color: #8F8F8F;
+      margin-left: 5px;
+    }
+
+    /* Priority badges */
+    .priority-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 8px;
+    }
+
+    .priority-high {
+      background-color: #FF5733;
+      color: white;
+    }
+
+    .priority-normal {
+      background-color: #FF8C42;
+      color: white;
+    }
+
+    .priority-low {
+      background-color: #EAEAEA;
+      color: #5A5A5A;
+    }
+
+    /* Due date styling */
+    .due-date {
+      display: inline-block;
+      font-size: 11px;
+      color: #5A5A5A;
+      margin-right: 8px;
+    }
+
+    .due-date.overdue {
+      color: #FF5733;
+      font-weight: 500;
+    }
+
+    /* Checklist progress */
+    .checklist-progress {
+      display: inline-block;
+      font-size: 11px;
+      color: #8F8F8F;
+      background-color: #FBFBFB;
+      padding: 2px 6px;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 20px;
+      color: #8F8F8F;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    .email-footer {
+      background-color: #2C2C2C;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #FF5733;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .cta-button:hover {
+      background-color: #FF8C42;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #8F8F8F;
+      margin: 10px 0;
+    }
+
+    .footer-text a {
+      color: #FF5733;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    .company-info {
+      font-size: 11px;
+      color: #5A5A5A;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #3A3A3A;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        margin: 10px;
+        width: auto !important;
+      }
+      
+      .board-header {
+        padding: 20px;
+      }
+      
+      .board-title a {
+        font-size: 22px;
+      }
+      
+      .metric-mini {
+        padding: 10px 5px;
+      }
+      
+      .metric-mini-number {
+        font-size: 18px;
+      }
+      
+      .metric-mini-label {
+        font-size: 9px;
+      }
+      
+      .status-section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header with Board Info -->
+    <div class="board-header">
+      <div class="date-range">Weekly Status Report • Week Ending August 16, 2025</div>
+      <h1 class="board-title">
+        <a href="https://trello.com/b/ABC123/project-board">MEASOM-LIVE Project Board</a>
+      </h1>
+      
+      <!-- Mini Metrics -->
+      <div class="metrics-mini">
+        <div class="metric-mini metric-done">
+          <span class="metric-mini-number">3</span>
+          <span class="metric-mini-label">Done</span>
+        </div>
+        <div class="metric-mini metric-progress">
+          <span class="metric-mini-number">5</span>
+          <span class="metric-mini-label">In Progress</span>
+        </div>
+        <div class="metric-mini metric-next">
+          <span class="metric-mini-number">8</span>
+          <span class="metric-mini-label">Next</span>
+        </div>
+        <div class="metric-mini metric-withyou">
+          <span class="metric-mini-number">2</span>
+          <span class="metric-mini-label">With You</span>
+        </div>
+        <div class="metric-mini metric-blocked">
+          <span class="metric-mini-number">1</span>
+          <span class="metric-mini-label">Blocked</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights Section -->
+    <div class="highlights-section">
+      <h2 class="highlights-title">What Happened This Week</h2>
+      <div class="highlight-item">3 cards moved to Review for your approval</div>
+      <div class="highlight-item">2 new design concepts completed</div>
+      <div class="highlight-item">1 card marked Done and delivered</div>
+      <div class="highlight-item">4 new requests added to backlog</div>
+    </div>
+
+    <!-- Done Section -->
+    <div class="status-section status-done">
+      <h2 class="status-title">Done (Last 7 Days)</h2>
+      <div class="card-table">
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/xyz789">Homepage Redesign Final</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-high">High</span>
+              <span class="checklist-progress">7/7 Complete</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Sarah:</span>
+            "Delivered to production. All responsive breakpoints tested and approved."
+            <span class="comment-date">(2 days ago)</span>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/abc456">Brand Guidelines Document</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-normal">Normal</span>
+              <span class="checklist-progress">5/5 Complete</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Design Team:</span>
+            "PDF and source files uploaded to shared drive. Ready for distribution."
+            <span class="comment-date">(3 days ago)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- In Progress Section -->
+    <div class="status-section status-progress">
+      <h2 class="status-title">In Progress</h2>
+      <div class="card-table">
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/def123">Mobile App UI Design</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-high">High</span>
+              <span class="due-date">Due: Aug 20</span>
+              <span class="checklist-progress">4/8 Tasks</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">John:</span>
+            "Completed onboarding screens. Moving to dashboard views next."
+            <span class="comment-date">(5 hours ago)</span>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/ghi456">Marketing Materials Suite</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-normal">Normal</span>
+              <span class="due-date">Due: Aug 25</span>
+              <span class="checklist-progress">2/6 Tasks</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Emma:</span>
+            "Business cards approved. Starting on brochure design today."
+            <span class="comment-date">(1 day ago)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Section -->
+    <div class="status-section status-next">
+      <h2 class="status-title">Next Up</h2>
+      <div class="card-table">
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/jkl789">Social Media Templates</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-normal">Normal</span>
+              <span class="due-date">Due: Sep 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/mno012">Email Campaign Design</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-low">Low</span>
+              <span class="due-date">Due: Sep 5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- With You Section -->
+    <div class="status-section status-withyou">
+      <h2 class="status-title">With You (Awaiting Feedback)</h2>
+      <div class="card-table">
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/pqr345">Logo Variations Review</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-high">High</span>
+              <span class="due-date overdue">Overdue: Aug 14</span>
+              <span class="checklist-progress">3/3 Complete</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Design Team:</span>
+            "Hi team, we need your feedback on the 3 logo options to proceed with brand rollout."
+            <span class="comment-date">(3 days ago)</span>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/stu678">Website Copy Approval</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-normal">Normal</span>
+              <span class="due-date">Due: Aug 18</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Content Team:</span>
+            "All pages copywritten. Please review tone and messaging for accuracy."
+            <span class="comment-date">(1 day ago)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blocked Section -->
+    <div class="status-section status-blocked">
+      <h2 class="status-title">Blocked</h2>
+      <div class="card-table">
+        <div class="card-item">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://trello.com/c/vwx901">Product Photography</a>
+            </div>
+            <div class="card-meta">
+              <span class="priority-badge priority-high">High</span>
+              <span class="due-date overdue">Overdue: Aug 10</span>
+              <span class="checklist-progress">0/4 Tasks</span>
+            </div>
+          </div>
+          <div class="latest-comment">
+            <span class="comment-author">Project Manager:</span>
+            "Waiting for product samples to arrive. Vendor delayed shipment until next week."
+            <span class="comment-date">(2 days ago)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <a href="https://trello.com/c/new-request" class="cta-button">Start a New Request</a>
+      
+      <div class="footer-text">
+        Submit requests directly via email:<br>
+        <a href="mailto:67dabc6bca5d07a0d3c54e3a@boards.trello.com">67dabc6bca5d07a0d3c54e3a@boards.trello.com</a>
+      </div>
+      
+      <div class="footer-text">
+        <a href="https://trello.com/b/ABC123/project-board">View Full Board</a> • 
+        <a href="#">Update Preferences</a> • 
+        <a href="#">Unsubscribe</a>
+      </div>
+      
+      <div class="company-info">
+        © 2025 DesignWorks Bureau Ltd • Company Number 14847378<br>
+        123 Creative Street, London, UK • hello@designworksbureau.co.uk
+      </div>
+    </div>
+  </div>
+</body>
+</html>

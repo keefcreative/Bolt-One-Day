@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "eyebrow": "Design for Good Initiative",
+    "title": "Unlimited Design Support, Built for Nonprofits",
+    "subtitle": "Mission-driven pricing. Agency-level quality.",
+    "description": "We've created the **Design for Good** Initiative to give nonprofits access to world-class design — without the agency price tag.",
+    "benefits": [
+      "Save 40% in your first year",
+      "Get unlimited requests", 
+      "Keep 20% off forever"
+    ],
+    "primaryCta": {
+      "text": "Claim Your 40% Discount",
+      "href": "#pricing"
+    },
+    "secondaryCta": {
+      "text": "Book a Call",
+      "href": "https://calendly.com/designworks/consultation"
+    },
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Nonprofits Served"
+      },
+      {
+        "value": "40%",
+        "label": "Average Savings"
+      },
+      {
+        "value": "100%",
+        "label": "Mission Focused"
+      }
+    ],
+    "announcement": "Launching with space for just 10 founding nonprofits.",
+    "credibility": "Backed by years of agency experience. Now built for mission-driven teams.",
+    "heroImage": "https://www.designworksbureau.co.uk/images/hero-monitor.png"
+  }
+}

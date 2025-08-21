@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "Pricing That Makes Sense",
+    "title": "The Design Team That Scales<br />With Your Ambition",
+    "description": [
+      "Your competitors are moving fast. While you're stuck waiting <strong>3-4 weeks for a simple banner</strong>, they're launching campaigns and capturing market share. While you're dealing with <strong>freelancers who ghost you mid-project</strong>, they're building consistent brands that customers trust. While you're calculating the <span style=\"color: #ff6b35; font-weight: 600;\">£50k+ real cost of hiring</span> (salary, taxes, benefits, equipment, management time), they're already scaling.",
+      "Stop falling behind. Get the design team that moves at the speed of opportunity—starting at just £799/month."
+    ],
+    "sectionTitle": "Choose Your Competitive Advantage"
+  },
+  "plans": [
+    {
+      "name": "Essential",
+      "tagline": "Stop design bottlenecks",
+      "description": "Perfect for small businesses tired of waiting weeks for simple designs",
+      "price": "£799",
+      "period": "/month",
+      "popular": false,
+      "ctaText": "Stop Design Bottlenecks",
+      "problemsSolved": [
+        "No more 2-week waits for simple graphics",
+        "Stop overpaying freelancers for basic work", 
+        "End inconsistent brand messaging",
+        "Eliminate design revision nightmares",
+        "Get professional designs without hiring"
+      ],
+      "features": [
+        "5 design requests per month",
+        "2-day turnaround time", 
+        "Unlimited revisions",
+        "Dedicated designer",
+        "Email support"
+      ],
+      "bestFor": "Small businesses, startups, solo entrepreneurs",
+      "isCustom": false,
+      "stripePriceId": "price_essential_monthly"
+    },
+    {
+      "name": "Business", 
+      "tagline": "Scale without hiring",
+      "description": "For growing companies that need consistent, fast design output",
+      "price": "£1,449",
+      "period": "/month",
+      "popular": true,
+      "ctaText": "Scale Without Hiring",
+      "problemsSolved": [
+        "Scale marketing without hiring designers",
+        "Maintain brand consistency across teams",
+        "Meet tight campaign deadlines reliably", 
+        "Reduce design costs by 60% vs hiring",
+        "Get strategic design guidance, not just execution"
+      ],
+      "features": [
+        "15 design requests per month",
+        "1-day turnaround time",
+        "Unlimited revisions", 
+        "Senior designer",
+        "Priority support",
+        "Complete brand guidelines"
+      ],
+      "bestFor": "Growing companies, marketing teams, agencies",
+      "isCustom": false,
+      "stripePriceId": "price_business_monthly"
+    },
+    {
+      "name": "Enterprise",
+      "tagline": "Design at enterprise speed",
+      "description": "For companies that need design to move at the pace of business",
+      "price": "£2,500",
+      "period": "/month", 
+      "popular": false,
+      "ctaText": "Get Enterprise Speed",
+      "problemsSolved": [
+        "Never miss a campaign deadline again",
+        "Handle unlimited design requests seamlessly",
+        "Get instant senior-level design expertise",
+        "Maintain quality at rapid scale",
+        "Strategic design that drives business results"
+      ],
+      "features": [
+        "Unlimited design requests",
+        "Same-day turnaround time",
+        "Unlimited revisions",
+        "Dedicated design team", 
+        "24/7 priority support",
+        "Strategic consulting included"
+      ],
+      "bestFor": "Large companies, multiple teams, high-volume needs",
+      "isCustom": false,
+      "stripePriceId": "price_enterprise_monthly"
+    }
+  ],
+  "enterprisePlus": {
+    "price": "£4,500",
+    "tagline": "Complete design domination",
+    "ctaText": "Dominate Your Market",
+    "problemsSolved": [
+      "Never miss a campaign deadline again",
+      "Handle unlimited design requests seamlessly",
+      "Get instant senior-level design expertise",
+      "Maintain quality at rapid scale",
+      "Strategic design that drives business results",
+      "Launch campaigns faster than competitors",
+      "Handle multiple brand portfolios seamlessly"
+    ],
+    "features": [
+      "Unlimited design requests",
+      "Same-day turnaround time",
+      "Unlimited revisions",
+      "Dedicated design team", 
+      "24/7 priority support",
+      "Strategic consulting included",
+      "4-hour rush turnaround available",
+      "Senior creative director assigned",
+      "White-glove account management",
+      "Monthly strategy sessions",
+      "Multi-brand management"
+    ],
+    "bestFor": "Enterprise brands, holding companies, rapid-growth startups",
+    "stripePriceId": "price_enterprise_plus_monthly"
+  }
+}

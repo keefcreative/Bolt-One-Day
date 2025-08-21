@@ -1,0 +1,26 @@
+{
+  "id": "financeflow-dashboard",
+  "title": "FinanceFlow Dashboard",
+  "category": "UI/UX Design",
+  "description": "Comprehensive financial analytics dashboard for enterprise clients with real-time data visualization and reporting.",
+  "createdDate": "2024-06-01",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/financeflow-dashboard.jpg",
+  "tags": ["Dashboard", "UI/UX", "Data Visualization", "Enterprise", "FinTech"],
+  "client": "FinanceFlow Corporation",
+  "year": "2024",
+  "duration": "10 weeks",
+  "challenge": "FinanceFlow needed a sophisticated dashboard that could handle complex financial data while remaining intuitive for non-technical users. The platform needed to process millions of transactions daily and present insights in real-time.",
+  "solution": "We designed a modular dashboard system with customizable widgets, intelligent data visualization, and predictive analytics. The interface uses progressive disclosure to manage complexity while keeping essential metrics immediately accessible.",
+  "results": [
+    "85% reduction in time to generate reports",
+    "3x increase in user engagement metrics",
+    "Successfully scaled to 50,000+ daily active users",
+    "98% customer satisfaction rating",
+    "Won 'Best FinTech UI' industry award"
+  ],
+  "liveUrl": "https://financeflow.com/dashboard",
+  "images": []
+}

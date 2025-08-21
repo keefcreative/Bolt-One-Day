@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Update | DesignWorks Bureau</title>
+  <style>
+    /* Email-safe CSS for maximum compatibility */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #FBFBFB;
+      color: #2C2C2C;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #EAEAEA;
+    }
+
+    /* Header */
+    .email-header {
+      background-color: #2C2C2C;
+      color: #FBFBFB;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .email-header h1 {
+      font-size: 28px;
+      font-weight: 300;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .email-header .date {
+      font-size: 14px;
+      color: #EAEAEA;
+      font-weight: 300;
+    }
+
+    .email-header .eyebrow {
+      font-size: 12px;
+      color: #FF5733;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    /* Content sections */
+    .email-content {
+      padding: 0;
+    }
+
+    .section {
+      padding: 30px;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #2C2C2C;
+      margin: 0 0 15px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #5A5A5A;
+      margin: 0 0 15px 0;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Progress section with left accent */
+    .progress-section {
+      background-color: #FBFBFB;
+      border-left: 4px solid #FF5733;
+      margin: 0;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      background-color: #FF5733;
+      color: #ffffff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 15px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #FF8C42;
+    }
+
+    /* Links */
+    a {
+      color: #FF5733;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #FF8C42;
+      text-decoration: underline;
+    }
+
+    /* Status indicators */
+    .status-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #EAEAEA;
+      display: table;
+      width: 100%;
+    }
+
+    .status-item:last-child {
+      border-bottom: none;
+    }
+
+    .status-label {
+      font-size: 12px;
+      color: #8F8F8F;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+      display: table-cell;
+      width: 40%;
+      vertical-align: top;
+    }
+
+    .status-value {
+      font-size: 16px;
+      color: #2C2C2C;
+      font-weight: 300;
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    /* Footer */
+    .email-footer {
+      background-color: #FBFBFB;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #EAEAEA;
+    }
+
+    .email-footer p {
+      font-size: 12px;
+      color: #8F8F8F;
+      margin: 5px 0;
+      font-weight: 300;
+    }
+
+    .email-footer a {
+      color: #FF5733;
+      font-weight: 400;
+    }
+
+    /* Responsive for mobile */
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        margin: 10px;
+        width: auto !important;
+      }
+      
+      .section {
+        padding: 20px;
+      }
+      
+      .email-header {
+        padding: 30px 20px;
+      }
+      
+      .email-header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="email-header">
+      <div class="eyebrow">Weekly Project Update</div>
+      <h1>Valued Client Update</h1>
+      <div class="date">Week Ending 13 August 2025</div>
+    </div>
+
+    <!-- Content -->
+    <div class="email-content">
+      <!-- Progress Section -->
+      <div class="section progress-section">
+        <h2>This Week's Progress</h2>
+        <p>Your project is moving forward on schedule. Here's what we've accomplished this week and what's coming up next.</p>
+        
+        <div style="margin: 20px 0;">
+          <div class="status-item">
+            <div class="status-label">Status</div>
+            <div class="status-value">On Track</div>
+          </div>
+          <div class="status-item">
+            <div class="status-label">Completion</div>
+            <div class="status-value">65% Complete</div>
+          </div>
+          <div class="status-item">
+            <div class="status-label">Next Milestone</div>
+            <div class="status-value">Design Review - Friday 16th</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updates Section -->
+      <div class="section">
+        <h2>Key Developments</h2>
+        <p>• Brand identity concepts finalized and ready for your review</p>
+        <p>• Website wireframes completed for all primary pages</p>
+        <p>• Marketing materials templates prepared for approval</p>
+        
+        <a href="#" class="cta-button">View Latest Designs</a>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="section">
+        <h2>Coming Up Next Week</h2>
+        <p>We'll be focusing on refining the selected design direction and preparing the initial website prototype for your review.</p>
+        <p>Please review the attached concepts and provide feedback by Thursday to keep the project on schedule.</p>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="section">
+        <h2>Questions or Feedback?</h2>
+        <p>We're here to help. Reply directly to this email or contact us:</p>
+        <p>
+          Email: <a href="mailto:hello@designworksbureau.co.uk">hello@designworksbureau.co.uk</a><br>
+          Phone: +44 20 7123 4567
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <p>© 2025 DesignWorks Bureau Ltd • Company Number 14847378</p>
+      <p>123 Creative Street, London, UK</p>
+      <p>
+        <a href="https://www.designworksbureau.co.uk">Visit our website</a> • 
+        <a href="#">Unsubscribe</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

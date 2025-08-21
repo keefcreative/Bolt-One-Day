@@ -1,0 +1,83 @@
+{
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "January 2025",
+    "effectiveDate": "January 2025",
+    "sections": [
+      {
+        "heading": "Agreement to Terms",
+        "content": "These Terms of Service (\"Terms\") constitute a legally binding agreement made between you and DesignWorks Bureau Ltd (\"Company\", \"we\", \"us\", or \"our\"), concerning your access to and use of the www.designworksbureau.co.uk website and our design services."
+      },
+      {
+        "heading": "Acceptable Use",
+        "content": "You may not use our website or services:",
+        "list": [
+          "For any unlawful purpose or to solicit others to perform such acts",
+          "To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances",
+          "To infringe upon or violate our intellectual property rights or the intellectual property rights of others",
+          "To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate",
+          "To submit false or misleading information",
+          "To interfere with or circumvent the security features of the website or services"
+        ]
+      },
+      {
+        "heading": "Services",
+        "content": "DesignWorks Bureau Ltd provides design services including but not limited to brand identity, web design, digital marketing, print design, UI/UX design, and packaging design. All services are subject to separate service agreements and project specifications."
+      },
+      {
+        "heading": "Intellectual Property Rights",
+        "content": "The website and its original content, features, and functionality are and will remain the exclusive property of DesignWorks Bureau Ltd and its licensors. The website is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used without our prior written consent.",
+        "subsections": [
+          {
+            "subheading": "Client Work",
+            "content": "Upon full payment of fees, clients will receive rights to the final deliverables as outlined in the project agreement. We retain the right to use work samples for portfolio and marketing purposes unless otherwise agreed in writing."
+          }
+        ]
+      },
+      {
+        "heading": "User Accounts and Registration",
+        "content": "When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for all activities that occur under your account."
+      },
+      {
+        "heading": "Prohibited Uses",
+        "content": "You may not use our services:",
+        "list": [
+          "To create content that is illegal, harmful, threatening, abusive, harassing, defamatory, or invasive of privacy",
+          "To create content that promotes discrimination, bigotry, racism, hatred, harassment or harm",
+          "To create content that is fraudulent or promotes illegal activities",
+          "To violate any third party's intellectual property rights"
+        ]
+      },
+      {
+        "heading": "Payment Terms",
+        "content": "Payment terms are outlined in individual project agreements. Generally, we require a deposit before work begins and final payment upon project completion. Late payments may result in project delays and additional fees."
+      },
+      {
+        "heading": "Cancellation and Refunds",
+        "content": "Cancellation terms vary by project type and are outlined in individual service agreements. Refunds are generally not provided for work already completed, but may be considered on a case-by-case basis."
+      },
+      {
+        "heading": "Limitation of Liability",
+        "content": "In no event shall DesignWorks Bureau Ltd, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, punitive, consequential, or special damages arising out of or in connection with your use of the website or services."
+      },
+      {
+        "heading": "Termination",
+        "content": "We may terminate or suspend your account and access to our services immediately, without prior notice, for any reason whatsoever, including without limitation if you breach the Terms."
+      },
+      {
+        "heading": "Governing Law",
+        "content": "These Terms shall be interpreted and governed by the laws of England and Wales, without regard to conflict of law provisions. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales."
+      },
+      {
+        "heading": "Contact Information",
+        "content": "If you have questions about these Terms, please contact us at:",
+        "contactDetails": {
+          "company": "DesignWorks Bureau Ltd",
+          "email": "hello@designworks.com",
+          "address": "123 Creative Street, London, UK", 
+          "companyNumber": "14847378"
+        }
+      }
+    ]
+  }
+}

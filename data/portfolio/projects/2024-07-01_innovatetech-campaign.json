@@ -1,0 +1,25 @@
+{
+  "id": "innovatetech-campaign",
+  "title": "InnovateTech Marketing Campaign",
+  "category": "Digital Marketing",
+  "description": "Comprehensive digital marketing campaign for tech startup, including social media assets, ad creatives, and landing pages.",
+  "createdDate": "2024-07-01",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/innovatetech-campaign.jpg",
+  "tags": ["Digital Marketing", "Social Media", "Campaign", "Ad Creative", "Landing Pages"],
+  "client": "InnovateTech",
+  "year": "2024",
+  "duration": "4 weeks",
+  "challenge": "InnovateTech needed to launch their new SaaS product with a comprehensive marketing campaign that would generate awareness and drive sign-ups. They required consistent branding across multiple digital channels.",
+  "solution": "We developed a cohesive campaign strategy with custom graphics, video content, and landing pages. The campaign included social media templates, Google Ads creatives, and email marketing designs that maintained brand consistency while optimizing for each platform.",
+  "results": [
+    "300% increase in website traffic",
+    "150% improvement in lead generation",
+    "45% higher click-through rates on ads",
+    "Successfully launched to 10,000+ users"
+  ],
+  "liveUrl": "https://innovatetech.io",
+  "images": []
+}

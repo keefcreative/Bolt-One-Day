@@ -1,0 +1,56 @@
+{
+  "title": "Everything you need to know",
+  "subtitle": "Have questions about our design subscription service? We've got answers.",
+  "items": [
+    {
+      "question": "How does the design subscription work?",
+      "answer": "Once subscribed, you can submit unlimited design requests through our platform. We'll work on them one at a time and deliver high-quality designs within the specified timeframe.",
+      "category": "subscription"
+    },
+    {
+      "question": "What's included in unlimited revisions?",
+      "answer": "We'll continue refining your design until you're 100% satisfied. There's no limit to the number of revision rounds, ensuring you get exactly what you envision.",
+      "category": "subscription"
+    },
+    {
+      "question": "Can I pause or cancel my subscription?",
+      "answer": "Yes, you can pause your subscription at any time and resume when needed. You can also cancel with no long-term commitments or cancellation fees.",
+      "category": "subscription"
+    },
+    {
+      "question": "What types of design work do you handle?",
+      "answer": "We cover all design needs including brand identity, web design, print materials, digital marketing assets, UI/UX design, and packaging design.",
+      "category": "general"
+    },
+    {
+      "question": "How fast will I receive my designs?",
+      "answer": "Most design requests are completed within 48-72 hours. More complex projects may take longer, but we'll always communicate timelines upfront and keep you updated throughout the process.",
+      "category": "design-process"
+    },
+    {
+      "question": "What if I don't like the design?",
+      "answer": "We offer unlimited revisions until you're completely happy with the result. We'll work with your feedback to refine the design until it meets your expectations perfectly.",
+      "category": "design-process"
+    },
+    {
+      "question": "How do I submit design requests?",
+      "answer": "Simply use our client portal to submit requests with detailed briefs, reference materials, and any specific requirements. You can also schedule calls with your account manager for more complex projects.",
+      "category": "design-process"
+    },
+    {
+      "question": "How does billing work?",
+      "answer": "We bill monthly in advance. Your subscription automatically renews each month, and you'll receive an invoice via email. We accept all major credit cards and bank transfers.",
+      "category": "billing"
+    },
+    {
+      "question": "Are there any setup fees?",
+      "answer": "No setup fees! You only pay the monthly subscription rate. We believe in transparent, straightforward pricing with no hidden costs or surprise charges.",
+      "category": "billing"
+    },
+    {
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades will apply at your next billing cycle. We'll prorate any differences accordingly.",
+      "category": "billing"
+    }
+  ]
+}

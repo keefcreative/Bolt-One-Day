@@ -1,0 +1,41 @@
+{
+  "portfolio": {
+    "eyebrow": "Our Work",
+    "title": "Featured Projects",
+    "description": "Explore our latest work and see how we've helped businesses transform their brands and achieve their goals.",
+    "projects": [
+      {
+        "id": "techflow-rebrand",
+        "title": "TechFlow Solutions Rebrand",
+        "category": "Brand Identity",
+        "description": "Complete brand transformation for a leading tech consultancy",
+        "image": "/images/portfolio/techflow-rebrand.jpg",
+        "tags": ["Brand Identity", "Logo Design", "Guidelines"]
+      },
+      {
+        "id": "bloom-beauty-ecommerce",
+        "title": "Bloom Beauty E-commerce",
+        "category": "Web Design",
+        "description": "Modern e-commerce platform for sustainable beauty brand",
+        "image": "/images/portfolio/bloom-beauty-ecommerce.jpg",
+        "tags": ["Web Design", "E-commerce", "UI/UX"]
+      },
+      {
+        "id": "innovatetech-campaign",
+        "title": "InnovateTech Marketing Campaign",
+        "category": "Digital Marketing",
+        "description": "Comprehensive digital marketing campaign for tech startup",
+        "image": "/images/portfolio/innovatetech-campaign.jpg",
+        "tags": ["Digital Marketing", "Social Media", "Campaign"]
+      },
+      {
+        "id": "artisan-studios-portfolio",
+        "title": "Artisan Studios Portfolio",
+        "category": "Web Design",
+        "description": "Creative portfolio website for design studio",
+        "image": "/images/portfolio/artisan-studios-portfolio.jpg",
+        "tags": ["Web Design", "Portfolio", "Creative"]
+      }
+    ]
+  }
+}

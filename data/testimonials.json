@@ -1,0 +1,44 @@
+{
+  "testimonials": {
+    "eyebrow": "Client Love",
+    "title": "What our clients say",
+    "description": "Don't just take our word for it. Here's what our clients have to say about working with DesignWorks.",
+    "items": [
+      {
+        "quote": "DesignWorks transformed our brand completely. The attention to detail and creative solutions exceeded our expectations. Our conversion rate increased by 150% after the rebrand.",
+        "author": "Sarah Johnson",
+        "position": "CEO",
+        "company": "TechFlow Solutions",
+        "avatar": "/images/testimonials/sarah-johnson.jpg"
+      },
+      {
+        "quote": "The design subscription model is genius. We get unlimited design work for a fraction of what we used to pay agencies. The quality is consistently excellent.",
+        "author": "Michael Chen",
+        "position": "Marketing Director",
+        "company": "GrowthCorp",
+        "avatar": "/images/team/marcus-chen.jpg"
+      },
+      {
+        "quote": "Working with DesignWorks feels like having an in-house design team, but better. They understand our brand and deliver exactly what we need, when we need it.",
+        "author": "Emily Rodriguez",
+        "position": "Founder",
+        "company": "Bloom Beauty",
+        "avatar": "/images/team/lisa-thompson.jpg"
+      },
+      {
+        "quote": "The team at DesignWorks doesn't just create beautiful designs—they solve business problems. Our new brand identity has helped us stand out in a crowded market and attract premium clients.",
+        "author": "James Wilson",
+        "position": "CMO",
+        "company": "InnovateTech",
+        "avatar": "/images/testimonials/james-wilson.jpg"
+      },
+      {
+        "quote": "From concept to execution, DesignWorks exceeded every expectation. Their attention to detail and creative vision transformed our entire digital presence. Highly recommend!",
+        "author": "Lisa Chen",
+        "position": "Creative Director",
+        "company": "Artisan Studios",
+        "avatar": "/images/testimonials/sarah-johnson.jpg"
+      }
+    ]
+  }
+}

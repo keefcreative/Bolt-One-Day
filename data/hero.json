@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "eyebrow": "Premium Design & Development",
+    "title": "Creative Design Solutions That Captivate",
+    "description": "Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.",
+    "primaryButton": {
+      "text": "Get Started",
+      "href": "#contact"
+    },
+    "secondaryButton": {
+      "text": "View Our Work",
+      "href": "#portfolio"
+    }
+  },
+  "stats": {
+    "items": [
+      {
+        "number": "500+",
+        "label": "Global Clients"
+      },
+      {
+        "number": "48h",
+        "label": "Average Delivery"
+      },
+      {
+        "number": "99%",
+        "label": "Client Retention"
+      }
+    ]
+  }
+}

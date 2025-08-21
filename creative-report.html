@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Weekly Report | DesignWorks Bureau</title>
+  <style>
+    /* Reset and Base - Matching website typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #FBFBFB;
+      color: #2C2C2C;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Container matching website */
+    .container-premium {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 640px) {
+      .container-premium {
+        padding: 0 40px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container-premium {
+        padding: 0 60px;
+      }
+    }
+
+    /* Section padding matching website */
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    @media (min-width: 768px) {
+      .section-padding {
+        padding: 120px 0;
+      }
+    }
+
+    /* Typography matching website */
+    .text-section {
+      font-size: 3rem;
+      line-height: 1.1;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+
+    @media (min-width: 768px) {
+      .text-section {
+        font-size: 4rem;
+      }
+    }
+
+    /* Header Section - Dark like website */
+    .header {
+      background-color: #2C2C2C;
+      color: #FBFBFB;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .header-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #FF5733;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: #FBFBFB;
+    }
+
+    @media (min-width: 768px) {
+      .header h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .header-subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #EAEAEA;
+      line-height: 1.6;
+    }
+
+    /* AI Section */
+    .ai-section {
+      background-color: white;
+      padding: 80px 0;
+      border-top: 1px solid #EAEAEA;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .ai-section h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #2C2C2C;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .ai-status {
+      font-size: 1rem;
+      color: #8F8F8F;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .ai-badge {
+      display: inline-block;
+      background-color: #FF5733;
+      color: white;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+
+    /* Metrics Section */
+    .metrics-section {
+      background-color: #FBFBFB;
+      padding: 100px 0;
+    }
+
+    .metrics-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .metrics-header h2 {
+      font-size: 3rem;
+      font-weight: 300;
+      color: #2C2C2C;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .metrics-header p {
+      font-size: 1.125rem;
+      color: #8F8F8F;
+      font-weight: 300;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background-color: #EAEAEA;
+      border: 1px solid #EAEAEA;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background-color: white;
+      padding: 40px 30px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .metric-card:hover {
+      background-color: #FBFBFB;
+    }
+
+    .metric-number {
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: #8F8F8F;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    /* Status colors */
+    .status-delivered { color: #2C2C2C; }
+    .status-active { color: #FF8C42; }
+    .status-blocked { color: #FF5733; }
+    .status-queue { color: #8F8F8F; }
+
+    /* Configuration Section */
+    .config-section {
+      background-color: white;
+      padding: 60px 0;
+      border-top: 1px solid #EAEAEA;
+    }
+
+    .config-content {
+      max-width: 800px;
+    }
+
+    .config-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #2C2C2C;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .config-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #EAEAEA;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .config-item:last-child {
+      border-bottom: none;
+    }
+
+    .config-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #2C2C2C;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .config-value {
+      font-size: 1rem;
+      color: #8F8F8F;
+      font-weight: 300;
+      text-align: right;
+      max-width: 60%;
+    }
+
+    .warning {
+      color: #FF5733;
+      font-weight: 400;
+    }
+
+    /* Action Section */
+    .action-section {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 100px 0;
+    }
+
+    .action-content {
+      text-align: center;
+    }
+
+    .action-title {
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .action-list {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: left;
+    }
+
+    .action-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1rem;
+      font-weight: 300;
+      color: #EAEAEA;
+    }
+
+    .action-item:last-child {
+      border-bottom: none;
+    }
+
+    .action-item strong {
+      color: #FF5733;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* CTA Button matching website */
+    .cta-button {
+      display: inline-block;
+      background-color: #FF5733;
+      color: white;
+      padding: 18px 48px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    .cta-button:hover {
+      background-color: #FF8C42;
+    }
+
+    /* Email Section */
+    .email-section {
+      background-color: #FBFBFB;
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid #EAEAEA;
+    }
+
+    .email-title {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #2C2C2C;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .email-description {
+      font-size: 1rem;
+      color: #8F8F8F;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .email-address {
+      display: inline-block;
+      font-size: 1.125rem;
+      color: #FF5733;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 16px 32px;
+      border: 2px solid #FF5733;
+      transition: all 0.3s ease;
+    }
+
+    .email-address:hover {
+      background-color: #FF5733;
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2C2C2C;
+      color: #EAEAEA;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+
+    .footer-divider {
+      display: inline-block;
+      margin: 0 1rem;
+      color: #8F8F8F;
+    }
+
+    .footer a {
+      color: #FF5733;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #FF8C42;
+    }
+
+    /* Table for project details */
+    .project-table {
+      width: 100%;
+      margin: 2rem 0;
+      border-collapse: collapse;
+    }
+
+    .project-table th {
+      text-align: left;
+      padding: 1rem;
+      border-bottom: 2px solid #EAEAEA;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8F8F8F;
+    }
+
+    .project-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #EAEAEA;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #2C2C2C;
+    }
+
+    .project-table tr:hover {
+      background-color: #FBFBFB;
+    }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge.delivered {
+      background-color: #2C2C2C;
+      color: white;
+    }
+
+    .status-badge.active {
+      background-color: #FF8C42;
+      color: white;
+    }
+
+    .status-badge.blocked {
+      background-color: #FF5733;
+      color: white;
+    }
+
+    .status-badge.queue {
+      background-color: #EAEAEA;
+      color: #2C2C2C;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container-premium">
+      <div class="header-eyebrow">Weekly Status Report</div>
+      <h1>Creative Pipeline Overview</h1>
+      <p class="header-subtitle">MEASOM-LIVE Board • Week Ending August 12, 2025</p>
+    </div>
+  </header>
+
+  <!-- AI Analysis Section -->
+  <section class="ai-section">
+    <div class="container-premium">
+      <h2>AI Creative Intelligence</h2>
+      <p class="ai-status">
+        Analysis engine active. Processing creative pipeline data for optimization insights.
+      </p>
+      <div class="ai-badge">System Online</div>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <section class="metrics-section">
+    <div class="container-premium">
+      <div class="metrics-header">
+        <h2>Pipeline Metrics</h2>
+        <p>Real-time status of your creative projects</p>
+      </div>
+      
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number status-delivered">0</div>
+          <div class="metric-label">Delivered</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number status-active">0</div>
+          <div class="metric-label">In Production</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number status-blocked">0</div>
+          <div class="metric-label">Blocked</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number status-queue">0</div>
+          <div class="metric-label">In Queue</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number status-queue">0%</div>
+          <div class="metric-label">Completion Rate</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number status-delivered">0</div>
+          <div class="metric-label">Avg Days</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configuration Section -->
+  <section class="config-section">
+    <div class="container-premium">
+      <div class="config-content">
+        <h3 class="config-title">Board Configuration</h3>
+        
+        <div class="config-item">
+          <span class="config-label">Total Cards Processed</span>
+          <span class="config-value">0</span>
+        </div>
+        
+        <div class="config-item">
+          <span class="config-label">Lists Found</span>
+          <span class="config-value">New Request, Queue, In-Progress, Review, Done/Completed, Archive</span>
+        </div>
+        
+        <div class="config-item">
+          <span class="config-label">Unmapped Lists</span>
+          <span class="config-value warning">In-Progress, Done/Completed, Archive - Consider updating list mappings</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Items Section -->
+  <section class="action-section">
+    <div class="container-premium">
+      <div class="action-content">
+        <h2 class="action-title">Action Items This Week</h2>
+        
+        <div class="action-list">
+          <div class="action-item">
+            <strong>Capacity</strong><br>
+            0 projects waiting in queue
+          </div>
+          <div class="action-item">
+            <strong>Client Updates</strong><br>
+            Proactively communicate progress on active projects
+          </div>
+          <div class="action-item">
+            <strong>Pipeline Health</strong><br>
+            All systems operational, no blockers detected
+          </div>
+        </div>
+        
+        <a href="https://trello.com/b/TBP3YU16/measom-live" class="cta-button">
+          Open Trello Board
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Submission Section -->
+  <section class="email-section">
+    <div class="container-premium">
+      <h3 class="email-title">New Project Submissions</h3>
+      <p class="email-description">Clients can submit new projects directly via email</p>
+      <a href="mailto:67dabc6bca5d07a0d3c54e3a@boards.trello.com" class="email-address">
+        67dabc6bca5d07a0d3c54e3a@boards.trello.com
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-premium">
+      © 2025 DesignWorks Bureau Ltd
+      <span class="footer-divider">•</span>
+      Company Number 14847378
+      <span class="footer-divider">•</span>
+      <a href="https://www.designworksbureau.co.uk">www.designworksbureau.co.uk</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "eyebrow": "Solutions",
+    "title": "Perfect For Every Business",
+    "description": "Our design subscription adapts to your unique needs and growth stage."
+  },
+  "solutions": [
+    {
+      "icon": "Building2",
+      "title": "SMEs",
+      "description": "Professional design that competes with the big players without the big budget. Cost-effective solutions with quick turnaround times that scale as you grow."
+    },
+    {
+      "icon": "Rocket",
+      "title": "Start-ups",
+      "description": "Launch with confidence using designs that attract investors and customers. MVP-ready designs, pitch materials, and flexible subscription model."
+    },
+    {
+      "icon": "Users",
+      "title": "Marketing Teams",
+      "description": "Extend your team's capabilities with unlimited design support on demand. Campaign materials, social assets, and marketing collateral."
+    },
+    {
+      "icon": "Building",
+      "title": "Enterprises",
+      "description": "Streamline design operations across departments with dedicated support. Multi-brand management with enterprise-grade security."
+    },
+    {
+      "icon": "Heart",
+      "title": "Charities",
+      "description": "Maximize impact with compelling designs that drive donations and awareness. Special non-profit rates for donation campaigns and events."
+    },
+    {
+      "icon": "Palette",
+      "title": "Creative Agencies",
+      "description": "Scale your agency's capacity with white-label design support for overflow work. Maintain client relationships while expanding capabilities."
+    }
+  ]
+}

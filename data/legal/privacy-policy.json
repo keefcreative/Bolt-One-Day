@@ -1,0 +1,82 @@
+{
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "January 2025",
+    "effectiveDate": "January 2025",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "content": "DesignWorks Bureau Ltd (\"we\", \"us\", or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.designworksbureau.co.uk or use our services."
+      },
+      {
+        "heading": "Information We Collect",
+        "content": "We may collect information about you in a variety of ways. The information we may collect includes:",
+        "subsections": [
+          {
+            "subheading": "Personal Data",
+            "content": "Personally identifiable information, such as your name, email address, telephone number, and company information that you voluntarily give to us when you contact us or use our services."
+          },
+          {
+            "subheading": "Usage Data",
+            "content": "Information our servers automatically collect when you access the site, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the site."
+          }
+        ]
+      },
+      {
+        "heading": "How We Use Your Information",
+        "content": "We may use information collected about you via our website or services to:",
+        "list": [
+          "Provide and maintain our services",
+          "Respond to your inquiries and fulfill your requests",
+          "Send you administrative information and updates",
+          "Improve our website and services",
+          "Monitor and analyze usage and trends"
+        ]
+      },
+      {
+        "heading": "Disclosure of Your Information",
+        "content": "We may share information we have collected about you in certain situations. Your information may be disclosed as follows:",
+        "subsections": [
+          {
+            "subheading": "By Law or to Protect Rights",
+            "content": "If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others."
+          },
+          {
+            "subheading": "Business Transfers",
+            "content": "We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company."
+          }
+        ]
+      },
+      {
+        "heading": "Cookies and Web Beacons",
+        "content": "We may use cookies, web beacons, tracking pixels, and other tracking technologies on our website to help customize the site and improve your experience. For more information on how we use cookies, please refer to our Cookie Policy."
+      },
+      {
+        "heading": "Security of Your Information",
+        "content": "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable."
+      },
+      {
+        "heading": "Your Data Protection Rights (GDPR)",
+        "content": "If you are a resident of the European Economic Area (EEA), you have certain data protection rights:",
+        "list": [
+          "Right to access - You have the right to request copies of your personal data",
+          "Right to rectification - You have the right to request that we correct any information you believe is inaccurate",
+          "Right to erasure - You have the right to request that we erase your personal data, under certain conditions",
+          "Right to restrict processing - You have the right to request that we restrict the processing of your personal data",
+          "Right to object to processing - You have the right to object to our processing of your personal data",
+          "Right to data portability - You have the right to request that we transfer the data that we have collected to another organization"
+        ]
+      },
+      {
+        "heading": "Contact Information",
+        "content": "If you have questions or comments about this Privacy Policy, please contact us at:",
+        "contactDetails": {
+          "company": "DesignWorks Bureau Ltd",
+          "email": "hello@designworks.com", 
+          "address": "123 Creative Street, London, UK",
+          "companyNumber": "14847378"
+        }
+      }
+    ]
+  }
+}

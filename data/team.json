@@ -1,0 +1,49 @@
+{
+  "team": {
+    "eyebrow": "Meet The Team",
+    "title": "The Creative Minds Behind DesignWorks",
+    "description": "Our diverse team of designers, strategists, and creative professionals work together to bring your vision to life.",
+    "team": [
+      {
+        "name": "Sarah Mitchell",
+        "position": "Brand Strategist",
+        "bio": "Sarah develops comprehensive brand strategies that align with business goals and resonate with target audiences.",
+        "avatar": "/images/team/sarah-mitchell.jpg",
+        "social": {
+          "twitter": "https://twitter.com/sarahmitchell",
+          "linkedin": "https://linkedin.com/in/sarahmitchell"
+        }
+      },
+      {
+        "name": "Emma Rodriguez",
+        "position": "Account Manager",
+        "bio": "Emma ensures seamless project delivery and maintains strong client relationships throughout the design process.",
+        "avatar": "/images/team/emma-rodriguez.jpg",
+        "social": {
+          "twitter": "https://twitter.com/emmarodriguez",
+          "linkedin": "https://linkedin.com/in/emmarodriguez"
+        }
+      },
+      {
+        "name": "Marcus Chen",
+        "position": "Senior Designer",
+        "bio": "Marcus brings creative concepts to life with meticulous attention to detail and innovative design solutions.",
+        "avatar": "/images/team/marcus-chen.jpg",
+        "social": {
+          "twitter": "https://twitter.com/marcuschen",
+          "linkedin": "https://linkedin.com/in/marcuschen"
+        }
+      },
+      {
+        "name": "Lisa Thompson",
+        "position": "Senior Designer",
+        "bio": "Lisa specializes in brand identity and digital design, creating cohesive visual experiences across all touchpoints.",
+        "avatar": "/images/team/lisa-thompson.jpg",
+        "social": {
+          "twitter": "https://twitter.com/lisathompson",
+          "linkedin": "https://linkedin.com/in/lisathompson"
+        }
+      }
+    ]
+  }
+}
