@@ -42,6 +42,44 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Brevo Conversations Configuration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.BrevoConversationsSetup = {
+                buttonStyle: 'round',
+                buttonPosition: 'br',
+                chatHeight: 600,
+                chatWidth: 400,
+                colors: {
+                  buttonText: '#FBFBFB',
+                  buttonBg: '#FF6B35'
+                },
+                zIndex: 9999,
+                startHidden: false
+              };
+            `,
+          }}
+        />
+        {/* Brevo Conversations Widget */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, w, c) {
+                w.BrevoConversationsID = '${process.env.NEXT_PUBLIC_BREVO_CONVERSATIONS_ID || '689cd1ce16d06dcf6c0f5674'}';
+                w[c] = w[c] || function() {
+                  (w[c].q = w[c].q || []).push(arguments);
+                };
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+                if (d.head) d.head.appendChild(s);
+              })(document, window, 'BrevoConversations');
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
       </body>

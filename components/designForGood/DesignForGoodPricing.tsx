@@ -98,7 +98,7 @@ export default function DesignForGoodPricing() {
               </button>
               
               <a
-                href="https://calendly.com/designworks/consultation"
+                href="https://meet.brevo.com/designworksbureau"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-ink text-ink font-medium text-sm tracking-[0.05em] uppercase transition-all duration-400 hover:bg-ink hover:text-white"

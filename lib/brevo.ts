@@ -26,6 +26,17 @@ export interface BrevoContactFormData {
   message: string
   service?: string
   source?: string
+  listType?: string
+}
+
+export interface BrevoChatLeadData {
+  email: string
+  firstName?: string
+  lastName?: string
+  company?: string
+  message: string
+  service?: string
+  listType?: string
 }
 
 export interface BrevoStripeCustomerData {
@@ -340,10 +351,83 @@ The DesignWorks Team
       return false
     }
   }
+
+  // Create chat lead in Brevo
+  async createChatLead(data: BrevoChatLeadData): Promise<boolean> {
+    if (!this.apiKey) {
+      console.error('Brevo API key not configured')
+      return false
+    }
+
+    try {
+      const createContact = new brevo.CreateContact()
+      createContact.email = data.email
+      createContact.attributes = {
+        FIRSTNAME: data.firstName || '',
+        LASTNAME: data.lastName || '',
+        COMPANY: data.company || '',
+        SERVICE_INTEREST: data.service || 'General Inquiry',
+        LAST_MESSAGE: data.message,
+        LEAD_SOURCE: 'Website Chatbot',
+        CONTACT_DATE: new Date().toISOString(),
+      }
+
+      // Determine which list to add to based on listType
+      let listIds: number[] = []
+      if (data.listType === 'chat-lead' && process.env.BREVO_CHAT_LEADS_LIST_ID) {
+        listIds.push(parseInt(process.env.BREVO_CHAT_LEADS_LIST_ID))
+      } else if (process.env.BREVO_LIST_ID) {
+        listIds.push(parseInt(process.env.BREVO_LIST_ID))
+      }
+
+      if (listIds.length > 0) {
+        createContact.listIds = listIds
+      }
+
+      await this.contactsApi.createContact(createContact)
+      console.log(`Chat lead created in Brevo: ${data.email}`)
+      return true
+    } catch (error: any) {
+      // If contact already exists, update it
+      if (error?.response?.body?.code === 'duplicate_parameter') {
+        try {
+          const updateContact = new brevo.UpdateContact()
+          updateContact.attributes = {
+            FIRSTNAME: data.firstName || '',
+            LASTNAME: data.lastName || '',
+            COMPANY: data.company || '',
+            SERVICE_INTEREST: data.service || 'General Inquiry',
+            LAST_MESSAGE: data.message,
+            LAST_CHAT_DATE: new Date().toISOString(),
+          }
+
+          await this.contactsApi.updateContact(data.email, updateContact)
+          console.log(`Chat lead updated in Brevo: ${data.email}`)
+          return true
+        } catch (updateError) {
+          console.error('Error updating chat lead:', updateError)
+          return false
+        }
+      }
+      console.error('Error creating chat lead in Brevo:', error)
+      return false
+    }
+  }
 }
 
 // Export singleton instance
 export const brevoIntegration = new BrevoIntegration()
+
+// Convenience function for creating chat leads
+export const createBrevoContact = async (data: BrevoContactFormData | BrevoChatLeadData): Promise<boolean> => {
+  if ('name' in data) {
+    // Handle contact form data
+    return await brevoIntegration.createOrUpdateContact(data as BrevoContactFormData)
+  } else {
+    // Handle chat lead data
+    return await brevoIntegration.createChatLead(data as BrevoChatLeadData)
+  }
+}
 
 // Export the class for testing or custom instances
 export default BrevoIntegration
