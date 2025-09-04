@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-08-28T14:28:36.355Z",
+  "total": 3,
+  "successful": 3,
+  "failed": 0,
+  "totalCost": 0.09,
+  "results": [
+    {
+      "name": "bloom-beauty-ecommerce",
+      "success": true,
+      "url": {},
+      "localPath": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/Content Script/generated_images/bloom-beauty-ecommerce_generated.jpg",
+      "prompt": "Professional product photography setup showing MacBook Pro displaying a luxury beauty e-commerce website with pink and gold color scheme, prominent #F97316 orange accent elements in the scene (orange notebook, pen, or desk accessory), clean minimal white desk, natural window lighting, shot with 85mm lens f/1.8, shallow depth of field, authentic workspace not stock photo, sharp edges only no rounded corners, professional photography quality"
+    },
+    {
+      "name": "ecomarket-marketplace",
+      "success": true,
+      "url": {},
+      "localPath": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/Content Script/generated_images/ecomarket-marketplace_generated.jpg",
+      "prompt": "Modern workspace with MacBook Pro showing an eco-friendly marketplace website with green nature themes, prominent #F97316 orange brand accent (orange coffee mug or plant pot), sustainable materials on desk, bamboo accessories, natural daylight from large window, professional photography, 85mm lens, bokeh background, authentic office environment, sharp architectural lines, no rounded corners"
+    },
+    {
+      "name": "techflow-rebrand",
+      "success": true,
+      "url": {},
+      "localPath": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/Content Script/generated_images/techflow-rebrand_generated.jpg",
+      "prompt": "Professional designer working on MacBook Pro displaying modern tech company brand guidelines, prominent #F97316 orange accent wall or large orange design element visible, clean minimal office space, modern furniture with sharp edges, natural lighting, authentic candid moment of actual work, not staged, professional photography quality, 85mm lens with shallow depth of field"
+    }
+  ]
+}

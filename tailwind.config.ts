@@ -29,6 +29,7 @@ const config: Config = {
         ocean: '#004E64',
         fog: '#E8F0F2',
         sage: '#E8F0EC',
+        charity: '#16a34a',
         
         // Keep existing shadcn colors for components
         background: 'hsl(var(--background))',

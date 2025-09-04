@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git init:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

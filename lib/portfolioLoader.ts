@@ -237,6 +237,9 @@ export function loadPortfolioProjects() {
     }));
     
     console.log(`Loaded ${projectsWithLayout.length} portfolio projects`);
+    if (projectsWithLayout.length > 0) {
+      console.log('First project:', projectsWithLayout[0].id, 'Layout:', projectsWithLayout[0].layoutConfig?.containerClass);
+    }
     
     return {
       eyebrow: "Our Work",

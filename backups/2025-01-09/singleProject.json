@@ -1,0 +1,37 @@
+{
+  "header": {
+    "eyebrow": "Project-Based Services",
+    "title": "Premium Design Without<br />The Commitment",
+    "titleHighlight": "The Commitment",
+    "description": "Sometimes exceptional work is needed for a specific project. We deliver the same premium quality with complete flexibility."
+  },
+  "projectTypes": [
+    {
+      "icon": "Palette",
+      "title": "Bespoke Design",
+      "description": "Custom brand identities, websites, and marketing materials tailored to your vision."
+    },
+    {
+      "icon": "Zap",
+      "title": "Specialised Projects",
+      "description": "Complex digital experiences, product launches, and unique creative challenges."
+    },
+    {
+      "icon": "Lightbulb",
+      "title": "Strategic Consultancy",
+      "description": "Brand audits, UX research, and design system planning for elevated strategy."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Create Something Exceptional?",
+    "description": "Get a tailored proposal for your specific project requirements",
+    "primaryButton": {
+      "text": "Get Project Quote",
+      "action": "scrollToContact"
+    },
+    "secondaryButton": {
+      "text": "Book Consultation", 
+      "url": "https://meet.brevo.com/designworksbureau"
+    }
+  }
+}

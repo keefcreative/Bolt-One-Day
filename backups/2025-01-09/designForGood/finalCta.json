@@ -1,0 +1,21 @@
+{
+  "finalCta": {
+    "eyebrow": "2025 Founding Cohort – 10 Spots Left",
+    "title": "Your Mission Deserves to Look as Big as It Feels",
+    "description": "Most nonprofits have huge impact — but limited time, staff, and design help. That's exactly why we built the **Design for Good** Initiative.",
+    "subtitle": "Join our founding cohort and get agency-quality creative support with no contracts, no pressure — just design that works for your cause.",
+    "primaryCta": {
+      "text": "Join the 2025 Cohort",
+      "href": "#pricing"
+    },
+    "secondaryCta": {
+      "text": "Book a Free Strategy Call",
+      "href": "https://meet.brevo.com/designworksbureau"
+    },
+    "guarantees": [
+      "100% Satisfaction Guarantee",
+      "No Long-Term Contract",
+      "Cancel Anytime"
+    ]
+  }
+}

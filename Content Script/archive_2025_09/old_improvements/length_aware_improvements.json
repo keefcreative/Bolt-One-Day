@@ -1,0 +1,95 @@
+[
+  {
+    "file": "hero.json",
+    "field": "title",
+    "type": "headline",
+    "original": "Premium Design Subscription",
+    "improved": "Smart Design Access",
+    "alternatives": [
+      "Professional Design Service",
+      "Quality Design Subscription",
+      "Smart Design Solution"
+    ],
+    "metrics": {
+      "originalWords": 3,
+      "originalChars": 28,
+      "improvedWords": 3,
+      "improvedChars": 19,
+      "wordDiff": 0,
+      "charDiff": -9,
+      "withinTolerance": true
+    }
+  },
+  {
+    "file": "hero.json",
+    "field": "subtitle",
+    "type": "subtitle",
+    "original": "World-class design, predictable pricing, no drama",
+    "improved": "Top-notch designs, fair prices, zero headaches",
+    "alternatives": [
+      "Great design, fixed pricing, no hassle",
+      "Quality design, clear costs, zero drama",
+      "Beautiful work, predictable prices, no nonsense"
+    ],
+    "metrics": {
+      "originalWords": 7,
+      "originalChars": 50,
+      "improvedWords": 6,
+      "improvedChars": 46,
+      "wordDiff": -1,
+      "charDiff": -4,
+      "withinTolerance": true
+    }
+  },
+  {
+    "file": "services.json",
+    "field": "description",
+    "type": "description",
+    "original": "We deliver comprehensive design solutions that elevate your brand and drive business growth through strategic creativity and seamless execution.",
+    "improved": "We craft smart designs that boost your brand and grow your business with clever creativity and flawless follow-through.",
+    "alternatives": [],
+    "metrics": {
+      "originalWords": 20,
+      "originalChars": 162,
+      "improvedWords": 18,
+      "improvedChars": 119,
+      "wordDiff": -2,
+      "charDiff": -43,
+      "withinTolerance": true
+    }
+  },
+  {
+    "file": "weBelieve.json",
+    "field": "philosophy",
+    "type": "philosophy",
+    "original": "We believe exceptional design shouldn't be a luxury reserved for Fortune 500 companies. Every business, regardless of size, deserves access to the kind of thoughtful, strategic design that transforms brands and drives results.",
+    "improved": "We think great design isn't just for the big players. Every company, no matter its size, should get the smart design work that changes brands and gets real results. No jargon, just impact.",
+    "alternatives": [],
+    "metrics": {
+      "originalWords": 35,
+      "originalChars": 235,
+      "improvedWords": 33,
+      "improvedChars": 188,
+      "wordDiff": -2,
+      "charDiff": -47,
+      "withinTolerance": true
+    }
+  },
+  {
+    "file": "founder.json",
+    "field": "quote",
+    "type": "longform",
+    "original": "I started DesignWorks with a simple conviction: that good design has the power to level the playing field. I've watched too many brilliant businesses struggle to communicate their value because they couldn't access the kind of strategic design that their larger competitors take for granted.",
+    "improved": "I started DesignWorks with a simple conviction: that good design has the power to level the playing field. I've watched too many brilliant businesses struggle to communicate their value because they couldn't access the kind of strategic design that their larger competitors take for granted.",
+    "alternatives": [],
+    "metrics": {
+      "originalWords": 47,
+      "originalChars": 289,
+      "improvedWords": 45,
+      "improvedChars": 291,
+      "wordDiff": -2,
+      "charDiff": 2,
+      "withinTolerance": true
+    }
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "comparison": {
+    "eyebrow": "See the Difference",
+    "title": "Why Nonprofits Are Joining the Design for Good Initiative",
+    "description": "Compare your options and see how we blend agency-quality creative with a mission-first mindset — all at nonprofit-friendly prices.",
+    "features": [
+      {
+        "name": "Mission-Aligned Design",
+        "description": "Designs that reflect your cause and connect with donors",
+        "diy": false,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Strategic Support", 
+        "description": "Guidance included, not an add-on",
+        "diy": false,
+        "agency": true,
+        "designForGood": true
+      },
+      {
+        "name": "Nonprofit-First Pricing",
+        "description": "Built for impact-focused budgets", 
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Unlimited Requests",
+        "description": "No project caps or extra fees",
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "72-Hour Delivery",
+        "description": "Fast turnaround on most projects",
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Sector Expertise",
+        "description": "Deep nonprofit experience",
+        "diy": false,
+        "agency": false,
+        "designForGood": true
+      }
+    ],
+    "conclusion": "We've built this for nonprofits that need to move fast, stay consistent, and look as professional as they are mission-driven.",
+    "benefits": [
+      {
+        "title": "Mission-First Approach",
+        "description": "Every design decision is made with your cause in mind"
+      },
+      {
+        "title": "Results That Matter",
+        "description": "Boost donor trust, campaign reach, and supporter engagement"
+      },
+      {
+        "title": "Founding Member Trial",
+        "description": "Try us with no long-term commitment. We'll earn your trust one project at a time"
+      }
+    ]
+  }
+}

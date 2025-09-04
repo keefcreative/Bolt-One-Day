@@ -1,0 +1,41 @@
+[
+  {
+    "file": "hero.json",
+    "path": "hero.description",
+    "original": "Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.",
+    "improved": "Level up your brand. All the design help you need, none of the hassle.",
+    "issues": {
+      "hasJargon": true,
+      "isGeneric": false,
+      "isTooLong": false,
+      "wordCount": 14
+    },
+    "keep": false
+  },
+  {
+    "file": "services.json",
+    "path": "services.items[1].description",
+    "original": "Stunning websites that convert visitors into customers with premium design and seamless user experience.",
+    "improved": "Websites that turn lookers into buyers. No fluff, all results.",
+    "issues": {
+      "hasJargon": true,
+      "isGeneric": false,
+      "isTooLong": false,
+      "wordCount": 14
+    },
+    "keep": false
+  },
+  {
+    "file": "contact.json",
+    "path": "contact.description",
+    "original": "Ready to transform your brand? Get in touch with our team and let's discuss how we can help you achieve your design goals.",
+    "improved": "Wanna stand out? Skip the buzzwords, let's chat real changes.",
+    "issues": {
+      "hasJargon": true,
+      "isGeneric": false,
+      "isTooLong": false,
+      "wordCount": 23
+    },
+    "keep": false
+  }
+]

@@ -33,7 +33,6 @@ export async function POST(request: NextRequest) {
       cancel_url: cancelUrl || `${request.nextUrl.origin}/#pricing`,
       allow_promotion_codes: true,
       billing_address_collection: 'required',
-      customer_creation: 'always',
       metadata: {
         source: 'website',
         plan: priceId,

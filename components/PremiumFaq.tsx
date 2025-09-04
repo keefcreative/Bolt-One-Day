@@ -15,9 +15,21 @@ interface FaqCategory {
   count: number;
 }
 
-export function PremiumFaq() {
-  const { title, subtitle, items } = premiumFaqData
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+interface PremiumFaqProps {
+  showSearch?: boolean;
+  showCategories?: boolean;
+  initialOpenIndex?: number | null;
+  data?: typeof premiumFaqData;
+}
+
+export function PremiumFaq({
+  showSearch = true,
+  showCategories = true,
+  initialOpenIndex = 0,
+  data = premiumFaqData
+}: PremiumFaqProps = {}) {
+  const { title, subtitle, items } = data
+  const [openIndex, setOpenIndex] = useState<number | null>(initialOpenIndex);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('subscription');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -41,8 +53,10 @@ export function PremiumFaq() {
   const filteredItems = useMemo(() => {
     let filtered = items;
 
-    // Filter by category (always filter since we removed 'all')
-    filtered = filtered.filter(item => item.category === activeCategory);
+    // Filter by category only if categories are shown
+    if (showCategories) {
+      filtered = filtered.filter(item => item.category === activeCategory);
+    }
 
     // Filter by search query
     if (searchQuery.trim()) {
@@ -104,46 +118,50 @@ export function PremiumFaq() {
             </p>
 
             {/* Search Bar */}
-            <div className="relative mb-6">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-ash" strokeWidth={1.2} />
-              <input
-                type="text"
-                placeholder="Search questions..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-mist rounded-lg bg-white text-ink placeholder-ash focus:outline-none focus:border-flame focus:ring-1 focus:ring-flame/20 transition-colors"
-              />
-            </div>
+            {showSearch && (
+              <div className="relative mb-6">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-ash" strokeWidth={1.2} />
+                <input
+                  type="text"
+                  placeholder="Search questions..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 border border-mist bg-white text-ink placeholder-ash focus:outline-none focus:border-flame focus:ring-1 focus:ring-flame/20 transition-colors"
+                />
+              </div>
+            )}
 
             {/* Category Navigation */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => handleCategoryChange(category.id)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                    activeCategory === category.id
-                      ? 'bg-flame text-white'
-                      : 'bg-white text-smoke hover:bg-flame hover:text-white border border-mist'
-                  }`}
-                >
-                  <span>{category.name}</span>
-                  <span className={`px-2 py-0.5 text-xs ${
-                    activeCategory === category.id
-                      ? 'bg-white/20 text-white'
-                      : 'bg-silk text-ash'
-                  }`}>
-                    {category.count}
-                  </span>
-                </button>
-              ))}
-            </div>
+            {showCategories && (
+              <div className="flex flex-wrap gap-3 mb-6">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                      activeCategory === category.id
+                        ? 'bg-flame text-white'
+                        : 'bg-white text-smoke hover:bg-flame hover:text-white border border-mist'
+                    }`}
+                  >
+                    <span>{category.name}</span>
+                    <span className={`px-2 py-0.5 text-xs ${
+                      activeCategory === category.id
+                        ? 'bg-white/20 text-white'
+                        : 'bg-silk text-ash'
+                    }`}>
+                      {category.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           
           <div className="space-y-4">
             {filteredItems.length > 0 ? (
               filteredItems.map((faq, index) => (
-                <div key={`${activeCategory}-${index}`} className="border border-mist bg-white rounded-lg overflow-hidden">
+                <div key={`${activeCategory}-${index}`} className="border border-mist bg-white overflow-hidden">
                   <button
                     onClick={() => handleQuestionClick(index)}
                     onMouseEnter={() => handleMouseEnter(index)}
@@ -170,7 +188,7 @@ export function PremiumFaq() {
                 </div>
               ))
             ) : (
-              <div className="text-center py-12 bg-white border border-mist rounded-lg">
+              <div className="text-center py-12 bg-white border border-mist">
                 <p className="text-ash font-light">
                   No questions found matching your search.
                 </p>
@@ -191,7 +209,7 @@ export function PremiumFaq() {
             {/* Load More Button (if you want to implement pagination) */}
             {filteredItems.length > 6 && (
               <div className="text-center pt-6">
-                <button className="px-6 py-3 border-2 border-flame text-flame hover:bg-flame hover:text-white transition-all duration-200 rounded-lg font-medium">
+                <button className="px-6 py-3 border-2 border-flame text-flame hover:bg-flame hover:text-white transition-all duration-200 font-medium">
                   Load More Questions
                 </button>
               </div>

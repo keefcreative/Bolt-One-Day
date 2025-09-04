@@ -1,0 +1,26 @@
+{
+  "threshold": 60,
+  "totalImages": 2,
+  "successful": 2,
+  "failed": 0,
+  "totalCost": 0.06,
+  "replacements": [
+    {
+      "original": "bloom-beauty-ecommerce.jpg",
+      "oldScore": 40,
+      "generatedUrl": {},
+      "prompt": "Professional e-commerce portfolio showcase on modern MacBook Pro screen, #F97316 orange accent color prominently featured, sharp edges and corners only (no rounded elements), showing bloom beauty ecommerce project, professional photography, high resolution, sharp focus, UI/UX design displayed clearly on screen, readable interface, shot with 85mm lens, depth of field, professional lighting setup. NOT: cartoon, illustration, anime, fake, stock photo, rounded corners, gradient backgrounds, cluttered, amateur, blurry, oversaturated, corporate cliche, cheesy, professional, modern, clean, minimalist, high quality, sharp focus, studio lighting, corporate but approachable, tech-forward, premium quality, authentic not staged, diverse and inclusive. NOT: cartoon, illustration, fantasy, vintage, retro, grunge, distressed, rounded corners, gradient backgrounds",
+      "cost": 0.03,
+      "success": true
+    },
+    {
+      "original": "ecomarket-marketplace.jpg",
+      "oldScore": 40,
+      "generatedUrl": {},
+      "prompt": "Professional online marketplace portfolio showcase on modern MacBook Pro screen, #F97316 orange accent color prominently featured, sharp edges and corners only (no rounded elements), showing ecomarket marketplace project, professional photography, high resolution, sharp focus, UI/UX design displayed clearly on screen, readable interface, shot with 85mm lens, depth of field, professional lighting setup. NOT: cartoon, illustration, anime, fake, stock photo, rounded corners, gradient backgrounds, cluttered, amateur, blurry, oversaturated, corporate cliche, cheesy, professional, modern, clean, minimalist, high quality, sharp focus, studio lighting, corporate but approachable, tech-forward, premium quality, authentic not staged, diverse and inclusive. NOT: cartoon, illustration, fantasy, vintage, retro, grunge, distressed, rounded corners, gradient backgrounds",
+      "cost": 0.03,
+      "success": true
+    }
+  ],
+  "timestamp": "2025-08-28T14:15:39.709Z"
+}

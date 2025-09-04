@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-08-31T18:16:26.524Z",
+  "totalImprovements": 3,
+  "files": 1,
+  "improvements": {
+    "hero.json": [
+      {
+        "file": "hero.json",
+        "path": "hero.eyebrow",
+        "original": "Premium Design & Development",
+        "improved": "Design Without The Drama",
+        "issues": {
+          "jargon": [
+            "premium"
+          ],
+          "generic": false,
+          "tooLong": false,
+          "voiceScore": 0.35000000000000003,
+          "weakPillars": [
+            {
+              "pillar": "honest",
+              "score": 0
+            },
+            {
+              "pillar": "principled",
+              "score": 0
+            },
+            {
+              "pillar": "human",
+              "score": 0
+            },
+            {
+              "pillar": "balanced",
+              "score": 0
+            }
+          ],
+          "missingPowerWords": false,
+          "passiveVoice": false,
+          "suggestions": [],
+          "needsImprovement": true
+        },
+        "issuesFixed": {
+          "jargon": [
+            "premium"
+          ],
+          "newJargonIntroduced": [],
+          "voiceImproved": false
+        },
+        "scoreImprovement": 0,
+        "wordCount": {
+          "original": 4,
+          "improved": 4,
+          "difference": 0
+        }
+      },
+      {
+        "file": "hero.json",
+        "path": "hero.title",
+        "original": "Creative Design Solutions That Captivate",
+        "improved": "Design That Actually Converts Visitors",
+        "issues": {
+          "jargon": [
+            "solutions"
+          ],
+          "generic": false,
+          "tooLong": false,
+          "voiceScore": 0.35000000000000003,
+          "weakPillars": [
+            {
+              "pillar": "honest",
+              "score": 0
+            },
+            {
+              "pillar": "principled",
+              "score": 0
+            },
+            {
+              "pillar": "human",
+              "score": 0
+            },
+            {
+              "pillar": "balanced",
+              "score": 0
+            }
+          ],
+          "missingPowerWords": false,
+          "passiveVoice": false,
+          "suggestions": [],
+          "needsImprovement": true
+        },
+        "issuesFixed": {
+          "jargon": [
+            "solutions"
+          ],
+          "newJargonIntroduced": [],
+          "voiceImproved": false
+        },
+        "scoreImprovement": 0,
+        "wordCount": {
+          "original": 5,
+          "improved": 5,
+          "difference": 0
+        }
+      },
+      {
+        "file": "hero.json",
+        "path": "hero.description",
+        "original": "Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.",
+        "improved": "Fix your brand's vibe with no-drama design subscriptions. Unlimited asks, 48-hour delivery, real team.",
+        "issues": {
+          "jargon": [
+            "transform"
+          ],
+          "generic": false,
+          "tooLong": false,
+          "voiceScore": 0.4508333333333334,
+          "weakPillars": [
+            {
+              "pillar": "honest",
+              "score": 0
+            },
+            {
+              "pillar": "principled",
+              "score": 0
+            },
+            {
+              "pillar": "human",
+              "score": 0
+            },
+            {
+              "pillar": "balanced",
+              "score": 0
+            }
+          ],
+          "missingPowerWords": false,
+          "passiveVoice": false,
+          "suggestions": [],
+          "needsImprovement": true
+        },
+        "issuesFixed": {
+          "jargon": [
+            "transform"
+          ],
+          "newJargonIntroduced": [],
+          "voiceImproved": true
+        },
+        "scoreImprovement": 0.017857142857142794,
+        "wordCount": {
+          "original": 14,
+          "improved": 14,
+          "difference": 0
+        }
+      }
+    ]
+  },
+  "summary": {
+    "jargonRemoved": 3,
+    "voiceImproved": 1,
+    "layoutSafe": 3
+  }
+}

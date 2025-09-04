@@ -20,12 +20,12 @@ export default function Navigation() {
   
   // Dynamic navigation items based on current page
   const dynamicNavItems = isDesignForGood ? [
-    { label: "Mission", href: "#dfg-mission" },
-    { label: "Process", href: "#dfg-process" },
-    { label: "Pricing", href: "#dfg-pricing" },
-    { label: "Founder", href: "#dfg-founder" },
-    { label: "FAQ", href: "#dfg-faq" },
-    { label: "Get Started", href: "#dfg-cta" }
+    { label: "Our Mission", href: "#dfg-mission" },
+    { label: "How It Works", href: "#dfg-process" },
+    { label: "Your Investment", href: "#dfg-pricing" },
+    { label: "Meet the Founder", href: "#dfg-founder" },
+    { label: "Got Questions?", href: "#dfg-faq" },
+    { label: "Start Today", href: "#dfg-cta" }
   ] : navigationData.items
   
   // Dynamic section IDs for scroll spy

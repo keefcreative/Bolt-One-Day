@@ -1,0 +1,37 @@
+{
+  "philosophy": {
+    "eyebrow": "Our Philosophy",
+    "title": "Everyone Deserves<br />Good Design",
+    "titleHighlight": "Good Design",
+    "description": "We believe exceptional design shouldn't be a luxury reserved for Fortune 500 companies. Every business, regardless of size, deserves access to the kind of thoughtful, strategic design that transforms brands and drives results."
+  },
+  "founderMessage": {
+    "eyebrow": "Message from the Founder",
+    "title": "Design as a Force for Good",
+    "quotes": [
+      "I started DesignWorks with a simple conviction: that good design has the power to level the playing field. I've watched too many brilliant businesses struggle to communicate their value because they couldn't access the kind of strategic design that their larger competitors take for granted.",
+      "Our subscription model isn't just about convenience—it's about democratising access to world-class creative services. Whether you're a startup founder bootstrapping your dream or an established company ready to scale, you deserve design that doesn't just look good, but works strategically for your business.",
+      "Every project we take on, from the smallest logo tweak to the most complex brand overhaul, is guided by this principle. Because when everyone has access to good design, we all benefit from a more thoughtful, beautiful world."
+    ],
+    "founder": {
+      "name": "Keith Hodgetts",
+      "title": "Founder & Creative Director",
+      "image": "/images/founders/keith-hodgetts.jpg",
+      "altText": "Keith Hodgetts, Founder & Creative Director"
+    }
+  },
+  "values": [
+    {
+      "title": "Accessible Excellence",
+      "description": "Premium design services without the premium agency overhead or lengthy contracts."
+    },
+    {
+      "title": "Strategic Partnership", 
+      "description": "We don't just execute—we collaborate as an extension of your team with genuine investment in your success."
+    },
+    {
+      "title": "Lasting Impact",
+      "description": "Every design decision is made with your long-term growth and brand evolution in mind."
+    }
+  ]
+}

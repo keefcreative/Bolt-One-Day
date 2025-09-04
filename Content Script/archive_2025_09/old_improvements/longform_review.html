@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long-form Content Review</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f9f9f9;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        h1 { 
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .improvement {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .improvement-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .field-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .content-type {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: capitalize;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .issues {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .issue-item {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .comparison {
+            padding: 30px;
+        }
+        
+        .version {
+            margin-bottom: 30px;
+        }
+        
+        .version-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .word-count {
+            font-size: 11px;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: #666;
+        }
+        
+        .content-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #ddd;
+        }
+        
+        .original .content-text {
+            background: #fef9f3;
+            border-color: #ffc107;
+        }
+        
+        .improved .content-text {
+            background: #f1f8f4;
+            border-color: #4caf50;
+        }
+        
+        .actions {
+            padding: 20px 30px;
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .btn-use {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .btn-keep {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .btn-edit {
+            background: #9c27b0;
+            color: white;
+        }
+        
+        .analysis {
+            padding: 25px 30px;
+            background: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .analysis-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .analysis-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+        }
+        
+        .metric-label {
+            color: #666;
+        }
+        
+        .metric-value {
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 Long-form Content Review</h1>
+            <p class="subtitle">
+                Reviewing paragraph-length content and multi-sentence copy.<br>
+                These changes focus on removing jargon while maintaining professional tone and message clarity.
+            </p>
+        </div>
+        
+        
+            <div class="improvement">
+                <div class="improvement-header">
+                    <div class="field-label">weBelieve.json → philosophy.description</div>
+                    <div class="content-type">philosophy</div>
+                    
+                    
+                        <div class="issues">
+                            
+                                <span class="issue-item">Contains jargon: strategic</span>
+                            
+                        </div>
+                    
+                </div>
+                
+                <div class="comparison">
+                    <div class="version original">
+                        <div class="version-label">
+                            Original Copy
+                            <span class="word-count">33 words</span>
+                        </div>
+                        <div class="content-text">We believe exceptional design shouldn't be a luxury reserved for Fortune 500 companies. Every business, regardless of size, deserves access to the kind of thoughtful, strategic design that transforms brands and drives results.</div>
+                    </div>
+                    
+                    <div class="version improved">
+                        <div class="version-label">
+                            Improved Version
+                            <span class="word-count">71 words</span>
+                        </div>
+                        <div class="content-text">Here's what we truly believe: Great design isn't just for the big shots with deep pockets. Whether you're running a start-up from your garage or leading a small team with big dreams, you should have the chance to nail that first impression with design that speaks volumes. Because let's face it, when design gets it right, it's not just about looking good—it's about connecting, making an impact, and moving things forward.</div>
+                    </div>
+                </div>
+                
+                <div class="analysis">
+                    <div class="analysis-title">Analysis</div>
+                    <div class="analysis-content">
+                        <div class="metric">
+                            <span class="metric-label">Word Count Change</span>
+                            <span class="metric-value">+38</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Readability</span>
+                            <span class="metric-value">Similar</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Jargon Removed</span>
+                            <span class="metric-value">Yes</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Tone</span>
+                            <span class="metric-value">More Conversational</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-use" onclick="alert('Use improved version for philosophy.description')">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="alert('Keep original for philosophy.description')">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="alert('Edit mode for philosophy.description')">
+                        ✏️ Edit & Refine
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement">
+                <div class="improvement-header">
+                    <div class="field-label">weBelieve.json → founderMessage.quotes[0]</div>
+                    <div class="content-type">founder story</div>
+                    
+                    
+                        <div class="issues">
+                            
+                                <span class="issue-item">Contains jargon: strategic</span>
+                            
+                        </div>
+                    
+                </div>
+                
+                <div class="comparison">
+                    <div class="version original">
+                        <div class="version-label">
+                            Original Copy
+                            <span class="word-count">45 words</span>
+                        </div>
+                        <div class="content-text">I started DesignWorks with a simple conviction: that good design has the power to level the playing field. I've watched too many brilliant businesses struggle to communicate their value because they couldn't access the kind of strategic design that their larger competitors take for granted.</div>
+                    </div>
+                    
+                    <div class="version improved">
+                        <div class="version-label">
+                            Improved Version
+                            <span class="word-count">242 words</span>
+                        </div>
+                        <div class="content-text">So here's how it all started. Picture this: I'm just like you, sitting on the other side of the table, sipping my coffee and thinking, why is it that only the big guns get to look good? I've seen way too many awesome small businesses, with ideas that could blow your mind, barely making a ripple. Why? Because they didn't have the means to jazz up their look with that slick design touch. It just didn't sit right with me.
+
+That’s when DesignWorks popped into my head. I was dead set on this idea - good design shouldn’t be this exclusive club where only the heavy hitters can play. It’s like, why can’t the little guy have a shot at looking great and telling their story in a way that actually sticks? I’ve watched too many brilliant businesses, people putting their heart and soul into their work, struggle to shout above the noise, all because they couldn’t wrap their head around or afford the kind of design magic their massive competitors were throwing cash at like it was nothing.
+
+So, yeah, that’s where my journey began. With a simple belief that good design, the kind that actually gets people to sit up and take notice, should be within reach for everyone. It’s not just about making things look pretty. It’s about leveling the playing field, giving those underdogs a fighting chance. That’s what I wanted to do, and that’s what DesignWorks is all about.</div>
+                    </div>
+                </div>
+                
+                <div class="analysis">
+                    <div class="analysis-title">Analysis</div>
+                    <div class="analysis-content">
+                        <div class="metric">
+                            <span class="metric-label">Word Count Change</span>
+                            <span class="metric-value">+197</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Readability</span>
+                            <span class="metric-value">Similar</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Jargon Removed</span>
+                            <span class="metric-value">Yes</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Tone</span>
+                            <span class="metric-value">More Conversational</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-use" onclick="alert('Use improved version for founderMessage.quotes[0]')">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="alert('Keep original for founderMessage.quotes[0]')">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="alert('Edit mode for founderMessage.quotes[0]')">
+                        ✏️ Edit & Refine
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement">
+                <div class="improvement-header">
+                    <div class="field-label">weBelieve.json → founderMessage.quotes[1]</div>
+                    <div class="content-type">value prop</div>
+                    
+                    
+                        <div class="issues">
+                            
+                                <span class="issue-item">Contains jargon: strategic, world-class, democratising</span>
+                            
+                        </div>
+                    
+                </div>
+                
+                <div class="comparison">
+                    <div class="version original">
+                        <div class="version-label">
+                            Original Copy
+                            <span class="word-count">43 words</span>
+                        </div>
+                        <div class="content-text">Our subscription model isn't just about convenience—it's about democratising access to world-class creative services. Whether you're a startup founder bootstrapping your dream or an established company ready to scale, you deserve design that doesn't just look good, but works strategically for your business.</div>
+                    </div>
+                    
+                    <div class="version improved">
+                        <div class="version-label">
+                            Improved Version
+                            <span class="word-count">95 words</span>
+                        </div>
+                        <div class="content-text">Here's the real deal: our subscription isn't just another convenient service. It’s about knocking down those high gates so everyone can get their hands on top-notch creative magic. Imagine you’re kickstarting your dream project or you’re at the helm of a growing business – you need design that’s more than just pretty pictures. You need design that hustles as hard as you do, pushing your vision forward. That’s what we’re here for. Because great design shouldn’t be a luxury; it should be a part of your toolkit, no matter where you're at in your journey.</div>
+                    </div>
+                </div>
+                
+                <div class="analysis">
+                    <div class="analysis-title">Analysis</div>
+                    <div class="analysis-content">
+                        <div class="metric">
+                            <span class="metric-label">Word Count Change</span>
+                            <span class="metric-value">+52</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Readability</span>
+                            <span class="metric-value">Similar</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Jargon Removed</span>
+                            <span class="metric-value">Yes</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Tone</span>
+                            <span class="metric-value">More Conversational</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-use" onclick="alert('Use improved version for founderMessage.quotes[1]')">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="alert('Keep original for founderMessage.quotes[1]')">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="alert('Edit mode for founderMessage.quotes[1]')">
+                        ✏️ Edit & Refine
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement">
+                <div class="improvement-header">
+                    <div class="field-label">solutions.json → solutions[0].description</div>
+                    <div class="content-type">service description</div>
+                    
+                    
+                </div>
+                
+                <div class="comparison">
+                    <div class="version original">
+                        <div class="version-label">
+                            Original Copy
+                            <span class="word-count">23 words</span>
+                        </div>
+                        <div class="content-text">Professional design that competes with the big players without the big budget. Cost-effective solutions with quick turnaround times that scale as you grow.</div>
+                    </div>
+                    
+                    <div class="version improved">
+                        <div class="version-label">
+                            Improved Version
+                            <span class="word-count">142 words</span>
+                        </div>
+                        <div class="content-text">Picture this: Your designs are so slick, so spot on, that when customers see them, they think you're playing in the big leagues. But here’s the kicker – you’re not draining your bank account to get there. We’re talking top-notch design work that fits right into your budget, not the other way around.
+
+And the best part? You won’t be twiddling your thumbs, waiting forever to see your brand come to life. We’re all about getting you what you need, fast, so you can move at the speed of your business. As your company grows and evolves, our services flex right along with you, making sure your design game is always strong, without missing a beat.
+
+In short, you get to look like a heavyweight contender, without the heavyweight costs, and with all the agility of a startup ready to take on the world.</div>
+                    </div>
+                </div>
+                
+                <div class="analysis">
+                    <div class="analysis-title">Analysis</div>
+                    <div class="analysis-content">
+                        <div class="metric">
+                            <span class="metric-label">Word Count Change</span>
+                            <span class="metric-value">+119</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Readability</span>
+                            <span class="metric-value">Similar</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Jargon Removed</span>
+                            <span class="metric-value">N/A</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Tone</span>
+                            <span class="metric-value">More Conversational</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-use" onclick="alert('Use improved version for solutions[0].description')">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="alert('Keep original for solutions[0].description')">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="alert('Edit mode for solutions[0].description')">
+                        ✏️ Edit & Refine
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement">
+                <div class="improvement-header">
+                    <div class="field-label">weBelieve.json → values[1].description</div>
+                    <div class="content-type">value statement</div>
+                    
+                    
+                </div>
+                
+                <div class="comparison">
+                    <div class="version original">
+                        <div class="version-label">
+                            Original Copy
+                            <span class="word-count">17 words</span>
+                        </div>
+                        <div class="content-text">We don't just execute—we collaborate as an extension of your team with genuine investment in your success.</div>
+                    </div>
+                    
+                    <div class="version improved">
+                        <div class="version-label">
+                            Improved Version
+                            <span class="word-count">81 words</span>
+                        </div>
+                        <div class="content-text">Here's the real scoop: When we jump into your world, we're not just another vendor ticking off tasks on a checklist. No, we're rolling up our sleeves, diving into the trenches with you, because your win is our win. Think of us as that teammate who's got your back, brainstorming with you at midnight, and celebrating your victories like they're our own. Because, at the end of the day, your success is what gets us out of bed in the morning.</div>
+                    </div>
+                </div>
+                
+                <div class="analysis">
+                    <div class="analysis-title">Analysis</div>
+                    <div class="analysis-content">
+                        <div class="metric">
+                            <span class="metric-label">Word Count Change</span>
+                            <span class="metric-value">+64</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Readability</span>
+                            <span class="metric-value">Similar</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Jargon Removed</span>
+                            <span class="metric-value">N/A</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Tone</span>
+                            <span class="metric-value">More Conversational</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-use" onclick="alert('Use improved version for values[1].description')">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="alert('Keep original for values[1].description')">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="alert('Edit mode for values[1].description')">
+                        ✏️ Edit & Refine
+                    </button>
+                </div>
+            </div>
+        
+    </div>
+</body>
+</html>

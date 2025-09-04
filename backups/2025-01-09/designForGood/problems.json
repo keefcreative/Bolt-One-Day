@@ -1,0 +1,24 @@
+{
+  "problems": {
+    "eyebrow": "The Hidden Cost of DIY Design",
+    "title": "DIY Design Is Costing You More Than You Think",
+    "description": "Most nonprofits don't have access to dedicated design support — so they make do. But homemade graphics come at a hidden cost: lost donations, lost time, and lost trust. That's exactly why we created the Design for Good Initiative.",
+    "subtitle": "We've seen it firsthand — and we're here to change it.",
+    "issues": [
+      {
+        "title": "Lost Donor Trust",
+        "description": "Amateur visuals cut donor trust by up to 68%"
+      },
+      {
+        "title": "Wasted Time", 
+        "description": "Staff waste 7+ hours weekly on DIY design"
+      },
+      {
+        "title": "Reduced Impact",
+        "description": "Inconsistent branding reduces campaign performance by 35%"
+      }
+    ],
+    "beforeImage": "/images/design-for-good/before-image.jpg",
+    "afterImage": "/images/design-for-good/after-image.jpg"
+  }
+}

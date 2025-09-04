@@ -1,0 +1,146 @@
+{
+  "portfolio": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/public/images/portfolio",
+  "totalImages": 3,
+  "summary": {
+    "totalAnalyzed": 3,
+    "successful": 3,
+    "failed": 0,
+    "averageScore": 48,
+    "distribution": {
+      "excellent": 0,
+      "good": 1,
+      "poor": 2
+    },
+    "needsReplacement": 2
+  },
+  "results": [
+    {
+      "image": "artisan-studios-portfolio.jpg",
+      "path": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/public/images/portfolio/artisan-studios-portfolio.jpg",
+      "brandScore": 65,
+      "conversionScore": 70,
+      "analysis": {
+        "colorCompliance": "The primary brand color #F97316 (orange) is not prominently featured as an accent in the image.",
+        "styleAlignment": "The image aligns with the modern and clean style, but the phone's rounded edges do not fully comply with the sharp edge requirement.",
+        "qualityAssessment": "The image quality is high with clear focus and natural lighting, capturing an authentic moment.",
+        "compositionAnalysis": "The composition is well-balanced with the phone as the focal point, supported by the blurred background of a computer setup.",
+        "emotionalImpact": "The image conveys a sense of productivity and modern technology, appealing to a tech-savvy audience."
+      },
+      "strengths": [
+        "High-quality image",
+        "Natural lighting",
+        "Authentic moment captured"
+      ],
+      "criticalIssues": [
+        "Lack of primary brand color",
+        "Rounded edges on the phone"
+      ],
+      "improvements": [
+        {
+          "priority": "critical",
+          "action": "Incorporate the brand's primary color #F97316 as an accent in the app interface or background elements.",
+          "impact": "Enhances brand recognition and consistency."
+        },
+        {
+          "priority": "important",
+          "action": "Use a device with sharper edges to align with brand guidelines.",
+          "impact": "Improves style consistency with brand identity."
+        }
+      ],
+      "altText": "Person holding a smartphone displaying a weather and air quality app, with a computer setup in the background.",
+      "requiresReplacement": false,
+      "replacementPrompt": "",
+      "method": "direct_api",
+      "timestamp": "2025-08-28T14:15:03.736Z"
+    },
+    {
+      "image": "bloom-beauty-ecommerce.jpg",
+      "path": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/public/images/portfolio/bloom-beauty-ecommerce.jpg",
+      "brandScore": 40,
+      "conversionScore": 50,
+      "analysis": {
+        "colorCompliance": "The primary color #F97316 is not present in the image.",
+        "styleAlignment": "The image lacks sharp edges due to the rounded corners of the phone.",
+        "qualityAssessment": "The image is of high quality with natural lighting.",
+        "compositionAnalysis": "The composition is clean but does not feature any real people or authentic moments.",
+        "emotionalImpact": "The image feels neutral and lacks emotional engagement."
+      },
+      "strengths": [
+        "High-quality image",
+        "Natural lighting"
+      ],
+      "criticalIssues": [
+        "Lack of brand color",
+        "No real people featured",
+        "Rounded corners present"
+      ],
+      "improvements": [
+        {
+          "priority": "critical",
+          "action": "Incorporate the primary brand color #F97316 as an accent.",
+          "impact": "Enhances brand recognition and consistency."
+        },
+        {
+          "priority": "important",
+          "action": "Include real people in the image.",
+          "impact": "Increases emotional engagement and authenticity."
+        },
+        {
+          "priority": "nice-to-have",
+          "action": "Use objects with sharp edges.",
+          "impact": "Aligns with the brand's modern and clean style."
+        }
+      ],
+      "altText": "A smartphone displaying a Pinterest feed on a white surface with natural lighting.",
+      "requiresReplacement": true,
+      "replacementPrompt": "Create an image featuring a real person using a smartphone with the brand color #F97316 as an accent, ensuring sharp edges and natural lighting.",
+      "method": "direct_api",
+      "timestamp": "2025-08-28T14:15:03.735Z"
+    },
+    {
+      "image": "ecomarket-marketplace.jpg",
+      "path": "/Users/keithhodgetts/Dropbox/Mac/Documents/GitHub/Bolt-One-Day/public/images/portfolio/ecomarket-marketplace.jpg",
+      "brandScore": 40,
+      "conversionScore": 50,
+      "analysis": {
+        "colorCompliance": "The primary color #F97316 (orange) is not present as an accent in the image.",
+        "styleAlignment": "The image features rounded corners on the phone, which does not align with the brand's preference for sharp edges.",
+        "qualityAssessment": "The image quality is good with natural lighting, but it lacks the presence of real people.",
+        "compositionAnalysis": "The composition is clean and modern but lacks elements that directly relate to the brand's guidelines.",
+        "emotionalImpact": "The image has a neutral emotional impact, lacking elements that evoke strong emotions."
+      },
+      "strengths": [
+        "Clean and modern composition",
+        "Good image quality with natural lighting"
+      ],
+      "criticalIssues": [
+        "Lack of primary color #F97316",
+        "Rounded corners on the phone"
+      ],
+      "improvements": [
+        {
+          "priority": "critical",
+          "action": "Incorporate the primary color #F97316 as an accent in the image.",
+          "impact": "Improves brand recognition and consistency."
+        },
+        {
+          "priority": "important",
+          "action": "Use objects with sharp edges to align with brand style.",
+          "impact": "Enhances brand style alignment."
+        },
+        {
+          "priority": "nice-to-have",
+          "action": "Include real people in the image to increase authenticity.",
+          "impact": "Boosts emotional connection and authenticity."
+        }
+      ],
+      "altText": "A smartphone displaying a social media app on a white surface with natural lighting.",
+      "requiresReplacement": true,
+      "replacementPrompt": "Create an image featuring a smartphone with sharp edges, incorporating the color #F97316 as an accent, and showing real people interacting naturally in a well-lit environment.",
+      "method": "direct_api",
+      "timestamp": "2025-08-28T14:15:07.050Z"
+    }
+  ],
+  "errors": [],
+  "timestamp": "2025-08-28T14:15:07.051Z"
+}

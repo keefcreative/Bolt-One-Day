@@ -1,0 +1,26 @@
+{
+  "id": "foodieapp-discovery",
+  "title": "FoodieApp Restaurant Discovery",
+  "category": "Mobile App",
+  "description": "AI-powered restaurant discovery app with personalized recommendations and social dining features.",
+  "createdDate": "2024-04-15",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/foodieapp-discovery.jpg",
+  "tags": ["Mobile App", "iOS", "Android", "AI Recommendations", "Social"],
+  "client": "FoodieApp Inc.",
+  "year": "2024",
+  "duration": "14 weeks",
+  "challenge": "FoodieApp wanted to differentiate in the crowded restaurant app market by offering hyper-personalized recommendations based on dietary preferences, mood, and social dining patterns while building a community of food enthusiasts.",
+  "solution": "We developed a mobile app with AI that learns user preferences, AR menu previews, group dining coordination, and influencer-curated lists. The design features mouth-watering food photography and smooth gesture-based navigation.",
+  "results": [
+    "2.5 million downloads in first 6 months",
+    "4.8 star rating on App Store and Google Play",
+    "30% monthly active user retention rate",
+    "Partnership with 50,000+ restaurants globally",
+    "Acquired by major food delivery platform"
+  ],
+  "liveUrl": "https://foodieapp.com",
+  "images": []
+}

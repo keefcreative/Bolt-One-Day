@@ -1,0 +1,305 @@
+{
+  "chatBehavioralTriggers": {
+    "pricingPageVisitor": {
+      "trigger": "pageUrl contains '/pricing' OR pageUrl contains '#pricing'",
+      "delay": "30 seconds",
+      "action": "startConversation",
+      "message": "I see you're looking at our pricing! 👋 Have any questions about our design subscription plans?",
+      "followUp": {
+        "noResponse": {
+          "delay": "2 minutes",
+          "message": "Still here if you need help choosing the right plan for your business!"
+        }
+      }
+    },
+    "designForGoodVisitor": {
+      "trigger": "pageUrl contains 'design-for-good'",
+      "delay": "45 seconds", 
+      "action": "startConversation",
+      "message": "Hi! Interested in our Design for Good program for non-profits? I'd love to help! 💚"
+    },
+    "portfolioEngagement": {
+      "trigger": "time on page > 2 minutes AND pageUrl contains 'portfolio'",
+      "delay": "10 seconds",
+      "action": "startConversation", 
+      "message": "Love what you're seeing in our portfolio? Let's chat about bringing that same quality to your brand! ✨"
+    },
+    "exitIntent": {
+      "trigger": "mouse leaves viewport",
+      "delay": "immediate",
+      "action": "startConversation",
+      "message": "Before you go - any quick questions I can help with? 😊"
+    },
+    "returnVisitor": {
+      "trigger": "returning visitor AND previous chat session exists",
+      "delay": "15 seconds",
+      "action": "startConversation",
+      "message": "Welcome back! How can I help you today?"
+    }
+  },
+  "automationWorkflows": [
+    {
+      "name": "Chat Lead Nurture Sequence",
+      "trigger": "contact added to 'chat-conversation' list",
+      "workflow": [
+        {
+          "step": 1,
+          "action": "wait",
+          "duration": "1 hour"
+        },
+        {
+          "step": 2, 
+          "action": "sendEmail",
+          "template": "chat-follow-up-1",
+          "subject": "Great chatting with you! Here's what we discussed",
+          "condition": "if no email sent in last 24 hours"
+        },
+        {
+          "step": 3,
+          "action": "wait", 
+          "duration": "2 days"
+        },
+        {
+          "step": 4,
+          "action": "sendEmail",
+          "template": "portfolio-showcase",
+          "subject": "See how we've helped businesses like yours",
+          "condition": "if email not opened"
+        },
+        {
+          "step": 5,
+          "action": "wait",
+          "duration": "3 days"
+        },
+        {
+          "step": 6,
+          "action": "sendSMS",
+          "message": "Hi {FIRSTNAME}, just checking - any design projects we can help with? Reply STOP to opt out.",
+          "condition": "if phone number exists"
+        }
+      ]
+    },
+    {
+      "name": "High-Intent Lead Fast Track",
+      "trigger": "contact added to 'high-intent-chat-leads' list",
+      "workflow": [
+        {
+          "step": 1,
+          "action": "sendEmail",
+          "template": "urgent-follow-up",
+          "subject": "Let's discuss your project - available for a quick call?",
+          "delay": "15 minutes"
+        },
+        {
+          "step": 2,
+          "action": "createTask",
+          "assignee": "sales-team",
+          "priority": "high",
+          "title": "High-intent chat lead - follow up ASAP",
+          "delay": "30 minutes"
+        },
+        {
+          "step": 3,
+          "action": "sendSMS", 
+          "message": "Hi {FIRSTNAME}, I'm Keith from DesignWorks. Saw you were interested in our services - free to chat for 5 mins?",
+          "delay": "2 hours",
+          "condition": "if no response to email"
+        }
+      ]
+    },
+    {
+      "name": "Abandoned Conversation Recovery",
+      "trigger": "conversation started but no message from contact in 30 minutes",
+      "workflow": [
+        {
+          "step": 1,
+          "action": "sendChatMessage",
+          "message": "Still there? Happy to answer any questions you might have!"
+        },
+        {
+          "step": 2,
+          "action": "wait",
+          "duration": "2 hours"
+        },
+        {
+          "step": 3,
+          "action": "sendEmail",
+          "template": "missed-chat-follow-up",
+          "subject": "We missed you in chat - here's how we can help",
+          "condition": "if email address provided"
+        }
+      ]
+    },
+    {
+      "name": "Brevo Meetings Booking Follow-up",
+      "trigger": "contact books meeting via Brevo Meetings",
+      "workflow": [
+        {
+          "step": 1,
+          "action": "sendEmail",
+          "template": "meeting-confirmation",
+          "subject": "Meeting confirmed! Here's what to prepare",
+          "delay": "5 minutes"
+        },
+        {
+          "step": 2,
+          "action": "sendEmail",
+          "template": "meeting-reminder-24h",
+          "subject": "Tomorrow's meeting - quick prep checklist",
+          "delay": "24 hours before meeting"
+        },
+        {
+          "step": 3,
+          "action": "sendEmail",
+          "template": "meeting-reminder-1h",
+          "subject": "Meeting in 1 hour - joining details inside",
+          "delay": "1 hour before meeting"
+        },
+        {
+          "step": 4,
+          "action": "wait",
+          "duration": "2 hours after meeting"
+        },
+        {
+          "step": 5,
+          "action": "sendEmail",
+          "template": "meeting-follow-up",
+          "subject": "Thanks for the great chat - next steps inside"
+        }
+      ]
+    },
+    {
+      "name": "Brevo Meetings No-show Recovery",
+      "trigger": "contact misses scheduled meeting",
+      "workflow": [
+        {
+          "step": 1,
+          "action": "sendEmail",
+          "template": "missed-meeting-follow-up",
+          "subject": "We missed you! Let's reschedule",
+          "delay": "1 hour after missed meeting"
+        },
+        {
+          "step": 2,
+          "action": "sendSMS",
+          "message": "Hi {FIRSTNAME}, we missed our meeting today. No worries! Free to reschedule? - Keith from DesignWorks",
+          "delay": "4 hours after missed meeting",
+          "condition": "if phone number exists"
+        },
+        {
+          "step": 3,
+          "action": "wait",
+          "duration": "2 days"
+        },
+        {
+          "step": 4,
+          "action": "sendEmail",
+          "template": "final-reschedule-offer",
+          "subject": "One more try - let's find a time that works",
+          "condition": "if no response to previous messages"
+        }
+      ]
+    }
+  ],
+  "leadScoringRules": [
+    {
+      "action": "visited pricing page",
+      "points": 15
+    },
+    {
+      "action": "started chat conversation",
+      "points": 25
+    },
+    {
+      "action": "mentioned 'interested' in chat",
+      "points": 30
+    },
+    {
+      "action": "mentioned 'budget' or 'timeline' in chat",
+      "points": 40
+    },
+    {
+      "action": "provided email address in chat",
+      "points": 35
+    },
+    {
+      "action": "visited portfolio 3+ times",
+      "points": 20
+    },
+    {
+      "action": "spent 5+ minutes on site",
+      "points": 10
+    },
+    {
+      "action": "mentioned company name in chat",
+      "points": 25
+    },
+    {
+      "action": "booked meeting via Brevo Meetings",
+      "points": 50
+    },
+    {
+      "action": "attended scheduled meeting",
+      "points": 75
+    },
+    {
+      "action": "rescheduled meeting (shows continued interest)",
+      "points": 30
+    },
+    {
+      "action": "clicked meeting booking link",
+      "points": 20
+    }
+  ],
+  "chatScenarios": {
+    "welcomeMessage": {
+      "trigger": "chat opened",
+      "message": "👋 Hi there! I'm here to help with any questions about our design services. What brings you to DesignWorks today?",
+      "quickReplies": [
+        "I need design help",
+        "Tell me about pricing", 
+        "I have a specific question",
+        "I'm just browsing"
+      ]
+    },
+    "pricingInquiry": {
+      "trigger": "user clicks 'Tell me about pricing'",
+      "message": "Great! We have three subscription tiers:\n\n• Essential ($2,995/month) - Perfect for startups\n• Professional ($4,995/month) - For growing businesses  \n• Enterprise ($7,995/month) - For large organizations\n\nWhat size business are you working with?",
+      "quickReplies": [
+        "Startup/Small business",
+        "Growing business", 
+        "Large organization",
+        "Not sure yet"
+      ]
+    },
+    "portfolioShowcase": {
+      "trigger": "user mentions 'examples' or 'portfolio'",
+      "message": "I'd love to show you our work! What type of design are you most interested in?",
+      "quickReplies": [
+        "Web design",
+        "Brand identity",
+        "Marketing materials", 
+        "UI/UX design"
+      ]
+    },
+    "bookMeetingFlow": {
+      "trigger": "user shows interest in consultation",
+      "message": "Perfect! I'd love to set up a quick 30-minute consultation to discuss your project. You can book a time that works for you at meet.brevo.com/designworksbureau",
+      "quickReplies": [
+        "Book now",
+        "Tell me more first",
+        "What will we discuss?",
+        "I'm not ready yet"
+      ]
+    },
+    "meetingPrepHelp": {
+      "trigger": "user asks about meeting preparation",
+      "message": "Great question! To make the most of our time, it helps to have:\n\n• Your project goals/timeline\n• Current challenges you're facing\n• Budget range (if known)\n• Any inspiration/examples\n\nDon't worry if you don't have everything - we'll figure it out together!",
+      "quickReplies": [
+        "I'm ready to book",
+        "What if I'm not sure about budget?",
+        "Can you show me your work first?"
+      ]
+    }
+  }
+}

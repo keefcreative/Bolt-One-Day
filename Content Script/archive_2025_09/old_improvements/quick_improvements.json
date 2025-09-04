@@ -1,0 +1,37 @@
+[
+  {
+    "file": "hero.json",
+    "field": "title",
+    "original": "Premium Design Subscription",
+    "improved": "\"Unlock Elite Design: Your Unfair Advantage\"",
+    "changed": true
+  },
+  {
+    "file": "hero.json",
+    "field": "subtitle",
+    "original": "World-class design, predictable pricing, no drama",
+    "improved": "\"Stunning designs at clear prices - without the hassle\"",
+    "changed": true
+  },
+  {
+    "file": "services.json",
+    "field": "heading",
+    "original": "Everything You Need to Stand Out",
+    "improved": "\"Unlock Your Full Potential: Stand Out Today\"",
+    "changed": true
+  },
+  {
+    "file": "pricing.json",
+    "field": "cta",
+    "original": "Start Your Design Journey",
+    "improved": "\"Embark on Your Design Journey Today!\"",
+    "changed": true
+  },
+  {
+    "file": "finalCta.json",
+    "field": "title",
+    "original": "Ready to Transform Your Brand?",
+    "improved": "\"Transform Your Brand Now!\"",
+    "changed": true
+  }
+]

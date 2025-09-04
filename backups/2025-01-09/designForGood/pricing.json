@@ -1,0 +1,61 @@
+{
+  "pricing": {
+    "eyebrow": "2025 Founding Member Pricing",
+    "title": "Creative Support You Can Count On — At a Price Built for Impact",
+    "description": "Join our founding cohort and get enterprise-level creative services at nonprofit-friendly rates.",
+    "plan": {
+      "name": "Charity Cohort Membership",
+      "standardPrice": "£2,499",
+      "firstYearPrice": "£1,499",
+      "firstYearDiscount": "40% off",
+      "lifetimePrice": "£1,999", 
+      "lifetimeDiscount": "20% off",
+      "period": "per month",
+      "stripePriceIdFirstYear": "price_1RH2QCP3PqPfy1jMN2bAn90J",
+      "stripePriceIdStandard": "price_1RH2QCP3PqPfy1jMbS2yn4ns"
+    },
+    "features": [
+      {
+        "title": "Unlimited design requests",
+        "description": "Everything from flyers to full campaign kits"
+      },
+      {
+        "title": "72-hour delivery",
+        "description": "Speed that supports your deadlines"
+      },
+      {
+        "title": "Newsletter + social templates",
+        "description": "Done-for-you, editable in Canva"
+      },
+      {
+        "title": "Print, email, web graphics",
+        "description": "Every format covered"
+      },
+      {
+        "title": "Monthly strategy calls",
+        "description": "Think of us as your creative partner"
+      },
+      {
+        "title": "ROI dashboard + analytics",
+        "description": "See what's working, amplify it"
+      },
+      {
+        "title": "Unlimited team access",
+        "description": "Everyone on your team can collaborate"
+      },
+      {
+        "title": "Priority support",
+        "description": "Always get a fast response"
+      }
+    ],
+    "guarantees": [
+      "100% Satisfaction Guarantee",
+      "No Long-Term Contract", 
+      "Cancel Anytime"
+    ],
+    "cta": {
+      "primary": "Join the 2025 Founding Cohort",
+      "secondary": "Book a Call"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "pricing": {
+    "eyebrow": "Simple Pricing",
+    "title": "One subscription, unlimited requests",
+    "description": "Choose the plan that fits your needs. All plans include unlimited revisions and a dedicated project manager.",
+    "plans": [
+      {
+        "name": "DesignWorks<br />Essential",
+        "price": "£799",
+        "period": "/month",
+        "description": "Ideal for startups and small businesses needing consistent, high-quality design support without the overhead of hiring an in-house design team.",
+        "stripePriceId": "price_1PP4M8P3PqPfy1jM3lzwQMmc",
+        "features": [
+          "One request at a time",
+          "48-72 hour delivery",
+          "Unlimited revisions",
+          "Unlimited brands",
+          "Email support",
+          "Pause or cancel anytime"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Business<br />DesignWorks",
+        "price": "£1,249",
+        "period": "/month",
+        "description": "Tailored for growing businesses and marketing teams requiring a higher volume of diverse design assets with priority service and support.",
+        "stripePriceId": "price_1PP4N8P3PqPfy1jMpxXppeTe",
+        "features": [
+          "Two requests at a time",
+          "24-48 hour delivery",
+          "Unlimited revisions",
+          "Unlimited brands", 
+          "Unlimited team members",
+          "Priority support",
+          "Advanced integrations",
+          "Pause or cancel anytime"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Enterprise<br />DesignWorks",
+        "price": "£2,500",
+        "period": "/month",
+        "description": "Designed for large organizations and agencies seeking a dedicated design team for complex projects with strategic creative partnership.",
+        "stripePriceId": "price_1PP4O6P3PqPfy1jMxw8JtIad",
+        "features": [
+          "Three requests at a time",
+          "12-24 hour delivery",
+          "Unlimited revisions",
+          "Unlimited brands",
+          "Unlimited team members",
+          "Dedicated design team",
+          "Dedicated account manager",
+          "Custom integrations"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Enterprise<br />DesignWorks +",
+        "price": "£4,500",
+        "period": "/month",
+        "description": "Our most comprehensive offering for enterprises demanding the highest level of service and premium support.",
+        "stripePriceId": "price_1PP4P2P3PqPfy1jMg755YNF3",
+        "features": [
+          "Unlimited requests",
+          "Same-day delivery options",
+          "Unlimited revisions",
+          "Unlimited brands",
+          "Unlimited team members",
+          "Dedicated design team",
+          "Senior account manager",
+          "White-label solutions",
+          "24/7 priority support",
+          "White-label solutions"
+        ],
+        "popular": false
+      }
+    ]
+  }
+}

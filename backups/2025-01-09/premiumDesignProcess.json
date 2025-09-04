@@ -1,0 +1,31 @@
+{
+  "eyebrow": "Our Process",
+  "title": "How We Bring Your Vision to Life",
+  "description": "Our streamlined design process ensures consistent quality and fast delivery for every project.",
+  "steps": [
+    {
+      "number": "01",
+      "icon": "MessageSquare",
+      "title": "Submit Request",
+      "description": "Share your design brief through our platform with all the details and requirements."
+    },
+    {
+      "number": "02",
+      "icon": "Lightbulb",
+      "title": "Design & Create",
+      "description": "Our expert designers get to work, creating your design with attention to every detail."
+    },
+    {
+      "number": "03",
+      "icon": "Palette",
+      "title": "Review & Refine",
+      "description": "Review the initial design and request any changes. We'll refine until it's perfect."
+    },
+    {
+      "number": "04",
+      "icon": "Rocket",
+      "title": "Final Delivery",
+      "description": "Receive your final design files in all the formats you need, ready to use."
+    }
+  ]
+}

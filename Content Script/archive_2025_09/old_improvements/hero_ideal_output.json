@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "eyebrow": {
+      "original": "Premium Design & Development",
+      "improved": "Design Without The Drama",
+      "wordCount": {
+        "original": 4,
+        "improved": 4,
+        "difference": 0
+      },
+      "changes": {
+        "what": "Replaced 'premium' with brand phrase",
+        "why": "Brand recognition, memorable, sets tone"
+      }
+    },
+    "title": {
+      "original": "Creative Design Solutions That Captivate",
+      "improved": "Design That Actually Converts Visitors",
+      "wordCount": {
+        "original": 5,
+        "improved": 5,
+        "difference": 0
+      },
+      "changes": {
+        "what": "Removed vague 'solutions', added specific outcome",
+        "why": "ROI focus triggers loss aversion - they're losing conversions"
+      }
+    },
+    "description": {
+      "original": "Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.",
+      "improved": "Fix your conversion problem with professional design subscription. Unlimited revisions, 48-hour delivery, dedicated crew.",
+      "wordCount": {
+        "original": 16,
+        "improved": 16,
+        "difference": 0
+      },
+      "changes": {
+        "what": "Replaced 'transform' with problem-focused 'fix', made timeline specific",
+        "why": "Problem-aware buyers convert better, specificity builds trust"
+      }
+    },
+    "primaryButton": {
+      "text": {
+        "original": "Get Started",
+        "improved": "Start Today",
+        "wordCount": {
+          "original": 2,
+          "improved": 2,
+          "difference": 0
+        },
+        "changes": {
+          "what": "Added time urgency",
+          "why": "Creates FOMO, implies immediate value"
+        }
+      },
+      "href": "#contact"
+    },
+    "secondaryButton": {
+      "text": {
+        "original": "View Our Work",
+        "improved": "See Real Results",
+        "wordCount": {
+          "original": 3,
+          "improved": 3,
+          "difference": 0
+        },
+        "changes": {
+          "what": "Shifted from portfolio to outcomes",
+          "why": "Prospects care about results not pretty pictures"
+        }
+      },
+      "href": "#portfolio"
+    }
+  },
+  "stats": {
+    "items": [
+      {
+        "number": "500+",
+        "label": {
+          "original": "Global Clients",
+          "improved": "Growing Companies",
+          "wordCount": {
+            "original": 2,
+            "improved": 2,
+            "difference": 0
+          },
+          "changes": {
+            "what": "Focused on growth not geography",
+            "why": "Aspirational - they want to be growing too"
+          }
+        }
+      },
+      {
+        "number": "48h",
+        "label": {
+          "original": "Average Delivery",
+          "improved": "Average Delivery",
+          "wordCount": {
+            "original": 2,
+            "improved": 2,
+            "difference": 0
+          },
+          "changes": {
+            "what": "Kept as is - already clear and specific",
+            "why": "No improvement needed"
+          }
+        }
+      },
+      {
+        "number": "99%",
+        "label": {
+          "original": "Client Retention",
+          "improved": "Stay With Us",
+          "wordCount": {
+            "original": 2,
+            "improved": 3,
+            "difference": 1
+          },
+          "changes": {
+            "what": "Made it more human and direct",
+            "why": "Personal connection, implies relationship not transaction"
+          }
+        }
+      }
+    ]
+  }
+}

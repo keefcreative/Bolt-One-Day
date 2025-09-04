@@ -1,19 +1,49 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
 import pricingData from '@/data/designForGood/pricing.json'
 
 export default function DesignForGoodPricing() {
   const { pricing } = pricingData
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleCheckout = async () => {
+    setIsLoading(true)
+    try {
+      const response = await fetch('/api/stripe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          priceId: pricing.plan.stripePriceIdFirstYear, // Use first year discount price
+          successUrl: `${window.location.origin}/design-for-good/success`,
+          cancelUrl: `${window.location.origin}/design-for-good#pricing`,
+        }),
+      })
+
+      const { url } = await response.json()
+      
+      if (url) {
+        window.location.href = url
+      }
+    } catch (error) {
+      // Error creating checkout session
+      // Fallback to contact form
+      scrollToElement('#contact')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <section id="pricing" className="section-padding bg-ink">
       <div className="container-premium">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase" style={{ color: '#16a34a' }}>
+          <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
             {pricing.eyebrow}
           </p>
           <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-white">
@@ -62,7 +92,7 @@ export default function DesignForGoodPricing() {
               <div className="space-y-4">
                 {pricing.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#16a34a' }} strokeWidth={2} />
+                    <Check className="w-5 h-5 mt-0.5 flex-shrink-0 text-charity" strokeWidth={2} />
                     <div>
                       <div className="font-medium text-ink">{feature.title}</div>
                       <div className="text-sm text-smoke font-light">{feature.description}</div>
@@ -84,17 +114,12 @@ export default function DesignForGoodPricing() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => scrollToElement('#contact')}
-                className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-ink text-white font-medium text-sm tracking-[0.05em] uppercase transition-all duration-400 hover:shadow-premium-lg hover:-translate-y-0.5"
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#16a34a'
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#0A0A0A'
-                }}
+                onClick={handleCheckout}
+                disabled={isLoading}
+                className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-ink text-white font-medium text-sm tracking-[0.05em] uppercase transition-all duration-400 hover:bg-charity hover:shadow-premium-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {pricing.cta.primary}
-                <ArrowRight className="w-5 h-5" strokeWidth={1.2} />
+                {isLoading ? 'Loading...' : pricing.cta.primary}
+                {!isLoading && <ArrowRight className="w-5 h-5" strokeWidth={1.2} />}
               </button>
               
               <a

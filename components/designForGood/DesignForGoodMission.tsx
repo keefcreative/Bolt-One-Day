@@ -19,7 +19,7 @@ export default function DesignForGoodMission() {
             {mission.description}
           </p>
           
-          <div className="p-8 bg-white border-l-4 mb-12" style={{ borderLeftColor: '#16a34a' }}>
+          <div className="p-8 bg-white border-l-4 border-l-charity mb-12">
             <p className="text-lg font-light text-ink leading-[1.6]">
               {mission.highlight}
             </p>
@@ -27,13 +27,7 @@ export default function DesignForGoodMission() {
           
           <button
             onClick={() => scrollToElement(mission.cta.href)}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-ink text-white font-medium text-sm tracking-[0.05em] uppercase transition-all duration-400 hover:shadow-premium-lg hover:-translate-y-0.5"
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#16a34a'
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#0A0A0A'
-            }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-ink text-white font-medium text-sm tracking-[0.05em] uppercase transition-all duration-400 hover:bg-charity hover:shadow-premium-lg hover:-translate-y-0.5"
           >
             {mission.cta.text}
           </button>

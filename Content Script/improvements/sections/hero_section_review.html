@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hero Section - Assistant Improvements</title>
+    <style>
+        /* Same styles as existing review pages */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .improvement-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content-comparison {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .content-box {
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            position: relative;
+        }
+        .original {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+        .improved {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+        }
+        .content-label {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .layout-safe {
+            background: #d4edda;
+            color: #155724;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .layout-warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .actions {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-approve { background: #00b894; color: white; }
+        .btn-keep { background: #fdcb6e; color: #2d3436; }
+        .btn-edit { background: #a29bfe; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Hero Section - Assistant Improvements</h1>
+            <p style="color: #666; margin-top: 10px;">
+                Processed by OpenAI BRANDVOICE Assistant
+            </p>
+        </div>
+        
+        
+            <div class="improvement-card" data-index="0">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → hero.eyebrow
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Premium Design & Development</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            4 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-0">Design Without The Drama</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            4 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Refocused from 'premium' to accessible, drama-free service.<br>
+                    <strong>Why:</strong> Stripping away the intimidation, making high-quality design feel approachable.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(0)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(0)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(0)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="1">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → hero.title
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Creative Design Solutions That Captivate</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            5 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-1">Design That Actually Converts Visitors</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            5 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Shifted focus from vague 'captivate' to tangible 'converts visitors'.<br>
+                    <strong>Why:</strong> Emphasizes real results over aesthetics, highlighting the value to the client.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(1)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(1)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(1)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="2">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → hero.description
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            16 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-2">Fix your brand's look with our design subscription. Unlimited revisions, 48-hour delivery, committed crew.</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            16 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Changed 'transform' to 'fix', and optimized details for clarity and directness.<br>
+                    <strong>Why:</strong> More direct and actionable, emphasizing speed and personal dedication.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(2)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(2)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(2)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="3">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → hero.primaryButton.text
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Get Started</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-3">Start Today</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Changed CTA to 'Start Today'.<br>
+                    <strong>Why:</strong> Increases urgency and promotes immediate action.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(3)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(3)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(3)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="4">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → hero.secondaryButton.text
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>View Our Work</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            3 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-4">See Real Results</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            3 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Changed to 'See Real Results'.<br>
+                    <strong>Why:</strong> Shifts focus to outcomes and evidential proof of success.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(4)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(4)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(4)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="5">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → stats.items.0.label
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Global Clients</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-5">Happy Customers</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Changed from 'Global Clients' to 'Happy Customers'.<br>
+                    <strong>Why:</strong> Emphasizes customer satisfaction over mere numbers.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(5)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(5)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(5)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="6">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → stats.items.1.label
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+0 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Average Delivery</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-6">Projects Shipped</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Refined to 'Projects Shipped'.<br>
+                    <strong>Why:</strong> Focuses on completion and delivery, implying speed and efficiency.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(6)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(6)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(6)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+            <div class="improvement-card" data-index="7">
+                <div class="card-header">
+                    <div style="font-family: monospace; color: #6c757d;">
+                        hero.json → stats.items.2.label
+                    </div>
+                    <div class="layout-safe">
+                        ✓ Layout Safe
+                        (+1 words)
+                    </div>
+                </div>
+                
+                <div class="content-comparison">
+                    <div class="content-box original">
+                        <span class="content-label">Original</span>
+                        <div>Client Retention</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            2 words
+                        </div>
+                    </div>
+                    
+                    <div class="content-box improved">
+                        <span class="content-label">Improved</span>
+                        <div id="improved-7">Clients Who Stay</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #636e72;">
+                            3 words
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div style="padding: 15px 25px; background: #f0f3ff; border-top: 1px solid #e9ecef;">
+                    <strong>Changes:</strong> Adjusted to 'Clients Who Stay'.<br>
+                    <strong>Why:</strong> Personalizes the statistic, suggesting loyalty and satisfaction.
+                </div>
+                
+                
+                <div class="actions">
+                    <button class="btn btn-approve" onclick="approve(7)">
+                        ✓ Use Improved
+                    </button>
+                    <button class="btn btn-keep" onclick="keep(7)">
+                        Keep Original
+                    </button>
+                    <button class="btn btn-edit" onclick="edit(7)">
+                        ✏️ Edit
+                    </button>
+                </div>
+            </div>
+        
+    </div>
+    
+    <script>
+        const improvements = [{"file":"hero.json","path":"hero.eyebrow","original":"Premium Design & Development","improved":"Design Without The Drama","wordCount":{"original":4,"improved":4,"difference":0},"changes":{"what":"Refocused from 'premium' to accessible, drama-free service.","why":"Stripping away the intimidation, making high-quality design feel approachable."},"layoutSafe":true},{"file":"hero.json","path":"hero.title","original":"Creative Design Solutions That Captivate","improved":"Design That Actually Converts Visitors","wordCount":{"original":5,"improved":5,"difference":0},"changes":{"what":"Shifted focus from vague 'captivate' to tangible 'converts visitors'.","why":"Emphasizes real results over aesthetics, highlighting the value to the client."},"layoutSafe":true},{"file":"hero.json","path":"hero.description","original":"Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.","improved":"Fix your brand's look with our design subscription. Unlimited revisions, 48-hour delivery, committed crew.","wordCount":{"original":16,"improved":16,"difference":0},"changes":{"what":"Changed 'transform' to 'fix', and optimized details for clarity and directness.","why":"More direct and actionable, emphasizing speed and personal dedication."},"layoutSafe":true},{"file":"hero.json","path":"hero.primaryButton.text","original":"Get Started","improved":"Start Today","wordCount":{"original":2,"improved":2,"difference":0},"changes":{"what":"Changed CTA to 'Start Today'.","why":"Increases urgency and promotes immediate action."},"layoutSafe":true},{"file":"hero.json","path":"hero.secondaryButton.text","original":"View Our Work","improved":"See Real Results","wordCount":{"original":3,"improved":3,"difference":0},"changes":{"what":"Changed to 'See Real Results'.","why":"Shifts focus to outcomes and evidential proof of success."},"layoutSafe":true},{"file":"hero.json","path":"stats.items.0.label","original":"Global Clients","improved":"Happy Customers","wordCount":{"original":2,"improved":2,"difference":0},"changes":{"what":"Changed from 'Global Clients' to 'Happy Customers'.","why":"Emphasizes customer satisfaction over mere numbers."},"layoutSafe":true},{"file":"hero.json","path":"stats.items.1.label","original":"Average Delivery","improved":"Projects Shipped","wordCount":{"original":2,"improved":2,"difference":0},"changes":{"what":"Refined to 'Projects Shipped'.","why":"Focuses on completion and delivery, implying speed and efficiency."},"layoutSafe":true},{"file":"hero.json","path":"stats.items.2.label","original":"Client Retention","improved":"Clients Who Stay","wordCount":{"original":2,"improved":3,"difference":1},"changes":{"what":"Adjusted to 'Clients Who Stay'.","why":"Personalizes the statistic, suggesting loyalty and satisfaction."},"layoutSafe":true}];
+        const decisions = new Map();
+        
+        function approve(index) {
+            decisions.set(index, 'approve');
+            document.querySelector(`[data-index="${index}"]`).style.borderLeft = '4px solid #00b894';
+        }
+        
+        function keep(index) {
+            decisions.set(index, 'keep');
+            document.querySelector(`[data-index="${index}"]`).style.borderLeft = '4px solid #fdcb6e';
+        }
+        
+        function edit(index) {
+            const current = document.getElementById(`improved-${index}`).textContent;
+            const edited = prompt('Edit the improved version:', current);
+            if (edited) {
+                document.getElementById(`improved-${index}`).textContent = edited;
+                improvements[index].improved = edited;
+                approve(index);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -29,7 +29,7 @@ export default function DesignForGoodHero() {
           <div className="max-w-[600px]">
             {/* Eyebrow */}
             {hero.eyebrow && (
-              <p className="animate-fade-in text-sm font-medium tracking-[0.1em] uppercase mb-6" style={{ color: '#16a34a' }}>
+              <p className="animate-fade-in text-sm font-medium tracking-[0.1em] uppercase mb-6 text-charity">
                 {hero.eyebrow}
               </p>
             )}
@@ -40,7 +40,7 @@ export default function DesignForGoodHero() {
             </h1>
             
             {/* Subtitle */}
-            <p className="animate-fade-in-delay-1 text-xl font-medium mb-8" style={{ color: '#16a34a' }}>
+            <p className="animate-fade-in-delay-1 text-xl font-medium mb-8 text-charity">
               {hero.subtitle}
             </p>
             
@@ -55,7 +55,7 @@ export default function DesignForGoodHero() {
             <div className="animate-fade-in-delay-2 space-y-3 mb-12">
               {hero.benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-5 h-5 flex items-center justify-center" style={{ backgroundColor: '#16a34a' }}>
+                  <div className="w-5 h-5 flex items-center justify-center bg-charity">
                     <Check className="w-3 h-3 text-white" strokeWidth={2} />
                   </div>
                   <span className="text-white font-light">{benefit}</span>
@@ -67,7 +67,7 @@ export default function DesignForGoodHero() {
             <div className="animate-fade-in-delay-3 flex flex-col sm:flex-row gap-4 mb-12">
               <button
                 onClick={() => scrollToElement(hero.primaryCta.href)}
-                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-ink text-white font-medium text-[0.875rem] tracking-[0.05em] uppercase transition-all duration-400 hover:shadow-premium-lg hover:-translate-y-0.5 border border-white/30 hover:bg-[#16a34a] hover:border-[#16a34a]"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-ink text-white font-medium text-[0.875rem] tracking-[0.05em] uppercase transition-all duration-400 hover:shadow-premium-lg hover:-translate-y-0.5 border border-white/30 hover:bg-charity hover:border-charity"
               >
                 {hero.primaryCta.text}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" strokeWidth={1.2} />

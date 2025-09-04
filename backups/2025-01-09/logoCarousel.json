@@ -1,0 +1,49 @@
+{
+  "logoCarousel": {
+    "eyebrow": "Trusted By Industry Leaders",
+    "title": "Join 500+ companies that trust us",
+    "subtitle": "From startups to Fortune 500 companies, we help brands stand out",
+    "logos": [
+      {
+        "name": "Microsoft",
+        "src": "/images/logos/microsoft.png",
+        "alt": "Microsoft logo"
+      },
+      {
+        "name": "Apple",
+        "src": "/images/logos/apple.png",
+        "alt": "Apple logo"
+      },
+      {
+        "name": "Google",
+        "src": "/images/logos/google.png",
+        "alt": "Google logo"
+      },
+      {
+        "name": "Amazon",
+        "src": "/images/logos/amazon.png",
+        "alt": "Amazon logo"
+      },
+      {
+        "name": "Netflix",
+        "src": "/images/logos/netflix.png",
+        "alt": "Netflix logo"
+      },
+      {
+        "name": "Tesla",
+        "src": "/images/logos/tesla.png",
+        "alt": "Tesla logo"
+      },
+      {
+        "name": "Meta",
+        "src": "/images/logos/meta.png",
+        "alt": "Meta logo"
+      },
+      {
+        "name": "Spotify",
+        "src": "/images/logos/spotify.png",
+        "alt": "Spotify logo"
+      }
+    ]
+  }
+}

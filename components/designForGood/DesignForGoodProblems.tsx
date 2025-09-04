@@ -5,7 +5,11 @@ import Image from 'next/image'
 import { TrendingDown, Clock, Target } from 'lucide-react'
 import problemsData from '@/data/designForGood/problems.json'
 
-const iconMap = {
+const iconMap: { [key: string]: any } = {
+  'Eroded Donor Confidence': TrendingDown,
+  'Hours Down the Drain': Clock,
+  'Diminished Effect': Target,
+  // Fallback for original titles
   'Lost Donor Trust': TrendingDown,
   'Wasted Time': Clock,
   'Reduced Impact': Target
@@ -36,13 +40,12 @@ export default function DesignForGoodProblems() {
         {/* Problems Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {problems.issues.map((issue, index) => {
-            const IconComponent = iconMap[issue.title]
+            const IconComponent = iconMap[issue.title] || Target
             return (
               <div key={index} className="text-center p-8 bg-silk">
                 <div className="w-16 h-16 mx-auto mb-6 bg-flame flex items-center justify-center">
                   <IconComponent className="w-8 h-8 text-white" strokeWidth={1.2} />
                 </div>
-                <h3 className="text-xl font-medium text-ink mb-4">{issue.title}</h3>
                 <h3 className="text-xl font-playfair font-bold text-ink mb-4">{issue.title}</h3>
                 <p className="text-smoke font-light leading-[1.6]">{issue.description}</p>
               </div>
@@ -72,7 +75,7 @@ export default function DesignForGoodProblems() {
               height={300}
               className="w-full aspect-[4/3] object-cover mb-4"
             />
-            <div className="inline-block px-4 py-2 text-white font-medium text-sm uppercase tracking-wider" style={{ backgroundColor: '#16a34a' }}>
+            <div className="inline-block px-4 py-2 text-white font-medium text-sm uppercase tracking-wider bg-charity">
               After
             </div>
           </div>

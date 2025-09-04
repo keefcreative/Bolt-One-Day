@@ -1,0 +1,14 @@
+{
+  "eyebrow": "Ready to Transform Your Brand?",
+  "title": "Start Your Design Journey Today",
+  "description": "Join hundreds of satisfied clients who trust DesignWorks for their creative needs. Get unlimited design requests with fast turnaround times.",
+  "cta": {
+    "text": "Get Started Now",
+    "url": "#contact"
+  },
+  "secondaryCta": {
+    "text": "View Pricing",
+    "url": "#pricing"
+  },
+  "backgroundImage": "/images/premium-cta-background.jpg"
+}

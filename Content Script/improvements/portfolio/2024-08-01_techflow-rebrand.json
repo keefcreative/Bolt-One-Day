@@ -1,0 +1,31 @@
+{
+  "id": "techflow-rebrand",
+  "title": "TechFlow Solutions Rebrand",
+  "category": "Brand Identity",
+  "description": "Complete brand transformation for a leading tech consultancy, creating a modern identity that reflects their innovative approach and expertise.",
+  "createdDate": "2024-08-01",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/techflow-rebrand.jpg",
+  "tags": [
+    "Brand Identity",
+    "Logo Design",
+    "Guidelines",
+    "Stationery",
+    "Digital Assets"
+  ],
+  "client": "TechFlow Solutions",
+  "year": "2024",
+  "duration": "8 weeks",
+  "challenge": "TechFlow Solutions needed a complete brand overhaul to position themselves as a premium tech consultancy and attract enterprise clients. Their existing brand felt outdated and didn't communicate the innovation and reliability required in their competitive space.",
+  "solution": "We developed a modern, tech-forward brand identity that communicates reliability and innovation. The new brand system includes a flexible logo system, comprehensive guidelines, and templates that scale across all touchpoints from business cards to large-scale presentations.",
+  "results": [
+    "40% increase in qualified enterprise leads",
+    "25% higher close rate on sales calls",
+    "Improved brand recognition in target market",
+    "Successfully positioned for Series B funding"
+  ],
+  "liveUrl": "https://techflowsolutions.com",
+  "images": []
+}

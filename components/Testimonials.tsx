@@ -63,7 +63,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 rounded-full bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
@@ -71,7 +71,7 @@ export default function Testimonials() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 rounded-full bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
@@ -105,7 +105,7 @@ export default function Testimonials() {
                   alt={currentTestimonial.author}
                   width={80}
                   height={80}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-mist"
+                  className="w-16 h-16 md:w-20 md:h-20 object-cover border-2 border-mist"
                 />
                 <div>
                   <div className="font-medium text-ink text-xl mb-1">
@@ -129,7 +129,7 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 transition-all duration-300 ${
                 currentIndex === index 
                   ? 'bg-flame w-8' 
                   : 'bg-mist hover:bg-flame/50'
@@ -145,7 +145,7 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`flex-shrink-0 flex items-center gap-3 p-3 rounded-lg border transition-all duration-200 ${
+              className={`flex-shrink-0 flex items-center gap-3 p-3 border transition-all duration-200 ${
                 currentIndex === index
                   ? 'border-flame bg-whisper'
                   : 'border-mist bg-white hover:border-flame/50'
@@ -156,7 +156,7 @@ export default function Testimonials() {
                 alt={testimonial.author}
                 width={40}
                 height={40}
-                className="w-10 h-10 rounded-full object-cover"
+                className="w-10 h-10 object-cover"
               />
               <div className="text-left">
                 <div className="font-medium text-ink text-sm">

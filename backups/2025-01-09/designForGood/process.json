@@ -1,0 +1,39 @@
+{
+  "process": {
+    "title": "How the Design for Good Initiative Works",
+    "description": "We've streamlined the agency process into three simple steps — built to support fast-moving teams with big missions and small budgets.",
+    "eyebrow": "Our Process",
+    "steps": [
+      {
+        "number": "01",
+        "icon": "MessageSquare",
+        "title": "Discovery & Strategy",
+        "description": "We start by understanding your mission, goals, and target audience through comprehensive research and strategic planning sessions."
+      },
+      {
+        "number": "02", 
+        "icon": "Lightbulb",
+        "title": "Concept Development",
+        "description": "Our creative team develops innovative concepts and design directions that align with your mission and objectives."
+      },
+      {
+        "number": "03",
+        "icon": "Palette",
+        "title": "Design & Refinement",
+        "description": "We craft pixel-perfect designs with meticulous attention to detail, iterating based on your feedback until perfection."
+      },
+      {
+        "number": "04",
+        "icon": "Rocket",
+        "title": "Launch & Support",
+        "description": "We deliver final assets and provide ongoing support to ensure your design solutions perform at their highest potential."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Founding Member Spots Are Limited",
+      "title": "Start Your First Request Today",
+      "subtitle": "No contracts. No risk. Just mission-first design support.",
+      "buttonText": "Get Started Now"
+    }
+  }
+}

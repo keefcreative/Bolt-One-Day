@@ -16,14 +16,14 @@ export default function BrandedPricingSection() {
   const [isEnterprisePlus, setIsEnterprisePlus] = useState(false)
   const { hero, plans, enterprisePlus } = brandedPricingData
 
-  const handleGetStarted = async (plan) => {
+  const handleGetStarted = async (plan: typeof plans[0] | typeof enterprisePlus) => {
     if (plan.isCustom) {
       scrollToElement('#contact')
       return
     }
 
     try {
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('/api/stripe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export default function BrandedPricingSection() {
         window.location.href = url
       }
     } catch (error) {
-      console.error('Error creating checkout session:', error)
+      // Error creating checkout session
       // Fallback to contact form
       scrollToElement('#contact')
     }

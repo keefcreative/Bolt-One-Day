@@ -5,41 +5,41 @@
   },
   "items": [
     {
-      "label": "Services",
+      "label": "What We Do",
       "href": "#services"
     },
     {
-      "label": "We Believe",
+      "label": "Our Philosophy",
       "href": "#we-believe"
     },
     {
-      "label": "Team",
+      "label": "Our Crew",
       "href": "#team"
     },
     {
-      "label": "Portfolio",
+      "label": "Our Wins",
       "href": "#portfolio"
     },
     {
-      "label": "Pricing",
+      "label": "Your Investment",
       "href": "#pricing"
     },
     {
-      "label": "FAQ",
+      "label": "Got Questions?",
       "href": "#faq"
     },
     {
-      "label": "Contact",
+      "label": "Say Hello",
       "href": "#contact"
     }
   ],
   "cta": {
-    "text": "Design For Good",
+    "text": "Start Real Impact",
     "href": "/design-for-good",
     "type": "primary"
   },
   "tertiaryCta": {
-    "text": "Book a Call",
+    "text": "Let's Talk",
     "href": "https://meet.brevo.com/designworksbureau",
     "type": "external"
   }

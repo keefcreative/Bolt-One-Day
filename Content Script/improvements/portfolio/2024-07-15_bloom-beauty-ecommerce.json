@@ -1,0 +1,31 @@
+{
+  "id": "bloom-beauty-ecommerce",
+  "title": "Bloom Beauty E-commerce",
+  "category": "Web Design",
+  "description": "Modern e-commerce platform for sustainable beauty brand, focusing on clean design and seamless user experience.",
+  "createdDate": "2024-07-15",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/bloom-beauty-ecommerce.jpg",
+  "tags": [
+    "Web Design",
+    "E-commerce",
+    "UI/UX",
+    "Mobile Responsive",
+    "Shopify"
+  ],
+  "client": "Bloom Beauty",
+  "year": "2024",
+  "duration": "6 weeks",
+  "challenge": "Bloom Beauty needed an e-commerce platform that would showcase their sustainable beauty products while providing an intuitive shopping experience. The challenge was balancing aesthetic appeal with conversion optimization.",
+  "solution": "We created a clean, modern e-commerce site that highlights product photography and sustainability messaging. The design includes intuitive navigation, detailed product pages, and a streamlined checkout process optimized for mobile users.",
+  "results": [
+    "60% increase in online sales",
+    "35% improvement in mobile conversion rate",
+    "50% reduction in cart abandonment",
+    "Featured in top beauty e-commerce sites"
+  ],
+  "liveUrl": "https://bloombeauty.com",
+  "images": []
+}

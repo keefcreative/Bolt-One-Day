@@ -18,7 +18,7 @@ export default function DesignForGoodFaq() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase" style={{ color: '#16a34a' }}>
+            <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
               {faq.eyebrow}
             </p>
             <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
@@ -38,12 +38,13 @@ export default function DesignForGoodFaq() {
                   className="w-full p-6 text-left flex justify-between items-center hover:bg-silk transition-colors duration-300"
                 >
                   <span className="font-medium text-ink pr-4">{item.question}</span>
-                  <span className="font-playfair font-bold text-ink pr-4">{item.question}</span>
                   <ChevronDown 
                     className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`} 
-                    style={{ color: openIndex === index ? '#16a34a' : '#6b7280' }}
+                    className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${
+                      openIndex === index ? 'rotate-180 text-charity' : 'text-gray-500'
+                    }`}
                     strokeWidth={1.2}
                   />
                 </button>
