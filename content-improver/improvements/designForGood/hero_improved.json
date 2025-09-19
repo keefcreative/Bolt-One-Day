@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "eyebrow": "Design Without Drama",
+    "title": "Professional Design, Tailor-made for Nonprofits",
+    "subtitle": "Genuine Results, Nonprofit Budgets.",
+    "description": "Our **Design for Good** mission makes professional design accessible to nonprofits—ditch the big agency rates.",
+    "benefits": [
+      "Slash your costs by 40% the first year",
+      "Unlimited design requests, no drama",
+      "Lock in a 20% discount, forever"
+    ],
+    "primaryCta": {
+      "text": "Snag Your 40% Reduction",
+      "href": "#pricing"
+    },
+    "secondaryCta": {
+      "text": "Schedule a Chat",
+      "href": "https://meet.brevo.com/designworksbureau"
+    },
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Nonprofits Empowered"
+      },
+      {
+        "value": "40%",
+        "label": "Typical Savings"
+      },
+      {
+        "value": "100%",
+        "label": "Committed to Missions"
+      }
+    ],
+    "announcement": "Opening doors for only 10 founding nonprofits.",
+    "credibility": "Years of pro experience, now for your cause.",
+    "heroImage": "https://www.designworksbureau.co.uk/images/hero-monitor.png"
+  }
+}

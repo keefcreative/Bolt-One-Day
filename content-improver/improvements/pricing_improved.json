@@ -1,0 +1,81 @@
+{
+  "pricing": {
+    "eyebrow": "No Drama Pricing",
+    "title": "One price, endless design jobs",
+    "description": "Pick the package you need. Every option comes with endless tweaks and your own project leader.",
+    "plans": [
+      {
+        "name": "DesignWorks<br />Essential",
+        "price": "£799",
+        "period": "/month",
+        "description": "Perfect for startups and SMEs wanting pro design help without adding a designer to the payroll.",
+        "stripePriceId": "price_1PP4M8P3PqPfy1jM3lzwQMmc",
+        "features": [
+          "One task at a time",
+          "48-72 hour turnaround",
+          "Endless revisions",
+          "Cover all your brands",
+          "Email help",
+          "Freeze or quit whenever"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Business<br />DesignWorks",
+        "price": "£1,249",
+        "period": "/month",
+        "description": "For growing companies and marketing squads needing more design variety, fast-track service and extra support.",
+        "stripePriceId": "price_1PP4N8P3PqPfy1jMpxXppeTe",
+        "features": [
+          "Two tasks at once",
+          "24-48 hour turnaround",
+          "Endless revisions",
+          "Cover all your brands",
+          "Endless team adds",
+          "Fast-tracked help",
+          "Cutting-edge integrations",
+          "Freeze or quit whenever"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Enterprise<br />DesignWorks",
+        "price": "£2,500",
+        "period": "/month",
+        "description": "For big firms and agencies needing a full-time design crew for complex projects and a creative partnership.",
+        "stripePriceId": "price_1PP4O6P3PqPfy1jMxw8JtIad",
+        "features": [
+          "Three tasks at once",
+          "12-24 hour turnaround",
+          "Endless revisions",
+          "Cover all your brands",
+          "Endless team adds",
+          "Your own design squad",
+          "Your own project boss",
+          "Bespoke integrations"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Enterprise<br />DesignWorks +",
+        "price": "£4,500",
+        "period": "/month",
+        "description": "The top-shelf choice for enterprises that demand the best service and VIP support.",
+        "stripePriceId": "price_1PP4P2P3PqPfy1jMg755YNF3",
+        "features": [
+          "Unlimited tasks",
+          "Options for same-day delivery",
+          "Endless revisions",
+          "Cover all your brands",
+          "Endless team adds",
+          "Your own design squad",
+          "Top-tier project boss",
+          "Custom solutions",
+          "24/7 swift support",
+          "Custom solutions"
+        ],
+        "popular": false
+      }
+    ]
+  }
+}

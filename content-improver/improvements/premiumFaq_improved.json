@@ -1,0 +1,56 @@
+{
+  "title": "Everything you need to crack it",
+  "subtitle": "Got questions on our no-drama design plans? Find your answers.",
+  "items": [
+    {
+      "question": "How does the design subscription work?",
+      "answer": "Subscribe and start sending unlimited design requests. We tackle them one by one, delivering professional work fast, without the wait.",
+      "category": "subscription"
+    },
+    {
+      "question": "What's included in unlimited revisions?",
+      "answer": "No caps on revisions here. We'll tweak and adjust until your vision's nailed—guaranteeing you're beyond thrilled.",
+      "category": "subscription"
+    },
+    {
+      "question": "Can I pause or cancel my subscription?",
+      "answer": "Absolutely, pause any time and kick it back on when you're ready. Cancel whenever - no strings or fees attached.",
+      "category": "subscription"
+    },
+    {
+      "question": "What types of design work do you handle?",
+      "answer": "From logos to websites, print to digital, UX/UI to packaging, we've got all your design needs covered.",
+      "category": "general"
+    },
+    {
+      "question": "How fast will I receive my designs?",
+      "answer": "Expect your designs within 48-72 hours usually. Bigger projects might take longer, but we're always upfront and keep you in the loop.",
+      "category": "design-process"
+    },
+    {
+      "question": "What if I don't like the design?",
+      "answer": "We roll with unlimited tweaks until you say it's perfect. We'll use your input to make sure it's spot on.",
+      "category": "design-process"
+    },
+    {
+      "question": "How do I submit design requests?",
+      "answer": "Drop your requests on our client portal. Need something complex? You can chat directly with your account manager too.",
+      "category": "design-process"
+    },
+    {
+      "question": "How does billing work?",
+      "answer": "Billing's upfront each month, auto-renewing. We'll email you the invoice. Credit cards, bank transfers? We take 'em all.",
+      "category": "billing"
+    },
+    {
+      "question": "Are there any setup fees?",
+      "answer": "Zero setup fees! Just the monthly rate - transparent, straightforward, with no nasty surprises.",
+      "category": "billing"
+    },
+    {
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Change your plan anytime. Upgrades are instant; downgrades adjust next billing cycle. We sort out the money bit fairly.",
+      "category": "billing"
+    }
+  ]
+}

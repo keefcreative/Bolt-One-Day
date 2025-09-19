@@ -1,0 +1,177 @@
+{
+  "brand": "DesignWorks Bureau",
+  "version": "1.0.0",
+  "lastUpdated": "2024-08-28",
+  
+  "visualIdentity": {
+    "style": {
+      "overall": "Modern, clean, professional with sharp edges",
+      "aesthetic": "Minimalist luxury with bold contrasts",
+      "mood": "Confident, innovative, trustworthy",
+      "personality": "Direct, honest, results-driven"
+    },
+    
+    "colorPalette": {
+      "primary": {
+        "ink": "#1A1A1A",
+        "pearl": "#FDFBF7",
+        "flame": "#F97316"
+      },
+      "secondary": {
+        "smoke": "#2A2A2A",
+        "ash": "#3A3A3A",
+        "silk": "#F8F8F7",
+        "mist": "#F0F0EF"
+      },
+      "accent": {
+        "ember": "#EA580C",
+        "coral": "#FB923C",
+        "ocean": "#0891B2"
+      },
+      "usage": {
+        "backgrounds": ["pearl", "silk", "mist", "ink"],
+        "text": ["ink", "smoke", "ash", "pearl"],
+        "buttons": ["flame", "ember", "ocean"],
+        "accents": ["flame", "coral", "ocean"]
+      }
+    },
+    
+    "typography": {
+      "headings": "Bold, sans-serif, high contrast",
+      "body": "Clean, readable, professional",
+      "emphasis": "Medium weight, slightly larger",
+      "restrictions": ["No script fonts", "No decorative fonts", "No serif for body text"]
+    },
+    
+    "imagery": {
+      "photography": {
+        "style": "High-quality, professional, authentic",
+        "subjects": ["Real people working", "Clean workspaces", "Modern technology", "Design process"],
+        "lighting": "Natural, bright, soft shadows",
+        "composition": "Rule of thirds, negative space, focused subjects",
+        "colorGrading": "Slightly desaturated, warm tones, high contrast",
+        "avoid": ["Stock photo clichés", "Fake smiles", "Staged handshakes", "Generic office scenes"]
+      },
+      
+      "illustrations": {
+        "style": "Geometric, minimal, line-based",
+        "complexity": "Simple, clear, purposeful",
+        "colors": "Limited palette, brand colors only",
+        "avoid": ["Cartoonish", "Overly detailed", "3D renders", "Gradients"]
+      },
+      
+      "portfolioWork": {
+        "presentation": "Clean mockups, realistic contexts",
+        "devices": "Modern devices only (latest phones, laptops)",
+        "backgrounds": "Minimal, doesn't compete with work",
+        "consistency": "Same perspective and lighting across set"
+      }
+    },
+    
+    "composition": {
+      "layout": "Grid-based, asymmetric balance",
+      "spacing": "Generous white space, breathing room",
+      "hierarchy": "Clear focal points, guided eye movement",
+      "edges": "Sharp corners, no rounded elements",
+      "patterns": ["Bento grid", "Card layouts", "Split sections"]
+    }
+  },
+  
+  "imageRequirements": {
+    "technical": {
+      "minResolution": "1920x1080",
+      "aspectRatios": {
+        "hero": "16:9",
+        "portfolio": "4:3",
+        "team": "1:1",
+        "testimonial": "1:1"
+      },
+      "formats": ["WebP preferred", "JPG fallback", "PNG for transparency"],
+      "maxFileSize": "500KB",
+      "optimization": "Lazy loading, responsive sizes"
+    },
+    
+    "quality": {
+      "sharpness": "Crisp, no blur unless intentional",
+      "exposure": "Properly exposed, no blown highlights",
+      "color": "Accurate, matches brand palette",
+      "consistency": "Uniform style across all images"
+    }
+  },
+  
+  "generationPrompts": {
+    "baseModifiers": [
+      "professional",
+      "modern",
+      "clean",
+      "minimalist",
+      "high quality",
+      "sharp focus",
+      "studio lighting"
+    ],
+    
+    "styleModifiers": [
+      "corporate but approachable",
+      "tech-forward",
+      "premium quality",
+      "authentic not staged",
+      "diverse and inclusive"
+    ],
+    
+    "avoidTerms": [
+      "cartoon",
+      "illustration",
+      "fantasy",
+      "vintage",
+      "retro",
+      "grunge",
+      "distressed",
+      "rounded corners",
+      "gradient backgrounds"
+    ],
+    
+    "portfolioTemplate": "Modern {projectType} design mockup, clean minimal background, professional presentation, high resolution, sharp edges, {deviceType} display, studio lighting, brand colors #F97316 accent",
+    
+    "teamTemplate": "Professional headshot of {description}, confident expression, clean background, natural lighting, business casual attire, approachable demeanor, high quality portrait",
+    
+    "heroTemplate": "Modern office workspace, {scene}, clean minimal aesthetic, natural lighting, professional environment, technology visible, sharp architectural lines, brand color accents"
+  },
+  
+  "analysisRules": {
+    "brandConsistency": {
+      "checkColor": true,
+      "checkStyle": true,
+      "checkQuality": true,
+      "checkComposition": true,
+      "minScore": 80
+    },
+    
+    "rejectCriteria": [
+      "Poor quality or pixelated",
+      "Off-brand colors",
+      "Dated or old-fashioned",
+      "Too busy or cluttered",
+      "Inconsistent with other images",
+      "Contains competitor branding",
+      "Inappropriate content"
+    ],
+    
+    "improvementAreas": [
+      "Color grading to match brand",
+      "Crop for better composition",
+      "Increase contrast",
+      "Remove distracting elements",
+      "Adjust brightness/exposure",
+      "Sharpen if slightly soft"
+    ]
+  },
+  
+  "altTextGuidelines": {
+    "structure": "{Primary subject} {action/state} {context/environment} {relevant details}",
+    "length": "50-150 characters",
+    "tone": "Descriptive, professional, accessible",
+    "include": ["Main subject", "Important actions", "Relevant context"],
+    "exclude": ["'Image of'", "'Picture of'", "Redundant information", "Subjective descriptions"],
+    "seoKeywords": ["design", "professional", "modern", "creative", "digital", "agency"]
+  }
+}

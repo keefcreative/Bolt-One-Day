@@ -1,0 +1,39 @@
+{
+  "process": {
+    "title": "How Our Design for Good Initiative Gets Real Results",
+    "description": "We've cut the fluff from the design process, squaring down to three no-drama steps — perfect for teams on a mission with more dreams than budget.",
+    "eyebrow": "How We Work",
+    "steps": [
+      {
+        "number": "01",
+        "icon": "MessageSquare",
+        "title": "Discovery & Strategy",
+        "description": "First, we dive deep into your cause, objectives, and community. It’s all about understanding and strategy."
+      },
+      {
+        "number": "02",
+        "icon": "Lightbulb",
+        "title": "Concept Development",
+        "description": "Next, our creatives roll up their sleeves to craft fresh, bold ideas that echo your mission and goals."
+      },
+      {
+        "number": "03",
+        "icon": "Palette",
+        "title": "Design & Refinement",
+        "description": "Then, we perfect your visuals, paying close attention to every pixel, and iterating till it’s spot-on."
+      },
+      {
+        "number": "04",
+        "icon": "Rocket",
+        "title": "Launch & Support",
+        "description": "Finally, we get your design across the finish line and stand by you to ensure it delivers."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Space is Limited",
+      "title": "Kickstart Your Mission Design Today",
+      "subtitle": "No contracts. No drama. Just design that’s all in for your cause.",
+      "buttonText": "Start Today"
+    }
+  }
+}

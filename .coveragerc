@@ -1,0 +1,22 @@
+[run]
+source = .
+omit = 
+    node_modules/*
+    .next/*
+    coverage/*
+    **/*.config.js
+    **/*.config.ts
+    **/jest.setup.js
+    **/__tests__/**
+    **/*.test.ts
+    **/*.test.js
+    **/*.spec.ts
+    **/*.spec.js
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:

@@ -1,0 +1,78 @@
+{
+  "timestamp": "2024-01-15T10:30:00Z",
+  "improvements": [
+    {
+      "id": "hero-headline-001",
+      "file": "data/hero.json",
+      "section": "hero",
+      "field": "headline",
+      "original": "Transform Your Business",
+      "improved": "Transform Your Business with Premium Design Solutions",
+      "reasoning": "Added specificity about the service offering and value proposition",
+      "confidence": 0.9,
+      "impact": "high",
+      "status": "pending"
+    },
+    {
+      "id": "services-web-desc-001",
+      "file": "data/services.json",
+      "section": "services",
+      "field": "description",
+      "original": "Beautiful, responsive websites",
+      "improved": "Beautiful, responsive websites that convert visitors into customers",
+      "reasoning": "Added outcome-focused language to emphasize conversion benefits",
+      "confidence": 0.85,
+      "impact": "medium",
+      "status": "approved"
+    },
+    {
+      "id": "cta-primary-001",
+      "file": "data/hero.json",
+      "section": "hero",
+      "field": "primaryCTA",
+      "original": "Get Started",
+      "improved": "Start Your Transformation",
+      "reasoning": "More specific and action-oriented language that connects to the headline",
+      "confidence": 0.8,
+      "impact": "medium",
+      "status": "rejected"
+    }
+  ],
+  "summary": {
+    "totalImprovements": 3,
+    "approvedImprovements": 1,
+    "pendingImprovements": 1,
+    "rejectedImprovements": 1,
+    "qualityScore": 88,
+    "brandAlignment": "excellent",
+    "avgConfidence": 0.85,
+    "highImpactChanges": 1,
+    "mediumImpactChanges": 2,
+    "lowImpactChanges": 0
+  },
+  "analysis": {
+    "strengths": [
+      "Strong value proposition",
+      "Clear service offerings",
+      "Professional tone maintained"
+    ],
+    "weaknesses": [
+      "Some CTAs could be more specific",
+      "Missing emotional connection in places"
+    ],
+    "opportunities": [
+      "Add more social proof",
+      "Enhance benefit-focused messaging"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "model": "gpt-4-turbo-preview",
+    "processingTime": 15.2,
+    "contentFiles": [
+      "data/hero.json",
+      "data/services.json",
+      "data/testimonials.json"
+    ]
+  }
+}

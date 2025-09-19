@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "eyebrow": "Design Without The Drama",
+    "title": "Design That Actually Converts Visitors",
+    "description": "Fix your conversion problem with our professional design subscription. Unlimited revisions, 48-hour delivery, dedicated team.",
+    "primaryButton": {
+      "text": "Start Today",
+      "href": "#contact"
+    },
+    "secondaryButton": {
+      "text": "See Real Results",
+      "href": "#portfolio"
+    }
+  },
+  "stats": {
+    "items": [
+      {
+        "number": "500+",
+        "label": "Happy Clients"
+      },
+      {
+        "number": "48h",
+        "label": "Quick Turnaround"
+      },
+      {
+        "number": "99%",
+        "label": "Client Happiness"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "content-improver",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "AI-Powered Content Improvement System for DesignWorks Bureau",
+  "main": "src/cli/content_cli.js",
+  "scripts": {
+    "content": "node src/cli/content_cli.js",
+    "status": "node src/core/status_tracker.js status",
+    "next": "node src/core/status_tracker.js next",
+    "reset": "node src/core/status_tracker.js reset",
+    "analyze": "node src/analyzers/content_analyzer.js",
+    "analyze:all": "node src/core/workflow_manager.js analyze",
+    "improve:assistant": "node src/core/assistant_section_processor.js",
+    "improve:pending": "node src/core/workflow_manager.js improve",
+    "review": "node src/core/workflow_manager.js review",
+    "review:dashboard": "open improvements/review_dashboard.html",
+    "dashboard": "open src/cli/content_dashboard.html",
+    "implement": "node src/core/implement_changes.js apply",
+    "implement:approved": "node src/core/workflow_manager.js implement",
+    "rollback": "node src/core/implement_changes.js rollback",
+    "workflow": "node src/core/workflow_manager.js full",
+    "workflow:continue": "node src/core/workflow_manager.js continue",
+    "test:assistant": "node archive/archive_2025_09/test_files/test_assistant_direct.js",
+    "history": "node src/core/implementation_log.js history",
+    "clean": "rm -rf reports/*.html reports/*.md reports/*.json improvements/*.html improvements/*.json",
+    "help": "node -e \"console.log('\\n🚀 Content Improvement System v2.0\\n\\n  MAIN COMMANDS:\\n  npm run content         - Interactive CLI dashboard\\n  npm run status          - View current status\\n  npm run workflow        - Run full workflow\\n\\n  STEP-BY-STEP:\\n  npm run analyze:all     - Analyze all pending sections\\n  npm run improve:pending - Improve analyzed sections\\n  npm run review          - Open review dashboard\\n  npm run implement:approved - Apply approved changes\\n\\n  UTILITIES:\\n  npm run next            - Show next recommended action\\n  npm run history         - View change history\\n  npm run reset           - Reset all status (caution!)\\n  npm run clean           - Clean generated files\\n\\n  For interactive mode: npm run content\\n')\"",
+    "test": "node -e \"console.log('✅ System check...');\" && node src/validators/brand_voice_validator.js test && node -e \"console.log('✅ All systems operational')\""
+  },
+  "keywords": [
+    "ai",
+    "content-management",
+    "brand-voice",
+    "image-generation", 
+    "openai",
+    "freepik",
+    "replicate",
+    "automation"
+  ],
+  "author": "DesignWorks Bureau",
+  "license": "Proprietary",
+  "dependencies": {
+    "chalk": "^5.6.0",
+    "dotenv": "^17.2.1",
+    "replicate": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "private"
+  }
+}

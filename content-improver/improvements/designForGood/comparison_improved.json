@@ -1,0 +1,66 @@
+{
+  "comparison": {
+    "eyebrow": "Impact Comparison",
+    "title": "Why Nonprofits Choose Design for Good",
+    "description": "Spot the difference as we merge professional creative with a community-first mindset - all within your budget.",
+    "features": [
+      {
+        "name": "Mission-Aligned Design",
+        "description": "Designs that amplify your mission and engage donors directly",
+        "diy": false,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Hands-On Support",
+        "description": "Expert advice included, no extra charges",
+        "diy": false,
+        "agency": true,
+        "designForGood": true
+      },
+      {
+        "name": "Budget-Friendly Pricing",
+        "description": "Tailored for nonprofit budgets focused on change",
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "No Limits on Requests",
+        "description": "Endless projects, zero additional costs",
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Fast Project Turnaround",
+        "description": "Quick delivery for most tasks",
+        "diy": true,
+        "agency": false,
+        "designForGood": true
+      },
+      {
+        "name": "Deep Nonprofit Knowledge",
+        "description": "We know your sector inside out",
+        "diy": false,
+        "agency": false,
+        "designForGood": true
+      }
+    ],
+    "conclusion": "Crafted for nonprofits eager to make an immediate impact, maintain authentic visuals, and come across as professional as their dedication.",
+    "benefits": [
+      {
+        "title": "Community-First Design",
+        "description": "Every creative decision roots from your core cause"
+      },
+      {
+        "title": "Meaningful Outcomes",
+        "description": "Elevate your credibility, expand campaign reach, and boost community engagement"
+      },
+      {
+        "title": "No-Strings-Attached Trial",
+        "description": "Test our compatibility without any commitment. We're here to win your confidence, project by project"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "level-5-catalogue-redesign",
+  "title": "Level 5 Product Catalogue Digital Optimization",
+  "category": "Digital Product",
+  "briefDescription": "Product catalogue transformation from print-focused to digital-optimized format with enhanced readability and UX.",
+  "description": "Level 5's product catalogue looked great in print but was unreadable on screens. We transformed it from print-first design to digital-optimized format that actually serves modern customers who read catalogues on devices, not paper.",
+  "createdDate": "2025-09-09", 
+  "featured": true,
+  "draft": false,
+  "priority": 6,
+  "image": "/images/portfolio/level-5-catalogue-redesign.jpg",
+  "tags": ["Catalogue Design", "Digital Optimization", "User Experience", "Typography"],
+  "client": "Level 5",
+  "year": "2025",
+  "duration": "2 weeks",
+  "industry": "Retail",
+  "location": "UK",
+  "projectType": "Digital Transformation",
+  "challenge": "Here's a common problem: Level 5's catalogue was designed for print when most customers read it digitally. Small text that looked fine on paper became unreadable at 100% screen scale. Two-page spreads that worked in print created terrible user experience on devices. They needed digital-first thinking, not print-first compromise.",
+  "solution": "Complete restructure prioritizing how people actually use catalogues today. Significantly increased body text font size for comfortable reading at 100% digital scale. Split two-page spreads into single pages for natural digital navigation. Added branded footer elements for consistent company recognition. Every change focused on user experience without sacrificing professionalism.",
+  "results": [
+    "Dramatically improved readability at 100% digital scale",
+    "Enhanced user experience through single-page digital format", 
+    "Successful digital-first approach serving modern customer behavior",
+    "Professional branded footer integration reinforcing company identity",
+    "Increased customer engagement with product information",
+    "Future-ready catalogue design for ongoing digital distribution"
+  ],
+  "services": [
+    "Digital Document Transformation",
+    "User Experience Optimization",
+    "Typography Enhancement", 
+    "Digital-First Design Strategy"
+  ],
+  "brandMessage": "Don't force digital customers to struggle with print-first design. We optimize for how people actually use your materials today.",
+  "whatWeLearned": "Digital transformation isn't about making print design work on screens—it's about redesigning for screen-first user experience. User behavior should drive design decisions.",
+  "liveUrl": "https://trello.com/c/jwqxkvEw/255-255-level-5-catalogue",
+  "images": [
+    "/images/portfolio/level-5-catalogue-redesign/before-after-readability.jpg",
+    "/images/portfolio/level-5-catalogue-redesign/page-split-comparison.jpg",
+    "/images/portfolio/level-5-catalogue-redesign/typography-enhancement.jpg",
+    "/images/portfolio/level-5-catalogue-redesign/branded-footer-integration.jpg"
+  ]
+}

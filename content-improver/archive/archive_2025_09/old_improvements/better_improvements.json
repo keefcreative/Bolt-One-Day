@@ -1,0 +1,62 @@
+[
+  {
+    "file": "hero.json",
+    "field": "title",
+    "original": "Premium Design Subscription",
+    "improved": "Design Delivered Monthly. No Gimmicks.",
+    "alternatives": [
+      "Design that actually ships",
+      "Your design team, minus the drama",
+      "Design that works. Finally.",
+      "Real design. Real results. No BS."
+    ],
+    "context": "Main headline - needs to be punchy and different",
+    "changed": true
+  },
+  {
+    "file": "hero.json",
+    "field": "subtitle",
+    "original": "World-class design, predictable pricing, no drama",
+    "improved": "Top-notch design, fair pricing, zero drama.",
+    "alternatives": [
+      "Great design, predictable pricing, no drama",
+      "Design that ships. Prices that don't change. Simple.",
+      "Good design, clear pricing, zero hassle",
+      "Design done right. Same price every month."
+    ],
+    "context": "This is actually pretty good - maybe just remove \"world-class\"",
+    "changed": true
+  },
+  {
+    "file": "services.json",
+    "field": "description",
+    "original": "We deliver comprehensive design solutions that elevate your brand and drive business growth through strategic creativity and seamless execution.",
+    "improved": "We make designs that actually sell your stuff. Straight to the point, no messing around.",
+    "alternatives": [],
+    "context": "This is full of corporate jargon - needs complete rewrite",
+    "changed": true
+  },
+  {
+    "file": "cta.json",
+    "field": "button",
+    "original": "Get Started",
+    "improved": "Click Here & Kick Off Your Design Plan Today",
+    "alternatives": [
+      "Start getting designs tomorrow",
+      "See our work first",
+      "Book a 15-min call",
+      "Get your first design"
+    ],
+    "context": "Generic CTA - needs more specificity",
+    "changed": true
+  },
+  {
+    "file": "process.json",
+    "field": "description",
+    "original": "Our innovative process leverages cutting-edge methodologies to deliver transformative results.",
+    "improved": "We get things done with cool methods that actually work.",
+    "alternatives": [],
+    "context": "This is the worst corporate speak - fix this!",
+    "changed": true
+  }
+]

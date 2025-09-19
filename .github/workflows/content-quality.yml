@@ -1,0 +1,210 @@
+name: Content Quality Check
+
+on:
+  schedule:
+    # Run daily at 9 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    inputs:
+      force_analysis:
+        description: 'Force full content analysis'
+        required: false
+        default: 'false'
+        type: boolean
+      quality_threshold:
+        description: 'Quality threshold (0-100)'
+        required: false
+        default: '75'
+        type: string
+
+jobs:
+  content-health-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install content-improver dependencies
+      run: cd content-improver && npm ci
+      
+    - name: Run content system health check
+      run: npm run content:health
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        CONTENT_SYSTEM_ENABLED: 'true'
+        
+    - name: Run quick quality check
+      id: quality_check
+      run: |
+        QUALITY_RESULT=$(npm run content:quality)
+        echo "quality_result<<EOF" >> $GITHUB_OUTPUT
+        echo "$QUALITY_RESULT" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        CONTENT_SYSTEM_ENABLED: 'true'
+        CONTENT_QUALITY_THRESHOLD: ${{ github.event.inputs.quality_threshold || '75' }}
+        
+    - name: Run full content analysis
+      if: github.event.inputs.force_analysis == 'true' || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 0') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 1') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 2') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 3') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 4') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 5')
+      run: npm run content:analyze
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        CONTENT_SYSTEM_ENABLED: 'true'
+        
+    - name: Generate content improvements
+      if: github.event.inputs.force_analysis == 'true' || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 0') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 1') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 2') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 3') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 4') || contains(steps.quality_check.outputs.quality_result, 'Quality Score: 5')
+      run: npm run content:improve
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        CONTENT_SYSTEM_ENABLED: 'true'
+        
+    - name: Upload content analysis results
+      uses: actions/upload-artifact@v4
+      with:
+        name: content-analysis-${{ github.run_number }}
+        path: |
+          content-improver/reports/
+          content-improver/improvements/
+        retention-days: 30
+        
+    - name: Check for critical quality issues
+      run: |
+        QUALITY_OUTPUT="${{ steps.quality_check.outputs.quality_result }}"
+        if echo "$QUALITY_OUTPUT" | grep -q "Quality Score: [0-4][0-9]"; then
+          echo "⚠️ Quality score is below 50%"
+          echo "::warning::Content quality is below acceptable threshold"
+        elif echo "$QUALITY_OUTPUT" | grep -q "Quality Score: [5-6][0-9]"; then
+          echo "⚠️ Quality score is moderate (50-69%)"
+          echo "::notice::Content quality could be improved"
+        else
+          echo "✅ Content quality is acceptable"
+        fi
+        
+  create-issue-for-improvements:
+    runs-on: ubuntu-latest
+    needs: [content-health-check]
+    if: always() && (needs.content-health-check.result == 'success' || needs.content-health-check.result == 'failure')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check for pending improvements
+      id: check_improvements
+      run: |
+        if [ -d "content-improver/improvements" ] && [ "$(ls -A content-improver/improvements 2>/dev/null)" ]; then
+          echo "has_improvements=true" >> $GITHUB_OUTPUT
+          IMPROVEMENT_COUNT=$(ls -1 content-improver/improvements/*.json 2>/dev/null | wc -l)
+          echo "improvement_count=$IMPROVEMENT_COUNT" >> $GITHUB_OUTPUT
+        else
+          echo "has_improvements=false" >> $GITHUB_OUTPUT
+          echo "improvement_count=0" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Create GitHub Issue for Content Improvements
+      if: steps.check_improvements.outputs.has_improvements == 'true'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const improvementCount = '${{ steps.check_improvements.outputs.improvement_count }}';
+          const runNumber = '${{ github.run_number }}';
+          const runUrl = '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}';
+          
+          const issueBody = `## Content Quality Report
+          
+          🤖 **Automated Content Analysis** completed on ${new Date().toISOString().split('T')[0]}
+          
+          ### Summary
+          - **Improvements Found**: ${improvementCount}
+          - **Analysis Run**: [#${runNumber}](${runUrl})
+          
+          ### Next Steps
+          1. Review the content improvements in the [workflow artifacts](${runUrl})
+          2. Run \`npm run content:review\` locally to review suggestions
+          3. Apply approved improvements with \`npm run content:implement\`
+          4. Test the changes and create a pull request
+          
+          ### Quick Commands
+          \`\`\`bash
+          # Review improvements
+          npm run content:review
+          
+          # Apply approved improvements
+          npm run content:implement
+          
+          # Check content quality
+          npm run content:quality
+          \`\`\`
+          
+          ---
+          *This issue was created automatically by the Content Quality workflow.*`;
+          
+          const { data: issues } = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['content-improvement', 'automated'],
+            state: 'open'
+          });
+          
+          // Don't create duplicate issues
+          const existingIssue = issues.find(issue => 
+            issue.title.includes('Content Improvements Available') &&
+            issue.created_at > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+          );
+          
+          if (!existingIssue) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Content Improvements Available (${improvementCount} suggestions)`,
+              body: issueBody,
+              labels: ['content-improvement', 'automated', 'enhancement']
+            });
+            
+            console.log('Created new content improvement issue');
+          } else {
+            console.log('Recent content improvement issue already exists');
+          }
+          
+  weekly-report:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 9 * * 1' # Only on Monday
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Generate weekly content report
+      run: |
+        echo "# Weekly Content Quality Report" > weekly_report.md
+        echo "Generated on $(date)" >> weekly_report.md
+        echo "" >> weekly_report.md
+        npm run content:history >> weekly_report.md
+        
+    - name: Upload weekly report
+      uses: actions/upload-artifact@v4
+      with:
+        name: weekly-content-report-${{ github.run_number }}
+        path: weekly_report.md
+        retention-days: 90

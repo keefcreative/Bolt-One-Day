@@ -1,0 +1,31 @@
+{
+  "id": "artisan-studios-portfolio",
+  "title": "Artisan Studios Portfolio",
+  "category": "Web Design",
+  "description": "Creative portfolio website for design studio, showcasing their work with elegant animations and intuitive navigation.",
+  "createdDate": "2024-06-15",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/artisan-studios-portfolio.jpg",
+  "tags": [
+    "Web Design",
+    "Portfolio",
+    "Creative",
+    "Animation",
+    "CMS"
+  ],
+  "client": "Artisan Studios",
+  "year": "2024",
+  "duration": "5 weeks",
+  "challenge": "Artisan Studios needed a portfolio website that would showcase their creative work while reflecting their artistic vision. The challenge was creating a site that was both visually stunning and functionally robust.",
+  "solution": "We designed a custom portfolio site with smooth animations, intuitive project filtering, and a content management system that allows easy updates. The design emphasizes visual storytelling while maintaining fast loading times and mobile responsiveness.",
+  "results": [
+    "200% increase in client inquiries",
+    "Featured in design gallery websites",
+    "90% improvement in time on site",
+    "Won 'Best Portfolio Design' award"
+  ],
+  "liveUrl": "https://artisanstudios.design",
+  "images": []
+}

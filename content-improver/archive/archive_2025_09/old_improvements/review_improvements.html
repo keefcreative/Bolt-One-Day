@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Improvements Review</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        h1 { 
+            color: #333; 
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stats {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F97316;
+        }
+        
+        .file-improvements {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .file-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .score-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .improvement-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+        }
+        
+        .improvement-item:last-child {
+            border-bottom: none;
+        }
+        
+        .field-name {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .original, .improved {
+            padding: 15px;
+            border-radius: 6px;
+            position: relative;
+        }
+        
+        .original {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+        }
+        
+        .improved {
+            background: #d4edda;
+            border: 1px solid #28a745;
+        }
+        
+        .version-label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .original .version-label { color: #856404; }
+        .improved .version-label { color: #155724; }
+        
+        .content-text {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-approve {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-approve:hover {
+            background: #218838;
+        }
+        
+        .btn-reject {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-reject:hover {
+            background: #c82333;
+        }
+        
+        .btn-edit {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+        
+        .approved {
+            opacity: 0.6;
+            position: relative;
+        }
+        
+        .approved::after {
+            content: "✓ APPROVED";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .implementation-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+        
+        .implementation-btn {
+            background: #F97316;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .implementation-btn:hover {
+            background: #ea580c;
+        }
+        
+        .approval-count {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span>🚀</span>
+            Content Improvements Review
+        </h1>
+        <p style="color: #666; margin-bottom: 30px;">
+            Review AI-generated improvements, approve changes, and implement them on your website.
+        </p>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-label">Files Analyzed</span>
+                <span class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Improvements Generated</span>
+                <span class="stat-value" id="totalImprovements">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Approved Changes</span>
+                <span class="stat-value" id="approvedCount">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Average Score Increase</span>
+                <span class="stat-value" id="avgIncrease">+0%</span>
+            </div>
+        </div>
+        
+        
+        
+        <div class="implementation-panel">
+            <div class="approval-count">
+                <span id="approvalStatus">No changes approved yet</span>
+            </div>
+            <button class="implementation-btn" onclick="implementChanges()">
+                🚀 Implement Approved Changes
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        const improvements = [];
+        const approved = new Set();
+        const rejected = new Set();
+        
+        // Calculate total improvements
+        let totalImprovements = 0;
+        improvements.forEach(file => {
+            totalImprovements += Object.keys(file.improvements).length;
+        });
+        document.getElementById('totalImprovements').textContent = totalImprovements;
+        
+        function approveImprovement(fileIndex, fieldIndex) {
+            const key = fileIndex + '-' + fieldIndex;
+            approved.add(key);
+            rejected.delete(key);
+            
+            const item = document.querySelector(`[data-file-index="${fileIndex}"][data-field-index="${fieldIndex}"]`);
+            item.classList.add('approved');
+            
+            updateApprovalCount();
+        }
+        
+        function rejectImprovement(fileIndex, fieldIndex) {
+            const key = fileIndex + '-' + fieldIndex;
+            rejected.add(key);
+            approved.delete(key);
+            
+            const item = document.querySelector(`[data-file-index="${fileIndex}"][data-field-index="${fieldIndex}"]`);
+            item.classList.remove('approved');
+            item.style.opacity = '0.3';
+            
+            updateApprovalCount();
+        }
+        
+        function editImprovement(fileIndex, fieldIndex) {
+            const file = improvements[fileIndex];
+            const field = Object.keys(file.improvements)[fieldIndex];
+            const improvement = file.improvements[field];
+            
+            const newText = prompt('Edit the improved content:', improvement.improved);
+            if (newText && newText !== improvement.improved) {
+                improvement.improved = newText;
+                
+                // Update display
+                const item = document.querySelector(`[data-file-index="${fileIndex}"][data-field-index="${fieldIndex}"]`);
+                const improvedText = item.querySelector('.improved .content-text');
+                improvedText.textContent = newText;
+                
+                // Auto-approve edited content
+                approveImprovement(fileIndex, fieldIndex);
+            }
+        }
+        
+        function updateApprovalCount() {
+            document.getElementById('approvedCount').textContent = approved.size;
+            
+            if (approved.size > 0) {
+                document.getElementById('approvalStatus').textContent = 
+                    `${approved.size} change${approved.size === 1 ? '' : 's'} approved, ready to implement`;
+            } else {
+                document.getElementById('approvalStatus').textContent = 'No changes approved yet';
+            }
+        }
+        
+        async function implementChanges() {
+            if (approved.size === 0) {
+                alert('No changes approved. Please approve at least one improvement before implementing.');
+                return;
+            }
+            
+            const approvedChanges = [];
+            
+            approved.forEach(key => {
+                const [fileIndex, fieldIndex] = key.split('-').map(Number);
+                const file = improvements[fileIndex];
+                const field = Object.keys(file.improvements)[fieldIndex];
+                
+                approvedChanges.push({
+                    file: file.file,
+                    field: field,
+                    original: file.improvements[field].original,
+                    improved: file.improvements[field].improved
+                });
+            });
+            
+            // Save approved changes
+            const response = await fetch('/save-approved', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ changes: approvedChanges })
+            }).catch(() => null);
+            
+            // For now, save to localStorage and show confirmation
+            localStorage.setItem('approvedChanges', JSON.stringify(approvedChanges));
+            
+            const message = `
+✅ Approved Changes Saved!
+
+${approvedChanges.length} improvement${approvedChanges.length === 1 ? '' : 's'} ready to implement.
+
+To apply these changes to your website, run:
+npm run implement:changes
+
+Or use the command:
+node implement_changes.js
+            `;
+            
+            alert(message);
+            
+            // Show implementation instructions
+            console.log('Approved changes:', approvedChanges);
+        }
+    </script>
+</body>
+</html>

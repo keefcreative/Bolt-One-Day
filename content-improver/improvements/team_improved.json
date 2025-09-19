@@ -1,0 +1,49 @@
+{
+  "team": {
+    "eyebrow": "Our Squad",
+    "title": "The Real People Behind DesignWorks",
+    "description": "A bunch of designers, thinkers, and real people turning big ideas into visual victories.",
+    "team": [
+      {
+        "name": "Sarah Mitchell",
+        "position": "Brand Champion",
+        "bio": "Sarah crafts brand plays that win markets and make fans out of audiences.",
+        "avatar": "/images/team/sarah-mitchell.jpg",
+        "social": {
+          "twitter": "https://twitter.com/sarahmitchell",
+          "linkedin": "https://linkedin.com/in/sarahmitchell"
+        }
+      },
+      {
+        "name": "Emma Rodriguez",
+        "position": "Client Hero",
+        "bio": "Emma makes sure every project lands smoothly and keeps clients in the loop and happy.",
+        "avatar": "/images/team/emma-rodriguez.jpg",
+        "social": {
+          "twitter": "https://twitter.com/emmarodriguez",
+          "linkedin": "https://linkedin.com/in/emmarodriguez"
+        }
+      },
+      {
+        "name": "Marcus Chen",
+        "position": "Design Wizard",
+        "bio": "Marcus turns bold ideas into visual feasts with a sharp eye for detail and fresh designs.",
+        "avatar": "/images/team/marcus-chen.jpg",
+        "social": {
+          "twitter": "https://twitter.com/marcuschen",
+          "linkedin": "https://linkedin.com/in/marcuschen"
+        }
+      },
+      {
+        "name": "Lisa Thompson",
+        "position": "Visual Storyteller",
+        "bio": "Lisa weaves brand stories into digital and physical realms, ensuring a seamless user journey everywhere.",
+        "avatar": "/images/team/lisa-thompson.jpg",
+        "social": {
+          "twitter": "https://twitter.com/lisathompson",
+          "linkedin": "https://linkedin.com/in/lisathompson"
+        }
+      }
+    ]
+  }
+}

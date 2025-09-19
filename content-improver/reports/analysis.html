@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Voice Analysis Report - 8/28/2025</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: #f7f9fc;
+        }
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .metric-label {
+            font-size: 0.875rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .metric-value.good { color: #22c55e; }
+        .metric-value.warning { color: #f59e0b; }
+        .metric-value.poor { color: #ef4444; }
+        .content {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .pillar-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        .pillar-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .pillar-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .file-list {
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .file-item {
+            background: white;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s;
+        }
+        .file-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .file-name {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .file-metrics {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        .recommendations {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .recommendations h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+        }
+        .recommendation-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid #fbbf24;
+        }
+        .priority-high {
+            border-left-color: #ef4444;
+        }
+        .priority-medium {
+            border-left-color: #f59e0b;
+        }
+        .priority-low {
+            border-left-color: #22c55e;
+        }
+        .footer {
+            background: #f7f9fc;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e5e7eb;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+<div class="header">
+    <h1>Brand Voice Analysis Report</h1>
+    <p class="subtitle">8/28/2025 | 38 files analyzed</p>
+</div>
+
+<div class="summary">
+    <div class="metric-card">
+        <div class="metric-label">Overall Score</div>
+        <div class="metric-value poor">0.0%</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 0.0%"></div>
+        </div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-label">Files Analyzed</div>
+        <div class="metric-value">38</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-label">Content Fields</div>
+        <div class="metric-value">undefined</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-label">Jargon Found</div>
+        <div class="metric-value poor">undefined</div>
+    </div>
+</div><div class="content">
+<div class="section">
+    <h2>Voice Pillar Performance</h2>
+    <div class="pillar-grid">
+        
+      <div class="pillar-card">
+        <div class="pillar-name">Honest</div>
+        <div class="pillar-score poor">3.6%</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 3.571428571428571%"></div>
+        </div>
+      </div>
+    
+      <div class="pillar-card">
+        <div class="pillar-name">Principled</div>
+        <div class="pillar-score poor">7.5%</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 7.539682539682538%"></div>
+        </div>
+      </div>
+    
+      <div class="pillar-card">
+        <div class="pillar-name">Human</div>
+        <div class="pillar-score poor">2.8%</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 2.7777777777777772%"></div>
+        </div>
+      </div>
+    
+      <div class="pillar-card">
+        <div class="pillar-name">Balanced</div>
+        <div class="pillar-score poor">2.4%</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 2.380952380952381%"></div>
+        </div>
+      </div>
+    
+    </div>
+</div>
+<div class="section">
+    <h2>File-by-File Analysis</h2>
+    <div class="file-list">
+        
+      <div class="file-item">
+        <div class="file-name">team.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">20.2%</strong></span>
+          <span>Fields: 18</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 20.171207658321062%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-07-15_bloom-beauty-ecommerce.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">23.8%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 23.846153846153847%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-06-15_artisan-studios-portfolio.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">26.1%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 26.095238095238095%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-08-01_techflow-rebrand.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">32.6%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 32.631578947368425%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-05-15_ecomarket-marketplace.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">32.8%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 32.811355311355314%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">services.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">34.6%</strong></span>
+          <span>Fields: 14</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 34.58843537414966%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-05-01_healthhub-platform.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">35.6%</strong></span>
+          <span>Fields: 6</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 35.6296992481203%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">testimonials.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="poor">39.5%</strong></span>
+          <span>Fields: 12</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 39.50895021645022%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">mission.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">40.9%</strong></span>
+          <span>Fields: 4</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 40.86507936507937%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">weBelieve.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">42.4%</strong></span>
+          <span>Fields: 15</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 42.355098605098604%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">solutions.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">42.8%</strong></span>
+          <span>Fields: 14</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 42.75139574200397%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">faq.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">43.0%</strong></span>
+          <span>Fields: 11</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 43.02793296089386%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">brandedPricing.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">44.0%</strong></span>
+          <span>Fields: 20</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 44%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-04-15_foodieapp-discovery.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">44.0%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 44.00000000000001%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">privacy-policy.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">44.3%</strong></span>
+          <span>Fields: 27</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 44.25337457817773%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">contact.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">44.6%</strong></span>
+          <span>Fields: 4</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 44.642857142857146%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">index-OLD-BACKUP.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">45.0%</strong></span>
+          <span>Fields: 14</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 45.032380952380954%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">premiumFaq.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">45.1%</strong></span>
+          <span>Fields: 22</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 45.11490160452098%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">singleProject.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">46.4%</strong></span>
+          <span>Fields: 14</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 46.365860266462676%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">brevo-automation-config.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">46.5%</strong></span>
+          <span>Fields: 70</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 46.481366459627324%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">cookie-policy.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">46.6%</strong></span>
+          <span>Fields: 33</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 46.60527299925206%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-07-01_innovatetech-campaign.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">47.1%</strong></span>
+          <span>Fields: 5</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 47.14285714285714%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">premiumDesignProcess.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">47.9%</strong></span>
+          <span>Fields: 10</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 47.87169312169312%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">problems.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">47.9%</strong></span>
+          <span>Fields: 12</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 47.90816326530612%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">comparison.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">49.4%</strong></span>
+          <span>Fields: 21</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 49.44548872180451%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">process.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">49.8%</strong></span>
+          <span>Fields: 14</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 49.80455568053993%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">founder.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">50.0%</strong></span>
+          <span>Fields: 4</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 50.000000000000014%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">pricing.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">50.4%</strong></span>
+          <span>Fields: 10</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 50.40849899830482%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">terms-of-service.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">51.3%</strong></span>
+          <span>Fields: 29</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 51.29038718291055%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">2024-06-01_financeflow-dashboard.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">53.3%</strong></span>
+          <span>Fields: 6</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 53.324175824175825%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">navigation.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">55.0%</strong></span>
+          <span>Fields: 11</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 55.00000000000001%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">advantage.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">55.9%</strong></span>
+          <span>Fields: 12</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 55.892857142857146%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">logoCarousel.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">55.9%</strong></span>
+          <span>Fields: 19</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 55.892857142857146%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">finalCta.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">58.1%</strong></span>
+          <span>Fields: 7</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 58.11904761904761%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">hero.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">63.3%</strong></span>
+          <span>Fields: 8</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 63.33333333333334%"></div>
+        </div>
+      </div>
+    
+      <div class="file-item">
+        <div class="file-name">premiumCta.json</div>
+        <div class="file-metrics">
+          <span>Score: <strong class="warning">64.1%</strong></span>
+          <span>Fields: 6</span>
+          <span>Jargon: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 64.12202380952381%"></div>
+        </div>
+      </div>
+    
+    </div>
+</div>
+<div class="recommendations">
+    <h3>📋 Priority Recommendations</h3>
+    
+        <div class="recommendation-item priority-high">
+          <strong>HIGH:</strong> Implement comprehensive brand voice overhaul
+          <br><small>Current score is very low. Focus on removing jargon, adding signature phrases, and strengthening CTAs</small>
+        </div>
+      
+        <div class="recommendation-item priority-high">
+          <strong>HIGH:</strong> Remove corporate jargon from 8 files
+          <br><small>Replace terms like "seamless", "innovative", "robust", "leverage", "optimize" with plain language</small>
+        </div>
+      
+        <div class="recommendation-item priority-medium">
+          <strong>MEDIUM:</strong> Strengthen "Honest" voice pillar
+          <br><small>Use more plain language, avoid marketing speak, be transparent and direct</small>
+        </div>
+      
+        <div class="recommendation-item priority-medium">
+          <strong>MEDIUM:</strong> Improve "Human" voice pillar
+          <br><small>Add personal stories, use conversational tone, show empathy and understanding</small>
+        </div>
+      
+        <div class="recommendation-item priority-medium">
+          <strong>MEDIUM:</strong> Enhance "Balanced" voice pillar
+          <br><small>Mix professional expertise with approachability, vary sentence structure</small>
+        </div>
+      
+</div></div><div class="footer">Report generated on 8/28/2025, 11:39:09 AM</div>
+    </div>
+</body>
+</html>

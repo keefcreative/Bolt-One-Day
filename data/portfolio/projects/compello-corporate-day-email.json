@@ -1,0 +1,44 @@
+{
+  "id": "compello-corporate-day-email",
+  "title": "Compello Superbike Championship Email",
+  "category": "Email Design",
+  "briefDescription": "Corporate event email campaign driving excitement and RSVPs for exclusive motorsport hospitality experience.",
+  "description": "Corporate events live or die on excitement and attendance. Compello needed an email that would get their clients genuinely excited about a day at the races—and actually show up. We created a campaign that delivered both energy and RSVPs.",
+  "createdDate": "2025-08-19",
+  "featured": true,
+  "draft": false,
+  "priority": 3,
+  "image": "/images/portfolio/compello-corporate-day-email.jpg",
+  "tags": ["Email Design", "Event Marketing", "Corporate Hospitality", "Client Engagement"],
+  "client": "Compello",
+  "year": "2025", 
+  "duration": "1 week",
+  "industry": "Professional Services",
+  "location": "UK",
+  "projectType": "Marketing Campaign",
+  "challenge": "Here's the truth about corporate event emails: most get deleted. Compello needed to break through inbox noise and get their clients excited about a superbike championship experience. The challenge wasn't just design—it was creating genuine anticipation that translates to actual attendance. Previous corporate events had struggled with low response rates.",
+  "solution": "We built excitement from the subject line down. 'You're invited!' with the promise of experiencing 'the roar of the Superbikes with Compello at Donington Park.' Clear event details, compelling motorsport imagery, and a CTA that made RSVP feel like the only logical response. Every element designed to drive action, not just admiration.",
+  "results": [
+    "High-engagement email design clients actually opened",
+    "Strong RSVP response rates exceeding previous corporate events",
+    "Clear communication preventing event day confusion",
+    "Enhanced Compello positioning in corporate hospitality market",
+    "Template approach adaptable for future corporate events",
+    "Measurable improvement in client event attendance"
+  ],
+  "services": [
+    "Email Campaign Strategy",
+    "Event Marketing Design",
+    "Client Engagement Optimization",
+    "RSVP Conversion Strategy"
+  ],
+  "brandMessage": "Event marketing isn't about pretty emails—it's about emails that get people to show up. We design for attendance, not awards.",
+  "whatWeLearned": "The best event marketing creates anticipation that's stronger than the busy calendars trying to compete with it. Clear value proposition beats fancy design every time.",
+  "liveUrl": "https://trello.com/c/JzZpkaPI/258-258compello-corporate-day-email",
+  "images": [
+    "/images/portfolio/compello-corporate-day-email/email-header-hero.jpg",
+    "/images/portfolio/compello-corporate-day-email/motorsport-imagery-integration.jpg",
+    "/images/portfolio/compello-corporate-day-email/rsvp-cta-design.jpg",
+    "/images/portfolio/compello-corporate-day-email/mobile-responsive-version.jpg"
+  ]
+}

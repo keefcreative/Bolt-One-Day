@@ -1,0 +1,44 @@
+{
+  "testimonials": {
+    "eyebrow": "Real Feedback",
+    "title": "Hear It Straight",
+    "description": "Don't just trust our spiel. Here's the real scoop from our partners about smashing it with DesignWorks.",
+    "items": [
+      {
+        "quote": "DesignWorks revamped our image top to bottom. Their keen eye and innovative approach doubled our conversions overnight. We're seeing a 150% uptick since the makeover.",
+        "author": "Sarah Johnson",
+        "position": "CEO",
+        "company": "TechFlow Solutions",
+        "avatar": "/images/testimonials/sarah-johnson.jpg"
+      },
+      {
+        "quote": "The subscription model is a game-changer. Unlimited design work without breaking the bank. Consistently outstanding quality, every time.",
+        "author": "Michael Chen",
+        "position": "Marketing Director",
+        "company": "GrowthCorp",
+        "avatar": "/images/team/marcus-chen.jpg"
+      },
+      {
+        "quote": "Partnering with DesignWorks is like having an elite design squad on call, but better. They get our vibe and nail it, every single deadline.",
+        "author": "Emily Rodriguez",
+        "position": "Founder",
+        "company": "Bloom Beauty",
+        "avatar": "/images/team/lisa-thompson.jpg"
+      },
+      {
+        "quote": "DesignWorks isn't just about pretty designs—they tackle real business hurdles. Our fresh identity has us turning heads and pulling in top-tier clients in our niche.",
+        "author": "James Wilson",
+        "position": "CMO",
+        "company": "InnovateTech",
+        "avatar": "/images/testimonials/james-wilson.jpg"
+      },
+      {
+        "quote": "From the drawing board to going live, DesignWorks knocked it out of the park. Their eye for detail and bold imagination took our online space to the next level. Can't praise them enough!",
+        "author": "Lisa Chen",
+        "position": "Creative Director",
+        "company": "Artisan Studios",
+        "avatar": "/images/testimonials/sarah-johnson.jpg"
+      }
+    ]
+  }
+}

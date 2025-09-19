@@ -1,0 +1,31 @@
+{
+  "eyebrow": "No Drama Process",
+  "title": "Our No BS Way to Real Results",
+  "description": "Our straightforward design approach ensures real results and swift delivery for every job.",
+  "steps": [
+    {
+      "number": "01",
+      "icon": "MessageSquare",
+      "title": "Kick Things Off",
+      "description": "Start by telling us what you need on our platform - the nitty-gritty, all of it."
+    },
+    {
+      "number": "02",
+      "icon": "Lightbulb",
+      "title": "Craft & Construct",
+      "description": "Our design wizards dive in, crafting your vision with an eye for the tiny stuff."
+    },
+    {
+      "number": "03",
+      "icon": "Palette",
+      "title": "Feedback & Fine-tune",
+      "description": "Take a look at our first shot and tell us what to fix. We tweak till you're thrilled."
+    },
+    {
+      "number": "04",
+      "icon": "Rocket",
+      "title": "Grab Your Design",
+      "description": "Get your hands on the final design, in every format you wanted, ready for action."
+    }
+  ]
+}

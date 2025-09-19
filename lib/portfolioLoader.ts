@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { PortfolioProject, PortfolioData, PortfolioLayoutConfig } from '@/types/portfolio';
+import { validateAndFixProject, truncateText } from '@/lib/portfolio-validation';
 
 // Layout configuration for bento grid positions
-export const LAYOUT_CONFIG = [
+export const LAYOUT_CONFIG: PortfolioLayoutConfig[] = [
   { 
     position: 0, 
     span: "md:col-span-2 md:row-span-2", 
@@ -149,9 +151,9 @@ function autoDetectImages(projectId) {
 
 /**
  * Loads and processes all portfolio projects
- * @returns {object} - processed portfolio data
+ * @returns {PortfolioData} - processed portfolio data
  */
-export function loadPortfolioProjects() {
+export function loadPortfolioProjects(): PortfolioData {
   try {
     const projectsDir = path.join(process.cwd(), 'data', 'portfolio', 'projects');
     
@@ -194,15 +196,19 @@ export function loadPortfolioProjects() {
           images: project.images && project.images.length > 0 ? project.images : images,
           featured: false, // Will be set below
           draft: project.draft || false,
-          priority: project.priority || null
+          priority: project.priority || null,
+          // Add brief description if missing
+          briefDescription: project.briefDescription || truncateText(project.description || '', 120)
         };
         
-        return enhancedProject;
+        // Validate and fix project data
+        const validatedProject = validateAndFixProject(enhancedProject);
+        return validatedProject;
       } catch (error) {
         console.error(`Error processing project file ${filename}:`, error);
         return null;
       }
-    }).filter(Boolean); // Remove null entries
+    }).filter((project): project is PortfolioProject => project !== null); // Remove null entries with type guard
     
     // Sort projects by date (newest first)
     projects.sort((a, b) => {
@@ -231,7 +237,7 @@ export function loadPortfolioProjects() {
     }
     
     // Assign layout configurations
-    const projectsWithLayout = displayProjects.map((project, index) => ({
+    const projectsWithLayout: PortfolioProject[] = displayProjects.map((project, index) => ({
       ...project,
       layoutConfig: LAYOUT_CONFIG[index] || LAYOUT_CONFIG[LAYOUT_CONFIG.length - 1]
     }));
@@ -265,9 +271,9 @@ export function loadPortfolioProjects() {
 /**
  * Gets a specific project by ID
  * @param {string} projectId - project slug
- * @returns {object|null} - project data or null
+ * @returns {PortfolioProject|null} - project data or null
  */
-export function getProjectById(projectId) {
+export function getProjectById(projectId: string): PortfolioProject | null {
   const portfolioData = loadPortfolioProjects();
   return portfolioData.projects.find(project => project.id === projectId) || null;
 }
@@ -275,9 +281,9 @@ export function getProjectById(projectId) {
 /**
  * Gets projects by category
  * @param {string} category - category name
- * @returns {array} - filtered projects
+ * @returns {PortfolioProject[]} - filtered projects
  */
-export function getProjectsByCategory(category) {
+export function getProjectsByCategory(category: string): PortfolioProject[] {
   const portfolioData = loadPortfolioProjects();
   return portfolioData.projects.filter(project => 
     project.category?.toLowerCase() === category.toLowerCase()

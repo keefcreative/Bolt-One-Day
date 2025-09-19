@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content System Control Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f23;
+            color: #ccc;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .control-panel {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+        
+        .control-panel h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .action-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .action-btn:active {
+            transform: translateY(0);
+        }
+        
+        .action-btn.secondary {
+            background: #2a2a3e;
+            border: 2px solid #667eea;
+        }
+        
+        .action-btn.danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+        }
+        
+        .action-btn .icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .sections-container {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .sections-container h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .section-card {
+            background: #0f0f23;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .section-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .section-card.completed {
+            border-color: #51cf66;
+            background: rgba(81, 207, 102, 0.05);
+        }
+        
+        .section-card.in-progress {
+            border-color: #ffd43b;
+            background: rgba(255, 212, 59, 0.05);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .section-name {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .section-status {
+            font-size: 20px;
+        }
+        
+        .progress-mini {
+            display: flex;
+            gap: 3px;
+            margin-top: 10px;
+        }
+        
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-step.complete {
+            background: #51cf66;
+        }
+        
+        .progress-step.active {
+            background: #ffd43b;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .workflow-visual {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .workflow-visual h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .workflow-step-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            background: #0f0f23;
+            border: 3px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .workflow-step.complete .workflow-step-icon {
+            border-color: #51cf66;
+            background: rgba(81, 207, 102, 0.1);
+            color: #51cf66;
+        }
+        
+        .workflow-step.active .workflow-step-icon {
+            border-color: #ffd43b;
+            background: rgba(255, 212, 59, 0.1);
+            color: #ffd43b;
+            animation: pulse 2s infinite;
+        }
+        
+        .workflow-step-label {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .workflow-line {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #333;
+            z-index: 1;
+        }
+        
+        .workflow-line-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #51cf66 0%, #ffd43b 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .log-container {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #333;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .log-container h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            background: #1a1a2e;
+            padding-bottom: 10px;
+        }
+        
+        .log-entry {
+            padding: 10px;
+            border-left: 3px solid #333;
+            margin-bottom: 10px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .log-entry.success {
+            border-color: #51cf66;
+            color: #51cf66;
+        }
+        
+        .log-entry.warning {
+            border-color: #ffd43b;
+            color: #ffd43b;
+        }
+        
+        .log-entry.error {
+            border-color: #ff6b6b;
+            color: #ff6b6b;
+        }
+        
+        .log-entry.info {
+            border-color: #667eea;
+            color: #667eea;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #667eea;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            color: #667eea;
+            font-size: 24px;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #667eea;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(102, 126, 234, 0.3);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 10px;
+            animation: blink 2s infinite;
+        }
+        
+        .status-indicator.online {
+            background: #51cf66;
+        }
+        
+        .status-indicator.offline {
+            background: #ff6b6b;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🚀 Content System Control Center <span class="status-indicator online"></span></h1>
+        <div class="subtitle">Real-time control and monitoring for content improvement workflow</div>
+    </div>
+    
+    <div class="container">
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-value" id="stat-analyzed">0</span>
+                <div class="stat-label">Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-improved">0</span>
+                <div class="stat-label">Improved</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-reviewed">0</span>
+                <div class="stat-label">Reviewed</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-implemented">0</span>
+                <div class="stat-label">Implemented</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-progress">0%</span>
+                <div class="stat-label">Complete</div>
+            </div>
+        </div>
+        
+        <!-- Workflow Visual -->
+        <div class="workflow-visual">
+            <h2>Workflow Pipeline</h2>
+            <div class="workflow-steps">
+                <div class="workflow-line">
+                    <div class="workflow-line-progress" id="workflow-progress"></div>
+                </div>
+                <div class="workflow-step" id="step-analyze">
+                    <div class="workflow-step-icon">🔍</div>
+                    <div class="workflow-step-label">Analyze</div>
+                </div>
+                <div class="workflow-step" id="step-improve">
+                    <div class="workflow-step-icon">🚀</div>
+                    <div class="workflow-step-label">Improve</div>
+                </div>
+                <div class="workflow-step" id="step-review">
+                    <div class="workflow-step-icon">📋</div>
+                    <div class="workflow-step-label">Review</div>
+                </div>
+                <div class="workflow-step" id="step-implement">
+                    <div class="workflow-step-icon">✅</div>
+                    <div class="workflow-step-label">Implement</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Control Panel -->
+        <div class="control-panel">
+            <h2>Quick Actions</h2>
+            <div class="action-grid">
+                <button class="action-btn" onclick="runAction('analyze')">
+                    <span class="icon">🔍</span>
+                    Analyze All Pending
+                </button>
+                <button class="action-btn" onclick="runAction('improve')">
+                    <span class="icon">🚀</span>
+                    Generate Improvements
+                </button>
+                <button class="action-btn" onclick="runAction('review')">
+                    <span class="icon">📋</span>
+                    Review Changes
+                </button>
+                <button class="action-btn" onclick="runAction('implement')">
+                    <span class="icon">✅</span>
+                    Implement Approved
+                </button>
+                <button class="action-btn secondary" onclick="runAction('workflow')">
+                    <span class="icon">🎯</span>
+                    Run Full Workflow
+                </button>
+                <button class="action-btn secondary" onclick="runAction('continue')">
+                    <span class="icon">➡️</span>
+                    Continue Workflow
+                </button>
+                <button class="action-btn secondary" onclick="refreshStatus()">
+                    <span class="icon">🔄</span>
+                    Refresh Status
+                </button>
+                <button class="action-btn danger" onclick="confirmReset()">
+                    <span class="icon">⚠️</span>
+                    Reset All
+                </button>
+            </div>
+        </div>
+        
+        <!-- Sections Grid -->
+        <div class="sections-container">
+            <h2>Section Status</h2>
+            <div class="sections-grid" id="sections-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Activity Log -->
+        <div class="log-container">
+            <h2>Activity Log</h2>
+            <div id="activity-log">
+                <div class="log-entry info">System initialized. Ready for commands.</div>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+    
+    <!-- Modal for Details -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Section Details</h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div id="modalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Mock data - in production would fetch from status.json
+        // Sections ordered as they appear on the website pages
+        let statusData = {
+            sections: {
+                // Global elements (appear on all pages)
+                navigation: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                
+                // Landing page sections (in order)
+                hero: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                logoCarousel: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                services: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                solutions: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                premiumDesignProcess: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                pricing: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                testimonials: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                team: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                weBelieve: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                premiumFaq: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                premiumCta: { analyzed: false, improved: false, reviewed: false, implemented: false },
+                contact: { analyzed: false, improved: false, reviewed: false, implemented: false }
+            },
+            stats: {
+                analyzed: 0,
+                improved: 0,
+                reviewed: 0,
+                implemented: 0
+            }
+        };
+        
+        function formatSectionName(name) {
+            return name.replace(/([A-Z])/g, ' $1')
+                      .replace(/^./, str => str.toUpperCase())
+                      .trim();
+        }
+        
+        function getSectionStatus(status) {
+            if (status.implemented) return { icon: '✅', class: 'completed' };
+            if (status.reviewed) return { icon: '📋', class: 'in-progress' };
+            if (status.improved) return { icon: '🚀', class: 'in-progress' };
+            if (status.analyzed) return { icon: '🔍', class: 'in-progress' };
+            return { icon: '○', class: '' };
+        }
+        
+        function updateStats() {
+            const total = Object.keys(statusData.sections).length;
+            const stats = statusData.stats;
+            
+            document.getElementById('stat-analyzed').textContent = stats.analyzed;
+            document.getElementById('stat-improved').textContent = stats.improved;
+            document.getElementById('stat-reviewed').textContent = stats.reviewed;
+            document.getElementById('stat-implemented').textContent = stats.implemented;
+            
+            const progress = Math.round(((stats.analyzed + stats.improved + stats.reviewed + stats.implemented) / (total * 4)) * 100);
+            document.getElementById('stat-progress').textContent = progress + '%';
+            
+            // Update workflow visual
+            updateWorkflowVisual(stats, total);
+        }
+        
+        function updateWorkflowVisual(stats, total) {
+            const steps = ['analyze', 'improve', 'review', 'implement'];
+            let currentStep = 0;
+            
+            if (stats.analyzed === total) currentStep = 1;
+            if (stats.improved === total) currentStep = 2;
+            if (stats.reviewed === total) currentStep = 3;
+            if (stats.implemented === total) currentStep = 4;
+            
+            steps.forEach((step, index) => {
+                const element = document.getElementById(`step-${step}`);
+                element.classList.remove('complete', 'active');
+                
+                if (index < currentStep) {
+                    element.classList.add('complete');
+                } else if (index === currentStep && currentStep < 4) {
+                    element.classList.add('active');
+                }
+            });
+            
+            const progressWidth = (currentStep / 4) * 100;
+            document.getElementById('workflow-progress').style.width = progressWidth + '%';
+        }
+        
+        function renderSections() {
+            const grid = document.getElementById('sections-grid');
+            grid.innerHTML = '';
+            
+            Object.entries(statusData.sections).forEach(([name, status]) => {
+                const { icon, class: statusClass } = getSectionStatus(status);
+                
+                const card = document.createElement('div');
+                card.className = `section-card ${statusClass}`;
+                card.onclick = () => showSectionDetails(name, status);
+                
+                card.innerHTML = `
+                    <div class="section-header">
+                        <span class="section-name">${formatSectionName(name)}</span>
+                        <span class="section-status">${icon}</span>
+                    </div>
+                    <div class="progress-mini">
+                        <div class="progress-step ${status.analyzed ? 'complete' : ''}"></div>
+                        <div class="progress-step ${status.improved ? 'complete' : ''} ${status.analyzed && !status.improved ? 'active' : ''}"></div>
+                        <div class="progress-step ${status.reviewed ? 'complete' : ''} ${status.improved && !status.reviewed ? 'active' : ''}"></div>
+                        <div class="progress-step ${status.implemented ? 'complete' : ''} ${status.reviewed && !status.implemented ? 'active' : ''}"></div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        function showSectionDetails(name, status) {
+            const modal = document.getElementById('detailModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            
+            title.textContent = formatSectionName(name);
+            
+            body.innerHTML = `
+                <h4>Status:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li>${status.analyzed ? '✅' : '○'} Analyzed ${status.analyzedAt ? `(${new Date(status.analyzedAt).toLocaleDateString()})` : ''}</li>
+                    <li>${status.improved ? '✅' : '○'} Improved ${status.improvedAt ? `(${new Date(status.improvedAt).toLocaleDateString()})` : ''}</li>
+                    <li>${status.reviewed ? '✅' : '○'} Reviewed ${status.reviewedAt ? `(${new Date(status.reviewedAt).toLocaleDateString()})` : ''}</li>
+                    <li>${status.implemented ? '✅' : '○'} Implemented ${status.implementedAt ? `(${new Date(status.implementedAt).toLocaleDateString()})` : ''}</li>
+                </ul>
+                
+                <div style="margin-top: 20px;">
+                    <button class="action-btn" onclick="runSectionAction('${name}', 'analyze')" ${status.analyzed ? 'disabled' : ''}>
+                        Analyze This Section
+                    </button>
+                    <button class="action-btn" onclick="runSectionAction('${name}', 'improve')" ${!status.analyzed || status.improved ? 'disabled' : ''}>
+                        Generate Improvements
+                    </button>
+                    <button class="action-btn" onclick="openReview('${name}')" ${!status.improved ? 'disabled' : ''}>
+                        Review Changes
+                    </button>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+        
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+        
+        function addLogEntry(message, type = 'info') {
+            const log = document.getElementById('activity-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            const time = new Date().toLocaleTimeString();
+            entry.textContent = `[${time}] ${message}`;
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep only last 50 entries
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+        }
+        
+        async function runAction(action) {
+            const loading = document.getElementById('loading');
+            loading.classList.add('active');
+            
+            addLogEntry(`Starting ${action}...`, 'info');
+            
+            try {
+                // In production, this would call the actual npm scripts
+                // For now, we'll simulate the action
+                await simulateAction(action);
+                
+                addLogEntry(`${action} completed successfully`, 'success');
+                refreshStatus();
+            } catch (error) {
+                addLogEntry(`Error during ${action}: ${error.message}`, 'error');
+            } finally {
+                loading.classList.remove('active');
+            }
+        }
+        
+        async function simulateAction(action) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Update mock data based on action
+            const sections = Object.keys(statusData.sections);
+            
+            switch(action) {
+                case 'analyze':
+                    sections.forEach(s => {
+                        if (!statusData.sections[s].analyzed) {
+                            statusData.sections[s].analyzed = true;
+                            statusData.sections[s].analyzedAt = new Date().toISOString();
+                            statusData.stats.analyzed++;
+                        }
+                    });
+                    break;
+                case 'improve':
+                    sections.forEach(s => {
+                        if (statusData.sections[s].analyzed && !statusData.sections[s].improved) {
+                            statusData.sections[s].improved = true;
+                            statusData.sections[s].improvedAt = new Date().toISOString();
+                            statusData.stats.improved++;
+                        }
+                    });
+                    break;
+                case 'review':
+                    // Would open review interface
+                    window.open('improvements/unified_dashboard.html', '_blank');
+                    break;
+                case 'implement':
+                    sections.forEach(s => {
+                        if (statusData.sections[s].reviewed && !statusData.sections[s].implemented) {
+                            statusData.sections[s].implemented = true;
+                            statusData.sections[s].implementedAt = new Date().toISOString();
+                            statusData.stats.implemented++;
+                        }
+                    });
+                    break;
+            }
+        }
+        
+        function runSectionAction(section, action) {
+            closeModal();
+            addLogEntry(`Running ${action} for ${formatSectionName(section)}...`, 'info');
+            // In production, would run actual command for specific section
+            runAction(action);
+        }
+        
+        function openReview(section) {
+            closeModal();
+            window.open(`improvements/sections/${section}_review.html`, '_blank');
+        }
+        
+        function confirmReset() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                addLogEntry('Resetting all progress...', 'warning');
+                // In production, would call npm run reset
+                location.reload();
+            }
+        }
+        
+        function refreshStatus() {
+            addLogEntry('Refreshing status...', 'info');
+            // In production, would fetch from status.json
+            updateStats();
+            renderSections();
+        }
+        
+        // Auto-refresh every 30 seconds
+        setInterval(refreshStatus, 30000);
+        
+        // Initialize
+        updateStats();
+        renderSections();
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'r':
+                        e.preventDefault();
+                        refreshStatus();
+                        break;
+                    case '1':
+                        e.preventDefault();
+                        runAction('analyze');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        runAction('improve');
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        runAction('review');
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        runAction('implement');
+                        break;
+                }
+            }
+        });
+        
+        // Add keyboard shortcut hints
+        addLogEntry('Keyboard shortcuts: Ctrl+R (refresh), Ctrl+1-4 (run actions)', 'info');
+    </script>
+</body>
+</html>

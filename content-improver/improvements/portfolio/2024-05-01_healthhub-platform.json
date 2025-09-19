@@ -1,0 +1,32 @@
+{
+  "id": "healthhub-platform",
+  "title": "HealthHub Medical Platform",
+  "category": "Healthcare Tech",
+  "description": "Telemedicine platform revolutionizing patient care with AI-powered diagnostics and seamless doctor consultations.",
+  "createdDate": "2024-05-01",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/healthhub-platform.jpg",
+  "tags": [
+    "Healthcare",
+    "Telemedicine",
+    "AI",
+    "Mobile App",
+    "HIPAA Compliant"
+  ],
+  "client": "HealthHub Technologies",
+  "year": "2024",
+  "duration": "16 weeks",
+  "challenge": "HealthHub needed a HIPAA-compliant telemedicine platform that could handle video consultations, prescription management, and health records while being accessible to elderly patients and those with limited tech experience.",
+  "solution": "We created an intuitive platform with one-click video consultations, AI symptom checker, and integrated pharmacy network. The design uses calming colors, large touch targets, and voice navigation options for accessibility.",
+  "results": [
+    "1 million+ virtual consultations completed",
+    "Average consultation wait time reduced to 5 minutes",
+    "95% patient satisfaction score",
+    "Reduced healthcare costs by 40% for partner clinics",
+    "FDA approval for AI diagnostic assistant"
+  ],
+  "liveUrl": "https://healthhub.medical",
+  "images": []
+}

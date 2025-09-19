@@ -1,0 +1,61 @@
+{
+  "pricing": {
+    "eyebrow": "2025 Founding Member Deals",
+    "title": "Reliable Creative Help — At Prices That Empower",
+    "description": "Be part of our founding crew and access top-notch creative help at rates non-profits love.",
+    "plan": {
+      "name": "Impact Maker Membership",
+      "standardPrice": "\t£2,499",
+      "firstYearPrice": "£1,499",
+      "firstYearDiscount": "40% off",
+      "lifetimePrice": "£1,999",
+      "lifetimeDiscount": "20% off",
+      "period": "per month",
+      "stripePriceIdFirstYear": "price_1RH2QCP3PqPfy1jMN2bAn90J",
+      "stripePriceIdStandard": "price_1RH2QCP3PqPfy1jMbS2yn4ns"
+    },
+    "features": [
+      {
+        "title": "Unlimited design work",
+        "description": "Flyers to campaigns, we've got you covered"
+      },
+      {
+        "title": "72-hour turnarounds",
+        "description": "Quick service to meet your deadlines"
+      },
+      {
+        "title": "Editable newsletter & social templates",
+        "description": "Ready-to-use, tweakable in Canva"
+      },
+      {
+        "title": "Every type of graphic",
+        "description": "Print, email, web — all sorted"
+      },
+      {
+        "title": "Monthly strategy sessions",
+        "description": "We're your on-call creative team"
+      },
+      {
+        "title": "Real-time analytics dashboard",
+        "description": "Track success, focus efforts"
+      },
+      {
+        "title": "Open team collaboration",
+        "description": "Your entire crew can join in"
+      },
+      {
+        "title": "Frontline support",
+        "description": "Quick answers, no waiting"
+      }
+    ],
+    "guarantees": [
+      "100% Happy-Or-It's-Free Promise",
+      "No Strings Attached",
+      "Easy Cancel Anytime"
+    ],
+    "cta": {
+      "primary": "Claim Your Spot in the 2025 Crew",
+      "secondary": "Schedule a Chat"
+    }
+  }
+}

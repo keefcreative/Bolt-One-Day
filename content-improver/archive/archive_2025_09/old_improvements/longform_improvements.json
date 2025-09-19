@@ -1,0 +1,63 @@
+[
+  {
+    "file": "weBelieve.json",
+    "field": "philosophy.description",
+    "type": "philosophy",
+    "original": "We believe exceptional design shouldn't be a luxury reserved for Fortune 500 companies. Every business, regardless of size, deserves access to the kind of thoughtful, strategic design that transforms brands and drives results.",
+    "improved": "Here's what we truly believe: Great design isn't just for the big shots with deep pockets. Whether you're running a start-up from your garage or leading a small team with big dreams, you should have the chance to nail that first impression with design that speaks volumes. Because let's face it, when design gets it right, it's not just about looking good—it's about connecting, making an impact, and moving things forward.",
+    "issues": [
+      "Contains jargon: strategic"
+    ],
+    "changed": true,
+    "originalWordCount": 33,
+    "improvedWordCount": 71
+  },
+  {
+    "file": "weBelieve.json",
+    "field": "founderMessage.quotes[0]",
+    "type": "founder_story",
+    "original": "I started DesignWorks with a simple conviction: that good design has the power to level the playing field. I've watched too many brilliant businesses struggle to communicate their value because they couldn't access the kind of strategic design that their larger competitors take for granted.",
+    "improved": "So here's how it all started. Picture this: I'm just like you, sitting on the other side of the table, sipping my coffee and thinking, why is it that only the big guns get to look good? I've seen way too many awesome small businesses, with ideas that could blow your mind, barely making a ripple. Why? Because they didn't have the means to jazz up their look with that slick design touch. It just didn't sit right with me.\n\nThat’s when DesignWorks popped into my head. I was dead set on this idea - good design shouldn’t be this exclusive club where only the heavy hitters can play. It’s like, why can’t the little guy have a shot at looking great and telling their story in a way that actually sticks? I’ve watched too many brilliant businesses, people putting their heart and soul into their work, struggle to shout above the noise, all because they couldn’t wrap their head around or afford the kind of design magic their massive competitors were throwing cash at like it was nothing.\n\nSo, yeah, that’s where my journey began. With a simple belief that good design, the kind that actually gets people to sit up and take notice, should be within reach for everyone. It’s not just about making things look pretty. It’s about leveling the playing field, giving those underdogs a fighting chance. That’s what I wanted to do, and that’s what DesignWorks is all about.",
+    "issues": [
+      "Contains jargon: strategic"
+    ],
+    "changed": true,
+    "originalWordCount": 45,
+    "improvedWordCount": 242
+  },
+  {
+    "file": "weBelieve.json",
+    "field": "founderMessage.quotes[1]",
+    "type": "value_prop",
+    "original": "Our subscription model isn't just about convenience—it's about democratising access to world-class creative services. Whether you're a startup founder bootstrapping your dream or an established company ready to scale, you deserve design that doesn't just look good, but works strategically for your business.",
+    "improved": "Here's the real deal: our subscription isn't just another convenient service. It’s about knocking down those high gates so everyone can get their hands on top-notch creative magic. Imagine you’re kickstarting your dream project or you’re at the helm of a growing business – you need design that’s more than just pretty pictures. You need design that hustles as hard as you do, pushing your vision forward. That’s what we’re here for. Because great design shouldn’t be a luxury; it should be a part of your toolkit, no matter where you're at in your journey.",
+    "issues": [
+      "Contains jargon: strategic, world-class, democratising"
+    ],
+    "changed": true,
+    "originalWordCount": 43,
+    "improvedWordCount": 95
+  },
+  {
+    "file": "solutions.json",
+    "field": "solutions[0].description",
+    "type": "service_description",
+    "original": "Professional design that competes with the big players without the big budget. Cost-effective solutions with quick turnaround times that scale as you grow.",
+    "improved": "Picture this: Your designs are so slick, so spot on, that when customers see them, they think you're playing in the big leagues. But here’s the kicker – you’re not draining your bank account to get there. We’re talking top-notch design work that fits right into your budget, not the other way around.\n\nAnd the best part? You won’t be twiddling your thumbs, waiting forever to see your brand come to life. We’re all about getting you what you need, fast, so you can move at the speed of your business. As your company grows and evolves, our services flex right along with you, making sure your design game is always strong, without missing a beat.\n\nIn short, you get to look like a heavyweight contender, without the heavyweight costs, and with all the agility of a startup ready to take on the world.",
+    "issues": [],
+    "changed": true,
+    "originalWordCount": 23,
+    "improvedWordCount": 142
+  },
+  {
+    "file": "weBelieve.json",
+    "field": "values[1].description",
+    "type": "value_statement",
+    "original": "We don't just execute—we collaborate as an extension of your team with genuine investment in your success.",
+    "improved": "Here's the real scoop: When we jump into your world, we're not just another vendor ticking off tasks on a checklist. No, we're rolling up our sleeves, diving into the trenches with you, because your win is our win. Think of us as that teammate who's got your back, brainstorming with you at midnight, and celebrating your victories like they're our own. Because, at the end of the day, your success is what gets us out of bed in the morning.",
+    "issues": [],
+    "changed": true,
+    "originalWordCount": 17,
+    "improvedWordCount": 81
+  }
+]

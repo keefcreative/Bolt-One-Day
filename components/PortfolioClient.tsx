@@ -4,31 +4,9 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import PortfolioModal from './PortfolioModal'
+import { limitTags } from '@/lib/portfolio-validation'
+import { PortfolioProject, PortfolioData } from '@/types/portfolio'
 
-interface PortfolioProject {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  tags: string[];
-  featured: boolean;
-  layoutConfig?: {
-    position: number;
-    span: string;
-    size: string;
-    featured: boolean;
-    containerClass: string;
-  };
-  [key: string]: any;
-}
-
-interface PortfolioData {
-  eyebrow: string;
-  title: string;
-  description: string;
-  projects: PortfolioProject[];
-}
 
 interface PortfolioClientProps {
   portfolioData: PortfolioData;
@@ -164,13 +142,13 @@ export default function PortfolioClient({ portfolioData }: PortfolioClientProps)
                       }`}>
                         {project.title}
                       </h3>
-                      <p className={`text-white/90 font-light leading-[1.6] mb-4 ${
+                      <p className={`text-white/90 font-light leading-[1.6] mb-4 line-clamp-2 ${
                         index === 0 ? 'text-base' : 'text-sm'
                       }`}>
-                        {project.description}
+                        {project.briefDescription || project.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {project.tags.slice(0, index === 0 ? 5 : 2).map((tag, tagIndex) => (
+                        {limitTags(project.tags, index === 0 ? 'featured' : index === 1 ? 'large' : 'small').map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
                             className={`bg-white/20 backdrop-blur-sm text-white font-light ${
@@ -223,11 +201,11 @@ export default function PortfolioClient({ portfolioData }: PortfolioClientProps)
                       <h3 className="font-light text-white mb-3 group-hover:text-coral transition-colors duration-400 text-lg">
                         {project.title}
                       </h3>
-                      <p className="text-white/90 font-light leading-[1.6] mb-4 text-sm">
-                        {project.description}
+                      <p className="text-white/90 font-light leading-[1.6] mb-4 text-sm line-clamp-2">
+                        {project.briefDescription || project.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {project.tags.slice(0, 2).map((tag, tagIndex) => (
+                        {limitTags(project.tags, 'small').map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
                             className="bg-white/20 backdrop-blur-sm text-white font-light px-2 py-1 text-xs"

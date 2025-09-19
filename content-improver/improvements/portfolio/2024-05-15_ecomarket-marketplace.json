@@ -1,0 +1,32 @@
+{
+  "id": "ecomarket-marketplace",
+  "title": "EcoMarket Sustainable Marketplace",
+  "category": "E-commerce",
+  "description": "Eco-friendly marketplace platform connecting conscious consumers with sustainable brands and products.",
+  "createdDate": "2024-05-15",
+  "featured": false,
+  "draft": false,
+  "priority": null,
+  "image": "/images/portfolio/ecomarket-marketplace.jpg",
+  "tags": [
+    "E-commerce",
+    "Sustainability",
+    "Marketplace",
+    "Mobile-First",
+    "Green Tech"
+  ],
+  "client": "EcoMarket",
+  "year": "2024",
+  "duration": "12 weeks",
+  "challenge": "EcoMarket wanted to create a trusted platform for sustainable products that could verify eco-credentials while providing a seamless shopping experience. They needed to differentiate from conventional e-commerce with transparency and impact tracking.",
+  "solution": "We built a marketplace with blockchain-verified sustainability certificates, carbon footprint calculator for each purchase, and gamified rewards for eco-friendly choices. The design emphasizes natural elements with earthy tones and organic shapes.",
+  "results": [
+    "500+ verified sustainable brands onboarded",
+    "120% increase in average order value",
+    "2 million pounds of CO2 offset tracked",
+    "Featured in TechCrunch and Forbes",
+    "B-Corp certification achieved"
+  ],
+  "liveUrl": "https://ecomarket.earth",
+  "images": []
+}

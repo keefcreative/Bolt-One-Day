@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "DesignWorks",
+    "logo": "/logo.svg"
+  },
+  "items": [
+    {
+      "label": "What We Do",
+      "href": "#services"
+    },
+    {
+      "label": "Our Philosophy",
+      "href": "#we-believe"
+    },
+    {
+      "label": "Our Crew",
+      "href": "#team"
+    },
+    {
+      "label": "Our Wins",
+      "href": "#portfolio"
+    },
+    {
+      "label": "Your Investment",
+      "href": "#pricing"
+    },
+    {
+      "label": "Got Questions?",
+      "href": "#faq"
+    },
+    {
+      "label": "Say Hello",
+      "href": "#contact"
+    }
+  ],
+  "cta": {
+    "text": "Start Real Impact",
+    "href": "/design-for-good",
+    "type": "primary"
+  },
+  "tertiaryCta": {
+    "text": "Schedule Your Chat",
+    "href": "https://meet.brevo.com/designworksbureau",
+    "type": "external"
+  }
+}

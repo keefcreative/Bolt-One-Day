@@ -1,0 +1,21 @@
+{
+  "finalCta": {
+    "eyebrow": "2025 Founding Cohort \n– 10 Spots Open",
+    "title": "Make Your Mission Shine Big as Your Dreams",
+    "description": "Tons of nonprofits drive change but juggle tight resources and design support. That's why **Design for Good** exists.",
+    "subtitle": "Hop into our founding cohort for expert creative aid without the ties — just pure design that amplifies your impact.",
+    "primaryCta": {
+      "text": "Secure Your Spot",
+      "href": "#pricing"
+    },
+    "secondaryCta": {
+      "text": "Grab a Free Strategy Chat",
+      "href": "https://meet.brevo.com/designworksbureau"
+    },
+    "guarantees": [
+      "100% Happy or It's on Us",
+      "No Forever Ties",
+      "Leave When You Need"
+    ]
+  }
+}

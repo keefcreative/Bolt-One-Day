@@ -1,0 +1,205 @@
+{
+  "brandName": "DesignWorks Bureau",
+  "voiceDescription": "Gary Vaynerchuk's urgency & honesty + Rory Sutherland's balance & credibility",
+  
+  "voicePillars": {
+    "honest": {
+      "keywords": ["plain", "direct", "transparent", "clear", "truth", "real", "straightforward"],
+      "description": "We speak plainly. No jargon, no fluff. We admit limits, trade-offs, and realities of design."
+    },
+    "principled": {
+      "keywords": ["values", "fairness", "accessibility", "impact", "right", "clarity", "trust"],
+      "description": "We believe good design is a right, not a luxury. We frame decisions in terms of values."
+    },
+    "human": {
+      "keywords": ["stories", "empathy", "approachable", "real", "understand", "pressure", "together"],
+      "description": "We share stories and examples that make design approachable. We empathize with client pressures."
+    },
+    "balanced": {
+      "keywords": ["thoughtful", "structured", "realistic", "steady", "strategic", "grounded", "measured"],
+      "description": "We mix urgency with reassurance. We show that bold creativity must coexist with careful strategy."
+    }
+  },
+  
+  "toneSettings": {
+    "marketing": {
+      "name": "Inspire/Rally",
+      "description": "Bold, punchy, emotional",
+      "characteristics": ["short sentences", "emotional appeals", "urgent language", "direct CTAs"],
+      "example": "Don't settle for design that gets ignored. Work with a team that fights for your brand."
+    },
+    "educational": {
+      "name": "Educate/Explain",
+      "description": "Structured, insightful, contextual",
+      "characteristics": ["longer explanations", "logical flow", "evidence-based", "teaching tone"],
+      "example": "Great design is never decoration. It's how your audience decides to trust you."
+    },
+    "support": {
+      "name": "Support/Reassure",
+      "description": "Empathetic, steady, encouraging",
+      "characteristics": ["reassuring language", "empathetic tone", "steady pace", "supportive phrases"],
+      "example": "Don't worry about chasing freelancers—we've got this covered every month."
+    },
+    "challenge": {
+      "name": "Challenge/Critique",
+      "description": "Direct but respectful",
+      "characteristics": ["honest feedback", "constructive criticism", "respectful challenges", "solution-focused"],
+      "example": "This design works—but only if your goal is attention. If you need trust, we'll need to rethink."
+    }
+  },
+  
+  "contentTypeTones": {
+    "hero": "marketing",
+    "cta": "marketing",
+    "pricing": "educational",
+    "services": "educational",
+    "portfolio": "educational",
+    "testimonials": "support",
+    "team": "support",
+    "contact": "support",
+    "faq": "educational",
+    "blog": "educational"
+  },
+  
+  "signaturePhrases": [
+    "Design that works",
+    "Good design. Every month. No drama.",
+    "Stop buying design that doesn't work",
+    "Not pretty. Powerful.",
+    "We've got you covered",
+    "Let's be clear",
+    "Every design choice costs something",
+    "We work with you, not just for you",
+    "Design that gets remembered",
+    "Works as hard as you do",
+    "No chasing freelancers",
+    "Simple, honest, creative",
+    "Design is how people decide",
+    "Impact before decoration",
+    "Clarity beats clutter"
+  ],
+  
+  "powerWords": {
+    "action": ["start", "get", "build", "create", "transform", "fight", "deliver", "make", "stop", "fix"],
+    "trust": ["honest", "clear", "reliable", "steady", "principled", "truth", "real", "transparent"],
+    "impact": ["works", "delivers", "powerful", "effective", "results", "matters", "counts", "lasts"],
+    "emotion": ["tired", "frustrated", "proud", "confident", "secure", "inspired", "excited"],
+    "urgency": ["now", "today", "immediately", "stop", "start", "don't wait", "every day"]
+  },
+  
+  "forbiddenJargon": [
+    "synergy",
+    "leverage",
+    "optimize",
+    "scalable methodology",
+    "underpinned",
+    "holistic",
+    "paradigm",
+    "ecosystem",
+    "best-in-class",
+    "cutting-edge",
+    "revolutionary",
+    "disruptive",
+    "game-changing",
+    "world-class",
+    "next-generation",
+    "seamless",
+    "robust",
+    "innovative",
+    "dynamic",
+    "actionable insights",
+    "move the needle",
+    "low-hanging fruit",
+    "circle back",
+    "touch base",
+    "bandwidth",
+    "core competencies",
+    "value-add",
+    "thought leadership"
+  ],
+  
+  "jargonReplacements": {
+    "synergy": "working together",
+    "leverage": "use",
+    "optimize": "improve",
+    "scalable": "grows with you",
+    "holistic": "complete",
+    "paradigm": "approach",
+    "ecosystem": "system",
+    "best-in-class": "excellent",
+    "cutting-edge": "modern",
+    "revolutionary": "new",
+    "disruptive": "different",
+    "game-changing": "important",
+    "world-class": "excellent",
+    "next-generation": "new",
+    "seamless": "smooth",
+    "robust": "strong",
+    "innovative": "creative",
+    "dynamic": "flexible",
+    "actionable insights": "useful information",
+    "move the needle": "make a difference",
+    "low-hanging fruit": "easy wins",
+    "circle back": "follow up",
+    "touch base": "check in",
+    "bandwidth": "time",
+    "core competencies": "what we do best",
+    "value-add": "benefit",
+    "thought leadership": "expertise"
+  },
+  
+  "sentenceStructureRules": {
+    "headlines": {
+      "maxWords": 8,
+      "preferredStructure": "short and punchy",
+      "examples": ["Good design. Every month. No drama.", "Stop buying design that doesn't work"]
+    },
+    "subheadlines": {
+      "minWords": 10,
+      "maxWords": 25,
+      "preferredStructure": "explanatory but concise",
+      "examples": ["We deliver creative that's clear, on-brand, and ready to use"]
+    },
+    "bodyCopy": {
+      "sentenceVariation": "alternate short and long",
+      "paragraphLength": "2-4 sentences",
+      "readingLevel": "grade 8-10"
+    },
+    "ctas": {
+      "maxWords": 5,
+      "mustInclude": "action verb",
+      "examples": ["Start your subscription", "Get started now", "See how it works"]
+    }
+  },
+  
+  "voiceTechniques": {
+    "repetition": {
+      "description": "Use repetition for emphasis",
+      "example": "design that works, design that lasts, design that grows with you"
+    },
+    "contrast": {
+      "description": "Use contrast to make points",
+      "example": "Pretty isn't the goal—powerful is"
+    },
+    "directAddress": {
+      "description": "Speak directly to the reader",
+      "example": "Here's what this means for your business"
+    },
+    "admitTradeoffs": {
+      "description": "Be honest about limitations",
+      "example": "Every design choice costs something. Our job is to help you spend wisely"
+    },
+    "collectiveLanguage": {
+      "description": "Use inclusive 'we' language",
+      "example": "We work with you, not just for you"
+    }
+  },
+  
+  "qualityMetrics": {
+    "voiceConsistencyThreshold": 0.8,
+    "jargonTolerancePercent": 2,
+    "powerWordMinimumPercent": 5,
+    "sentenceVariationTarget": 0.5,
+    "signaturePhraseFrequency": "1 per 200 words"
+  }
+}

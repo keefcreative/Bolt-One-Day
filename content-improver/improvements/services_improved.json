@@ -1,0 +1,45 @@
+{
+  "services": {
+    "eyebrow": "Design Without The Drama",
+    "title": "Design That Actually Converts",
+    "description": "From brand visuals to digital presence, we grow your business with professional design that turns heads.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Brand Identity",
+        "description": "Full brand kits with logos, guides, and more that truly capture your business spirit.",
+        "icon": "Palette"
+      },
+      {
+        "number": "02",
+        "title": "Web Design",
+        "description": "Websites that convert visitors into buyers with top-notch design and easy navigation.",
+        "icon": "Monitor"
+      },
+      {
+        "number": "03",
+        "title": "Digital Marketing",
+        "description": "Engaging social media posts, ad visuals, and marketing assets that boost your results.",
+        "icon": "Megaphone"
+      },
+      {
+        "number": "04",
+        "title": "Print Design",
+        "description": "Impressive business cards, brochures, and print pieces that leave a durable impact.",
+        "icon": "FileText"
+      },
+      {
+        "number": "05",
+        "title": "UI/UX Design",
+        "description": "Smooth user interfaces and experiences that keep users coming back and meet your goals.",
+        "icon": "Smartphone"
+      },
+      {
+        "number": "06",
+        "title": "Packaging Design",
+        "description": "Eye-popping packaging that makes a statement on shelves and offers unforgettable unboxing moments.",
+        "icon": "Package"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "problems": {
+    "eyebrow": "The Real Cost of Skimping on Design",
+    "title": "Skimping on Design Costs More Than You Realize",
+    "description": "Many nonprofits lack pro design support, so they settle. Yet, DIY efforts have a hidden toll: missed donations, wasted time, and dwindling trust. That's precisely why we kickstarted Design for Good.",
+    "subtitle": "We've witnessed the struggle — we're here to fix that.",
+    "issues": [
+      {
+        "title": "Eroded Donor Confidence",
+        "description": "Make-do visuals slash donor confidence by up to 68%"
+      },
+      {
+        "title": "Hours Down the Drain",
+        "description": "Teams lose 7+ hours a week on DIY design tasks"
+      },
+      {
+        "title": "Diminished Effect",
+        "description": "Off-brand attempts knock down campaign results by 35%"
+      }
+    ],
+    "beforeImage": "/images/design-for-good/before-image.jpg",
+    "afterImage": "/images/design-for-good/after-image.jpg"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "philosophy": {
+    "eyebrow": "Our Philosophy",
+    "title": "Everyone Deserves<br />Good Design",
+    "titleHighlight": "Good Design",
+    "description": "We stand by the fact that excellent design isn't just for the big leagues. Every business, big or small, should get the kind of impactful, no-BS design that changes games and boosts results."
+  },
+  "founderMessage": {
+    "eyebrow": "Message from the Founder",
+    "title": "Design as a Force for Good",
+    "quotes": [
+      "Launching DesignWorks, I was driven by one belief: good design levels the playing field. I've seen too many sharp businesses flounder, unable to share their message, simply because they didn't have access to the results-driven design their massive rivals did.",
+      "Our subscription isn't just handy—it breaks down doors to professional creative services for all. Whether you're a bootstrapped startup or a grow-ready company, you deserve design that's not only eye-catching but genuinely bolsters your business.",
+      "Every project, from minor logo adjustments to full brand makeovers, is steered by this mission. Because when good design is within reach for everyone, we craft a more careful, more stunning world together."
+    ],
+    "founder": {
+      "name": "Keith Hodgetts",
+      "title": "Founder & Creative Director",
+      "image": "/images/founders/keith-hodgetts.jpg",
+      "altText": "Keith Hodgetts, Founder & Creative Director"
+    }
+  },
+  "values": [
+    {
+      "title": "Accessible Excellence",
+      "description": "Professional design services without the high-end agency fees or long-term contracts."
+    },
+    {
+      "title": "Strategic Partnership",
+      "description": "We're not just doers—we're your team, truly invested in seeing you win."
+    },
+    {
+      "title": "Lasting Impact",
+      "description": "We make each design choice with your future growth and brand's journey in mind."
+    }
+  ]
+}

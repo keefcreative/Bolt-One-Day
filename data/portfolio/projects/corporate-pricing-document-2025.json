@@ -1,0 +1,44 @@
+{
+  "id": "corporate-pricing-document-2025",
+  "title": "2025 Corporate Pricing Document Optimization",
+  "category": "Print Design",
+  "briefDescription": "Sales document optimization enhancing pricing clarity and fixing inconsistencies to support deal closure conversations.",
+  "description": "Pricing documents either help sales teams close deals or create confusion that kills them. We optimized this 2025 corporate pricing document to enhance clarity, fix inconsistencies, and support sales conversations with professional presentation.",
+  "createdDate": "2025-08-19",
+  "featured": true,
+  "draft": false,
+  "priority": 8,
+  "image": "/images/portfolio/corporate-pricing-document-2025.jpg",
+  "tags": ["Sales Documentation", "Corporate Materials", "Pricing Strategy", "B2B Sales Support"],
+  "client": "Corporate Sales Team",
+  "year": "2025", 
+  "duration": "1 week",
+  "industry": "Automotive",
+  "location": "UK",
+  "projectType": "Content Strategy",
+  "challenge": "The 2025 corporate pricing document had problems that would confuse clients and frustrate sales teams. Needed to add 'Manual Car (Auto + £4)' heading without breaking existing column structure. Background colors for hybrid and electric sections were inconsistent with overall design. These might seem small, but pricing documents need precision—confusion kills deals.",
+  "solution": "Careful restructuring to accommodate new pricing heading while preserving existing layout integrity. Corrected background color inconsistencies to create unified visual design throughout document. Prepared dual-format delivery—InDesign source file for future editing flexibility and presentation-ready PDF for immediate client meetings. Every detail focused on sales team effectiveness.",
+  "results": [
+    "Successfully integrated new pricing structure without disrupting layout",
+    "Achieved visual consistency enhancing professional client presentation",
+    "Improved pricing clarity directly supporting sales team deal-closing ability",
+    "Dual-format delivery providing immediate use and future editing capability",
+    "Enhanced corporate brand standards maintaining professional appearance",
+    "Streamlined sales process through clearer pricing communication"
+  ],
+  "services": [
+    "Sales Documentation Optimization",
+    "Corporate Pricing Strategy Support",
+    "Business Document Design",
+    "Sales Team Resource Development"
+  ],
+  "brandMessage": "Pricing documents are sales tools, not just information sheets. Every design decision should make the sales conversation easier, not harder.",
+  "whatWeLearned": "Small inconsistencies in business documents create big problems in sales conversations. Professional presentation supports deal closure and builds client confidence.",
+  "liveUrl": "https://trello.com/c/Mu3YFH6L/260-260corp-acct-pricing-2025",
+  "images": [
+    "/images/portfolio/corporate-pricing-document-2025/pricing-layout-improvements.jpg",
+    "/images/portfolio/corporate-pricing-document-2025/color-consistency-fix.jpg",
+    "/images/portfolio/corporate-pricing-document-2025/indesign-pdf-formats.jpg",
+    "/images/portfolio/corporate-pricing-document-2025/sales-presentation-ready.jpg"
+  ]
+}

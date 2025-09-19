@@ -1,0 +1,39 @@
+{
+  "header": {
+    "eyebrow": "Solutions",
+    "title": "Fits All Business Sizes",
+    "description": "Our design subscription molds to your unique journey and growth stage."
+  },
+  "solutions": [
+    {
+      "icon": "Building2",
+      "title": "SMEs",
+      "description": "Design that punches above its weight, without draining your wallet. Affordable, quick-to-ship solutions that scale with your hustle."
+    },
+    {
+      "icon": "Rocket",
+      "title": "Start-ups",
+      "description": "Kick off with designs that draw investors and clients. MVP-ready visuals, convincing pitch materials, and a flexible plan that gets it."
+    },
+    {
+      "icon": "Users",
+      "title": "Marketing Teams",
+      "description": "Boost your team with unlimited design firepower when you need it. From campaign visuals to social buzz, we've got your back."
+    },
+    {
+      "icon": "Building",
+      "title": "Enterprises",
+      "description": "Simplify your design process across teams with our dedicated squad. Manage multiple brands smoothly with top-notch security."
+    },
+    {
+      "icon": "Heart",
+      "title": "Charities",
+      "description": "Amplify your cause with designs that inspire donations and awareness. Enjoy special rates for campaigns and events that make a difference."
+    },
+    {
+      "icon": "Palette",
+      "title": "Creative Agencies",
+      "description": "Boost your agency's output with our behind-the-scenes design help for extra projects. Keep your clients happy while growing your portfolio."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "eyebrow": "Design Without The Drama",
+    "title": "Design That Actually Converts Visitors",
+    "description": "Get professional design that drives real revenue. Unlimited revisions, 48-hour delivery, your dedicated design crew.",
+    "primaryButton": {
+      "text": "Start Today",
+      "href": "#contact"
+    },
+    "secondaryButton": {
+      "text": "See Real Results",
+      "href": "#portfolio"
+    }
+  },
+  "stats": {
+    "items": [
+      {
+        "number": "500+",
+        "label": "Growing Companies"
+      },
+      {
+        "number": "48h",
+        "label": "Average Delivery"
+      },
+      {
+        "number": "99%",
+        "label": "Keep Coming Back"
+      }
+    ]
+  },
+  "analysis": {
+    "improvements": {
+      "eyebrow": {
+        "original": "Premium Design & Development",
+        "improved": "Design Without The Drama",
+        "why": "Uses brand phrase, removes 'premium' (overused), more memorable"
+      },
+      "title": {
+        "original": "Creative Design Solutions That Captivate",
+        "improved": "Design That Actually Converts Visitors",
+        "why": "Outcome-focused (conversion), specific benefit, removes vague 'solutions'"
+      },
+      "description": {
+        "original": "Transform your brand with professional design subscription service. Unlimited requests, fast turnaround, dedicated team.",
+        "improved": "Get professional design that drives real revenue. Unlimited revisions, 48-hour delivery, your dedicated design crew.",
+        "why": "Removed 'transform', added ROI focus, specific timeline, 'crew' is more human than 'team'"
+      },
+      "primaryButton": {
+        "original": "Get Started",
+        "improved": "Start Today",
+        "why": "Creates urgency, more action-oriented"
+      },
+      "secondaryButton": {
+        "original": "View Our Work",
+        "improved": "See Real Results",
+        "why": "Outcome-focused, implies proof/results not just portfolio"
+      },
+      "stats": {
+        "Global Clients": "Growing Companies - More specific and relevant",
+        "Average Delivery": "Kept as is - already clear and specific",
+        "Client Retention": "Keep Coming Back - More human and conversational"
+      }
+    },
+    "wordCount": {
+      "eyebrow": {"original": 4, "improved": 4, "difference": 0},
+      "title": {"original": 5, "improved": 5, "difference": 0},
+      "description": {"original": 18, "improved": 16, "difference": -2},
+      "primaryButton": {"original": 2, "improved": 2, "difference": 0},
+      "secondaryButton": {"original": 3, "improved": 3, "difference": 0},
+      "statsLabels": {"original": [2,2,2], "improved": [2,2,3], "difference": 1}
+    },
+    "psychologyApplied": {
+      "lossAversion": "Focus on revenue being lost without good design",
+      "specificity": "48-hour delivery instead of 'fast'",
+      "socialProof": "500+ growing companies",
+      "outcomesFocus": "Converts visitors, drives revenue, real results"
+    },
+    "brandVoice": {
+      "honest": "Actually converts, real revenue, real results",
+      "principled": "No false urgency, genuine value focus",
+      "human": "Design crew, keep coming back",
+      "balanced": "Professional but approachable tone"
+    }
+  }
+}

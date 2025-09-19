@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "headline": "Transform Your Business",
+    "subheadline": "We help companies grow with premium design solutions",
+    "description": "Our expert team delivers exceptional results for forward-thinking businesses.",
+    "primaryCTA": "Get Started",
+    "secondaryCTA": "Learn More"
+  },
+  "services": [
+    {
+      "id": "web-design",
+      "title": "Web Design",
+      "description": "Beautiful, responsive websites that convert visitors into customers",
+      "features": [
+        "Responsive Design",
+        "SEO Optimized",
+        "Fast Loading"
+      ]
+    },
+    {
+      "id": "branding",
+      "title": "Brand Identity",
+      "description": "Complete brand packages that establish your market presence",
+      "features": [
+        "Logo Design",
+        "Brand Guidelines",
+        "Marketing Materials"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "client-1",
+      "name": "Sarah Johnson",
+      "company": "TechCorp",
+      "role": "CEO",
+      "content": "The team delivered exceptional results that exceeded our expectations.",
+      "rating": 5
+    }
+  ],
+  "team": [
+    {
+      "id": "team-1",
+      "name": "John Smith",
+      "role": "Creative Director",
+      "bio": "10+ years of experience in premium design solutions"
+    }
+  ],
+  "about": {
+    "headline": "About Our Agency",
+    "description": "We are a premium design agency focused on delivering exceptional results for our clients.",
+    "mission": "To help businesses thrive through outstanding design and strategy."
+  }
+}

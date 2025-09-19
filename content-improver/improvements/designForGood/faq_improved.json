@@ -1,0 +1,26 @@
+{
+  "faq": {
+    "eyebrow": "Key Questions",
+    "title": "What You're Curious About: Design for Good Explained",
+    "description": "Trying something new can spark questions. Got more? Let's talk.",
+    "questions": [
+      {
+        "question": "How does the 40% discount work?",
+        "answer": "Early birds score 40% off the first year—only £1,499/month. Stick with us, get 20% off forever after, just £1,999/month. Usual rate? £2,499/month. Real savings, real impact."
+      },
+      {
+        "question": "What types of design work do you handle?",
+        "answer": "Everything you need: fundraising visuals, social posts, newsletters, yearly summaries, event vibes, web graphics, prints, and more. If it's for a good cause, we're on it."
+      },
+      {
+        "question": "How fast do you deliver designs?",
+        "answer": "48 hours for most things. Bigger projects? We'll talk deadlines upfront and keep you clued in. Speed without sacrificing quality."
+      },
+      {
+        "question": "Is there a limit to design requests?",
+        "answer": "Never a cap. Fire away as many asks as you've got. We tackle them one by one for top-notch results, with a line forming in your queue."
+      }
+    ],
+    "contactCta": "Questions? Get in touch right here"
+  }
+}
