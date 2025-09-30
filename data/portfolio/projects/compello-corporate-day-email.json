@@ -9,9 +9,14 @@
   "draft": false,
   "priority": 3,
   "image": "/images/portfolio/compello-corporate-day-email.jpg",
-  "tags": ["Email Design", "Event Marketing", "Corporate Hospitality", "Client Engagement"],
+  "tags": [
+    "Email Design",
+    "Event Marketing",
+    "Corporate Hospitality",
+    "Client Engagement"
+  ],
   "client": "Compello",
-  "year": "2025", 
+  "year": "2025",
   "duration": "1 week",
   "industry": "Professional Services",
   "location": "UK",

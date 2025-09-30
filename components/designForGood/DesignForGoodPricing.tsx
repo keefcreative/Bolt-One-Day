@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import pricingData from '@/data/designForGood/pricing.json'
 
 export default function DesignForGoodPricing() {
@@ -46,12 +47,14 @@ export default function DesignForGoodPricing() {
           <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
             {pricing.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-white">
-            {pricing.title}
-          </h2>
-          <p className="text-lg font-light text-white/80 leading-[1.6] max-w-2xl mx-auto">
-            {pricing.description}
-          </p>
+          <h2
+            className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-white headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(pricing.title) }}
+          />
+          <p
+            className="text-lg font-light text-white/80 leading-[1.6] max-w-2xl mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(pricing.description) }}
+          />
         </div>
 
         {/* Pricing Card */}

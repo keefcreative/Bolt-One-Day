@@ -177,6 +177,25 @@
   .service-card:hover {
     @apply bg-pearl shadow-premium-lg z-10 relative;
   }
+
+  /* Balanced Typography Components */
+  .headline-balanced {
+    @apply text-balance leading-tight tracking-tight;
+    orphans: 2;
+    widows: 2;
+  }
+
+  .body-balanced {
+    @apply text-pretty leading-relaxed;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .description-balanced {
+    @apply text-balance;
+    orphans: 2;
+    widows: 2;
+  }
 }
 
 @layer utilities {
@@ -435,6 +454,20 @@
 
   .animate-fade-in {
     animation: fade-in 0.6s ease-out forwards;
+  }
+
+  /* Typography Line Balance Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .avoid-widows {
+    orphans: 3;
+    widows: 3;
   }
 
   /* Accessibility - Reduce motion */

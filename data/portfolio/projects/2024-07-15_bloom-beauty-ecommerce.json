@@ -9,7 +9,13 @@
   "draft": false,
   "priority": 2,
   "image": "/images/portfolio/bloom-beauty-ecommerce.jpg",
-  "tags": ["Web Design", "E-commerce", "UI/UX", "Mobile Responsive", "Shopify"],
+  "tags": [
+    "Web Design",
+    "E-commerce",
+    "UI/UX",
+    "Mobile Responsive",
+    "Shopify"
+  ],
   "client": "Bloom Beauty",
   "year": "2024",
   "duration": "6 weeks",

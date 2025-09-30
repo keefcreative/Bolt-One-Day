@@ -9,7 +9,13 @@
   "draft": false,
   "priority": 1,
   "image": "/images/portfolio/techflow-rebrand.jpg",
-  "tags": ["Brand Identity", "Logo Design", "Guidelines", "Stationery", "Digital Assets"],
+  "tags": [
+    "Brand Identity",
+    "Logo Design",
+    "Guidelines",
+    "Stationery",
+    "Digital Assets"
+  ],
   "client": "TechFlow Solutions",
   "year": "2024",
   "duration": "8 weeks",

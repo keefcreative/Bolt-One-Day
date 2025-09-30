@@ -10,7 +10,11 @@
         "category": "Brand Identity",
         "description": "Complete brand transformation for a leading tech consultancy",
         "image": "/images/portfolio/techflow-rebrand.jpg",
-        "tags": ["Brand Identity", "Logo Design", "Guidelines"]
+        "tags": [
+          "Brand Identity",
+          "Logo Design",
+          "Guidelines"
+        ]
       },
       {
         "id": "bloom-beauty-ecommerce",
@@ -18,7 +22,11 @@
         "category": "Web Design",
         "description": "Modern e-commerce platform for sustainable beauty brand",
         "image": "/images/portfolio/bloom-beauty-ecommerce.jpg",
-        "tags": ["Web Design", "E-commerce", "UI/UX"]
+        "tags": [
+          "Web Design",
+          "E-commerce",
+          "UI/UX"
+        ]
       },
       {
         "id": "innovatetech-campaign",
@@ -26,7 +34,11 @@
         "category": "Digital Marketing",
         "description": "Comprehensive digital marketing campaign for tech startup",
         "image": "/images/portfolio/innovatetech-campaign.jpg",
-        "tags": ["Digital Marketing", "Social Media", "Campaign"]
+        "tags": [
+          "Digital Marketing",
+          "Social Media",
+          "Campaign"
+        ]
       },
       {
         "id": "artisan-studios-portfolio",
@@ -34,7 +46,11 @@
         "category": "Web Design",
         "description": "Creative portfolio website for design studio",
         "image": "/images/portfolio/artisan-studios-portfolio.jpg",
-        "tags": ["Web Design", "Portfolio", "Creative"]
+        "tags": [
+          "Web Design",
+          "Portfolio",
+          "Creative"
+        ]
       }
     ]
   }

@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react'
 import { Check, Star, AlertTriangle, Clock, Users, TrendingUp } from 'lucide-react'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import brandedPricingData from '@/data/brandedPricing.json'
 
 // Utility function for smooth scrolling (replace with your actual import)
-const scrollToElement = (selector) => {
+const scrollToElement = (selector: string) => {
   const element = document.querySelector(selector)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
@@ -17,7 +18,7 @@ export default function BrandedPricingSection() {
   const { hero, plans, enterprisePlus } = brandedPricingData
 
   const handleGetStarted = async (plan: typeof plans[0] | typeof enterprisePlus) => {
-    if (plan.isCustom) {
+    if ('isCustom' in plan && plan.isCustom) {
       scrollToElement('#contact')
       return
     }
@@ -56,8 +57,8 @@ export default function BrandedPricingSection() {
     padding: '0 2rem'
   }
 
-  const cardStyle = (isPopular) => ({
-    position: 'relative',
+  const cardStyle = (isPopular: boolean) => ({
+    position: 'relative' as const,
     background: 'white',
     padding: '2rem',
     border: isPopular ? '2px solid #ff6b35' : '1px solid rgba(107, 114, 128, 0.2)',
@@ -74,14 +75,14 @@ export default function BrandedPricingSection() {
             {hero.eyebrow}
           </p>
           <h2
-            className="mb-8 text-5xl font-light tracking-tight"
+            className="mb-8 text-5xl font-light tracking-tight headline-balanced"
             style={{ color: '#2c2c2c' }}
-            dangerouslySetInnerHTML={{ __html: hero.title }}
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(hero.title) }}
           />
-          
+
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-xl font-light leading-relaxed mb-6" style={{ color: '#6b7280' }} 
-               dangerouslySetInnerHTML={{ __html: hero.description[0] }} />
+            <p className="text-xl font-light leading-relaxed mb-6 body-balanced" style={{ color: '#6b7280' }}
+               dangerouslySetInnerHTML={{ __html: balanceDescription(hero.description[0]) }} />
             <p className="text-xl font-medium leading-relaxed" style={{ color: '#2c2c2c' }}>
               {hero.description[1]}
             </p>
@@ -268,10 +269,10 @@ export default function BrandedPricingSection() {
                       cursor: 'pointer'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = currentPlan.popular ? '#e55a2b' : '#ff6b35'
+                      (e.target as HTMLButtonElement).style.backgroundColor = currentPlan.popular ? '#e55a2b' : '#ff6b35'
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = currentPlan.popular ? '#ff6b35' : '#2c2c2c'
+                      (e.target as HTMLButtonElement).style.backgroundColor = currentPlan.popular ? '#ff6b35' : '#2c2c2c'
                     }}
                   >
                     {currentPlan.ctaText}
@@ -306,10 +307,10 @@ export default function BrandedPricingSection() {
                 cursor: 'pointer'
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = '#e55a2b'
+                (e.target as HTMLButtonElement).style.color = '#e55a2b'
               }}
               onMouseLeave={(e) => {
-                e.target.style.color = '#ff6b35'
+                (e.target as HTMLButtonElement).style.color = '#ff6b35'
               }}
             >
               Need something bigger? Let's talk.

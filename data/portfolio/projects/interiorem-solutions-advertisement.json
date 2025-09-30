@@ -9,8 +9,13 @@
   "draft": false,
   "priority": 7,
   "image": "/images/portfolio/interiorem-solutions-advertisement.jpg",
-  "tags": ["Trade Advertising", "Interior Design", "Heritage Branding", "B2B Marketing"],
-  "client": "Interiorem Solutions", 
+  "tags": [
+    "Trade Advertising",
+    "Interior Design",
+    "Heritage Branding",
+    "B2B Marketing"
+  ],
+  "client": "Interiorem Solutions",
   "year": "2025",
   "duration": "1 day",
   "industry": "Professional Services",
@@ -23,7 +28,7 @@
     "Compelling 'Custodians of Your Vision' positioning differentiating from competitors",
     "Strategic integration of 90-year heritage messaging building credibility",
     "Professional brand representation supporting Jamie's networking efforts",
-    "Enhanced industry visibility at important commercial interior design event", 
+    "Enhanced industry visibility at important commercial interior design event",
     "Flexible color options maximizing advertisement effectiveness"
   ],
   "services": [

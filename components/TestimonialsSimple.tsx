@@ -1,11 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import testimonialsData from '@/data/testimonials.json'
 
-export default function Testimonials() {
+export default function TestimonialsSimple() {
   const { testimonials } = testimonialsData
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
@@ -43,17 +42,17 @@ export default function Testimonials() {
   const currentTestimonial = testimonials.items[currentIndex]
 
   return (
-    <section id="testimonials" className="section-padding bg-pearl">
+    <section id="testimonials" className="section-padding bg-ink">
       <div className="container-premium">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
             {testimonials.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink">
+          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-white">
             {testimonials.title}
           </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto">
+          <p className="text-lg font-light text-pearl/80 leading-[1.6] max-w-2xl mx-auto">
             {testimonials.description}
           </p>
         </div>
@@ -63,7 +62,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 hover:border-flame hover:text-flame text-white transition-all duration-200 flex items-center justify-center z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
@@ -71,7 +70,7 @@ export default function Testimonials() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white shadow-lg border border-mist hover:border-flame hover:text-flame transition-all duration-200 flex items-center justify-center z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 hover:border-flame hover:text-flame text-white transition-all duration-200 flex items-center justify-center z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
@@ -81,7 +80,7 @@ export default function Testimonials() {
           <div className="p-8 md:p-12 relative">
             {/* Background Quote */}
             <div className="absolute top-8 right-8 opacity-5">
-              <Quote className="w-24 h-24" strokeWidth={1} />
+              <Quote className="w-24 h-24 text-white" strokeWidth={1} />
             </div>
 
             {/* Quote Icon */}
@@ -90,33 +89,24 @@ export default function Testimonials() {
             </div>
 
             {/* Testimonial Content */}
-            <div 
+            <div
               key={currentIndex}
               className="animate-fade-in"
             >
-              <blockquote className="text-2xl md:text-3xl font-light text-ink leading-[1.4] mb-8 relative z-10">
+              <blockquote className="text-2xl md:text-3xl font-light text-white leading-[1.4] mb-8 relative z-10">
                 "{currentTestimonial.quote}"
               </blockquote>
 
-              {/* Author Info */}
-              <div className="flex items-center gap-6">
-                <Image
-                  src={currentTestimonial.avatar}
-                  alt={currentTestimonial.author}
-                  width={80}
-                  height={80}
-                  className="w-16 h-16 md:w-20 md:h-20 object-cover border-2 border-mist"
-                />
-                <div>
-                  <div className="font-medium text-ink text-xl mb-1">
-                    {currentTestimonial.author}
-                  </div>
-                  <div className="text-smoke font-light text-lg mb-1">
-                    {currentTestimonial.position}
-                  </div>
-                  <div className="text-flame font-medium">
-                    {currentTestimonial.company}
-                  </div>
+              {/* Author Info - Without Image */}
+              <div className="flex flex-col gap-2">
+                <div className="font-medium text-white text-xl">
+                  {currentTestimonial.author}
+                </div>
+                <div className="text-pearl/70 font-light text-lg">
+                  {currentTestimonial.position}
+                </div>
+                <div className="text-flame font-medium">
+                  {currentTestimonial.company}
                 </div>
               </div>
             </div>
@@ -130,47 +120,15 @@ export default function Testimonials() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 transition-all duration-300 ${
-                currentIndex === index 
-                  ? 'bg-flame w-8' 
-                  : 'bg-mist hover:bg-flame/50'
+                currentIndex === index
+                  ? 'bg-flame w-8'
+                  : 'bg-white/30 hover:bg-flame/50'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
-
-        {/* Thumbnail Navigation (Optional - for premium feel) */}
-        <div className="hidden md:flex justify-center gap-4 mt-8 overflow-x-auto pb-4">
-          {testimonials.items.map((testimonial, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`flex-shrink-0 flex items-center gap-3 p-3 border transition-all duration-200 ${
-                currentIndex === index
-                  ? 'border-flame bg-whisper'
-                  : 'border-mist bg-white hover:border-flame/50'
-              }`}
-            >
-              <Image
-                src={testimonial.avatar}
-                alt={testimonial.author}
-                width={40}
-                height={40}
-                className="w-10 h-10 object-cover"
-              />
-              <div className="text-left">
-                <div className="font-medium text-ink text-sm">
-                  {testimonial.author}
-                </div>
-                <div className="text-smoke text-xs">
-                  {testimonial.company}
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
       </div>
-
     </section>
   )
 }

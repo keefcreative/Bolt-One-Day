@@ -4,6 +4,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Calendar } from 'lucide-react'
 import contactData from '@/data/contact.json'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 
 const Contact: React.FC = () => {
   const { contact } = contactData
@@ -73,12 +74,14 @@ const Contact: React.FC = () => {
           <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
             {contact.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink">
-            {contact.title}
-          </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto">
-            {contact.description}
-          </p>
+          <h2
+            className="mb-6 text-section font-light tracking-[-0.03em] text-ink headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(contact.title) }}
+          />
+          <p
+            className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(contact.description) }}
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -127,7 +130,10 @@ const Contact: React.FC = () => {
             {/* Calendly Integration */}
             <div className="pt-6 border-t border-mist">
               <h3 className="text-ink font-medium mb-4 text-lg">Book a Consultation</h3>
-              <p className="text-smoke mb-6 leading-relaxed">{contact.consultationDescription}</p>
+              <p
+                className="text-smoke mb-6 leading-relaxed body-balanced"
+                dangerouslySetInnerHTML={{ __html: balanceDescription(contact.consultationDescription) }}
+              />
               <a
                 href={contact.calendlyUrl}
                 target="_blank"

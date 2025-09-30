@@ -5,7 +5,7 @@ import Services from '@/components/Services'
 import WeBelieve from '@/components/WeBelieve'
 import TeamCollective from '@/components/TeamCollective'
 import PortfolioServer from '@/components/PortfolioServer'
-import Testimonials from '@/components/Testimonials'
+import TestimonialsSimple from '@/components/TestimonialsSimple'
 import BrandedPricingSection from '@/components/BrandedPricingSection'
 import SingleProject from '@/components/SingleProject'
 import Solutions from '@/components/Solutions'
@@ -39,7 +39,7 @@ export default function Home() {
         <PremiumDesignProcess />
       </section>
       <section id="testimonials">
-        <Testimonials />
+        <TestimonialsSimple />
       </section>
       <section id="pricing">
         <BrandedPricingSection />

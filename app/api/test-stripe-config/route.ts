@@ -33,7 +33,6 @@ export async function GET() {
         description: product.description,
         active: product.active,
         metadata: product.metadata,
-        features: product.features,
         default_price: product.default_price,
         prices: productPrices.map(price => ({
           id: price.id,
@@ -64,7 +63,7 @@ export async function GET() {
       products: formattedProducts,
       subscription_prices: subscriptionPrices.map(price => ({
         id: price.id,
-        product: typeof price.product === 'object' ? price.product.name : price.product,
+        product: typeof price.product === 'object' && 'name' in price.product ? price.product.name : price.product,
         nickname: price.nickname,
         amount: price.unit_amount ? price.unit_amount / 100 : 0,
         currency: price.currency,
@@ -72,7 +71,7 @@ export async function GET() {
         interval_count: price.recurring?.interval_count
       })),
       config: {
-        api_version: stripe.apiVersion,
+        api_version: '2024-11-20.acacia',
         webhook_configured: !!process.env.STRIPE_WEBHOOK_SECRET,
         publishable_key_configured: !!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
       }

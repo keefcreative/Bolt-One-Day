@@ -25,9 +25,9 @@ import type {
 const execAsync = promisify(exec);
 
 // Extended types for integration layer
-export interface ContentFile extends Omit<ContentFileType, 'data'> {
+export interface ContentFile extends Omit<ContentFileType, 'data' | 'type'> {
   path: string;
-  section: ContentSection;
+  type: ContentSection | 'json';
   lastModified: Date;
   size: number;
   content?: any;
@@ -263,9 +263,12 @@ export class ContentIntegration {
       return this.parseValidationResults(stdout);
     } catch (error) {
       return [{
+        id: `validation-error-${Date.now()}`,
         type: 'structure',
         severity: 'medium',
-        message: `Validation failed for ${filePath}: ${error}`
+        message: `Validation failed for ${filePath}: ${error}`,
+        location: { field: filePath, line: 0, character: 0 },
+        autoFixable: false
       }];
     }
   }
@@ -308,9 +311,22 @@ export class ContentIntegration {
     
     return {
       currentStage: 'idle',
-      progress: 0,
-      filesProcessed: 0,
-      totalFiles: 0,
+      progress: {
+        current: 0,
+        total: 0,
+        percentage: 0
+      },
+      files: {
+        pending: 0,
+        analyzed: 0,
+        improved: 0,
+        reviewed: 0,
+        applied: 0
+      },
+      quality: {
+        averageScore: 0,
+        trend: 'stable'
+      },
       errors: [],
       lastRun: null,
       nextRecommendedAction: 'Run content analysis'
@@ -401,12 +417,15 @@ export const contentOperations = {
 
       return { score, issues };
     } catch (error) {
-      return { 
-        score: 0, 
+      return {
+        score: 0,
         issues: [{
+          id: `quick-check-error-${Date.now()}`,
           type: 'structure',
           severity: 'critical',
-          message: `Quick quality check failed: ${error}`
+          message: `Quick quality check failed: ${error}`,
+          location: { field: 'content', line: 0, character: 0 },
+          autoFixable: false
         }]
       };
     }

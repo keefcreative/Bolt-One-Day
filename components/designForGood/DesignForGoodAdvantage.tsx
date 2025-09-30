@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Percent, Clock, Infinity as InfinityIcon, Heart } from 'lucide-react'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import advantageData from '@/data/designForGood/advantage.json'
 
 const iconMap: { [key: string]: any } = {
@@ -28,16 +29,18 @@ export default function DesignForGoodAdvantage() {
           <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
             {advantage.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
-            {advantage.title}
-          </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-3xl mx-auto">
-            {advantage.description}
-          </p>
+          <h2
+            className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(advantage.title) }}
+          />
+          <p
+            className="text-lg font-light text-smoke leading-[1.6] max-w-3xl mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(advantage.description) }}
+          />
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {advantage.benefits.map((benefit, index) => {
             const IconComponent = iconMap[benefit.title] || Heart
             return (

@@ -69,7 +69,7 @@ export const LAYOUT_CONFIG: PortfolioLayoutConfig[] = [
  * @param {string} filename - e.g., "2024-08-01_techflow-rebrand.json"
  * @returns {Date|null} - parsed date or null if invalid
  */
-function extractDateFromFilename(filename) {
+function extractDateFromFilename(filename: string): Date | null {
   const dateMatch = filename.match(/^(\d{4}-\d{2}-\d{2})_/);
   if (dateMatch) {
     const dateStr = dateMatch[1];
@@ -84,7 +84,7 @@ function extractDateFromFilename(filename) {
  * @param {string} filename - e.g., "2024-08-01_techflow-rebrand.json"
  * @returns {string} - project slug
  */
-function extractSlugFromFilename(filename) {
+function extractSlugFromFilename(filename: string): string {
   const slugMatch = filename.match(/^\d{4}-\d{2}-\d{2}_(.+)\.json$/);
   return slugMatch ? slugMatch[1] : filename.replace('.json', '');
 }
@@ -94,12 +94,12 @@ function extractSlugFromFilename(filename) {
  * @param {string} projectId - project slug
  * @returns {object} - { mainImage, galleryImages }
  */
-function autoDetectImages(projectId) {
+function autoDetectImages(projectId: string): { mainImage: string | null; galleryImages: string[] } {
   const imageDir = path.join(process.cwd(), 'public', 'images', 'portfolio');
   const extensions = ['.jpg', '.jpeg', '.png', '.webp'];
-  
-  let mainImage = null;
-  const galleryImages = [];
+
+  let mainImage: string | null = null;
+  const galleryImages: string[] = [];
   
   // Check for main image with various extensions
   for (const ext of extensions) {
@@ -122,12 +122,12 @@ function autoDetectImages(projectId) {
           galleryImages.push(`/images/portfolio/${projectId}/${file}`);
         });
     } catch (error) {
-      console.warn(`Could not read gallery directory for ${projectId}:`, error.message);
+      console.warn(`Could not read gallery directory for ${projectId}:`, error instanceof Error ? error.message : 'Unknown error');
     }
   }
   
   // Ensure we always have at least 4 images for the modal gallery
-  let finalImages = [];
+  let finalImages: string[] = [];
   
   if (galleryImages.length >= 4) {
     // Use gallery images if we have 4 or more

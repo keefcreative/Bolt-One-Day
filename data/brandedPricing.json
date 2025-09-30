@@ -19,14 +19,14 @@
       "ctaText": "Stop Design Bottlenecks",
       "problemsSolved": [
         "No more 2-week waits for simple graphics",
-        "Stop overpaying freelancers for basic work", 
+        "Stop overpaying freelancers for basic work",
         "End inconsistent brand messaging",
         "Eliminate design revision nightmares",
         "Get professional designs without hiring"
       ],
       "features": [
         "5 design requests per month",
-        "2-day turnaround time", 
+        "2-day turnaround time",
         "Unlimited revisions",
         "Dedicated designer",
         "Email support"
@@ -36,7 +36,7 @@
       "stripePriceId": "price_1PP4M8P3PqPfy1jM3lzwQMmc"
     },
     {
-      "name": "Business", 
+      "name": "Business",
       "tagline": "Scale without hiring",
       "description": "For growing companies that need consistent, fast design output",
       "price": "£1,449",
@@ -46,14 +46,14 @@
       "problemsSolved": [
         "Scale marketing without hiring designers",
         "Maintain brand consistency across teams",
-        "Meet tight campaign deadlines reliably", 
+        "Meet tight campaign deadlines reliably",
         "Reduce design costs by 60% vs hiring",
         "Get strategic design guidance, not just execution"
       ],
       "features": [
         "15 design requests per month",
         "1-day turnaround time",
-        "Unlimited revisions", 
+        "Unlimited revisions",
         "Senior designer",
         "Priority support",
         "Complete brand guidelines"
@@ -67,7 +67,7 @@
       "tagline": "Design at enterprise speed",
       "description": "For companies that need design to move at the pace of business",
       "price": "£2,500",
-      "period": "/month", 
+      "period": "/month",
       "popular": false,
       "ctaText": "Get Enterprise Speed",
       "problemsSolved": [
@@ -81,7 +81,7 @@
         "Unlimited design requests",
         "Same-day turnaround time",
         "Unlimited revisions",
-        "Dedicated design team", 
+        "Dedicated design team",
         "24/7 priority support",
         "Strategic consulting included"
       ],
@@ -107,7 +107,7 @@
       "Unlimited design requests",
       "Same-day turnaround time",
       "Unlimited revisions",
-      "Dedicated design team", 
+      "Dedicated design team",
       "24/7 priority support",
       "Strategic consulting included",
       "4-hour rush turnaround available",

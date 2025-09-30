@@ -9,7 +9,12 @@
   "draft": false,
   "priority": 2,
   "image": "/images/portfolio/4m-drywall-custom-artwork.jpg",
-  "tags": ["Custom Artwork", "Brand Adaptation", "Print Design", "Construction"],
+  "tags": [
+    "Custom Artwork",
+    "Brand Adaptation",
+    "Print Design",
+    "Construction"
+  ],
   "client": "4M DRYWALL",
   "year": "2025",
   "duration": "2 weeks",
@@ -20,7 +25,7 @@
   "solution": "We analyzed the reference, then made it theirs. Swapped yellow for their signature blue steel. Designed a clean header with proper logo placement. Integrated their core message about high-quality drylining for residential markets. Every element served both the technical brief and their brand story. That's how custom work should function—meeting specs while building brand.",
   "results": [
     "Pixel-perfect recreation meeting exact 184mm x 130mm specifications",
-    "Successful brand integration with blue steel color adaptation", 
+    "Successful brand integration with blue steel color adaptation",
     "Professional messaging positioning them in residential markets",
     "Print-ready delivery with proper technical specifications",
     "Custom solution strengthening brand recognition",
@@ -28,7 +33,7 @@
   ],
   "services": [
     "Custom Artwork Development",
-    "Brand Color Integration", 
+    "Brand Color Integration",
     "Technical Production Management",
     "Print Specification Optimization"
   ],

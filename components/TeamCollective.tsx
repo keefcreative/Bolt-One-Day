@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, Rocket, Palette, Globe, Handshake } from 'lucide-react'
+import { balanceHeadline, balanceDescription, balanceText } from '@/lib/typography-utils'
 import teamData from '@/data/team.json'
 
 export default function TeamCollective() {
@@ -18,15 +19,18 @@ export default function TeamCollective() {
       <div className="container-premium">
         {/* Header - Compact */}
         <div className="text-center mb-12">
-          <p className="mb-3 font-medium text-flame text-sm tracking-[0.1em] uppercase">
-            {team.eyebrow}
-          </p>
-          <h2 className="mb-4 text-4xl md:text-5xl font-light tracking-[-0.03em] text-ink">
-            {team.title}
-          </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto">
-            {team.description}
-          </p>
+          <p
+            className="mb-3 font-medium text-flame text-sm tracking-[0.1em] uppercase"
+            dangerouslySetInnerHTML={{ __html: team.eyebrow }}
+          />
+          <h2
+            className="mb-4 text-4xl md:text-5xl font-light tracking-[-0.03em] text-ink headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(team.title) }}
+          />
+          <p
+            className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(team.description) }}
+          />
         </div>
 
         {/* Two Column Layout */}
@@ -34,9 +38,10 @@ export default function TeamCollective() {
 
           {/* Left: Intro & Capabilities */}
           <div>
-            <p className="text-lg font-light text-ink leading-[1.7] mb-8">
-              {team.collective_experience.intro}
-            </p>
+            <p
+              className="text-lg font-light text-ink leading-[1.7] mb-8 body-balanced"
+              dangerouslySetInnerHTML={{ __html: balanceText(team.collective_experience.intro) }}
+            />
 
             <div className="space-y-4">
               {team.collective_experience.capabilities.map((capability, index) => {
@@ -50,12 +55,14 @@ export default function TeamCollective() {
                       {Icon && <Icon className="w-5 h-5 text-flame group-hover:text-white" strokeWidth={1.5} />}
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-ink mb-1 group-hover:text-flame transition-colors duration-300">
-                        {capability.area}
-                      </h3>
-                      <p className="text-smoke font-light text-sm leading-[1.5]">
-                        {capability.description}
-                      </p>
+                      <h3
+                        className="text-lg font-medium text-ink mb-1 group-hover:text-flame transition-colors duration-300"
+                        dangerouslySetInnerHTML={{ __html: balanceText(capability.area) }}
+                      />
+                      <p
+                        className="text-smoke font-light text-sm leading-[1.5]"
+                        dangerouslySetInnerHTML={{ __html: balanceText(capability.description) }}
+                      />
                     </div>
                   </div>
                 )

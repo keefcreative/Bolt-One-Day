@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from 'next/image';
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils';
 import premiumCtaData from '@/data/premiumCta.json'
 
 export function PremiumCta() {
@@ -30,12 +31,12 @@ export function PremiumCta() {
           
           {/* Heading */}
           <h2
-            className="text-[3.5rem] lg:text-[4rem] font-light tracking-[-0.03em] leading-[1.2] mb-8 text-white"
-            dangerouslySetInnerHTML={{ __html: title }}
+            className="text-[3.5rem] lg:text-[4rem] font-light tracking-[-0.03em] leading-[1.2] mb-8 text-white headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(title) }}
           />
-          
+
           {/* Description */}
-          <p className="text-xl font-light text-white/90 leading-[1.8] mb-12 max-w-lg">
+          <p className="text-xl font-light text-white/90 leading-[1.8] mb-12 max-w-lg description-balanced">
             {description}
           </p>
           

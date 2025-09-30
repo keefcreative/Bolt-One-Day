@@ -9,7 +9,12 @@
   "draft": false,
   "priority": 5,
   "image": "/images/portfolio/golf-day-2025-banner.jpg",
-  "tags": ["Event Branding", "Golf Tournament", "Roll-up Banner", "Print Design"],
+  "tags": [
+    "Event Branding",
+    "Golf Tournament",
+    "Roll-up Banner",
+    "Print Design"
+  ],
   "client": "Event Organizers",
   "year": "2025",
   "duration": "1 week",
@@ -34,7 +39,7 @@
   ],
   "brandMessage": "Annual events need design that honors tradition while delivering fresh impact. We create continuity that feels both familiar and exciting.",
   "whatWeLearned": "The best event design evolution maintains what works while improving what matters—atmosphere, recognition, and guest experience. Tradition and innovation can coexist.",
-  "liveUrl": "https://trello.com/c/ZUEcET7d/235-235golf-day-2025-banner", 
+  "liveUrl": "https://trello.com/c/ZUEcET7d/235-235golf-day-2025-banner",
   "images": [
     "/images/portfolio/golf-day-2025-banner/banner-design-elegant.jpg",
     "/images/portfolio/golf-day-2025-banner/dinner-venue-setup.jpg",

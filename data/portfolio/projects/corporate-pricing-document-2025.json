@@ -9,9 +9,14 @@
   "draft": false,
   "priority": 8,
   "image": "/images/portfolio/corporate-pricing-document-2025.jpg",
-  "tags": ["Sales Documentation", "Corporate Materials", "Pricing Strategy", "B2B Sales Support"],
+  "tags": [
+    "Sales Documentation",
+    "Corporate Materials",
+    "Pricing Strategy",
+    "B2B Sales Support"
+  ],
   "client": "Corporate Sales Team",
-  "year": "2025", 
+  "year": "2025",
   "duration": "1 week",
   "industry": "Automotive",
   "location": "UK",

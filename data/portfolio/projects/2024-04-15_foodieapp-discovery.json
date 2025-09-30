@@ -8,7 +8,13 @@
   "draft": false,
   "priority": null,
   "image": "/images/portfolio/foodieapp-discovery.jpg",
-  "tags": ["Mobile App", "iOS", "Android", "AI Recommendations", "Social"],
+  "tags": [
+    "Mobile App",
+    "iOS",
+    "Android",
+    "AI Recommendations",
+    "Social"
+  ],
   "client": "FoodieApp Inc.",
   "year": "2024",
   "duration": "14 weeks",

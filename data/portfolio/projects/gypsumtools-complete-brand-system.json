@@ -9,7 +9,13 @@
   "draft": false,
   "priority": 1,
   "image": "/images/portfolio/gypsumtools-complete-brand-system.jpg",
-  "tags": ["Brand Identity", "Logo Design", "Email Signatures", "Uniform Design", "Social Media"],
+  "tags": [
+    "Brand Identity",
+    "Logo Design",
+    "Email Signatures",
+    "Uniform Design",
+    "Social Media"
+  ],
   "client": "GYPSUMTOOLS",
   "year": "2025",
   "duration": "8 weeks",
@@ -20,7 +26,7 @@
   "solution": "We didn't just redesign—we rebuilt from the ground up. New logo maintaining their bold orange identity but with proper typography and distinction. Then we created the system that makes brands work: strategic brand book, professional email signatures for the whole team, corporate document headers, complete uniform designs, and social media assets optimized for real platforms. Every piece working together.",
   "results": [
     "Complete brand transformation customers immediately noticed",
-    "Professional email signatures for entire 4-person team", 
+    "Professional email signatures for entire 4-person team",
     "Corporate document templates enhancing external communications",
     "Comprehensive uniform system ready for customer-facing staff",
     "Social media presence representing their expertise",
@@ -29,7 +35,7 @@
   ],
   "services": [
     "Brand Strategy & Identity Design",
-    "Email Signature Systems", 
+    "Email Signature Systems",
     "Corporate Document Templates",
     "Uniform & Workwear Design",
     "Social Media Asset Creation"
@@ -39,7 +45,7 @@
   "liveUrl": "https://gypsumtools.com",
   "images": [
     "/images/portfolio/gypsumtools-complete-brand-system/logo-before-after.jpg",
-    "/images/portfolio/gypsumtools-complete-brand-system/brand-book-spreads.jpg", 
+    "/images/portfolio/gypsumtools-complete-brand-system/brand-book-spreads.jpg",
     "/images/portfolio/gypsumtools-complete-brand-system/email-signatures-team.jpg",
     "/images/portfolio/gypsumtools-complete-brand-system/uniform-mockups.jpg"
   ]

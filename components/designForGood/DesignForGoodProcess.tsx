@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { ArrowRight, MessageSquare, Lightbulb, Palette, Rocket } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import processData from '@/data/designForGood/process.json'
 
 // Icon mapping for process steps
@@ -34,15 +35,17 @@ export default function DesignForGoodProcess() {
       <div className="container-premium">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <p className="mb-4 font-medium text-green-600 text-sm tracking-[0.1em] uppercase">
+          <p className="mb-4 font-medium text-charity text-sm tracking-[0.1em] uppercase">
             {process.eyebrow}
           </p>
-          <h2 className="text-section font-playfair font-bold text-ink mb-6">
-            {process.title}
-          </h2>
-          <p className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto">
-            {process.description}
-          </p>
+          <h2
+            className="text-section font-playfair font-bold text-ink mb-6 headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(process.title) }}
+          />
+          <p
+            className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(process.description) }}
+          />
         </div>
 
         {/* Process Steps */}

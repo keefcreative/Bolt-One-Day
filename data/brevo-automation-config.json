@@ -14,14 +14,14 @@
     },
     "designForGoodVisitor": {
       "trigger": "pageUrl contains 'design-for-good'",
-      "delay": "45 seconds", 
+      "delay": "45 seconds",
       "action": "startConversation",
       "message": "Hi! Interested in our Design for Good program for non-profits? I'd love to help! 💚"
     },
     "portfolioEngagement": {
       "trigger": "time on page > 2 minutes AND pageUrl contains 'portfolio'",
       "delay": "10 seconds",
-      "action": "startConversation", 
+      "action": "startConversation",
       "message": "Love what you're seeing in our portfolio? Let's chat about bringing that same quality to your brand! ✨"
     },
     "exitIntent": {
@@ -48,7 +48,7 @@
           "duration": "1 hour"
         },
         {
-          "step": 2, 
+          "step": 2,
           "action": "sendEmail",
           "template": "chat-follow-up-1",
           "subject": "Great chatting with you! Here's what we discussed",
@@ -56,7 +56,7 @@
         },
         {
           "step": 3,
-          "action": "wait", 
+          "action": "wait",
           "duration": "2 days"
         },
         {
@@ -100,7 +100,7 @@
         },
         {
           "step": 3,
-          "action": "sendSMS", 
+          "action": "sendSMS",
           "message": "Hi {FIRSTNAME}, I'm Keith from DesignWorks. Saw you were interested in our services - free to chat for 5 mins?",
           "delay": "2 hours",
           "condition": "if no response to email"
@@ -257,7 +257,7 @@
       "message": "👋 Hi there! I'm here to help with any questions about our design services. What brings you to DesignWorks today?",
       "quickReplies": [
         "I need design help",
-        "Tell me about pricing", 
+        "Tell me about pricing",
         "I have a specific question",
         "I'm just browsing"
       ]
@@ -267,7 +267,7 @@
       "message": "Great! We have three subscription tiers:\n\n• Essential ($2,995/month) - Perfect for startups\n• Professional ($4,995/month) - For growing businesses  \n• Enterprise ($7,995/month) - For large organizations\n\nWhat size business are you working with?",
       "quickReplies": [
         "Startup/Small business",
-        "Growing business", 
+        "Growing business",
         "Large organization",
         "Not sure yet"
       ]
@@ -278,7 +278,7 @@
       "quickReplies": [
         "Web design",
         "Brand identity",
-        "Marketing materials", 
+        "Marketing materials",
         "UI/UX design"
       ]
     },

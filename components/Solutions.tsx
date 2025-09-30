@@ -8,7 +8,7 @@ export default function Solutions() {
   const { header, solutions } = solutionsData
 
   // Map icon names to actual icon components
-  const iconMap = {
+  const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
     Building2: Building2,
     Rocket: Rocket,
     Users: Users,

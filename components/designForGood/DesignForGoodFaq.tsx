@@ -38,10 +38,7 @@ export default function DesignForGoodFaq() {
                   className="w-full p-6 text-left flex justify-between items-center hover:bg-silk transition-colors duration-300"
                 >
                   <span className="font-medium text-ink pr-4">{item.question}</span>
-                  <ChevronDown 
-                    className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`} 
+                  <ChevronDown
                     className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${
                       openIndex === index ? 'rotate-180 text-charity' : 'text-gray-500'
                     }`}

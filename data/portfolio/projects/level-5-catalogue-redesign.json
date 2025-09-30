@@ -4,12 +4,17 @@
   "category": "Digital Product",
   "briefDescription": "Product catalogue transformation from print-focused to digital-optimized format with enhanced readability and UX.",
   "description": "Level 5's product catalogue looked great in print but was unreadable on screens. We transformed it from print-first design to digital-optimized format that actually serves modern customers who read catalogues on devices, not paper.",
-  "createdDate": "2025-09-09", 
+  "createdDate": "2025-09-09",
   "featured": true,
   "draft": false,
   "priority": 6,
   "image": "/images/portfolio/level-5-catalogue-redesign.jpg",
-  "tags": ["Catalogue Design", "Digital Optimization", "User Experience", "Typography"],
+  "tags": [
+    "Catalogue Design",
+    "Digital Optimization",
+    "User Experience",
+    "Typography"
+  ],
   "client": "Level 5",
   "year": "2025",
   "duration": "2 weeks",
@@ -20,7 +25,7 @@
   "solution": "Complete restructure prioritizing how people actually use catalogues today. Significantly increased body text font size for comfortable reading at 100% digital scale. Split two-page spreads into single pages for natural digital navigation. Added branded footer elements for consistent company recognition. Every change focused on user experience without sacrificing professionalism.",
   "results": [
     "Dramatically improved readability at 100% digital scale",
-    "Enhanced user experience through single-page digital format", 
+    "Enhanced user experience through single-page digital format",
     "Successful digital-first approach serving modern customer behavior",
     "Professional branded footer integration reinforcing company identity",
     "Increased customer engagement with product information",
@@ -29,7 +34,7 @@
   "services": [
     "Digital Document Transformation",
     "User Experience Optimization",
-    "Typography Enhancement", 
+    "Typography Enhancement",
     "Digital-First Design Strategy"
   ],
   "brandMessage": "Don't force digital customers to struggle with print-first design. We optimize for how people actually use your materials today.",

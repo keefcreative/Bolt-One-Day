@@ -2,8 +2,9 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { MessageSquare, Lightbulb, Palette, Rocket, DivideIcon as LucideIcon } from 'lucide-react';
+import { MessageSquare, Lightbulb, Palette, Rocket, type LucideIcon } from 'lucide-react';
 import premiumDesignProcessData from '@/data/premiumDesignProcess.json'
+import { balanceHeadline, balanceDescription, balanceText } from '@/lib/typography-utils'
 
 // Icon mapping for dynamic icon rendering
 const iconMap: Record<string, LucideIcon> = {
@@ -33,12 +34,14 @@ export function PremiumDesignProcess() {
           <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
             {eyebrow}
           </p>
-          <h2 className="text-section font-light text-ink mb-6">
-            {title}
-          </h2>
-          <p className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto">
-            {description}
-          </p>
+          <h2
+            className="text-section font-light text-ink mb-6 headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(title) }}
+          />
+          <p
+            className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(description) }}
+          />
         </div>
 
         {/* Process Steps */}
@@ -68,18 +71,20 @@ export function PremiumDesignProcess() {
               </div>
               
               {/* Title */}
-              <h3 className={`text-xl font-medium mb-4 tracking-wide transition-colors duration-base ${
-                activeStep === index ? 'text-flame' : 'text-ink'
-              }`}>
-                {step.title}
-              </h3>
-              
+              <h3
+                className={`text-xl font-medium mb-4 tracking-wide transition-colors duration-base ${
+                  activeStep === index ? 'text-flame' : 'text-ink'
+                }`}
+                dangerouslySetInnerHTML={{ __html: balanceText(step.title) }}
+              />
+
               {/* Description */}
-              <p className={`leading-relaxed transition-colors duration-base ${
-                activeStep === index ? 'text-ink' : 'text-smoke'
-              }`}>
-                {step.description}
-              </p>
+              <p
+                className={`leading-relaxed transition-colors duration-base body-balanced ${
+                  activeStep === index ? 'text-ink' : 'text-smoke'
+                }`}
+                dangerouslySetInnerHTML={{ __html: balanceDescription(step.description) }}
+              />
 
               {/* Connection Line - Hidden on mobile */}
               {index < steps.length - 1 && (

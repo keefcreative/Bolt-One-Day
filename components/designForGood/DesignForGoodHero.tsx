@@ -3,6 +3,7 @@
 import React from 'react'
 import { ArrowRight, Check } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import heroData from '@/data/designForGood/hero.json'
 import DesignForGoodAnimation from './DesignForGoodAnimation'
 
@@ -35,9 +36,10 @@ export default function DesignForGoodHero() {
             )}
             
             {/* Title */}
-            <h1 className="animate-fade-in-delay-1 text-[clamp(3rem,4vw,4.5rem)] font-playfair font-bold leading-[1.1] mb-6 tracking-[-0.04em] text-white">
-              {hero.title}
-            </h1>
+            <h1
+              className="animate-fade-in-delay-1 text-[clamp(3rem,4vw,4.5rem)] font-playfair font-bold leading-[1.1] mb-6 tracking-[-0.04em] text-white headline-balanced"
+              dangerouslySetInnerHTML={{ __html: balanceHeadline(hero.title, 40) }}
+            />
             
             {/* Subtitle */}
             <p className="animate-fade-in-delay-1 text-xl font-medium mb-8 text-charity">
@@ -46,9 +48,10 @@ export default function DesignForGoodHero() {
             
             {/* Description */}
             {hero.description && (
-              <p className="animate-fade-in-delay-2 text-lg font-light text-white/80 mb-8 leading-[1.6]">
-                {hero.description}
-              </p>
+              <p
+                className="animate-fade-in-delay-2 text-lg font-light text-white/80 mb-8 leading-[1.6] description-balanced"
+                dangerouslySetInnerHTML={{ __html: balanceDescription(hero.description) }}
+              />
             )}
 
             {/* Benefits */}

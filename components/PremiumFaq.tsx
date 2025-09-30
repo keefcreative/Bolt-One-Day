@@ -110,7 +110,7 @@ export function PremiumFaq({
             <p className="mb-3 font-medium text-flame text-[0.875rem] tracking-[0.1em] uppercase md:mb-4">
               FAQ
             </p>
-            <h2 className="text-[3.5rem] font-light tracking-[-0.03em] leading-[1.2] text-ink mb-6">
+            <h2 className="text-[3.5rem] font-playfair font-bold tracking-[-0.03em] leading-[1.2] text-ink mb-6">
               {title}
             </h2>
             <p className="text-lg font-light text-smoke leading-[1.6] mb-8">

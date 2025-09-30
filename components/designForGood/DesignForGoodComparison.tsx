@@ -3,6 +3,7 @@
 import React from 'react'
 import { Check, X, ArrowRight } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import comparisonData from '@/data/designForGood/comparison.json'
 
 export default function DesignForGoodComparison() {
@@ -16,12 +17,14 @@ export default function DesignForGoodComparison() {
           <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
             {comparison.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
-            {comparison.title}
-          </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-3xl mx-auto">
-            {comparison.description}
-          </p>
+          <h2
+            className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(comparison.title) }}
+          />
+          <p
+            className="text-lg font-light text-smoke leading-[1.6] max-w-3xl mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(comparison.description) }}
+          />
         </div>
 
         {/* Comparison Table */}

@@ -2,6 +2,7 @@
 
 import { Monitor, Megaphone, FileText, Package, Palette, Smartphone } from 'lucide-react'
 import servicesData from '@/data/services.json'
+import { balanceHeadline, balanceDescription, balanceText } from '@/lib/typography-utils'
 
 const iconMap = {
   Monitor,
@@ -37,12 +38,14 @@ export default function Services() {
           <div className="mb-4 font-medium text-flame text-[0.875rem] tracking-[0.1em] uppercase">
             {services.eyebrow}
           </div>
-          <h2 className="mb-8 text-[3.5rem] font-light tracking-[-0.03em] text-ink leading-[1.2]">
-            {services.title}
-          </h2>
-          <p className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto">
-            {services.description}
-          </p>
+          <h2
+            className="mb-8 text-[3.5rem] font-light tracking-[-0.03em] text-ink leading-[1.2] headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(services.title) }}
+          />
+          <p
+            className="text-xl font-light text-smoke leading-[1.6] max-w-[640px] mx-auto description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(services.description) }}
+          />
         </div>
 
         {/* Services Grid - Premium 3x2 Layout */}
@@ -56,13 +59,15 @@ export default function Services() {
                   {service.number}
                 </div>
                 
-                <h3 className="text-[1.75rem] font-light text-ink mb-6 leading-[1.3] group-hover:text-flame transition-colors duration-600">
-                  {service.title}
-                </h3>
-                
-                <p className="text-smoke font-light leading-[1.6] text-[1rem]">
-                  {service.description}
-                </p>
+                <h3
+                  className="text-[1.75rem] font-light text-ink mb-6 leading-[1.3] group-hover:text-flame transition-colors duration-600"
+                  dangerouslySetInnerHTML={{ __html: balanceText(service.title) }}
+                />
+
+                <p
+                  className="text-smoke font-light leading-[1.6] text-[1rem] body-balanced"
+                  dangerouslySetInnerHTML={{ __html: balanceDescription(service.description) }}
+                />
 
                 {/* Hover indicator */}
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-flame transform scale-x-0 group-hover:scale-x-100 transition-transform duration-600 origin-left" />

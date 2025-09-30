@@ -9,7 +9,7 @@ export default function SingleProject() {
   const { header, projectTypes, cta } = singleProjectData
 
   // Map icon names to actual icon components
-  const iconMap = {
+  const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
     Palette: Palette,
     Zap: Zap,
     Lightbulb: Lightbulb

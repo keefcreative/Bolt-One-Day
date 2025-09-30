@@ -173,7 +173,17 @@ const config: Config = {
         '34': '8.5rem',
         '38': '9.5rem',
       },
-      
+
+      // Typography-optimized Max Widths (character-based for better line balance)
+      maxWidth: {
+        'prose-narrow': '30ch',    // ~30-40 chars/line - mobile/narrow content
+        'prose-optimal': '65ch',   // ~65-75 chars/line - optimal readability
+        'prose-wide': '80ch',      // ~80 chars/line - wider content
+        'headline': '20ch',        // Headlines - prevent long single lines
+        'subhead': '40ch',         // Subheadings
+        'description': '55ch',     // Short descriptions
+      },
+
       // Animation Timing
       transitionTimingFunction: {
         'premium': 'cubic-bezier(0.16, 1, 0.3, 1)',

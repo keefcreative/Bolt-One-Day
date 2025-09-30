@@ -8,7 +8,13 @@
   "draft": false,
   "priority": null,
   "image": "/images/portfolio/artisan-studios-portfolio.jpg",
-  "tags": ["Web Design", "Portfolio", "Creative", "Animation", "CMS"],
+  "tags": [
+    "Web Design",
+    "Portfolio",
+    "Creative",
+    "Animation",
+    "CMS"
+  ],
   "client": "Artisan Studios",
   "year": "2024",
   "duration": "5 weeks",

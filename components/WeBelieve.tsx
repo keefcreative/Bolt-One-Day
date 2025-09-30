@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import weBelieveData from '@/data/weBelieve.json'
+import { balanceHeadline, balanceDescription, balanceText } from '@/lib/typography-utils'
 
 export default function WeBelieve() {
   const { philosophy, founderMessage, values } = weBelieveData
@@ -26,14 +27,15 @@ export default function WeBelieve() {
               <div className="w-12 h-px bg-flame mt-2 mx-auto" />
             </div>
             
-            <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-white">
-              {philosophy.title.split('<br />')[0]}<br />
-              <span className="text-flame">{philosophy.titleHighlight}</span>
-            </h2>
-            
-            <p className="text-lg font-light text-white/80 leading-[1.6] max-w-2xl mx-auto">
-              {philosophy.description}
-            </p>
+            <h2
+              className="mb-6 text-section font-light tracking-[-0.03em] text-white headline-balanced"
+              dangerouslySetInnerHTML={{ __html: `${balanceHeadline(philosophy.title.split('<br />')[0])}<br /><span class="text-flame">${philosophy.titleHighlight}</span>` }}
+            />
+
+            <p
+              className="text-lg font-light text-white/80 leading-[1.6] max-w-2xl mx-auto description-balanced"
+              dangerouslySetInnerHTML={{ __html: balanceDescription(philosophy.description) }}
+            />
           </div>
 
           {/* Founder Message */}
@@ -45,16 +47,19 @@ export default function WeBelieve() {
                 <span className="text-sm font-medium text-flame tracking-[0.1em] uppercase mb-4 block">
                   {founderMessage.eyebrow}
                 </span>
-                <h3 className="text-subsection font-light text-white mb-6 leading-tight">
-                  {founderMessage.title}
-                </h3>
+                <h3
+                  className="text-subsection font-light text-white mb-6 leading-tight headline-balanced"
+                  dangerouslySetInnerHTML={{ __html: balanceHeadline(founderMessage.title) }}
+                />
               </div>
               
               <div className="space-y-6 text-white/80 font-light leading-[1.6]">
                 {founderMessage.quotes.map((quote, index) => (
-                  <p key={index} className={index === 0 ? "text-lg font-light text-white/80 leading-[1.6]" : ""}>
-                    "{quote}"
-                  </p>
+                  <p
+                    key={index}
+                    className={index === 0 ? "text-lg font-light text-white/80 leading-[1.6] body-balanced" : "body-balanced"}
+                    dangerouslySetInnerHTML={{ __html: `"${balanceDescription(quote)}"` }}
+                  />
                 ))}
               </div>
               
@@ -92,10 +97,14 @@ export default function WeBelieve() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {values.map((value, index) => (
                 <div key={index} className="text-center">
-                  <h4 className="text-xl font-light text-white mb-4">{value.title}</h4>
-                  <p className="text-white/70 font-light leading-[1.6]">
-                    {value.description}
-                  </p>
+                  <h4
+                    className="text-xl font-light text-white mb-4"
+                    dangerouslySetInnerHTML={{ __html: balanceText(value.title) }}
+                  />
+                  <p
+                    className="text-white/70 font-light leading-[1.6] body-balanced"
+                    dangerouslySetInnerHTML={{ __html: balanceDescription(value.description) }}
+                  />
                 </div>
               ))}
             </div>

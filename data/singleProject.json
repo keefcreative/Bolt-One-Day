@@ -30,7 +30,7 @@
       "action": "scrollToContact"
     },
     "secondaryButton": {
-      "text": "Book Consultation", 
+      "text": "Book Consultation",
       "url": "https://meet.brevo.com/designworksbureau"
     }
   }

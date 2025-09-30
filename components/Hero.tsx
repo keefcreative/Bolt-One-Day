@@ -2,6 +2,7 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { scrollToElement } from '@/lib/utils'
+import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
 import heroData from '@/data/hero.json'
 
 // Animated Design Background Component
@@ -222,19 +223,22 @@ export default function Hero() {
       <div className="container-premium w-full relative z-10">
         <div className="hero-text max-w-[800px]">
           {/* Eyebrow - keeping flame color as it works well on dark */}
-          <p className="animate-fade-in text-sm font-medium tracking-[0.1em] uppercase text-flame mb-8">
-            {hero.eyebrow}
-          </p>
-          
+          <p
+            className="animate-fade-in text-sm font-medium tracking-[0.1em] uppercase text-flame mb-8"
+            dangerouslySetInnerHTML={{ __html: hero.eyebrow }}
+          />
+
           {/* Title - changed to white for dark background */}
-          <h1 className="animate-fade-in-delay-1 text-[clamp(3.5rem,5vw,5.5rem)] font-light leading-[1.1] mb-8 tracking-[-0.04em] text-white">
-            {hero.title}
-          </h1>
-          
+          <h1
+            className="animate-fade-in-delay-1 text-[clamp(3.5rem,5vw,5.5rem)] font-light leading-[1.1] mb-8 tracking-[-0.04em] text-white headline-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceHeadline(hero.title, 45) }}
+          />
+
           {/* Description - changed to light grey for readability */}
-          <p className="animate-fade-in-delay-2 text-xl font-light text-white/80 mb-12 leading-[1.8] max-w-[540px]">
-            {hero.description}
-          </p>
+          <p
+            className="animate-fade-in-delay-2 text-xl font-light text-white/80 mb-12 leading-[1.8] max-w-[540px] description-balanced"
+            dangerouslySetInnerHTML={{ __html: balanceDescription(hero.description) }}
+          />
 
           {/* Buttons - adjusted for dark background */}
           <div className="animate-fade-in-delay-3 flex flex-col sm:flex-row gap-6 mb-16">

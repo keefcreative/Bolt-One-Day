@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { balanceText } from '@/lib/typography-utils'
 import founderData from '@/data/designForGood/founder.json'
 
 export default function DesignForGoodFounder() {
@@ -13,7 +14,7 @@ export default function DesignForGoodFounder() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase" style={{ color: '#16a34a' }}>
+            <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
               {founder.eyebrow}
             </p>
             <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
@@ -37,9 +38,11 @@ export default function DesignForGoodFounder() {
             <div>
               <div className="space-y-6 text-smoke font-light leading-[1.6] mb-8">
                 {founder.message.map((paragraph, index) => (
-                  <p key={index} className="text-lg">
-                    {paragraph}
-                  </p>
+                  <p
+                    key={index}
+                    className="text-lg body-balanced"
+                    dangerouslySetInnerHTML={{ __html: balanceText(paragraph) }}
+                  />
                 ))}
               </div>
 
