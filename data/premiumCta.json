@@ -1,7 +1,7 @@
 {
-  "eyebrow": "Ready to Change Your Brand?",
-  "title": "Kickstart Your Design Overhaul",
-  "description": "Join 500+ growing companies that bank on DesignWorks for real results. Enjoy unlimited design fixes with 48-hour delivery.",
+  "eyebrow": "Ready to Get Design Right?",
+  "title": "Let's Build Something<br />That Works",
+  "description": "No junior designers. No endless revisions. No drama. Just seasoned pros who deliver design that converts—fast.",
   "cta": {
     "text": "Start Today",
     "url": "#contact"
@@ -10,5 +10,5 @@
     "text": "Check Pricing",
     "url": "#pricing"
   },
-  "backgroundImage": "/images/premium-cta-background.jpg"
+  "backgroundImage": "/images/premium-cta-backgroundv2.jpeg"
 }

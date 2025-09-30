@@ -17,8 +17,8 @@ export function PremiumCta() {
           className="object-cover"
           alt="DesignWorks office space"
         />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/50" />
+        {/* Subtle overlay for text legibility on geometric background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/60 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
@@ -29,9 +29,10 @@ export function PremiumCta() {
           </div>
           
           {/* Heading */}
-          <h2 className="text-[3.5rem] lg:text-[4rem] font-light tracking-[-0.03em] leading-[1.2] mb-8 text-white">
-            {title}
-          </h2>
+          <h2
+            className="text-[3.5rem] lg:text-[4rem] font-light tracking-[-0.03em] leading-[1.2] mb-8 text-white"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           
           {/* Description */}
           <p className="text-xl font-light text-white/90 leading-[1.8] mb-12 max-w-lg">

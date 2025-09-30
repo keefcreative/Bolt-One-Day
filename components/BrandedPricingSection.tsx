@@ -73,9 +73,11 @@ export default function BrandedPricingSection() {
           <p className="mb-4 font-medium text-sm tracking-widest uppercase" style={{ color: '#ff6b35' }}>
             {hero.eyebrow}
           </p>
-          <h2 className="mb-8 text-5xl font-light tracking-tight" style={{ color: '#2c2c2c' }}>
-            {hero.title.replace('<br />', '')}
-          </h2>
+          <h2
+            className="mb-8 text-5xl font-light tracking-tight"
+            style={{ color: '#2c2c2c' }}
+            dangerouslySetInnerHTML={{ __html: hero.title }}
+          />
           
           <div className="text-center max-w-3xl mx-auto">
             <p className="text-xl font-light leading-relaxed mb-6" style={{ color: '#6b7280' }} 

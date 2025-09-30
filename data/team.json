@@ -1,49 +1,56 @@
 {
   "team": {
-    "eyebrow": "Our Squad",
-    "title": "The Real People Behind DesignWorks",
-    "description": "A bunch of designers, thinkers, and real people turning big ideas into visual victories.",
-    "team": [
-      {
-        "name": "Sarah Mitchell",
-        "position": "Brand Champion",
-        "bio": "Sarah crafts brand plays that win markets and make fans out of audiences.",
-        "avatar": "/images/team/sarah-mitchell.jpg",
-        "social": {
-          "twitter": "https://twitter.com/sarahmitchell",
-          "linkedin": "https://linkedin.com/in/sarahmitchell"
+    "eyebrow": "Who We Are",
+    "title": "We're the team that actually gets it",
+    "description": "No ego. No drama. Just talented humans who love making brands shine.",
+    "collective_experience": {
+      "intro": "Look, we could bore you with our degrees and awards. But here's what matters: we've been in the trenches with 100+ brands, and we know what works.",
+      "capabilities": [
+        {
+          "area": "Strategy That Sticks",
+          "description": "We dig into what makes your brand tick, then build a game plan that actually makes sense (and makes money).",
+          "icon": "rocket"
+        },
+        {
+          "area": "Design That Delivers",
+          "description": "Beautiful? Sure. But more importantly, it converts. Every design decision is backed by data and purpose.",
+          "icon": "palette"
+        },
+        {
+          "area": "Digital Done Right",
+          "description": "From mobile to desktop, social to web—we ensure your brand looks killer everywhere your customers are.",
+          "icon": "globe"
+        },
+        {
+          "area": "Partnership, Not Vendor-ship",
+          "description": "We're in your Slack, on your calls, part of your team. Basically, we're your design department (minus the overhead).",
+          "icon": "handshake"
         }
-      },
-      {
-        "name": "Emma Rodriguez",
-        "position": "Client Hero",
-        "bio": "Emma makes sure every project lands smoothly and keeps clients in the loop and happy.",
-        "avatar": "/images/team/emma-rodriguez.jpg",
-        "social": {
-          "twitter": "https://twitter.com/emmarodriguez",
-          "linkedin": "https://linkedin.com/in/emmarodriguez"
+      ],
+      "stats": [
+        {
+          "number": "75+",
+          "label": "Years Combined"
+        },
+        {
+          "number": "50+",
+          "label": "Happy Brands"
+        },
+        {
+          "number": "48hr",
+          "label": "Turnaround"
+        },
+        {
+          "number": "∞",
+          "label": "Revisions"
         }
-      },
-      {
-        "name": "Marcus Chen",
-        "position": "Design Wizard",
-        "bio": "Marcus turns bold ideas into visual feasts with a sharp eye for detail and fresh designs.",
-        "avatar": "/images/team/marcus-chen.jpg",
-        "social": {
-          "twitter": "https://twitter.com/marcuschen",
-          "linkedin": "https://linkedin.com/in/marcuschen"
-        }
-      },
-      {
-        "name": "Lisa Thompson",
-        "position": "Visual Storyteller",
-        "bio": "Lisa weaves brand stories into digital and physical realms, ensuring a seamless user journey everywhere.",
-        "avatar": "/images/team/lisa-thompson.jpg",
-        "social": {
-          "twitter": "https://twitter.com/lisathompson",
-          "linkedin": "https://linkedin.com/in/lisathompson"
-        }
+      ],
+      "callout": "Design isn't decoration. It's how people decide whether to trust you.",
+      "approach": "Other agencies hand you off to juniors after the pitch. Not us. You get our A-team from day one to done. Think of us as your unfair advantage—seasoned pros who move fast, iterate quickly, and actually answer their emails.",
+      "cta": {
+        "text": "Let's Work Together",
+        "url": "#contact"
       }
-    ]
+    }
   }
 }

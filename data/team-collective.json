@@ -1,0 +1,47 @@
+{
+  "team": {
+    "eyebrow": "Our Squad",
+    "title": "The Real People Behind DesignWorks",
+    "description": "A collective of designers, thinkers, and real people turning big ideas into visual victories.",
+    "collective_experience": {
+      "intro": "Our team brings together decades of combined experience across brand strategy, visual design, digital innovation, and client partnership. We're a diverse group united by a passion for creating work that matters.",
+      "capabilities": [
+        {
+          "area": "Brand Strategy & Identity",
+          "description": "From startups finding their voice to established brands evolving for the future, our strategists craft brand plays that win markets and build lasting connections with audiences."
+        },
+        {
+          "area": "Design Excellence",
+          "description": "Our designers blend bold creativity with meticulous attention to detail, transforming complex ideas into visual experiences that captivate and communicate with clarity."
+        },
+        {
+          "area": "Digital Innovation",
+          "description": "We bridge digital and physical realms seamlessly, creating user journeys that flow naturally across every touchpoint and platform your audience encounters."
+        },
+        {
+          "area": "Client Partnership",
+          "description": "We believe the best work comes from true collaboration. Our team keeps you in the loop, ensures smooth delivery, and treats your success as our own."
+        }
+      ],
+      "stats": [
+        {
+          "number": "50+",
+          "label": "Years Combined Experience"
+        },
+        {
+          "number": "200+",
+          "label": "Projects Delivered"
+        },
+        {
+          "number": "15+",
+          "label": "Industries Served"
+        },
+        {
+          "number": "100%",
+          "label": "Client Satisfaction"
+        }
+      ],
+      "approach": "We're not just designers—we're strategic partners who dive deep into your challenges, collaborate closely throughout the process, and deliver solutions that drive real results. Our diverse perspectives and complementary skills mean you get the full spectrum of expertise on every project."
+    }
+  }
+}

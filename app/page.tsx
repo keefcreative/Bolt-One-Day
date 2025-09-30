@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import LogoCarousel from '@/components/LogoCarousel'
 import Services from '@/components/Services'
 import WeBelieve from '@/components/WeBelieve'
-import Team from '@/components/Team'
+import TeamCollective from '@/components/TeamCollective'
 import PortfolioServer from '@/components/PortfolioServer'
 import Testimonials from '@/components/Testimonials'
 import BrandedPricingSection from '@/components/BrandedPricingSection'
@@ -30,7 +30,7 @@ export default function Home() {
         <WeBelieve />
       </section>
       <section id="team">
-        <Team />
+        <TeamCollective />
       </section>
       <section id="portfolio">
         <PortfolioServer />
