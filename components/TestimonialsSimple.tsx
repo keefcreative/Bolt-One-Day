@@ -98,7 +98,7 @@ export default function TestimonialsSimple() {
               </blockquote>
 
               {/* Author Info - Without Image */}
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1">
                 <div className="font-medium text-white text-xl">
                   {currentTestimonial.author}
                 </div>

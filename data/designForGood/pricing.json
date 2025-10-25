@@ -1,61 +1,62 @@
 {
   "pricing": {
-    "eyebrow": "2025 Founding Member Deals",
-    "title": "Reliable Creative Help —<br />At Prices That Empower",
-    "description": "Be part of our founding crew and access top-notch creative help at affordable rates that non-profits truly love.",
-    "plan": {
-      "name": "Impact Maker Membership",
-      "standardPrice": "\t£2,499",
-      "firstYearPrice": "£1,499",
-      "firstYearDiscount": "40% off",
-      "lifetimePrice": "£1,999",
-      "lifetimeDiscount": "20% off",
-      "period": "per month",
-      "stripePriceIdFirstYear": "price_1RH2QCP3PqPfy1jMN2bAn90J",
-      "stripePriceIdStandard": "price_1RH2QCP3PqPfy1jMbS2yn4ns"
-    },
-    "features": [
+    "eyebrow": "2025 Founding Member Pricing",
+    "title": "Design That Works as Hard<br />as Your Mission",
+    "description": [
+      "Your donors judge you in seconds. While you're stuck with <strong>DIY graphics that look amateur</strong>, other nonprofits are landing major partnerships. While you're burning nights <strong>wrestling with Canva templates</strong>, they're focusing on impact. While you're calculating the <span style=\"color: #16a34a; font-weight: 600;\">£50k+ you can't afford for a designer</span>, they're already amplifying their message.",
+      "Stop looking bootstrapped. Get the design team that makes your mission shine — starting at just £1,499/month."
+    ],
+    "sectionTitle": "Choose Your Impact Level",
+    "plans": [
       {
-        "title": "Unlimited design work",
-        "description": "Flyers to campaigns, we've got you covered"
-      },
-      {
-        "title": "72-hour turnarounds",
-        "description": "Quick service to meet your deadlines"
-      },
-      {
-        "title": "Editable newsletter & social templates",
-        "description": "Ready-to-use, tweakable in Canva"
-      },
-      {
-        "title": "Every type of graphic",
-        "description": "Print, email, web — all sorted"
-      },
-      {
-        "title": "Monthly strategy sessions",
-        "description": "We're your on-call creative team"
-      },
-      {
-        "title": "Real-time analytics dashboard",
-        "description": "Track success, focus efforts"
-      },
-      {
-        "title": "Open team collaboration",
-        "description": "Your entire crew can join in"
-      },
-      {
-        "title": "Frontline support",
-        "description": "Quick answers, no waiting"
+        "name": "Impact Maker",
+        "tagline": "Stop looking bootstrapped",
+        "description": "Perfect for nonprofits ready to match their professional work with professional design",
+        "standardPrice": "£2,499",
+        "standardPriceLabel": "Regular Price",
+        "firstYearPrice": "£1,499",
+        "firstYearDiscount": "40% off first year",
+        "lifetimePrice": "£1,999",
+        "lifetimeDiscount": "20% off forever",
+        "lifetimePriceLabel": "Then 20% off forever",
+        "period": "/month",
+        "popular": true,
+        "ctaText": "Claim Your Founding Spot",
+        "problemsSolved": [
+          "No more DIY graphics that scream 'underfunded'",
+          "Stop losing donors to poor first impressions",
+          "End the late-night Canva struggles",
+          "Get taken seriously by major funders",
+          "Focus on your mission, not design software"
+        ],
+        "features": [
+          "Unlimited design requests",
+          "72-hour turnaround time",
+          "Editable Canva templates included",
+          "Print, digital, and social media",
+          "Monthly strategy sessions",
+          "Unlimited team members",
+          "Priority support"
+        ],
+        "bestFor": "Growing nonprofits, community organizations, social enterprises",
+        "isCustom": false,
+        "stripePriceIdFirstYear": "price_1RH2QCP3PqPfy1jMN2bAn90J",
+        "stripePriceIdStandard": "price_1RH2QCP3PqPfy1jMbS2yn4ns"
       }
     ],
     "guarantees": [
-      "100% Happy-Or-It's-Free Promise",
-      "No Strings Attached",
-      "Easy Cancel Anytime"
+      "100% Happy or It's on Us",
+      "No Forever Ties",
+      "Leave When You Need"
     ],
     "cta": {
-      "primary": "Claim Your Spot in the 2025 Crew",
-      "secondary": "Schedule a Chat"
+      "primary": "Secure Your Founding Member Spot",
+      "secondary": "Grab a Free Strategy Chat"
+    },
+    "additionalInfo": {
+      "text": "Only 10 founding member spots available.",
+      "linkText": "See if you qualify",
+      "linkAction": "#dfg-cta"
     }
   }
 }

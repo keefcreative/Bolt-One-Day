@@ -20,13 +20,15 @@ interface PremiumFaqProps {
   showCategories?: boolean;
   initialOpenIndex?: number | null;
   data?: typeof premiumFaqData;
+  titleFont?: 'light' | 'playfair';
 }
 
 export function PremiumFaq({
   showSearch = true,
   showCategories = true,
   initialOpenIndex = 0,
-  data = premiumFaqData
+  data = premiumFaqData,
+  titleFont = 'light'
 }: PremiumFaqProps = {}) {
   const { title, subtitle, items } = data
   const [openIndex, setOpenIndex] = useState<number | null>(initialOpenIndex);
@@ -110,7 +112,7 @@ export function PremiumFaq({
             <p className="mb-3 font-medium text-flame text-[0.875rem] tracking-[0.1em] uppercase md:mb-4">
               FAQ
             </p>
-            <h2 className="text-[3.5rem] font-playfair font-bold tracking-[-0.03em] leading-[1.2] text-ink mb-6">
+            <h2 className={`text-[3.5rem] tracking-[-0.03em] leading-[1.2] text-ink mb-6 ${titleFont === 'playfair' ? 'font-playfair font-bold' : 'font-light'}`}>
               {title}
             </h2>
             <p className="text-lg font-light text-smoke leading-[1.6] mb-8">

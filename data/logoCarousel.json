@@ -6,43 +6,83 @@
     "logos": [
       {
         "name": "Microsoft",
-        "src": "/images/logos/microsoft.png",
+        "src": "/images/logos/Logos__Microsoft.png",
         "alt": "Microsoft logo"
       },
       {
-        "name": "Apple",
-        "src": "/images/logos/apple.png",
-        "alt": "Apple logo"
+        "name": "Electronic Arts",
+        "src": "/images/logos/Logos__Electronic Arts.png",
+        "alt": "Electronic Arts logo"
       },
       {
-        "name": "Google",
-        "src": "/images/logos/google.png",
-        "alt": "Google logo"
+        "name": "Warner Bros",
+        "src": "/images/logos/Logos__Warner Bros.png",
+        "alt": "Warner Bros logo"
       },
       {
-        "name": "Amazon",
-        "src": "/images/logos/amazon.png",
-        "alt": "Amazon logo"
+        "name": "SEGA",
+        "src": "/images/logos/Logos__SEGA.png",
+        "alt": "SEGA logo"
       },
       {
-        "name": "Netflix",
-        "src": "/images/logos/netflix.png",
-        "alt": "Netflix logo"
+        "name": "Square Enix",
+        "src": "/images/logos/Logos__Square Enix.png",
+        "alt": "Square Enix logo"
       },
       {
-        "name": "Tesla",
-        "src": "/images/logos/tesla.png",
-        "alt": "Tesla logo"
+        "name": "Nokia",
+        "src": "/images/logos/Logos__Nokia.png",
+        "alt": "Nokia logo"
       },
       {
-        "name": "Meta",
-        "src": "/images/logos/meta.png",
-        "alt": "Meta logo"
+        "name": "Paramount",
+        "src": "/images/logos/Logos__Paramount.png",
+        "alt": "Paramount logo"
       },
       {
-        "name": "Spotify",
-        "src": "/images/logos/spotify.png",
-        "alt": "Spotify logo"
+        "name": "Harrods",
+        "src": "/images/logos/Logos__Harrods.png",
+        "alt": "Harrods logo"
+      },
+      {
+        "name": "Herbalife Europe",
+        "src": "/images/logos/Logos__Herbalife.png",
+        "alt": "Herbalife Europe logo"
+      },
+      {
+        "name": "ABCAM PLC",
+        "src": "/images/logos/Logos__Abcam.png",
+        "alt": "ABCAM PLC logo"
+      },
+      {
+        "name": "TAG Worldwide",
+        "src": "/images/logos/Logos__tag.png",
+        "alt": "TAG Worldwide logo"
+      },
+      {
+        "name": "Soap & Glory",
+        "src": "/images/logos/Logos__Soap&Glory.png",
+        "alt": "Soap & Glory logo"
+      },
+      {
+        "name": "Towergate Insurance",
+        "src": "/images/logos/Logos__Towergate.png",
+        "alt": "Towergate Insurance logo"
+      },
+      {
+        "name": "Measom Design Group",
+        "src": "/images/logos/Logos__Measom.png",
+        "alt": "Measom Design Group logo"
+      },
+      {
+        "name": "Compello",
+        "src": "/images/logos/Logos__Compello.png",
+        "alt": "Compello logo"
+      },
+      {
+        "name": "Gypsum Tools",
+        "src": "/images/logos/Logos__gypsumtools.png",
+        "alt": "Gypsum Tools logo"
       }
     ]
   }

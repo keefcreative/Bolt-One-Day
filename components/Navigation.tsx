@@ -22,7 +22,7 @@ export default function Navigation() {
   const dynamicNavItems = isDesignForGood ? [
     { label: "Our Mission", href: "#dfg-mission" },
     { label: "How It Works", href: "#dfg-process" },
-    { label: "Your Investment", href: "#dfg-pricing" },
+    { label: "The Deal", href: "#dfg-pricing" },
     { label: "Meet the Founder", href: "#dfg-founder" },
     { label: "Got Questions?", href: "#dfg-faq" },
     { label: "Start Today", href: "#dfg-cta" }

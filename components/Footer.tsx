@@ -178,7 +178,7 @@ export default function Footer() {
                   onClick={() => window.location.href = '/design-for-good#dfg-pricing'}
                   className="text-pearl/80 hover:text-coral transition-colors font-light"
                 >
-                  Pricing
+                  The Deal
                 </button>
               </li>
               <li>

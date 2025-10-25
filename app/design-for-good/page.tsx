@@ -47,10 +47,11 @@ export default function DesignForGoodPage() {
         <DesignForGoodComparison />
       </section>
       <section id="dfg-faq">
-        <PremiumFaq 
+        <PremiumFaq
           showSearch={false}
           showCategories={false}
           initialOpenIndex={0}
+          titleFont="playfair"
           data={{
             title: dfgFaqData.faq.title,
             subtitle: dfgFaqData.faq.description,

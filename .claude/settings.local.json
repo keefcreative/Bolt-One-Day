@@ -8,7 +8,11 @@
       "Bash(chmod:*)",
       "Bash(npx tsc:*)",
       "Bash(lsof:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "Bash(curl -L -o warner-bros.png \"https://cdn.freebiesupply.com/logos/large/2x/warner-bros-logo-png-transparent.png\")",
+      "Bash(curl -L -o square-enix.png \"https://cdn.freebiesupply.com/logos/large/2x/square-enix-logo-png-transparent.png\")",
+      "Bash(for logo in microsoft.png ea.png warner-bros.png sega.png square-enix.png nokia.png paramount.png harrods.png herbalife.png abcam.png tag-worldwide.png soap-and-glory.png towergate.png measom-design-group.png compello.png)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

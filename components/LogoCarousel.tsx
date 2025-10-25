@@ -41,32 +41,32 @@ export default function LogoCarousel() {
           
           {/* Carousel container */}
           <div className="overflow-hidden">
-            <div 
+            <div
               ref={carouselRef}
               className="flex items-center gap-16 animate-loop-horizontally"
               style={{
-                width: `${duplicatedLogos.length * 128}px`,
+                width: `${duplicatedLogos.length * 216}px`,
                 animationDuration: '60s'
               }}
             >
               {duplicatedLogos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 w-32 h-16 flex items-center justify-center logo-item"
-                  style={{ minWidth: '128px' }}
+                  className="flex-shrink-0 w-54 h-26 flex items-center justify-center logo-item"
+                  style={{ minWidth: '216px' }}
                 >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={100}
-                    height={40}
+                    width={169}
+                    height={68}
                     className="object-contain transition-all duration-500 filter grayscale hover:grayscale-0"
                     style={{
                       filter: 'grayscale(100%) opacity(0.6)',
                       width: 'auto',
                       height: 'auto',
-                      maxWidth: '100px',
-                      maxHeight: '40px'
+                      maxWidth: '169px',
+                      maxHeight: '68px'
                     }}
                   />
                 </div>
