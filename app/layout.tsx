@@ -1,5 +1,32 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+import CampaignProvider from "@/components/CampaignProvider";
+import CampaignErrorBoundary from "@/components/CampaignErrorBoundary";
+
+// Configure Switzer font with multiple weights
+const switzer = localFont({
+  src: [
+    {
+      path: '../public/fonts/switzer/Switzer-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/switzer/Switzer-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/switzer/Switzer-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-switzer',
+  display: 'swap',
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "DesignWorks | Creative Design Solutions That Captivate",
@@ -41,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={switzer.variable} suppressHydrationWarning>
       <head>
         {/* Brevo Conversations Configuration */}
         <script
@@ -80,8 +107,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
-        {children}
+      <body className={`${switzer.variable} font-sans antialiased`}>
+        <CampaignErrorBoundary>
+          <CampaignProvider>
+            {children}
+          </CampaignProvider>
+        </CampaignErrorBoundary>
       </body>
     </html>
   );

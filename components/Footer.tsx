@@ -57,11 +57,11 @@ export default function Footer() {
         {/* Newsletter CTA */}
         <div className="mb-16 pb-16 border-b border-pearl/20">
           <div className="max-w-2xl">
-            <h3 className="text-section font-light text-white mb-4 leading-tight">
+            <h3 className="text-section font-light text-white mb-4 leading-tight text-balance">
               Stay Inspired<br />
               with DesignWorks
             </h3>
-            <p className="text-pearl/80 font-light mb-6 leading-relaxed">
+            <p className="text-pearl/80 font-light mb-6 leading-relaxed text-pretty">
               Get weekly design tips, industry trends, and exclusive content delivered to your inbox.
             </p>
             

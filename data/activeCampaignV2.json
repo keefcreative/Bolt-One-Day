@@ -1,0 +1,271 @@
+{
+  "classOf2025V2": {
+    "hero": {
+      "eyebrow": "Join the Class of 2025",
+      "headline": "The 2025 Competitive Edge: Design Velocity That Outpaces Your Market",
+      "subhead": "While your competitors wait 5-7 days for design revisions, you'll ship campaigns the same week. We're building a cohort of 10 companies who treat design as competitive advantage.",
+      "pricing": "£999/month through December 2026.",
+      "enrollmentDeadline": "Enrollment closes December 31st, 2025.",
+      "bullets": [
+        "48-hour priority turnaround",
+        "Monthly strategy sessions with cohort",
+        "Rate locked for 14 months"
+      ]
+    },
+    "problems": [
+      {
+        "icon": "Clock",
+        "title": "Slow Kills Momentum",
+        "description": "Your competitor launched their Q1 campaign last week. You're still waiting on design revisions. By the time you launch, they've captured mindshare."
+      },
+      {
+        "icon": "Layers",
+        "title": "Inconsistent Looks Amateur",
+        "description": "Freelancer A does your social posts. Freelancer B handles presentations. Agency C owns the website. Your brand looks like 3 different companies. Enterprise clients notice."
+      },
+      {
+        "icon": "DollarSign",
+        "title": "Expensive = Rationed",
+        "description": "At £150 per social post, you test one ad instead of five. You skip updating that old pitch deck. You make do with 'good enough' because 'great' costs too much. Your competitors aren't rationing."
+      },
+      {
+        "icon": "UserX",
+        "title": "Hiring Creates New Bottlenecks",
+        "description": "Hire a designer for £45K/year. They're great at brand work, weak at motion graphics. They get sick. They take holiday. They quit after 8 months. You're back to square one."
+      }
+    ],
+    "timelineStages": [
+      {
+        "stage": "WEEK 1",
+        "title": "The Realization",
+        "description": "You finally update that pitch deck you've been putting off for 6 months. You test 3 ad variations instead of 1. You request 5 social post designs 'just to see what works.' For the first time, you realize: you've been rationing design for years."
+      },
+      {
+        "stage": "MONTH 1",
+        "title": "The Shift",
+        "description": "Your marketing team stops saying 'we can't launch until design is ready.' They start saying 'let's test that—we can have 3 versions by Thursday.' Campaign velocity increases 3x. Not because you're working harder. Because design isn't the bottleneck anymore."
+      },
+      {
+        "stage": "MONTH 3",
+        "title": "The Perception Gap",
+        "description": "Competitors start asking who your agency is. Prospects comment on your 'brand consistency.' You're the same size as your competitors, but you look 3x bigger. This matters when you're pitching enterprise clients. They don't buy from companies that look scrappy."
+      },
+      {
+        "stage": "MONTH 6",
+        "title": "The Unfair Advantage",
+        "description": "You can't imagine going back. While other companies your size spend 2 weeks getting a freelancer's attention, you ship campaigns the same week. Your competitors are still stuck in 2024's design constraints. You've moved on."
+      }
+    ],
+    "benefits": [
+      {
+        "icon": "Zap",
+        "title": "Speed & Agility",
+        "description": "Test more. Iterate faster. Capture opportunities while competitors are still briefing freelancers. Same-week delivery on every request—respond this week, not next month.",
+        "included": [
+          "48-hour turnaround on most projects",
+          "Same-day delivery available for urgent requests"
+        ]
+      },
+      {
+        "icon": "Calendar",
+        "title": "Strategic Partnership",
+        "description": "Monthly strategy calls with anonymous cohort insights. Design decisions informed by what's working for other growth-stage companies.",
+        "included": [
+          "1-hour monthly strategy session",
+          "Anonymous cohort intelligence"
+        ]
+      },
+      {
+        "icon": "Users",
+        "title": "Institutional Knowledge",
+        "description": "Dedicated team that learns your brand deeply. No re-briefing freelancers. No explaining your vision to new agencies.",
+        "included": [
+          "Dedicated design team",
+          "Centralized brand asset management"
+        ]
+      }
+    ],
+    "cohortReasons": [
+      {
+        "icon": "TrendingUp",
+        "title": "Cohort Economics",
+        "description": "10 companies at £999/month = predictable revenue that lets us invest in your success, not chase new clients. You get consistency and focus. We get sustainability.",
+        "tradeOff": "We turn away companies that don't fit. You get a design partner incentivized for long-term relationships."
+      },
+      {
+        "icon": "Layers",
+        "title": "Strategic Depth",
+        "description": "Monthly strategy calls where we know your business. A design team that understands your market position and competitive landscape. Not possible if we're servicing 50 clients.",
+        "tradeOff": "You don't get instant 24/7 availability. You do get designers who know your brand without needing re-briefs."
+      },
+      {
+        "icon": "Network",
+        "title": "Anonymous Cohort Insights",
+        "description": "You're in a cohort with 9 other growth-stage companies. We share patterns we see across the group. Example: 'We're seeing 3 B2B SaaS companies get better results with benefit-led ad copy. Worth testing?'",
+        "tradeOff": "We can't disclose who else is in the cohort. You do get strategic intelligence from companies at your stage."
+      }
+    ],
+    "comparisonTable": {
+      "alternatives": [
+        {
+          "name": "Freelancer Chaos",
+          "cost": "£2,000-4,000/month",
+          "details": [
+            "15-20 assets at project rates",
+            "£80-150 per social post",
+            "£500-1,000 per presentation"
+          ],
+          "downsides": [
+            "Inconsistent quality",
+            "Management overhead",
+            "Availability issues",
+            "\"Can you do this by Friday?\""
+          ]
+        },
+        {
+          "name": "Agency Retainer",
+          "cost": "£3,000-5,000/month",
+          "details": [
+            "Limited monthly hours",
+            "£150-250 per hour",
+            "Extra fees for rush work"
+          ],
+          "downsides": [
+            "Slow revision cycles",
+            "Account manager layers",
+            "3-6 month contracts",
+            "\"That'll cost extra\""
+          ]
+        },
+        {
+          "name": "Hiring In-House",
+          "cost": "£45K/year + benefits",
+          "details": [
+            "£3,750/month base",
+            "+ Benefits & tools",
+            "+ Recruitment costs"
+          ],
+          "downsides": [
+            "Sick days, holidays, turnover",
+            "Single specialization",
+            "Recruitment costs",
+            "\"I'm at capacity\""
+          ]
+        },
+        {
+          "name": "Class of 2025",
+          "cost": "£999/month",
+          "details": [
+            "Unlimited assets",
+            "All deliverables included",
+            "No hidden costs"
+          ],
+          "downsides": [
+            "No downtime",
+            "Full team access",
+            "Institutional knowledge",
+            "\"We'll have it Thursday\""
+          ]
+        }
+      ]
+    },
+    "testimonial": {
+      "quote": "We came to DesignWorks Bureau with a very open and non-specific brief, and they quickly transformed it into clear, innovative concepts. Every round of feedback was handled with exceptional speed and professionalism. The final design more than fulfilled our expectations. A fantastic partner—and the beginning of a long relationship.",
+      "author": "Ray Livingston",
+      "title": "Head of Brand & Product Marketing",
+      "company": "Jack Poker",
+      "challenge": "Scaling marketing for a regulated gambling platform across multiple markets while maintaining brand consistency and meeting tight campaign deadlines.",
+      "results": [
+        { "metric": "£19,050", "label": "value at project rates" },
+        { "metric": "£6,245", "label": "actual cost invested" },
+        { "metric": "40+ assets", "label": "delivered in first 90 days" },
+        { "metric": "36-hour", "label": "average turnaround" },
+        { "metric": "67% COST SAVINGS", "label": "vs freelancer model", "highlight": true }
+      ]
+    },
+    "finalCTA": {
+      "lockInNow": [
+        "£999/month through Dec 2026",
+        "14 months guaranteed pricing",
+        "48-hour priority turnaround",
+        "Monthly strategy sessions included",
+        "Join inaugural cohort",
+        "Start building momentum now",
+        { "text": "Save £6,300", "description": "over lock-in period", "bold": true }
+      ],
+      "waitUntil2026": [
+        "£1,449/month (minimum)",
+        "No rate lock guarantee",
+        "3-5 day standard turnaround",
+        "Strategy calls not included at standard rate",
+        "Miss Class of 2025 cohort",
+        "Start 12+ months behind",
+        { "text": "Pay £5,400 more", "description": "per year", "bold": true }
+      ],
+      "afterDeadline": [
+        "Class of 2025 closes permanently",
+        "Standard rate returns to £1,449/month",
+        "No rate lock guarantee for new clients",
+        "Monthly strategy sessions not included at standard tier"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "What's included in Class of 2025?",
+        "answer": "Five strategic capabilities:\n\n1. Campaign Velocity - Unlimited requests, most completed within 48 hours\n2. Market Agility - Same-week delivery guaranteed, no rush fees\n3. Strategic Partnership - Monthly 1-hour strategy sessions with cohort insights\n4. Institutional Knowledge - Dedicated team that learns your brand deeply\n5. Rate Lock - £999/month through December 31, 2026\n\nPlus: Brand asset management, style guide development, unlimited revisions, and everything your brand needs for consistency at scale."
+      },
+      {
+        "question": "How is this different from your standard service?",
+        "answer": "Three material differences:\n\n1. Turnaround - Class of 2025: Same-week guaranteed. Standard: 3-5 days.\n\n2. Strategic Access - Class of 2025: Monthly strategy calls, cohort insights, priority for new capabilities. Standard: Execution-focused.\n\n3. Pricing - Class of 2025: £999/month locked through 2026. Standard: £1,449/month.\n\nBoth get unlimited design and dedicated teams. Class of 2025 gets faster turnaround and strategic partnership."
+      },
+      {
+        "question": "What happens after December 31, 2026?",
+        "answer": "Three options:\n\nOption 1: Continue at £999/month (most clients choose this)\nNothing changes. Keep the strategic partnership.\n\nOption 2: Renegotiate based on usage\nIf your needs grew significantly or decreased, we can adjust.\n\nOption 3: Part ways\n30 days notice. No penalties. Your rate lock is preserved if you return.\n\nNew clients after signup: £1,449/month minimum, no rate lock."
+      },
+      {
+        "question": "Can I pause or cancel?",
+        "answer": "Complete flexibility:\n\nPause: Anytime with 30 days notice. Your rate is preserved. Resume whenever ready.\n\nCancel: Anytime with 30 days notice. No penalties. Keep all the work.\n\nRate Lock: If you pause or cancel, your locked rate is reserved. Return in 2027? Still at your founding rate.\n\nCompare to agencies (3-6 month contracts), freelancers (lost relationships), or hiring (can't pause employees)."
+      },
+      {
+        "question": "How do monthly strategy sessions work?",
+        "answer": "1-hour calls, scheduled monthly, focused on visual strategy:\n\n- What's working across the cohort (anonymous insights)\n- How your design supports business goals\n- Campaign planning for upcoming quarters\n- Visual trends relevant to your market\n\nNot possible with freelancers (transactional) or large agencies (account manager layer blocks access). You get direct access to the team working on your brand."
+      },
+      {
+        "question": "What's your turnaround time?",
+        "answer": "Same-week delivery guaranteed. Most projects completed within 48 hours.\n\nBreakdown by complexity:\n- Social posts, email templates: 24-36 hours\n- Presentations, landing pages: 36-48 hours\n- Multi-page documents: 48-72 hours\n- Full brand guides: 5-7 days\n\nUrgent requests: Many completed same-day. Just flag it.\n\nWe track this religiously. Q4 2024 average was 36 hours."
+      },
+      {
+        "question": "How is this different from hiring a designer?",
+        "answer": "Three key differences:\n\n1. Capacity - One designer: 15-20 assets/month. Our team: 30-50+ assets/month.\n\n2. Specialization - One designer: Great at brand, weak at motion graphics. Our team: Full spectrum.\n\n3. Risk - Hire for £45K/year, they leave in 8 months, start over. With us: Institutional knowledge stays, cancel anytime.\n\nTrade-off: You don't get someone in your office. You do get more capacity, broader skills, zero turnover risk."
+      },
+      {
+        "question": "Why lock in now vs waiting for Class of 2026?",
+        "answer": "Let's be honest about trade-offs:\n\nLock in now:\n- £999/month through December 2026 (14 months)\n- Continue at £999 after OR renegotiate\n- £6,300 savings vs standard rate\n- Join inaugural cohort from day one\n\nWait for Class of 2026:\n- Opens mid-2026 at earliest (if we run it)\n- Entry price likely £1,200-1,500\n- Shorter lock-in period\n- Start 6-12 months behind companies building momentum\n\nWaiting costs £450-900/month from January 2026 forward. That's £5,400-10,800 over one year.\n\nLocking in makes sense if you're serious about market positioning in 2025-2026."
+      },
+      {
+        "question": "Is there a minimum commitment?",
+        "answer": "No. Month-to-month subscription.\n\nCancel with 30 days notice anytime. No penalties. No questions.\n\nThe \"commitment\" is:\n- £999/month while active\n- 30 days notice to cancel\n\nNo 6-month minimum. No annual contracts. No cancellation fees.\n\nYour rate lock is the benefit, not a trap. We can't raise your price. You can cancel anytime."
+      },
+      {
+        "question": "What types of design work do you handle?",
+        "answer": "Everything your brand needs for consistency across touchpoints:\n\nDigital: Social graphics, email templates, landing pages, display ads, motion graphics\n\nSales: Pitch decks, presentations, proposals, case studies, one-pagers\n\nBrand: Logo development, brand guidelines, template libraries, icon sets\n\nPrint: Brochures, business cards, event graphics, packaging\n\nWhat we don't do: Video production (we do motion graphics, not editing), photography (we do editing), website development (we do design, you handle code), 3D modeling."
+      },
+      {
+        "question": "How do I submit requests?",
+        "answer": "Three ways:\n\n1. Slack (most popular) - Dedicated channel, real-time updates\n2. Email - Dedicated project email, 2-hour response\n3. Trello/Asana - Integrate with your existing tools\n\nEach request includes:\n- What you need\n- When you need it\n- Reference materials\n- Any constraints\n\nWe'll ask clarifying questions if needed, then get to work."
+      },
+      {
+        "question": "What if I have multiple brands?",
+        "answer": "One active request per brand at a time.\n\n2 brands = 2 simultaneous requests for £999/month.\n\n5+ brands = Consider Enterprise tier for that volume.\n\nMost Class of 2025 companies have 1-2 brands."
+      },
+      {
+        "question": "How do you maintain quality with unlimited requests?",
+        "answer": "Three mechanisms:\n\n1. Focus - One request at a time per brand. Deep focus until it's done right.\n\n2. Consistency - Same designers work on your brand every time. Quality improves as they learn.\n\n3. Unlimited revisions - We don't stop until it's right. No revision limits.\n\nOur incentive: Keep you subscribed long-term. That only happens if quality stays high."
+      },
+      {
+        "question": "What if I'm not happy with the work?",
+        "answer": "Unlimited revisions until you're satisfied.\n\nProcess:\n1. Provide specific feedback\n2. We revise and deliver updated version\n3. Repeat until you're happy\n4. No limit on revision rounds\n\nFirst month: If genuinely unsatisfied, cancel within 30 days. You're only out £999 and keep all work.\n\nWhat we need: Specific feedback. \"The colors feel too corporate\" gives us direction. \"I don't like it\" doesn't help us improve."
+      }
+    ]
+  }
+}

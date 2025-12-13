@@ -17,7 +17,7 @@ export default function DesignForGoodFounder() {
             <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
               {founder.eyebrow}
             </p>
-            <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
+            <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink text-balance">
               {founder.title}
             </h2>
           </div>

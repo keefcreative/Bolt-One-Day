@@ -3,19 +3,28 @@
 import React, { useState } from 'react'
 import { Check, Star, AlertTriangle, Clock, Users, TrendingUp } from 'lucide-react'
 import { balanceHeadline, balanceDescription } from '@/lib/typography-utils'
+import { scrollToElement } from '@/lib/scroll-utils'
+import { useCampaignSpots } from '@/hooks/useCampaignSpots'
 import brandedPricingData from '@/data/brandedPricing.json'
+import type { CampaignConfig } from '@/types/campaign'
+import campaignData from '@/data/activeCampaign.json'
 
-// Utility function for smooth scrolling (replace with your actual import)
-const scrollToElement = (selector: string) => {
-  const element = document.querySelector(selector)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
+const typedCampaignData = campaignData as CampaignConfig
 
 export default function BrandedPricingSection() {
   const [isEnterprisePlus, setIsEnterprisePlus] = useState(false)
   const { hero, plans, enterprisePlus } = brandedPricingData
+
+  // Get real-time campaign spots from Stripe
+  const campaignSpots = useCampaignSpots('classOf2025')
+
+  // Check if Class of 2025 campaign is active
+  const isCampaignActive = typedCampaignData.active === 'classOf2025' && typedCampaignData.classOf2025.enabled
+
+  // Use dynamic spots if available, fallback to static config during loading
+  const spotsRemaining = campaignSpots.loading
+    ? typedCampaignData.classOf2025.spotsRemaining
+    : campaignSpots.spotsRemaining
 
   const handleGetStarted = async (plan: typeof plans[0] | typeof enterprisePlus) => {
     if ('isCustom' in plan && plan.isCustom) {
@@ -100,7 +109,7 @@ export default function BrandedPricingSection() {
               // Determine if this is Enterprise plan and get appropriate data
               const isEnterprise = plan.name === "Enterprise"
               let currentPlan = plan
-              
+
               if (isEnterprise && isEnterprisePlus) {
                 currentPlan = {
                   ...plan,
@@ -115,9 +124,44 @@ export default function BrandedPricingSection() {
                 }
               }
 
+              // CAMPAIGN LOGIC: Check if this is Business plan during campaign
+              const isBusinessPlan = plan.name === "Business"
+              const isCampaignBusiness = isBusinessPlan && isCampaignActive
+
+              // Override stripe price ID for campaign
+              if (isCampaignBusiness && typedCampaignData.classOf2025.pricing.stripePriceId) {
+                currentPlan = {
+                  ...currentPlan,
+                  stripePriceId: typedCampaignData.classOf2025.pricing.stripePriceId
+                }
+              }
+
+              // Determine dynamic styling
+              const cardBg = isCampaignBusiness ? '#1A1A1A' : 'white' // smoke : white
+              const textColor = isCampaignBusiness ? 'white' : '#2c2c2c'
+              const secondaryTextColor = isCampaignBusiness ? '#E5E5E5' : '#6b7280'
+              const cardBorder = isCampaignBusiness
+                ? '2px solid #ff6b35'
+                : (currentPlan.popular ? '2px solid #ff6b35' : '1px solid rgba(107, 114, 128, 0.2)')
+
+              // Determine pricing
+              const displayPrice = isCampaignBusiness ? typedCampaignData.classOf2025.pricing.amount : currentPlan.price
+              const originalPrice = isCampaignBusiness ? currentPlan.price : null
+
+              // Badge content
+              const badgeContent = isCampaignBusiness
+                ? `CLASS OF 2025 - ${spotsRemaining} SPOTS LEFT`
+                : (currentPlan.popular ? 'Saves Most Time' : null)
+
               return (
-                <div key={index} style={{...cardStyle(currentPlan.popular), display: 'flex', flexDirection: 'column'}}>
-                  {currentPlan.popular && (
+                <div key={index} style={{
+                  ...cardStyle(currentPlan.popular || isCampaignBusiness),
+                  backgroundColor: cardBg,
+                  border: cardBorder,
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}>
+                  {badgeContent && (
                     <div style={{
                       position: 'absolute',
                       top: '-1rem',
@@ -133,8 +177,8 @@ export default function BrandedPricingSection() {
                       gap: '0.5rem',
                       whiteSpace: 'nowrap'
                     }}>
-                      <TrendingUp className="w-4 h-4" strokeWidth={1.2} />
-                      Saves Most Time
+                      <TrendingUp style={{ width: '16px', height: '16px' }} strokeWidth={1.2} />
+                      {badgeContent}
                     </div>
                   )}
 
@@ -185,72 +229,196 @@ export default function BrandedPricingSection() {
                     </div>
                   )}
 
-                  <div className="text-center mb-8">
-                    <h4 className="text-2xl font-light mb-2 tracking-tight" style={{ color: '#2c2c2c' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <h4 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: '300',
+                      marginBottom: '0.5rem',
+                      letterSpacing: '-0.025em',
+                      color: textColor
+                    }}>
                       {currentPlan.name}
                     </h4>
-                    <p className="text-lg font-medium mb-6" style={{ color: '#ff6b35' }}>
+                    <p style={{
+                      fontSize: '1.125rem',
+                      fontWeight: '500',
+                      marginBottom: '1.5rem',
+                      color: '#ff6b35'
+                    }}>
                       {currentPlan.tagline}
                     </p>
-                    <div className="flex items-baseline justify-center mb-6">
-                      <span className="text-5xl font-light tracking-tight" style={{ color: '#2c2c2c' }}>
-                        {currentPlan.price}
-                      </span>
-                      <span className="ml-2 font-light" style={{ color: '#6b7280' }}>
-                        {currentPlan.period}
-                      </span>
+
+                    {/* Price with optional strikethrough */}
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '1.5rem'
+                    }}>
+                      {originalPrice && (
+                        <span style={{
+                          fontSize: '1rem',
+                          fontWeight: '300',
+                          color: secondaryTextColor,
+                          textDecoration: 'line-through',
+                          opacity: 0.7,
+                          marginBottom: '0.25rem'
+                        }}>
+                          {originalPrice}
+                        </span>
+                      )}
+
+                      <div style={{ display: 'flex', alignItems: 'baseline' }}>
+                        <span style={{
+                          fontSize: '3rem',
+                          fontWeight: '300',
+                          letterSpacing: '-0.025em',
+                          color: textColor
+                        }}>
+                          {displayPrice}
+                        </span>
+                        <span style={{
+                          marginLeft: '0.5rem',
+                          fontWeight: '300',
+                          color: secondaryTextColor
+                        }}>
+                          {currentPlan.period}
+                        </span>
+                      </div>
+
+                      {isCampaignBusiness && (
+                        <span style={{
+                          fontSize: '0.75rem',
+                          fontWeight: '600',
+                          color: '#ff6b35',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                          marginTop: '0.5rem'
+                        }}>
+                          Save {typedCampaignData.classOf2025.pricing.savings}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-sm font-light px-4 py-2 inline-block border" style={{ 
-                      color: '#6b7280',
-                      backgroundColor: '#faf9f7',
-                      borderColor: 'rgba(107, 114, 128, 0.2)'
+
+                    <p style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '300',
+                      padding: '0.5rem 1rem',
+                      display: 'inline-block',
+                      border: '1px solid rgba(107, 114, 128, 0.2)',
+                      color: secondaryTextColor,
+                      backgroundColor: isCampaignBusiness ? 'rgba(255, 255, 255, 0.05)' : '#faf9f7'
                     }}>
                       {currentPlan.bestFor}
                     </p>
                   </div>
 
                   {/* Problems solved section */}
-                  <div className="mb-8">
-                    <h5 className="font-medium mb-4 flex items-center gap-2" style={{ color: '#2c2c2c' }}>
+                  <div style={{ marginBottom: '2rem' }}>
+                    <h5 style={{
+                      fontWeight: '500',
+                      marginBottom: '1rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: textColor
+                    }}>
                       <div style={{ width: '8px', height: '8px', backgroundColor: '#ff6b35' }}></div>
                       Problems This Solves:
                     </h5>
-                    <ul className="space-y-3">
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.75rem'
+                    }}>
                       {currentPlan.problemsSolved.slice(0, 3).map((problem, problemIndex) => (
-                        <li key={problemIndex} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#ff6b35' }} strokeWidth={1.2} />
-                          <span className="text-sm font-light leading-relaxed" style={{ color: '#6b7280' }}>
+                        <li key={problemIndex} style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.75rem'
+                        }}>
+                          <Check
+                            style={{
+                              width: '20px',
+                              height: '20px',
+                              marginTop: '0.125rem',
+                              flexShrink: 0,
+                              color: '#ff6b35'
+                            }}
+                            strokeWidth={1.2}
+                          />
+                          <span style={{
+                            fontSize: '0.875rem',
+                            fontWeight: '300',
+                            lineHeight: '1.625',
+                            color: secondaryTextColor
+                          }}>
                             {problem}
                           </span>
                         </li>
                       ))}
                     </ul>
+
+                    {/* Campaign-specific urgency note */}
+                    {isCampaignBusiness && (
+                      <p style={{
+                        fontSize: '0.875rem',
+                        fontWeight: '500',
+                        color: '#ff6b35',
+                        marginTop: '1rem',
+                        padding: '0.75rem',
+                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                        border: '1px solid rgba(255, 107, 53, 0.3)',
+                        fontStyle: 'italic'
+                      }}>
+                        Lock in this rate for life. Price increases Jan 1, 2026.
+                      </p>
+                    )}
                   </div>
 
                   {/* What's included */}
-                  <div className="mb-8 flex-grow">
-                    <h5 className="font-medium mb-4" style={{ color: '#2c2c2c' }}>What's Included:</h5>
-                    <ul className="space-y-2">
+                  <div style={{ marginBottom: '2rem', flexGrow: 1 }}>
+                    <h5 style={{
+                      fontWeight: '500',
+                      marginBottom: '1rem',
+                      color: textColor
+                    }}>
+                      What's Included:
+                    </h5>
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem'
+                    }}>
                       {currentPlan.features.map((feature, featureIndex) => {
                         // For Enterprise+, highlight the additional features (beyond original 6)
                         const isAdditionalFeature = isEnterprise && isEnterprisePlus && featureIndex >= 6
-                        
+
                         return (
-                          <li key={featureIndex} className="flex items-start gap-3">
-                            <div style={{ 
-                              width: '6px', 
-                              height: '6px', 
+                          <li key={featureIndex} style={{
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            gap: '0.75rem'
+                          }}>
+                            <div style={{
+                              width: '6px',
+                              height: '6px',
                               backgroundColor: isAdditionalFeature ? '#ff6b35' : 'rgba(107, 114, 128, 0.4)',
                               marginTop: '8px',
                               flexShrink: 0
                             }}></div>
-                            <span 
-                              className="text-sm font-light" 
-                              style={{ 
-                                color: isAdditionalFeature ? '#2c2c2c' : '#6b7280',
-                                fontWeight: isAdditionalFeature ? '500' : '300'
-                              }}
-                            >
+                            <span style={{
+                              fontSize: '0.875rem',
+                              fontWeight: isAdditionalFeature ? '500' : '300',
+                              color: isAdditionalFeature ? textColor : secondaryTextColor
+                            }}>
                               {feature}
                             </span>
                           </li>
@@ -261,18 +429,25 @@ export default function BrandedPricingSection() {
 
                   <button
                     onClick={() => handleGetStarted(currentPlan)}
-                    className="w-full py-4 px-6 font-medium text-sm tracking-widest uppercase transition-all duration-300"
                     style={{
-                      backgroundColor: currentPlan.popular ? '#ff6b35' : '#2c2c2c',
+                      width: '100%',
+                      padding: '1rem 1.5rem',
+                      fontWeight: '500',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      transition: 'all 0.3s ease',
+                      backgroundColor: currentPlan.popular || isCampaignBusiness ? '#ff6b35' : '#2c2c2c',
                       color: 'white',
                       border: 'none',
                       cursor: 'pointer'
                     }}
                     onMouseEnter={(e) => {
-                      (e.target as HTMLButtonElement).style.backgroundColor = currentPlan.popular ? '#e55a2b' : '#ff6b35'
+                      (e.target as HTMLButtonElement).style.backgroundColor = '#e55a2b'
                     }}
                     onMouseLeave={(e) => {
-                      (e.target as HTMLButtonElement).style.backgroundColor = currentPlan.popular ? '#ff6b35' : '#2c2c2c'
+                      (e.target as HTMLButtonElement).style.backgroundColor =
+                        (currentPlan.popular || isCampaignBusiness) ? '#ff6b35' : '#2c2c2c'
                     }}
                   >
                     {currentPlan.ctaText}

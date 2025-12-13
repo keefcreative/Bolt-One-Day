@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class of 2025 - Centered Constellation with Edge Breakaways</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            background: #0A0A0A;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            perspective: 1000px;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+        
+        /* ==========================================
+           CONSTELLATION BACKGROUND SYSTEM
+           ========================================== */
+        
+        .constellation-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Main Center Constellation */
+        .constellation-main {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 700px;
+            pointer-events: none;
+        }
+        
+        .constellation-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+        
+        /* Layer depth via blur and opacity */
+        .layer-back {
+            filter: blur(3px);
+            opacity: 0.25;
+            z-index: 1;
+            animation: mainDriftBack 80s ease-in-out infinite;
+        }
+        
+        .layer-mid {
+            filter: blur(1px);
+            opacity: 0.5;
+            z-index: 2;
+            animation: mainDriftMid 60s ease-in-out infinite;
+        }
+        
+        .layer-front {
+            filter: blur(0px);
+            opacity: 0.8;
+            z-index: 3;
+            animation: mainDriftFront 45s ease-in-out infinite;
+        }
+        
+        /* Main constellation animations */
+        @keyframes mainDriftBack {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(20px, -15px) scale(1.03);
+            }
+            50% {
+                transform: translate(-15px, 20px) scale(0.97);
+            }
+            75% {
+                transform: translate(-20px, -18px) scale(1.01);
+            }
+        }
+        
+        @keyframes mainDriftMid {
+            0%, 100% {
+                transform: translate(0, 0) scale(1) rotateZ(0deg);
+            }
+            33% {
+                transform: translate(-18px, 15px) scale(1.02) rotateZ(1.5deg);
+            }
+            66% {
+                transform: translate(15px, -12px) scale(0.98) rotateZ(-1.5deg);
+            }
+        }
+        
+        @keyframes mainDriftFront {
+            0%, 100% {
+                transform: translate(0, 0) scale(1) rotateZ(0deg);
+            }
+            30% {
+                transform: translate(12px, -18px) scale(1.01) rotateZ(-0.8deg);
+            }
+            60% {
+                transform: translate(-15px, 14px) scale(0.99) rotateZ(0.8deg);
+            }
+        }
+        
+        /* Edge Breakaway Clusters */
+        .cluster {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .cluster svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Top Right Cluster */
+        .cluster-top-right {
+            top: 8%;
+            right: 12%;
+            width: 280px;
+            height: 280px;
+            animation: clusterDrift1 50s ease-in-out infinite;
+        }
+        
+        @keyframes clusterDrift1 {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-15px, 10px) scale(1.05);
+            }
+        }
+        
+        /* Mid Right Cluster */
+        .cluster-mid-right {
+            top: 45%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            animation: clusterDrift2 45s ease-in-out infinite -10s;
+        }
+        
+        @keyframes clusterDrift2 {
+            0%, 100% {
+                transform: translate(0, 0) scale(1) rotateZ(0deg);
+            }
+            50% {
+                transform: translate(-10px, -12px) scale(0.95) rotateZ(2deg);
+            }
+        }
+        
+        /* Bottom Left Cluster */
+        .cluster-bottom-left {
+            bottom: 12%;
+            left: 8%;
+            width: 240px;
+            height: 240px;
+            animation: clusterDrift3 55s ease-in-out infinite -20s;
+        }
+        
+        @keyframes clusterDrift3 {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(12px, -8px) scale(1.02);
+            }
+        }
+        
+        /* Bottom Center Cluster (subtle) */
+        .cluster-bottom-center {
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 180px;
+            opacity: 0.4;
+            animation: clusterDrift4 60s ease-in-out infinite -15s;
+        }
+        
+        @keyframes clusterDrift4 {
+            0%, 100% {
+                transform: translateX(-50%) translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) translate(8px, 10px) scale(0.98);
+            }
+        }
+        
+        /* SVG Styles */
+        .constellation-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .node {
+            transform-origin: center;
+            transition: all 0.3s ease;
+        }
+        
+        .connection-line {
+            stroke-linecap: round;
+            fill: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Node animations */
+        @keyframes nodePulse {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
+        @keyframes nodeFloat {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(8px, -8px);
+            }
+            50% {
+                transform: translate(-4px, 8px);
+            }
+            75% {
+                transform: translate(-8px, -4px);
+            }
+        }
+        
+        /* Floating particles throughout */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(40px, -40px) scale(1.3);
+            }
+        }
+        
+        /* Ambient glow orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(80px);
+            opacity: 0.12;
+            animation: orbFloat 25s ease-in-out infinite;
+        }
+        
+        @keyframes orbFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(80px, -40px) scale(1.15);
+            }
+            66% {
+                transform: translate(-60px, 50px) scale(0.9);
+            }
+        }
+        
+        /* ==========================================
+           HERO CONTENT
+           ========================================== */
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+        
+        .eyebrow {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #FF6B35;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-weight: 300;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .btn-primary {
+            background: #FF6B35;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: #E5502C;
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .benefits {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .benefits li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: 500;
+        }
+        
+        .deadline {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+        
+        /* Orange outlined box (from your design) */
+        .outlined-box {
+            position: absolute;
+            top: 10%;
+            right: 8%;
+            width: 220px;
+            height: 280px;
+            border: 2px solid #FF6B35;
+            z-index: 2;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .constellation-main {
+                left: 50%;
+                width: 500px;
+                height: 500px;
+            }
+            
+            .cluster-top-right {
+                width: 180px;
+                height: 180px;
+                right: 5%;
+            }
+            
+            .cluster-mid-right {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .cluster-bottom-left {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .cluster-bottom-center {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 0 2rem;
+            }
+            
+            .outlined-box {
+                display: none;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Control Panel */
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 1.5rem;
+            border-radius: 0;
+            max-width: 300px;
+            z-index: 1000;
+            font-size: 0.875rem;
+        }
+        
+        .controls h3 {
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #FF6B35;
+            font-weight: 500;
+        }
+        
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+        
+        .control-group input[type="range"] {
+            width: 100%;
+        }
+        
+        .control-group input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        
+        .preset-btn {
+            padding: 0.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            color: #FF6B35;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .preset-btn:hover {
+            background: rgba(255, 107, 53, 0.2);
+            border-color: #FF6B35;
+        }
+        
+        .toggle-controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 999;
+        }
+        
+        .controls.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <!-- Constellation Background System -->
+        <div class="constellation-background">
+            <!-- Ambient glow orbs -->
+            <div class="glow-orb" style="width: 500px; height: 500px; background: #FF6B35; top: 20%; left: 30%;"></div>
+            <div class="glow-orb" style="width: 400px; height: 400px; background: #FF8964; bottom: 20%; right: 20%; animation-delay: -10s;"></div>
+            
+            <!-- Floating particles -->
+            <div class="particles" id="particles"></div>
+            
+            <!-- Main Center Constellation (3 layers) -->
+            <div class="constellation-main">
+                <div class="constellation-layer layer-back" data-depth="0.1">
+                    <svg class="constellation-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+                        <g class="connections-back"></g>
+                        <g class="nodes-back"></g>
+                    </svg>
+                </div>
+                
+                <div class="constellation-layer layer-mid" data-depth="0.3">
+                    <svg class="constellation-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+                        <g class="connections-mid"></g>
+                        <g class="nodes-mid"></g>
+                    </svg>
+                </div>
+                
+                <div class="constellation-layer layer-front" data-depth="0.5">
+                    <svg class="constellation-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+                        <g class="connections-front"></g>
+                        <g class="nodes-front"></g>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Edge Breakaway Clusters -->
+            <div class="cluster cluster-top-right">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+                    <g class="cluster-connections-1"></g>
+                    <g class="cluster-nodes-1"></g>
+                </svg>
+            </div>
+            
+            <div class="cluster cluster-mid-right">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                    <g class="cluster-connections-2"></g>
+                    <g class="cluster-nodes-2"></g>
+                </svg>
+            </div>
+            
+            <div class="cluster cluster-bottom-left">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+                    <g class="cluster-connections-3"></g>
+                    <g class="cluster-nodes-3"></g>
+                </svg>
+            </div>
+            
+            <div class="cluster cluster-bottom-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+                    <g class="cluster-connections-4"></g>
+                    <g class="cluster-nodes-4"></g>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Orange outlined box (decorative element from your design) -->
+        <div class="outlined-box"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="eyebrow">JOIN THE CLASS OF 2025</div>
+            
+            <h1>The 2025 Competitive Edge: Design Velocity That Outpaces Your Market</h1>
+            
+            <p class="subtitle">
+                While your competitors wait 5-7 days for design revisions, you'll ship campaigns the same week. 
+                We're building a cohort of 10 companies who treat design as competitive advantage.
+            </p>
+            
+            <p class="price">£999/month through December 2026.</p>
+            
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">
+                    BOOK DISCOVERY CALL
+                    <span>→</span>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    SEE HOW IT WORKS
+                </a>
+            </div>
+            
+            <ul class="benefits">
+                <li>48-hour priority turnaround</li>
+                <li>Monthly strategy sessions with cohort</li>
+                <li>Rate locked for 14 months</li>
+            </ul>
+            
+            <p class="deadline">Enrollment closes December 31st, 2025.</p>
+        </div>
+    </section>
+
+    <!-- Control Panel Toggle -->
+    <button class="toggle-controls" onclick="toggleControls()">⚙️ CONTROLS</button>
+    
+    <!-- Control Panel -->
+    <div class="controls hidden">
+        <h3>Constellation Controls</h3>
+        
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="parallaxEnabled" checked>
+                Enable Parallax
+            </label>
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Parallax Intensity: <span id="parallaxValue">20</span>px
+            </label>
+            <input type="range" id="parallaxIntensity" min="5" max="40" value="20">
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Main Opacity: <span id="mainOpacityValue">80</span>%
+            </label>
+            <input type="range" id="mainOpacity" min="30" max="100" value="80">
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Cluster Opacity: <span id="clusterOpacityValue">60</span>%
+            </label>
+            <input type="range" id="clusterOpacity" min="20" max="100" value="60">
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Animation Speed: <span id="speedValue">1.0</span>x
+            </label>
+            <input type="range" id="animSpeed" min="0.3" max="2.5" step="0.1" value="1.0">
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Node Size: <span id="nodeSizeValue">8</span>px
+            </label>
+            <input type="range" id="nodeSize" min="4" max="14" value="8">
+        </div>
+        
+        <div class="control-group">
+            <label>
+                Particle Count: <span id="particleCountValue">35</span>
+            </label>
+            <input type="range" id="particleCount" min="10" max="60" value="35">
+        </div>
+        
+        <h3 style="margin-top: 1.5rem;">Presets</h3>
+        <div class="preset-buttons">
+            <button class="preset-btn" onclick="applyPreset('subtle')">Subtle</button>
+            <button class="preset-btn" onclick="applyPreset('balanced')">Balanced</button>
+            <button class="preset-btn" onclick="applyPreset('dramatic')">Dramatic</button>
+            <button class="preset-btn" onclick="applyPreset('hypnotic')">Hypnotic</button>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CENTERED CONSTELLATION SYSTEM
+        // ============================================
+        
+        class CenteredConstellation {
+            constructor() {
+                // Main constellation layers
+                this.mainLayers = [
+                    { name: 'back', selector: '.nodes-back', connections: '.connections-back', nodeCount: 6, depth: 0.1 },
+                    { name: 'mid', selector: '.nodes-mid', connections: '.connections-mid', nodeCount: 8, depth: 0.3 },
+                    { name: 'front', selector: '.nodes-front', connections: '.connections-front', nodeCount: 10, depth: 0.5 }
+                ];
+                
+                // Edge breakaway clusters
+                this.clusters = [
+                    { name: 'cluster-1', nodes: '.cluster-nodes-1', connections: '.cluster-connections-1', nodeCount: 4, size: 280 },
+                    { name: 'cluster-2', nodes: '.cluster-nodes-2', connections: '.cluster-connections-2', nodeCount: 3, size: 200 },
+                    { name: 'cluster-3', nodes: '.cluster-nodes-3', connections: '.cluster-connections-3', nodeCount: 5, size: 240 },
+                    { name: 'cluster-4', nodes: '.cluster-nodes-4', connections: '.cluster-connections-4', nodeCount: 3, size: 180 }
+                ];
+                
+                this.settings = {
+                    parallaxEnabled: true,
+                    parallaxIntensity: 20,
+                    mainOpacity: 0.8,
+                    clusterOpacity: 0.6,
+                    animSpeed: 1.0,
+                    nodeSize: 8,
+                    clusterNodeSize: 5,
+                    nodeColor: '#FF6B35',
+                    connectionDensity: 40,
+                    particleCount: 35,
+                    pulseSpeed: 3,
+                    floatSpeed: 60
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.createMainConstellation();
+                this.createClusters();
+                this.createParticles();
+                this.setupParallax();
+                this.setupControls();
+            }
+            
+            // Create main center constellation
+            createMainConstellation() {
+                this.mainLayers.forEach(layer => {
+                    const nodesGroup = document.querySelector(layer.selector);
+                    const connectionsGroup = document.querySelector(layer.connections);
+                    
+                    if (!nodesGroup || !connectionsGroup) return;
+                    
+                    nodesGroup.innerHTML = '';
+                    connectionsGroup.innerHTML = '';
+                    
+                    const nodes = [];
+                    const centerX = 350;
+                    const centerY = 350;
+                    const spread = 200;
+                    
+                    // Create nodes in organic pattern
+                    for (let i = 0; i < layer.nodeCount; i++) {
+                        const angle = (i / layer.nodeCount) * Math.PI * 2 + (i * 2.4);
+                        const distance = 0.3 + (i / layer.nodeCount) * 0.7;
+                        
+                        const x = centerX + Math.cos(angle) * spread * distance + (Math.random() - 0.5) * 50;
+                        const y = centerY + Math.sin(angle) * spread * distance + (Math.random() - 0.5) * 50;
+                        
+                        const node = this.createNode(x, y, this.settings.nodeSize, i);
+                        nodesGroup.appendChild(node);
+                        nodes.push({ x, y });
+                    }
+                    
+                    // Create connections
+                    const maxDistance = spread * (this.settings.connectionDensity / 50);
+                    
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const distance = this.getDistance(nodes[i], nodes[j]);
+                            
+                            if (distance < maxDistance) {
+                                const line = this.createConnection(nodes[i], nodes[j]);
+                                connectionsGroup.appendChild(line);
+                            }
+                        }
+                    }
+                });
+                
+                this.applyMainStyles();
+            }
+            
+            // Create edge breakaway clusters
+            createClusters() {
+                this.clusters.forEach(cluster => {
+                    const nodesGroup = document.querySelector(cluster.nodes);
+                    const connectionsGroup = document.querySelector(cluster.connections);
+                    
+                    if (!nodesGroup || !connectionsGroup) return;
+                    
+                    nodesGroup.innerHTML = '';
+                    connectionsGroup.innerHTML = '';
+                    
+                    const nodes = [];
+                    const centerX = cluster.size / 2;
+                    const centerY = cluster.size / 2;
+                    const spread = cluster.size * 0.3;
+                    
+                    // Create smaller, more delicate nodes
+                    for (let i = 0; i < cluster.nodeCount; i++) {
+                        const angle = (i / cluster.nodeCount) * Math.PI * 2;
+                        const distance = 0.4 + Math.random() * 0.5;
+                        
+                        const x = centerX + Math.cos(angle) * spread * distance;
+                        const y = centerY + Math.sin(angle) * spread * distance;
+                        
+                        const node = this.createNode(x, y, this.settings.clusterNodeSize, i);
+                        nodesGroup.appendChild(node);
+                        nodes.push({ x, y });
+                    }
+                    
+                    // Create connections (fewer, more sparse)
+                    const maxDistance = spread * 1.2;
+                    
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const distance = this.getDistance(nodes[i], nodes[j]);
+                            
+                            if (distance < maxDistance && Math.random() > 0.3) {
+                                const line = this.createConnection(nodes[i], nodes[j]);
+                                connectionsGroup.appendChild(line);
+                            }
+                        }
+                    }
+                });
+                
+                this.applyClusterStyles();
+            }
+            
+            createNode(x, y, size, index) {
+                const node = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                node.setAttribute('class', 'node');
+                node.setAttribute('cx', x);
+                node.setAttribute('cy', y);
+                node.setAttribute('r', size);
+                
+                const delay = index * 0.3;
+                node.style.animation = `nodePulse ${this.settings.pulseSpeed}s ease-in-out infinite ${delay}s, nodeFloat ${this.settings.floatSpeed}s ease-in-out infinite ${delay * 2}s`;
+                
+                return node;
+            }
+            
+            createConnection(node1, node2) {
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('class', 'connection-line');
+                line.setAttribute('x1', node1.x);
+                line.setAttribute('y1', node1.y);
+                line.setAttribute('x2', node2.x);
+                line.setAttribute('y2', node2.y);
+                
+                return line;
+            }
+            
+            getDistance(node1, node2) {
+                const dx = node2.x - node1.x;
+                const dy = node2.y - node1.y;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+            
+            createParticles() {
+                const container = document.getElementById('particles');
+                container.innerHTML = '';
+                
+                for (let i = 0; i < this.settings.particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    const size = Math.random() * 3 + 1;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    
+                    const duration = 30 + Math.random() * 20;
+                    const delay = Math.random() * -30;
+                    
+                    particle.style.animation = `particleFloat ${duration}s ease-in-out infinite ${delay}s`;
+                    
+                    container.appendChild(particle);
+                }
+            }
+            
+            setupParallax() {
+                const mainConstellation = document.querySelector('.constellation-main');
+                const layers = document.querySelectorAll('.constellation-layer');
+                const clusters = document.querySelectorAll('.cluster');
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (!this.settings.parallaxEnabled) return;
+                    
+                    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+                    
+                    // Main constellation parallax
+                    layers.forEach(layer => {
+                        const depth = parseFloat(layer.dataset.depth);
+                        const moveX = x * this.settings.parallaxIntensity * depth;
+                        const moveY = y * this.settings.parallaxIntensity * depth;
+                        
+                        layer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    });
+                    
+                    // Subtle parallax on clusters
+                    clusters.forEach((cluster, index) => {
+                        const depth = 0.15 + (index * 0.05);
+                        const moveX = x * this.settings.parallaxIntensity * depth * 0.5;
+                        const moveY = y * this.settings.parallaxIntensity * depth * 0.5;
+                        
+                        const currentTransform = window.getComputedStyle(cluster).transform;
+                        if (currentTransform && currentTransform !== 'none') {
+                            cluster.style.transform = `${currentTransform.replace(/translate.*?\)/, '')} translate(${moveX}px, ${moveY}px)`;
+                        }
+                    });
+                });
+            }
+            
+            applyMainStyles() {
+                const color = this.settings.nodeColor;
+                const rgb = this.hexToRgb(color);
+                
+                document.querySelectorAll('.layer-front').forEach(layer => {
+                    layer.style.opacity = this.settings.mainOpacity;
+                });
+                
+                document.querySelectorAll('.constellation-main .node').forEach(node => {
+                    node.setAttribute('fill', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.15)`);
+                    node.setAttribute('stroke', color);
+                    node.setAttribute('stroke-width', '2');
+                    node.style.filter = `drop-shadow(0 0 6px ${color})`;
+                });
+                
+                document.querySelectorAll('.constellation-main .connection-line').forEach(line => {
+                    line.setAttribute('stroke', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.25)`);
+                    line.setAttribute('stroke-width', '1.5');
+                    line.style.filter = `drop-shadow(0 0 3px ${color})`;
+                });
+            }
+            
+            applyClusterStyles() {
+                const color = this.settings.nodeColor;
+                const rgb = this.hexToRgb(color);
+                
+                document.querySelectorAll('.cluster').forEach(cluster => {
+                    cluster.style.opacity = this.settings.clusterOpacity;
+                });
+                
+                document.querySelectorAll('.cluster .node').forEach(node => {
+                    node.setAttribute('fill', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.1)`);
+                    node.setAttribute('stroke', color);
+                    node.setAttribute('stroke-width', '1.5');
+                    node.style.filter = `drop-shadow(0 0 4px ${color})`;
+                });
+                
+                document.querySelectorAll('.cluster .connection-line').forEach(line => {
+                    line.setAttribute('stroke', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.2)`);
+                    line.setAttribute('stroke-width', '1');
+                    line.style.filter = `drop-shadow(0 0 2px ${color})`;
+                });
+            }
+            
+            setupControls() {
+                // Parallax toggle
+                document.getElementById('parallaxEnabled').addEventListener('change', (e) => {
+                    this.settings.parallaxEnabled = e.target.checked;
+                });
+                
+                // Parallax intensity
+                document.getElementById('parallaxIntensity').addEventListener('input', (e) => {
+                    this.settings.parallaxIntensity = parseFloat(e.target.value);
+                    document.getElementById('parallaxValue').textContent = e.target.value;
+                });
+                
+                // Main opacity
+                document.getElementById('mainOpacity').addEventListener('input', (e) => {
+                    this.settings.mainOpacity = parseFloat(e.target.value) / 100;
+                    document.getElementById('mainOpacityValue').textContent = e.target.value;
+                    this.applyMainStyles();
+                });
+                
+                // Cluster opacity
+                document.getElementById('clusterOpacity').addEventListener('input', (e) => {
+                    this.settings.clusterOpacity = parseFloat(e.target.value) / 100;
+                    document.getElementById('clusterOpacityValue').textContent = e.target.value;
+                    this.applyClusterStyles();
+                });
+                
+                // Animation speed
+                document.getElementById('animSpeed').addEventListener('input', (e) => {
+                    const speed = parseFloat(e.target.value);
+                    this.settings.animSpeed = speed;
+                    document.getElementById('speedValue').textContent = speed.toFixed(1);
+                    this.updateAnimationSpeeds();
+                });
+                
+                // Node size
+                document.getElementById('nodeSize').addEventListener('input', (e) => {
+                    this.settings.nodeSize = parseInt(e.target.value);
+                    this.settings.clusterNodeSize = Math.round(this.settings.nodeSize * 0.65);
+                    document.getElementById('nodeSizeValue').textContent = e.target.value;
+                    this.createMainConstellation();
+                    this.createClusters();
+                });
+                
+                // Particle count
+                document.getElementById('particleCount').addEventListener('input', (e) => {
+                    this.settings.particleCount = parseInt(e.target.value);
+                    document.getElementById('particleCountValue').textContent = e.target.value;
+                    this.createParticles();
+                });
+            }
+            
+            updateAnimationSpeeds() {
+                const speedMultiplier = 1 / this.settings.animSpeed;
+                
+                document.querySelector('.layer-back').style.animationDuration = `${80 * speedMultiplier}s`;
+                document.querySelector('.layer-mid').style.animationDuration = `${60 * speedMultiplier}s`;
+                document.querySelector('.layer-front').style.animationDuration = `${45 * speedMultiplier}s`;
+                
+                document.querySelectorAll('.cluster').forEach((cluster, index) => {
+                    const baseDurations = [50, 45, 55, 60];
+                    cluster.style.animationDuration = `${baseDurations[index] * speedMultiplier}s`;
+                });
+            }
+            
+            hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : { r: 255, g: 107, b: 53 };
+            }
+        }
+        
+        // Preset configurations
+        const presets = {
+            subtle: {
+                parallaxIntensity: 15,
+                mainOpacity: 0.6,
+                clusterOpacity: 0.4,
+                animSpeed: 0.6,
+                nodeSize: 6,
+                particleCount: 20
+            },
+            balanced: {
+                parallaxIntensity: 20,
+                mainOpacity: 0.8,
+                clusterOpacity: 0.6,
+                animSpeed: 1.0,
+                nodeSize: 8,
+                particleCount: 35
+            },
+            dramatic: {
+                parallaxIntensity: 30,
+                mainOpacity: 0.95,
+                clusterOpacity: 0.75,
+                animSpeed: 1.5,
+                nodeSize: 10,
+                particleCount: 45
+            },
+            hypnotic: {
+                parallaxIntensity: 35,
+                mainOpacity: 1.0,
+                clusterOpacity: 0.85,
+                animSpeed: 2.2,
+                nodeSize: 12,
+                particleCount: 55
+            }
+        };
+        
+        function applyPreset(presetName) {
+            const preset = presets[presetName];
+            
+            document.getElementById('parallaxIntensity').value = preset.parallaxIntensity;
+            document.getElementById('parallaxValue').textContent = preset.parallaxIntensity;
+            
+            document.getElementById('mainOpacity').value = preset.mainOpacity * 100;
+            document.getElementById('mainOpacityValue').textContent = preset.mainOpacity * 100;
+            
+            document.getElementById('clusterOpacity').value = preset.clusterOpacity * 100;
+            document.getElementById('clusterOpacityValue').textContent = preset.clusterOpacity * 100;
+            
+            document.getElementById('animSpeed').value = preset.animSpeed;
+            document.getElementById('speedValue').textContent = preset.animSpeed.toFixed(1);
+            
+            document.getElementById('nodeSize').value = preset.nodeSize;
+            document.getElementById('nodeSizeValue').textContent = preset.nodeSize;
+            
+            document.getElementById('particleCount').value = preset.particleCount;
+            document.getElementById('particleCountValue').textContent = preset.particleCount;
+            
+            // Trigger changes
+            constellation.settings.parallaxIntensity = preset.parallaxIntensity;
+            constellation.settings.mainOpacity = preset.mainOpacity;
+            constellation.settings.clusterOpacity = preset.clusterOpacity;
+            constellation.settings.animSpeed = preset.animSpeed;
+            constellation.settings.nodeSize = preset.nodeSize;
+            constellation.settings.clusterNodeSize = Math.round(preset.nodeSize * 0.65);
+            constellation.settings.particleCount = preset.particleCount;
+            
+            constellation.createMainConstellation();
+            constellation.createClusters();
+            constellation.createParticles();
+            constellation.updateAnimationSpeeds();
+        }
+        
+        function toggleControls() {
+            document.querySelector('.controls').classList.toggle('hidden');
+        }
+        
+        // Initialize
+        let constellation;
+        document.addEventListener('DOMContentLoaded', () => {
+            constellation = new CenteredConstellation();
+        });
+    </script>
+</body>
+</html>

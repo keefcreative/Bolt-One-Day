@@ -86,7 +86,7 @@ const config: Config = {
       
       // Premium Font Family
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'sans-serif'],
+        sans: ['var(--font-switzer)', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'sans-serif'],
         playfair: ['"Playfair Display"', 'serif'],
       },
       

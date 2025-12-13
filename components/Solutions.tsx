@@ -25,10 +25,10 @@ export default function Solutions() {
           <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
             {header.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink">
+          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink text-balance">
             {header.title}
           </h2>
-          <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto">
+          <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto text-pretty">
             {header.description}
           </p>
         </div>
@@ -43,11 +43,11 @@ export default function Solutions() {
                   <IconComponent className="w-10 h-10" strokeWidth={1.2} />
                 </div>
                 
-                <h3 className="text-[1.75rem] font-light text-ink mb-6 leading-[1.3] group-hover:text-flame transition-colors duration-600">
+                <h3 className="text-[1.75rem] font-light text-ink mb-6 leading-[1.3] group-hover:text-flame transition-colors duration-600 text-balance">
                   {solution.title}
                 </h3>
-                
-                <p className="text-smoke font-light leading-[1.6] text-[1rem]">
+
+                <p className="text-smoke font-light leading-[1.6] text-[1rem] text-pretty">
                   {solution.description}
                 </p>
 

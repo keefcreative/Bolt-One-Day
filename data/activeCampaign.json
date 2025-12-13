@@ -1,0 +1,108 @@
+{
+  "active": "classOf2025",
+  "classOf2025": {
+    "enabled": true,
+    "name": "Class of 2025",
+    "spotsRemaining": 8,
+    "totalSpots": 10,
+    "deadline": "2025-12-31T23:59:59Z",
+    "pricing": {
+      "amount": "£999",
+      "period": "/month",
+      "originalPrice": "£1,449",
+      "savings": "£450",
+      "stripePriceId": "price_1Sc4O7P3PqPfy1jMzrqN0O7L"
+    },
+    "banner": {
+      "text": "Class of 2025: {spots} spots left – Lock in £999/mo before Dec 31",
+      "cta": "Apply Now",
+      "ctaHref": "/class-of-2025-v2"
+    },
+    "urls": {
+      "discoveryCall": "https://meet.brevo.com/designworksbureau/class-of-2025-discovery-call",
+      "email": "hello@designworksbureau.co.uk"
+    },
+    "cta": {
+      "primary": "Book Discovery Call",
+      "secondary": "See How It Works",
+      "enroll": "Claim Your Seat",
+      "enrollLoading": "Loading..."
+    },
+    "benefits": [
+      {
+        "icon": "Zap",
+        "title": "Unlimited Requests",
+        "description": "Submit as many design projects as you need. From brand identity to marketing materials, we handle it all."
+      },
+      {
+        "icon": "Target",
+        "title": "48-Hour Turnaround",
+        "description": "Priority delivery on every request. Most projects completed within 48 hours, many same-day."
+      },
+      {
+        "icon": "Calendar",
+        "title": "Monthly Strategy Sessions",
+        "description": "1-hour strategic planning calls each month. Align design with business goals and market opportunities."
+      },
+      {
+        "icon": "Lock",
+        "title": "Locked Pricing",
+        "description": "£999/month guaranteed through December 2025. No price increases, no surprises."
+      },
+      {
+        "icon": "Users",
+        "title": "Dedicated Team",
+        "description": "Your own design squad that learns your brand inside and out. Consistency across all touchpoints."
+      },
+      {
+        "icon": "Check",
+        "title": "Flexible Commitment",
+        "description": "Pause or cancel anytime. No long-term contracts or hidden fees. You're in control."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What's included in the Class of 2025?",
+        "answer": "You get unlimited design requests, 48-hour average turnaround, monthly 1-hour strategy sessions, a dedicated design team, and locked pricing of £999/month through December 2025. This includes all types of design work: branding, web design, marketing materials, social media assets, presentations, and more."
+      },
+      {
+        "question": "How is this different from your standard service?",
+        "answer": "Class of 2025 offers significantly discounted pricing (£999 vs £1,449 standard rate), priority turnaround times, guaranteed monthly strategy sessions, and rate protection through the end of 2025. You're also part of an exclusive cohort of 10 forward-thinking businesses."
+      },
+      {
+        "question": "Can I pause or cancel my subscription?",
+        "answer": "Yes, absolutely. You can pause your subscription at any time (you retain your spot but aren't billed), or cancel with no penalties. We believe in earning your business every month through exceptional work."
+      },
+      {
+        "question": "What's your typical turnaround time?",
+        "answer": "For Class of 2025 members, average turnaround is 48 hours. Many requests are completed same-day or next-day. Larger projects like full website designs or comprehensive brand systems may take 5-7 days, but you'll always know the timeline upfront."
+      },
+      {
+        "question": "How do monthly strategy sessions work?",
+        "answer": "Each month, you'll have a dedicated 1-hour video call with your design team. We'll review your business goals, upcoming campaigns, market opportunities, and align your design strategy accordingly. These sessions ensure every design decision supports your bigger business objectives."
+      },
+      {
+        "question": "What happens after December 2025?",
+        "answer": "After December 2025, you have three options: continue at the standard rate (£1,449/month), negotiate a custom enterprise package, or cancel with no penalties. There's no obligation to continue, but many clients choose to stay for the ongoing value."
+      },
+      {
+        "question": "Is there a minimum commitment period?",
+        "answer": "No minimum commitment. While the campaign runs through December 2025, you can pause or cancel at any time. However, if you leave and want to rejoin later, you'll pay the current standard rate, not the locked £999/month rate."
+      },
+      {
+        "question": "What types of design work do you handle?",
+        "answer": "We handle all types of graphic design: brand identity, logo design, web design and development, marketing materials, social media assets, presentations, packaging design, email templates, infographics, illustrations, and more. If it's visual, we can help."
+      }
+    ]
+  },
+  "designForGood": {
+    "enabled": false,
+    "name": "Design for Good",
+    "tagline": "Premium design for nonprofits that change the world",
+    "showBelowPricing": true,
+    "ctaText": "Learn More",
+    "ctaHref": "/design-for-good",
+    "backgroundColor": "#E8F0EC",
+    "accentColor": "#16a34a"
+  }
+}

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe, stripePublicKey } from '@/lib/stripe'
+import { applyBrandingToCheckout } from '@/lib/stripe-branding'
+import type Stripe from 'stripe'
 
 // Test endpoint for Stripe integration - REMOVE IN PRODUCTION
 export async function GET(request: NextRequest) {
@@ -159,8 +161,8 @@ export async function POST(request: NextRequest) {
   try {
     const { priceId, email } = await request.json()
 
-    // Create a subscription checkout session
-    const session = await stripe.checkout.sessions.create({
+    // Create a subscription checkout session with branding
+    const checkoutParams: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
       line_items: priceId ? [
         {
@@ -189,7 +191,15 @@ export async function POST(request: NextRequest) {
       customer_email: email,
       billing_address_collection: 'required',
       allow_promotion_codes: true,
-    })
+      metadata: {
+        source: 'test-endpoint',
+        environment: 'development',
+      },
+    }
+
+    // Apply DesignWorks branding
+    const brandedParams = applyBrandingToCheckout(checkoutParams)
+    const session = await stripe.checkout.sessions.create(brandedParams)
 
     return NextResponse.json({
       success: true,

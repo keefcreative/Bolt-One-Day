@@ -1,0 +1,43 @@
+{
+  "id": "gypsumtools-black-friday-2025-campaign",
+  "title": "Gypsumtools Black Friday 2025 Campaign",
+  "category": "Multi-Channel Campaign",
+  "briefDescription": "Comprehensive Black Friday campaign spanning website banners, social media content, email marketing sequence, and large-format print materials.",
+  "description": "Gypsumtools required a full-scale Black Friday campaign to drive sales across their professional tool and materials range. This multi-channel project delivered a cohesive visual system across digital and print, with 14 daily product promotions supported by coordinated marketing assets.",
+  "image": "/images/portfolio/gypsumtools-black-friday-2025/hero.jpg",
+  "images": [
+    "/images/portfolio/gypsumtools-black-friday-2025/creative-concepts-presentation.jpg",
+    "/images/portfolio/gypsumtools-black-friday-2025/website-banners-desktop-mobile.jpg",
+    "/images/portfolio/gypsumtools-black-friday-2025/social-media-posts-suite.jpg",
+    "/images/portfolio/gypsumtools-black-friday-2025/email-sequence-layouts.jpg",
+    "/images/portfolio/gypsumtools-black-friday-2025/a1-print-poster.jpg"
+  ],
+  "tags": ["Campaign Design", "Social Media", "Email Marketing", "Web Banners", "Print Design"],
+  "client": "Gypsumtools",
+  "year": "2025",
+  "duration": "4 weeks",
+  "industry": "Construction / Tools",
+  "location": "UK",
+  "projectType": "Marketing Campaign",
+  "challenge": "Create a cohesive Black Friday campaign that would stand out in a crowded promotional period whilst maintaining Gypsumtools' professional brand positioning. The campaign needed to promote 14 different product deals across a two-week period, requiring a scalable system for daily social content.",
+  "solution": "We developed three distinct creative concepts—'Industrial Impact' (bold, high-contrast workshop aesthetic), 'Precision Cuts' (clean, technical approach), and 'Toolbox Takeover' (dynamic, action-oriented)—allowing the client to choose the direction that best aligned with their audience. The selected concept was then rolled out across all channels: responsive website banners (desktop and mobile), a three-email sequence (pre-hype, featured products, launch), daily social media posts for 'Deal of the Day' promotions, animated in/out videos, and A1 print materials for trade counter display. We created a Canva bulk-creation system enabling the client to generate variations efficiently.",
+  "results": [
+    "3 creative concepts developed and presented",
+    "Desktop and mobile website banner suite",
+    "14 'Deal of the Day' social media post sets",
+    "3-email automated sequence (pre-hype, features, launch)",
+    "A1 large-format print materials",
+    "Canva bulk-creation workflow for future campaigns"
+  ],
+  "services": ["Campaign Strategy", "Creative Direction", "Web Design", "Social Media Design", "Email Design", "Print Design", "Video Production"],
+  "brandMessage": "Coordinated multi-channel campaigns that transform seasonal promotions into memorable brand moments.",
+  "whatWeLearned": "Building scalable systems (like Canva bulk-creation workflows) multiplies the value of creative work by enabling clients to generate variations independently. The three-concept approach ensured buy-in by demonstrating genuine strategic alternatives.",
+  "technicalDetails": [
+    "Responsive web banner specifications (1920×527 desktop, 349×350 mobile)",
+    "3-email HTML template development",
+    "Social media post templates (1080×1080 feed, story formats)",
+    "In/out video animation assets",
+    "A1 print-ready artwork (594mm × 841mm)",
+    "Canva bulk CSV workflow system"
+  ]
+}

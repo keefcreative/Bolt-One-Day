@@ -38,7 +38,9 @@ export async function POST(request: NextRequest) {
         company: formData.company,
         message: formData.message,
         service: formData.service,
-        source: formData.source || 'Website Contact Form'
+        source: formData.source || 'Website Contact Form',
+        campaign: formData.campaign,
+        campaignSource: formData.campaignSource
       })
 
       // Send notification email to team
@@ -49,6 +51,8 @@ export async function POST(request: NextRequest) {
           company: formData.company,
           message: formData.message,
           service: formData.service,
+          campaign: formData.campaign,
+          campaignSource: formData.campaignSource
         })
 
         // Send welcome email to the contact

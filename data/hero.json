@@ -15,16 +15,16 @@
   "stats": {
     "items": [
       {
-        "number": "50+",
-        "label": "Happy Clients"
+        "number": "250+",
+        "label": "Projects\nCompleted"
+      },
+      {
+        "number": "12+",
+        "label": "Brands\nElevated"
       },
       {
         "number": "48h",
-        "label": "Quick Turnaround"
-      },
-      {
-        "number": "99%",
-        "label": "Client Happiness"
+        "label": "Work\nDelivered"
       }
     ]
   }

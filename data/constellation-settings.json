@@ -1,0 +1,20 @@
+{
+  "autoAnimationEnabled": true,
+  "driftSpeed": 2.5,
+  "driftIntensity": 175,
+  "parallaxEnabled": true,
+  "parallaxIntensity": 30,
+  "backBlur": 4,
+  "backOpacity": 0.35,
+  "midBlur": 1.5,
+  "midOpacity": 0.65,
+  "nodeSize": 6,
+  "nodeColor": "#ff6b34",
+  "nodeGlow": 9,
+  "connectionDensity": 30,
+  "connectionWidth": 1,
+  "particleCount": 45,
+  "particleSpeed": 25,
+  "pulseSpeed": 3,
+  "floatSpeed": 30
+}

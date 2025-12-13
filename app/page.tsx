@@ -5,8 +5,9 @@ import Services from '@/components/Services'
 import WeBelieve from '@/components/WeBelieve'
 import TeamCollective from '@/components/TeamCollective'
 import PortfolioServer from '@/components/PortfolioServer'
-import TestimonialsSimple from '@/components/TestimonialsSimple'
+import SingleTestimonial from '@/components/SingleTestimonial'
 import BrandedPricingSection from '@/components/BrandedPricingSection'
+import DesignForGoodBanner from '@/components/DesignForGoodBanner'
 import SingleProject from '@/components/SingleProject'
 import Solutions from '@/components/Solutions'
 import { PremiumCta } from '@/components/PremiumCta'
@@ -38,12 +39,14 @@ export default function Home() {
       <section id="process">
         <PremiumDesignProcess />
       </section>
-      <section id="testimonials">
-        <TestimonialsSimple />
+      <section id="testimonial">
+        <SingleTestimonial />
       </section>
       <section id="pricing">
         <BrandedPricingSection />
       </section>
+      {/* Design for Good Banner - Only shows during DFG campaign */}
+      <DesignForGoodBanner />
       <section id="single-project">
         <SingleProject />
       </section>

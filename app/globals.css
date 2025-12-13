@@ -31,6 +31,14 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0rem;
+
+    /* Campaign banner height - default: no banner */
+    --banner-height: 0px;
+  }
+
+  /* When campaign banner is active */
+  :root.has-banner {
+    --banner-height: 60px;
   }
   
   .dark {
@@ -70,7 +78,7 @@
   
   body {
     @apply bg-pearl text-ink;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    /* Font family now handled via Tailwind 'font-sans' class using --font-switzer CSS variable */
     font-weight: 300;
     line-height: 1.6;
     letter-spacing: -0.01em;
@@ -133,7 +141,8 @@
   }
   
   .nav-sticky {
-    @apply fixed top-0 left-0 right-0 z-50 border-b border-mist/50 transition-all duration-base ease-premium;
+    @apply fixed left-0 right-0 z-50 border-b border-mist/50 transition-all duration-base ease-premium;
+    top: var(--banner-height, 0px);
   }
   
   .nav-link {
@@ -438,6 +447,42 @@
 
   .animate-loop-horizontally:hover {
     animation-play-state: paused;
+  }
+
+  /* Logo Icon Animations */
+  @keyframes logo-float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-6px) scale(1.02);
+    }
+  }
+
+  @keyframes logo-glow-rotate {
+    0% {
+      filter: drop-shadow(0 -4px 6px rgba(255, 107, 53, 0.6));
+    }
+    25% {
+      filter: drop-shadow(4px 0 6px rgba(255, 107, 53, 0.6));
+    }
+    50% {
+      filter: drop-shadow(0 4px 6px rgba(255, 107, 53, 0.6));
+    }
+    75% {
+      filter: drop-shadow(-4px 0 6px rgba(255, 107, 53, 0.6));
+    }
+    100% {
+      filter: drop-shadow(0 -4px 6px rgba(255, 107, 53, 0.6));
+    }
+  }
+
+  .animate-logo-float {
+    animation: logo-float 4s ease-in-out infinite;
+  }
+
+  .animate-logo-glow-rotate {
+    animation: logo-glow-rotate 10s linear infinite;
   }
 
   /* Testimonials Styles */

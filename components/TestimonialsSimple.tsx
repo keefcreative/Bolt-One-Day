@@ -49,10 +49,10 @@ export default function TestimonialsSimple() {
           <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
             {testimonials.eyebrow}
           </p>
-          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-white">
+          <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-white text-balance">
             {testimonials.title}
           </h2>
-          <p className="text-lg font-light text-pearl/80 leading-[1.6] max-w-2xl mx-auto">
+          <p className="text-lg font-light text-pearl/80 leading-[1.6] max-w-2xl mx-auto text-pretty">
             {testimonials.description}
           </p>
         </div>

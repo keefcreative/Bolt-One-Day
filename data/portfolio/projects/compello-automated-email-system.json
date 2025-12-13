@@ -1,0 +1,61 @@
+{
+  "id": "compello-automated-email-system",
+  "title": "Compello Automated Monthly Offers Email System",
+  "category": "Email Design & Automation",
+  "briefDescription": "Bulletproof automated email template system delivering monthly vehicle offers with zero manual rebuilds.",
+  "description": "Compello needed to send monthly vehicle offers to their client base, but rebuilding emails every month was eating time and introducing errors. We built an automated template system that generates pixel-perfect, Outlook-safe emails from data—turning a recurring headache into a one-click process.",
+  "createdDate": "2025-10-01",
+  "featured": true,
+  "draft": false,
+  "priority": 3,
+  "image": "/images/portfolio/compello-automated-email-system.jpg",
+  "tags": [
+    "Email Automation",
+    "HTML Email",
+    "Template System",
+    "Outlook Compatible",
+    "Mobile Responsive"
+  ],
+  "client": "Compello",
+  "year": "2025",
+  "duration": "3 weeks",
+  "industry": "Vehicle Leasing",
+  "location": "UK",
+  "projectType": "Automation System",
+  "challenge": "Monthly vehicle offer emails were a recurring pain point. Each month meant rebuilding from scratch—reformatting vehicle data, wrestling with Outlook rendering issues, testing across email clients, fixing mobile layouts. The process took days, introduced inconsistencies, and pulled the team away from higher-value work. Compello needed a system, not a service.",
+  "solution": "We engineered a bulletproof HTML email template with JavaScript-powered content generation. The 1,100+ line template handles every email client quirk—Outlook's notorious rendering, iOS link detection, Gmail's style stripping. Vehicle data feeds directly into the system, generating production-ready emails automatically. Mobile-responsive tables, consistent branding, zero manual formatting. What took days now takes minutes.",
+  "results": [
+    "Reduced email production time from days to minutes",
+    "100% consistent branding across every monthly send",
+    "Bulletproof rendering across Outlook, Gmail, Apple Mail, and mobile",
+    "Zero manual HTML editing required for monthly updates",
+    "Scalable system handling any number of vehicle offers",
+    "Mobile-responsive design with custom table layouts",
+    "Eliminated rendering bugs and client-specific issues"
+  ],
+  "services": [
+    "Email Template Engineering",
+    "Automation System Development",
+    "Cross-Client Compatibility Testing",
+    "Mobile-Responsive Email Design",
+    "JavaScript Template Generation"
+  ],
+  "technicalDetails": [
+    "1,143 lines of bulletproof HTML/CSS",
+    "Outlook-specific conditional formatting",
+    "iOS and Gmail link detection handling",
+    "JavaScript-powered content injection",
+    "Mobile breakpoints with table restructuring",
+    "5+ iteration refinement process"
+  ],
+  "brandMessage": "The best design systems eliminate recurring work. We don't just design emails—we engineer systems that keep delivering value month after month without constant intervention.",
+  "whatWeLearned": "Email automation isn't about replacing designers—it's about freeing them from repetitive production work. When the technical foundation is solid, creativity can focus on strategy and improvement rather than fighting rendering bugs.",
+  "liveUrl": "https://trello.com/c/example/271-compello-offers-mailer",
+  "images": [
+    "/images/portfolio/compello-automated-email-system/email-desktop-preview.jpg",
+    "/images/portfolio/compello-automated-email-system/email-mobile-responsive.jpg",
+    "/images/portfolio/compello-automated-email-system/outlook-compatibility-testing.jpg",
+    "/images/portfolio/compello-automated-email-system/template-code-structure.jpg",
+    "/images/portfolio/compello-automated-email-system/vehicle-data-integration.jpg"
+  ]
+}

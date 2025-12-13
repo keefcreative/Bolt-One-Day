@@ -52,6 +52,14 @@ The app uses Next.js App Router with the following organization:
 ### Design System
 
 Custom premium design tokens defined in `tailwind.config.ts`:
+- **Primary Font**: Switzer (geometric sans-serif)
+  - Configured via `next/font/local` in `/app/layout.tsx`
+  - Weights: Light (300), Regular (400), Medium (500)
+  - Font files: `/public/fonts/switzer/*.otf`
+  - CSS variable: `--font-switzer`
+- **Accent Font**: Playfair Display (serif, from Google Fonts)
+  - Used for Design for Good section headlines
+  - Weights: 400, 500, 600, 700
 - **Colors**: ink, smoke, ash, pearl, silk, mist, flame, ember, coral, ocean
 - **Typography**: Custom font scales (hero, display, section, subsection)
 - **Animations**: fade-in variants, underline-reveal, loop-horizontally

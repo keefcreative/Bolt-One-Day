@@ -267,7 +267,7 @@ export default function Hero() {
                 <div className="text-[2.5rem] font-light text-white mb-2 group-hover:text-flame transition-colors duration-400">
                   {stat.number}
                 </div>
-                <div className="text-white/70 uppercase tracking-[0.1em] text-sm font-medium">
+                <div className="text-white/70 uppercase tracking-[0.1em] text-sm font-medium whitespace-pre-line">
                   {stat.label}
                 </div>
               </div>

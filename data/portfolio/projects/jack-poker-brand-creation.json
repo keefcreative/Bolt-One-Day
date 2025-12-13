@@ -1,0 +1,43 @@
+{
+  "id": "jack-poker-brand-creation",
+  "title": "Jack Poker Complete Brand Creation",
+  "category": "Brand Identity",
+  "briefDescription": "Full brand creation for AI-powered poker platform, from strategic positioning through four distinct creative directions to final identity system.",
+  "description": "Jack Poker, an innovative AI-powered online poker platform, required a complete brand identity built from scratch. This comprehensive project explored the intersection of technology, entertainment, and gaming culture, delivering a distinctive visual system that differentiates in a competitive market.",
+  "image": "/images/portfolio/jack-poker-brand-creation/hero.jpg",
+  "images": [
+    "/images/portfolio/jack-poker-brand-creation/brand-strategy-moodboards.jpg",
+    "/images/portfolio/jack-poker-brand-creation/four-creative-routes.jpg",
+    "/images/portfolio/jack-poker-brand-creation/character-design-exploration.jpg",
+    "/images/portfolio/jack-poker-brand-creation/logo-development-process.jpg",
+    "/images/portfolio/jack-poker-brand-creation/final-brand-system.jpg"
+  ],
+  "tags": ["Brand Creation", "Logo Design", "Character Design", "Visual Identity", "Gaming", "Tech"],
+  "client": "Jack Poker",
+  "year": "2024",
+  "duration": "6 weeks",
+  "industry": "Gaming / Technology",
+  "location": "UK",
+  "projectType": "Brand Creation",
+  "challenge": "Create a completely new brand identity for an AI-powered poker platform that needed to appeal to both casual players and serious enthusiasts. The brand had to communicate technological sophistication without alienating users who simply want entertainment, whilst standing out in a market dominated by established poker brands.",
+  "solution": "We began with extensive competitor analysis and strategic positioning work, examining trends in gaming, technology, and entertainment branding. A comprehensive moodboard process explored colour psychology, typography trends, and visual directions. Four distinct creative routes were developed: Route 1 ('Digital Horizon'—high-tech, AI-forward with neon accents), Route 2 ('Playful Premium'—vibrant gradients, approachable personality), Route 3 ('Strategic Elegance'—regal, navy and gold, chess-inspired), and Route 4 ('Quantum Edge'—futuristic, circuitry patterns, electric energy). Each route included logotype concepts and character design exploration, recognising the importance of mascot potential in gaming brands.",
+  "results": [
+    "Comprehensive competitor and market analysis",
+    "20+ moodboard explorations",
+    "4 complete creative routes with rationale",
+    "Character design concepts per route",
+    "Full logotype development",
+    "Strategic brand positioning document"
+  ],
+  "services": ["Brand Strategy", "Competitor Analysis", "Visual Identity", "Logo Design", "Character Design", "Moodboarding"],
+  "brandMessage": "Building brands from zero requires genuine exploration—not predetermined outcomes dressed as options.",
+  "whatWeLearned": "Gaming and technology brands benefit enormously from character/mascot exploration even if not ultimately used. The personality dimension helps clarify abstract brand values. Four routes, whilst more intensive, generates superior final outcomes compared to presenting variations of a single direction.",
+  "technicalDetails": [
+    "AI-assisted concept generation",
+    "Comprehensive moodboard methodology",
+    "Multi-route creative exploration",
+    "Character design guidelines",
+    "Logo versatility testing (dark/light, scale)",
+    "Colour palette psychology analysis"
+  ]
+}

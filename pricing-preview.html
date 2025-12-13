@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Section Preview</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #faf9f7; }
+        .headline-balanced { text-wrap: balance; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- MOCK ICONS (Simulating Lucide-React) ---
+        const Check = ({ className, style }) => <i data-lucide="check" className={className} style={style}></i>;
+        const TrendingUp = ({ className }) => <i data-lucide="trending-up" className={className}></i>;
+        const Sparkles = ({ className, fill }) => <i data-lucide="sparkles" className={className} style={{ fill: fill || 'none' }}></i>;
+        const Heart = ({ className, fill }) => <i data-lucide="heart" className={className} style={{ fill: fill || 'none' }}></i>;
+        const Timer = ({ className }) => <i data-lucide="timer" className={className}></i>;
+        const Tag = ({ className }) => <i data-lucide="tag" className={className}></i>;
+
+        // --- MOCK DATA (Replacing your JSON import) ---
+        const brandedPricingData = {
+            hero: {
+                eyebrow: "Pricing Plans",
+                title: "Design that scales with you",
+                description: ["Simple, transparent pricing to grow your business.", "Pause or cancel anytime."],
+                sectionTitle: "Choose your perfect plan"
+            },
+            plans: [
+                {
+                    name: "Starter",
+                    tagline: "For small teams",
+                    price: "£1,999",
+                    period: "/month",
+                    popular: false,
+                    bestFor: "Small tasks & Ad-hoc",
+                    ctaText: "Get Started",
+                    problemsSolved: ["No design consistency", "Slow turnaround"],
+                    features: ["One request at a time", "Average 48h delivery", "Slack Communication"]
+                },
+                {
+                    name: "Business", // This is the target for Class of 2025
+                    tagline: "For growing brands",
+                    price: "£2,999",
+                    period: "/month",
+                    popular: true,
+                    bestFor: "Scale-ups & Agencies",
+                    ctaText: "Get Started",
+                    problemsSolved: ["Bottlenecked marketing", "Expensive freelancers"],
+                    features: ["Two requests at a time", "Average 24h delivery", "Slack + Teams", "Stock photos included"]
+                },
+                {
+                    name: "Enterprise",
+                    tagline: "For large orgs",
+                    price: "Custom",
+                    period: "",
+                    popular: false,
+                    bestFor: "Departments & large scale",
+                    ctaText: "Contact Us",
+                    problemsSolved: ["Complex workflows", "Security compliance"],
+                    features: ["Dedicated Project Manager", "Custom SLAs", "SSO & Security"]
+                }
+            ],
+            enterprisePlus: {
+                price: "Custom +",
+                tagline: "Full White Glove Service",
+                ctaText: "Talk to Sales",
+                bestFor: "Global Corporations",
+                problemsSolved: ["Global coordination", "Asset management"],
+                features: ["Dedicated Design Squad", "Prioritized Support", "Same-day delivery"]
+            }
+        };
+
+        // --- MAIN COMPONENT ---
+        function BrandedPricingSection() {
+            const [isEnterprisePlus, setIsEnterprisePlus] = useState(false);
+            const [activePromo, setActivePromo] = useState('STANDARD');
+            const [spotsLeft, setSpotsLeft] = useState(3);
+            const { hero, plans, enterprisePlus } = brandedPricingData;
+
+            // Initialize Lucide icons after render
+            useEffect(() => {
+                if (window.lucide) window.lucide.createIcons();
+            });
+
+            const getPricingDisplay = (plan) => {
+                let displayPrice = plan.price;
+                let originalPrice = null;
+                let note = null;
+
+                // Campaign 1: CLASS OF 2025 (Targeting Business Plan)
+                if (activePromo === 'CLASS_2025' && plan.name === 'Business') {
+                    originalPrice = plan.price;
+                    displayPrice = '£999';
+                    note = 'Locked for life';
+                }
+
+                // Campaign 2: DESIGN FOR GOOD (Non-Profits)
+                // Applies to Starter and Business, assuming 40% off logic
+                if (activePromo === 'NON_PROFIT' && plan.name !== 'Enterprise') {
+                    originalPrice = plan.price;
+                    // Mock calculation for preview
+                    if(plan.name === 'Business') displayPrice = '£1,799'; 
+                    if(plan.name === 'Starter') displayPrice = '£1,199'; 
+                    
+                    // Specific override for your prompt (£1,499)
+                    if(plan.name === 'Business') displayPrice = '£1,499';
+
+                    note = '40% off 1st year';
+                }
+
+                return { displayPrice, originalPrice, note };
+            };
+
+            const cardStyle = (isPopular, isPromoActive) => ({
+                position: 'relative',
+                background: 'white',
+                padding: '2rem',
+                border: isPromoActive 
+                    ? '2px solid #ff6b35' 
+                    : isPopular 
+                        ? '2px solid #ff6b35' 
+                        : '1px solid rgba(107, 114, 128, 0.2)',
+                boxShadow: isPromoActive 
+                    ? '0 10px 25px -5px rgba(255, 107, 53, 0.15)' 
+                    : '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                transform: isPromoActive ? 'scale(1.02)' : 'scale(1)',
+                zIndex: isPromoActive ? 10 : 1,
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+            });
+
+            return (
+                <section style={{ padding: '5rem 0', backgroundColor: '#faf9f7' }}>
+                    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                        
+                        {/* HERO */}
+                        <div className="text-center max-w-4xl mx-auto mb-12">
+                            <p className="mb-4 font-medium text-sm tracking-widest uppercase" style={{ color: '#ff6b35' }}>{hero.eyebrow}</p>
+                            <h2 className="mb-8 text-5xl font-light tracking-tight" style={{ color: '#2c2c2c' }}>
+                                {hero.title}
+                            </h2>
+                            <p className="text-xl font-light leading-relaxed mb-6" style={{ color: '#6b7280' }}>
+                                {hero.description[0]}
+                            </p>
+                        </div>
+
+                        {/* TOGGLES */}
+                        <div className="max-w-4xl mx-auto mb-16">
+                            <div className="flex flex-col md:flex-row justify-center gap-4">
+                                <button
+                                    onClick={() => setActivePromo('STANDARD')}
+                                    className={`px-6 py-3 rounded-lg border flex items-center gap-2 transition-all ${
+                                        activePromo === 'STANDARD' ? 'bg-gray-800 text-white border-gray-800' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'
+                                    }`}
+                                >
+                                    <Tag className="w-4 h-4" />
+                                    <span className="text-sm font-medium">Standard Pricing</span>
+                                </button>
+
+                                <button
+                                    onClick={() => setActivePromo('CLASS_2025')}
+                                    className={`px-6 py-3 rounded-lg border flex items-center gap-2 transition-all relative overflow-hidden ${
+                                        activePromo === 'CLASS_2025' ? 'text-white border-[#ff6b35]' : 'bg-white text-gray-500 border-gray-200 hover:border-[#ff6b35]'
+                                    }`}
+                                    style={{ backgroundColor: activePromo === 'CLASS_2025' ? '#ff6b35' : 'white' }}
+                                >
+                                    <Sparkles className="w-4 h-4" />
+                                    <div className="text-left">
+                                        <span className="block text-sm font-bold uppercase tracking-wide">Class of 2025</span>
+                                        {activePromo !== 'CLASS_2025' && <span className="text-xs">Limited Spots Available</span>}
+                                    </div>
+                                    {activePromo === 'CLASS_2025' && (
+                                        <div className="absolute top-0 right-0 bg-white text-[#ff6b35] text-[10px] font-bold px-2 py-0.5 rounded-bl">
+                                            {spotsLeft} SPOTS LEFT
+                                        </div>
+                                    )}
+                                </button>
+
+                                <button
+                                    onClick={() => setActivePromo('NON_PROFIT')}
+                                    className={`px-6 py-3 rounded-lg border flex items-center gap-2 transition-all ${
+                                        activePromo === 'NON_PROFIT' ? 'bg-teal-700 text-white border-teal-700' : 'bg-white text-gray-500 border-gray-200 hover:border-teal-700'
+                                    }`}
+                                >
+                                    <Heart className="w-4 h-4" />
+                                    <div className="text-left">
+                                        <span className="block text-sm font-medium">Design for Good</span>
+                                        {activePromo !== 'NON_PROFIT' && <span className="text-xs">Non-Profits & Charities</span>}
+                                    </div>
+                                </button>
+                            </div>
+                            
+                            <div className="text-center mt-6 h-6">
+                                {activePromo === 'CLASS_2025' && (
+                                    <p className="text-[#ff6b35] text-sm font-medium flex items-center justify-center gap-2 animate-pulse">
+                                        <Timer className="w-4 h-4" />
+                                        Offer ends Dec 31st, 2025. Save over £500/mo for life.
+                                    </p>
+                                )}
+                                {activePromo === 'NON_PROFIT' && (
+                                    <p className="text-teal-700 text-sm font-medium">
+                                        40% off your first year. 20% off for life after that.
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* CARDS */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+                            {plans.map((plan, index) => {
+                                const isEnterprise = plan.name === "Enterprise";
+                                let currentPlan = plan;
+                                if (isEnterprise && isEnterprisePlus) {
+                                    currentPlan = { ...plan, ...enterprisePlus, name: "Enterprise+" };
+                                }
+
+                                const { displayPrice, originalPrice, note } = getPricingDisplay(currentPlan);
+                                const isPromoTarget = (activePromo === 'CLASS_2025' && currentPlan.name === 'Business') || 
+                                                    (activePromo === 'NON_PROFIT' && !isEnterprise && currentPlan.name !== 'Starter');
+
+                                return (
+                                    <div key={index} style={cardStyle(currentPlan.popular, isPromoTarget)}>
+                                        
+                                        {/* BADGES */}
+                                        {currentPlan.popular && activePromo === 'STANDARD' && (
+                                            <div style={{ position: 'absolute', top: '-1rem', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#ff6b35', color: 'white', padding: '0.5rem 1.5rem', fontSize: '0.875rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                <TrendingUp className="w-4 h-4" /> Saves Most Time
+                                            </div>
+                                        )}
+                                        {isPromoTarget && activePromo === 'CLASS_2025' && (
+                                            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#ff6b35] text-white px-6 py-2 shadow-lg flex items-center gap-2 whitespace-nowrap z-20 rounded-sm">
+                                                <Sparkles className="w-4 h-4" fill="white" />
+                                                <span className="font-bold tracking-wider text-sm">CLASS OF 2025 OFFER</span>
+                                            </div>
+                                        )}
+                                        {isPromoTarget && activePromo === 'NON_PROFIT' && (
+                                            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-teal-700 text-white px-6 py-2 shadow-lg flex items-center gap-2 whitespace-nowrap z-20 rounded-sm">
+                                                <Heart className="w-4 h-4" fill="white" />
+                                                <span className="font-bold tracking-wider text-sm">NON-PROFIT RATE</span>
+                                            </div>
+                                        )}
+
+                                        {/* CARD CONTENT */}
+                                        <div className="text-center mb-8 pt-4">
+                                            <h4 className="text-2xl font-light mb-2 tracking-tight" style={{ color: '#2c2c2c' }}>{currentPlan.name}</h4>
+                                            <p className="text-lg font-medium mb-6" style={{ color: isPromoTarget ? '#ff6b35' : '#6b7280' }}>{currentPlan.tagline}</p>
+                                            
+                                            <div className="flex flex-col items-center justify-center mb-6 min-h-[5rem]">
+                                                {originalPrice && <span className="text-lg text-gray-400 line-through mb-1 decoration-red-400">{originalPrice}</span>}
+                                                <div className="flex items-baseline">
+                                                    <span className="text-5xl font-light tracking-tight" style={{ color: isPromoTarget ? '#ff6b35' : '#2c2c2c' }}>{displayPrice}</span>
+                                                    <span className="ml-2 font-light" style={{ color: '#6b7280' }}>{currentPlan.period}</span>
+                                                </div>
+                                                {note && <span className="text-xs font-bold uppercase tracking-wider mt-2 px-2 py-1 bg-gray-100 rounded text-gray-600">{note}</span>}
+                                            </div>
+                                        </div>
+
+                                        <div className="mb-8">
+                                            <h5 className="font-medium mb-4 flex items-center gap-2" style={{ color: '#2c2c2c' }}>
+                                                <div style={{ width: '8px', height: '8px', backgroundColor: '#ff6b35' }}></div>
+                                                Problems This Solves:
+                                            </h5>
+                                            <ul className="space-y-3">
+                                                {currentPlan.problemsSolved.map((p, i) => (
+                                                    <li key={i} className="flex items-start gap-3">
+                                                        <Check className="w-5 h-5 mt-0.5" style={{ color: '#ff6b35' }} />
+                                                        <span className="text-sm font-light text-gray-500">{p}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <button className="w-full py-4 px-6 font-medium text-sm tracking-widest uppercase transition-all duration-300"
+                                            style={{
+                                                backgroundColor: isPromoTarget ? '#ff6b35' : (currentPlan.popular ? '#ff6b35' : '#2c2c2c'),
+                                                color: 'white', border: 'none', cursor: 'pointer',
+                                                opacity: (activePromo !== 'STANDARD' && !isPromoTarget && !isEnterprise) ? 0.5 : 1
+                                            }}
+                                        >
+                                            {activePromo === 'CLASS_2025' && isPromoTarget ? 'Secure Your Spot' : activePromo === 'NON_PROFIT' && isPromoTarget ? 'Apply for Grant' : currentPlan.ctaText}
+                                        </button>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<BrandedPricingSection />);
+    </script>
+</body>
+</html>

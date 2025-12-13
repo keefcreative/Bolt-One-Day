@@ -21,10 +21,10 @@ export default function DesignForGoodFaq() {
             <p className="mb-4 font-medium text-sm tracking-[0.1em] uppercase text-charity">
               {faq.eyebrow}
             </p>
-            <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink">
+            <h2 className="mb-6 text-section font-playfair font-bold tracking-[-0.03em] text-ink text-balance">
               {faq.title}
             </h2>
-            <p className="text-lg font-light text-smoke leading-[1.6]">
+            <p className="text-lg font-light text-smoke leading-[1.6] text-pretty">
               {faq.description}
             </p>
           </div>

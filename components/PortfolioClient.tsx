@@ -59,7 +59,7 @@ export default function PortfolioClient({ portfolioData }: PortfolioClientProps)
       <section id="portfolio" className="section-padding bg-white">
         <div className="container-premium">
           <div className="text-center">
-            <h2 className="text-section font-light tracking-[-0.03em] text-ink mb-4">
+            <h2 className="text-section font-light tracking-[-0.03em] text-ink mb-4 text-balance">
               Portfolio Loading...
             </h2>
             <p className="text-smoke">
@@ -80,10 +80,10 @@ export default function PortfolioClient({ portfolioData }: PortfolioClientProps)
             <p className="mb-4 font-medium text-flame text-sm tracking-[0.1em] uppercase">
               {portfolioData.eyebrow}
             </p>
-            <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink">
+            <h2 className="mb-6 text-section font-light tracking-[-0.03em] text-ink text-balance">
               {portfolioData.title}
             </h2>
-            <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto">
+            <p className="text-lg font-light text-smoke leading-[1.6] max-w-2xl mx-auto text-pretty">
               {portfolioData.description}
             </p>
           </div>

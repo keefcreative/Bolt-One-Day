@@ -27,6 +27,8 @@ export interface BrevoContactFormData {
   service?: string
   source?: string
   listType?: string
+  campaign?: string
+  campaignSource?: string
 }
 
 export interface BrevoChatLeadData {
@@ -95,6 +97,10 @@ class BrevoIntegration {
         LAST_MESSAGE: data.message,
         LEAD_SOURCE: data.source || 'Website Contact Form',
         CONTACT_DATE: new Date().toISOString(),
+        ...(data.campaign && {
+          CAMPAIGN: data.campaign,
+          CAMPAIGN_SOURCE: data.campaignSource || data.source || 'Unknown'
+        })
       }
 
       // Add to specific list if configured
@@ -136,6 +142,10 @@ class BrevoIntegration {
       SERVICE_INTEREST: data.service || 'General Inquiry',
       LAST_MESSAGE: data.message,
       LAST_CONTACT_DATE: new Date().toISOString(),
+      ...(data.campaign && {
+        CAMPAIGN: data.campaign,
+        CAMPAIGN_SOURCE: data.campaignSource || data.source || 'Unknown'
+      })
     }
 
     await this.contactsApi.updateContact(data.email, updateContact)
@@ -185,11 +195,17 @@ class BrevoIntegration {
 
   // Send notification email for new contact form submission
   async sendContactNotification(data: BrevoContactFormData): Promise<boolean> {
+    const isCampaignLead = data.campaign === 'classOf2025'
+    const subject = isCampaignLead
+      ? `🔥 CLASS OF 2025 APPLICATION: ${data.name}`
+      : `New Contact Form Submission: ${data.name}`
+
     const notificationEmail: EmailData = {
       to: process.env.NOTIFICATION_EMAIL || 'team@designworks.com',
-      subject: `New Contact Form Submission: ${data.name}`,
+      subject,
       htmlContent: `
-        <h2>New Contact Form Submission</h2>
+        ${isCampaignLead ? '<div style="background: #FF6B35; color: white; padding: 16px; margin-bottom: 24px;"><h2 style="margin: 0;">🔥 CLASS OF 2025 APPLICATION</h2><p style="margin: 8px 0 0 0;">High-priority campaign lead - respond within 24 hours!</p></div>' : '<h2>New Contact Form Submission</h2>'}
+        ${isCampaignLead ? `<p style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 12px; margin-bottom: 16px;"><strong>Campaign:</strong> Class of 2025<br><strong>Source:</strong> ${data.campaignSource || data.source || 'Unknown'}</p>` : ''}
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Company:</strong> ${data.company || 'Not provided'}</p>
@@ -200,9 +216,7 @@ class BrevoIntegration {
         <p><em>Submitted on ${new Date().toLocaleString()}</em></p>
       `,
       textContent: `
-New Contact Form Submission
-
-Name: ${data.name}
+${isCampaignLead ? '🔥 CLASS OF 2025 APPLICATION\nHigh-priority campaign lead - respond within 24 hours!\n\n' : 'New Contact Form Submission\n\n'}${isCampaignLead ? `Campaign: Class of 2025\nSource: ${data.campaignSource || data.source || 'Unknown'}\n\n` : ''}Name: ${data.name}
 Email: ${data.email}
 Company: ${data.company || 'Not provided'}
 Service Interest: ${data.service || 'General inquiry'}

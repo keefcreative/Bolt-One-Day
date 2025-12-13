@@ -145,7 +145,7 @@ function autoDetectImages(projectId: string): { mainImage: string | null; galler
   
   return {
     mainImage: mainImage || '/images/portfolio/placeholder.jpg', // fallback
-    images: finalImages
+    galleryImages: finalImages
   };
 }
 
@@ -159,16 +159,26 @@ export function loadPortfolioProjects(): PortfolioData {
     
     if (!fs.existsSync(projectsDir)) {
       console.warn('Portfolio projects directory not found');
-      return { projects: [] };
+      return {
+        eyebrow: 'Portfolio',
+        title: 'Our Work',
+        description: 'Explore our portfolio projects',
+        projects: []
+      };
     }
-    
+
     // Read all JSON files
     const files = fs.readdirSync(projectsDir)
       .filter(file => file.endsWith('.json'));
-    
+
     if (files.length === 0) {
       console.warn('No portfolio project files found');
-      return { projects: [] };
+      return {
+        eyebrow: 'Portfolio',
+        title: 'Our Work',
+        description: 'Explore our portfolio projects',
+        projects: []
+      };
     }
     
     // Process each project file
@@ -183,7 +193,7 @@ export function loadPortfolioProjects(): PortfolioData {
         const slug = extractSlugFromFilename(filename);
         
         // Auto-detect images
-        const { mainImage, images } = autoDetectImages(project.id || slug);
+        const { mainImage, galleryImages } = autoDetectImages(project.id || slug);
         
         // Enhance project data
         const enhancedProject = {
@@ -193,7 +203,7 @@ export function loadPortfolioProjects(): PortfolioData {
           createdDate: project.createdDate || (fileDate ? fileDate.toISOString().split('T')[0] : new Date().toISOString().split('T')[0]),
           fileDate,
           image: project.image || mainImage,
-          images: project.images && project.images.length > 0 ? project.images : images,
+          images: project.images && project.images.length > 0 ? project.images : galleryImages,
           featured: false, // Will be set below
           draft: project.draft || false,
           priority: project.priority || null,
@@ -222,7 +232,7 @@ export function loadPortfolioProjects(): PortfolioData {
       // Then by date (newest first)
       const dateA = a.fileDate || new Date(a.createdDate);
       const dateB = b.fileDate || new Date(b.createdDate);
-      return dateB - dateA;
+      return dateB.getTime() - dateA.getTime();
     });
     
     // Filter out draft projects
@@ -256,14 +266,14 @@ export function loadPortfolioProjects(): PortfolioData {
       publishedProjects: publishedProjects.length
     };
     
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error loading portfolio projects:', error);
     return {
       eyebrow: "Our Work",
       title: "Featured Projects",
-      description: "Explore our latest work and see how we've helped businesses transform their brands and achieve their goals.", 
+      description: "Explore our latest work and see how we've helped businesses transform their brands and achieve their goals.",
       projects: [],
-      error: error.message
+      error: error?.message || 'Unknown error'
     };
   }
 }

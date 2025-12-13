@@ -7,12 +7,15 @@ export const STRIPE_PRICE_MAPPINGS = {
   business: 'price_1PP4N8P3PqPfy1jMpxXppeTe', // £12.49/month - Business DesignWorks
   enterprise: 'price_1PP4O6P3PqPfy1jMxw8JtIad', // £25.00/month - Enterprise DesignWorks
   enterprise_plus: 'price_1PP4P2P3PqPfy1jMg755YNF3', // £45.00/month - Enterprise DesignWorks +
-  
+
+  // Campaign offers
+  class_of_2025: 'price_1Sc4O7P3PqPfy1jMzrqN0O7L', // £999/month - Class of 2025 Campaign (Business DesignWorks)
+
   // Design for Good (Non-profit plans)
   design_for_good: 'price_1RCLNfP3PqPfy1jMQQrRKcFv', // £25.00/month - Design For Good
   design_for_good_discounted: 'price_1RH2QCP3PqPfy1jMN2bAn90J', // £14.99/month - Design for Good: Charity Cohort Membership
   design_for_good_standard: 'price_1RH2QCP3PqPfy1jMbS2yn4ns', // £24.99/month - Design for Good: Charity Cohort Membership
-  
+
   // Add-ons
   interim_boost: 'price_1RJyOlP3PqPfy1jMqFCjzsGl', // £24.98/month - Interim Boost (Business Plan Add-On)
   priority_triage: 'price_1RJyQKP3PqPfy1jMpwQlXr0t', // £12.49/month - Priority Triage + One Designer
@@ -73,13 +76,28 @@ export const STRIPE_PRODUCTS = {
       '4-hour rush available',
       'Senior creative director'
     ]
+  },
+  class_of_2025: {
+    name: 'Class of 2025 - Business DesignWorks',
+    displayPrice: '£999',
+    actualPrice: 999, // in pence: 99900
+    stripePriceId: STRIPE_PRICE_MAPPINGS.class_of_2025,
+    features: [
+      '10 design requests per month',
+      '48h turnaround',
+      'Priority support',
+      'Unlimited revisions',
+      'Senior designer',
+      'Lock in rate for life',
+      'Campaign exclusive pricing'
+    ]
   }
 }
 
 // Helper function to get the correct Stripe price ID
 export function getStripePriceId(planName: string): string | null {
   const normalizedName = planName.toLowerCase().replace(/\s+/g, '_')
-  return STRIPE_PRICE_MAPPINGS[normalizedName] || null
+  return STRIPE_PRICE_MAPPINGS[normalizedName as keyof typeof STRIPE_PRICE_MAPPINGS] || null
 }
 
 // Helper function to validate if a price ID exists in Stripe
