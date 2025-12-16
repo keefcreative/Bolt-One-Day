@@ -13,6 +13,7 @@ import DesignForGoodComparison from '@/components/designForGood/DesignForGoodCom
 import { PremiumFaq } from '@/components/PremiumFaq'
 import dfgFaqData from '@/data/designForGood/faq.json'
 import DesignForGoodFinalCta from '@/components/designForGood/DesignForGoodFinalCta'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const Navigation = dynamic(() => import('@/components/Navigation'), {
   ssr: false
@@ -22,6 +23,7 @@ export default function DesignForGoodPage() {
   return (
     <main className="min-h-screen">
       <Navigation />
+      <ScrollToTop />
       <section id="dfg-hero">
         <DesignForGoodHero />
       </section>

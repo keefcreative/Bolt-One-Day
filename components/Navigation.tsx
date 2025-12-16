@@ -36,7 +36,14 @@ export default function Navigation() {
   // Ensure we have valid navigation data
   if (!navigationData || !navigationData.items) {
     return (
-      <nav className="nav-sticky py-6 transition-all duration-300 bg-pearl/80 backdrop-blur-md">
+      <nav
+        className="nav-sticky py-6 transition-all duration-300"
+        style={{
+          background: 'rgba(10, 10, 10, 0.85)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        }}
+      >
         <div className="container-premium">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -48,7 +55,7 @@ export default function Navigation() {
                   />
                 </svg>
               </div>
-              <span className="font-light text-2xl tracking-tight text-ink">Loading...</span>
+              <span className="font-light text-2xl tracking-tight text-pearl">Loading...</span>
             </div>
           </div>
         </div>
@@ -173,7 +180,7 @@ export default function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2"
+              className="md:hidden p-2 text-pearl"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -229,10 +236,10 @@ export default function Navigation() {
         </div>
         
         {/* Progress Indicator */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-mist/20">
-          <div 
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10">
+          <div
             className="h-full transition-all duration-150 ease-out"
-            style={{ 
+            style={{
               width: `${scrollProgress}%`,
               backgroundColor: isDesignForGood ? '#16a34a' : '#FF6B35'
             }}

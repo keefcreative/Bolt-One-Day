@@ -146,9 +146,9 @@
   }
   
   .nav-link {
-    @apply relative text-smoke font-light transition-colors duration-base ease-premium;
+    @apply relative text-pearl font-light transition-colors duration-base ease-premium;
   }
-  
+
   .nav-link:hover,
   .nav-link.active {
     @apply text-flame;

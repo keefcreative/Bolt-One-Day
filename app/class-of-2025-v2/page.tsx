@@ -17,6 +17,7 @@ import InvestmentSection from '@/components/classOf2025/InvestmentSection'
 import TestimonialsSection from '@/components/classOf2025/TestimonialsSection'
 import FAQSection from '@/components/classOf2025/FAQSection'
 import FinalCTASection from '@/components/classOf2025/FinalCTASection'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const typedCampaignData = campaignData as CampaignConfig
 
@@ -113,6 +114,7 @@ export default function ClassOf2025V2Page() {
   return (
     <>
       <CampaignNavbar />
+      <ScrollToTop />
       <main className="bg-ink text-pearl">
         {/* Section 1: Hero */}
         <HeroSection

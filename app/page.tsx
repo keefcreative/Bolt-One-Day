@@ -15,11 +15,13 @@ import { PremiumFaq } from '@/components/PremiumFaq'
 import { PremiumDesignProcess } from '@/components/PremiumDesignProcess'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
+      <ScrollToTop />
       <section id="hero">
         <Hero />
       </section>
