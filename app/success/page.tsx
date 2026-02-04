@@ -15,7 +15,7 @@ export default function SuccessPage() {
     setCampaign(searchParams.get('campaign'))
   }, [searchParams])
 
-  const isClassOf2025 = campaign === 'classOf2025'
+  const isClassOf2026 = campaign === 'classOf2026'
   const brevoCallLink = 'https://meet.brevo.com/designworksbureau/class-of-2025-discovery-call'
 
   return (
@@ -27,13 +27,13 @@ export default function SuccessPage() {
             <Check size={48} className="text-green-500" strokeWidth={2} />
           </div>
 
-          {isClassOf2025 ? (
+          {isClassOf2026 ? (
             <>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight mb-4">
-                Welcome to Class of 2025!
+                Welcome to Class of 2026!
               </h1>
               <p className="text-xl sm:text-2xl font-light text-pearl/80 mb-2">
-                Your £999/month rate is locked through December 2026
+                Your £999/month rate is locked for 12 months
               </p>
               <p className="text-base sm:text-lg font-light text-pearl/60">
                 You're now part of an exclusive cohort of 10 growth-stage companies
@@ -80,7 +80,7 @@ export default function SuccessPage() {
                   We'll Reach Out Within 24 Hours
                 </h3>
                 <p className="text-base font-light text-pearl/70 m-0">
-                  {isClassOf2025
+                  {isClassOf2026
                     ? 'Our team will email you to schedule your onboarding call and introduce you to your dedicated design team.'
                     : 'Our team will email you to schedule your onboarding call and get you set up.'}
                 </p>
@@ -109,7 +109,7 @@ export default function SuccessPage() {
         </div>
 
         {/* Book Onboarding Call CTA */}
-        {isClassOf2025 && (
+        {isClassOf2026 && (
           <div className="bg-black border-2 border-flame p-8 sm:p-12 text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-normal text-pearl mb-4">
               Want to Get Started Faster?
@@ -132,7 +132,7 @@ export default function SuccessPage() {
 
         {/* Additional Info */}
         <div className="text-center space-y-4">
-          {isClassOf2025 && (
+          {isClassOf2026 && (
             <>
               <p className="text-base font-light text-pearl/70">
                 <strong className="font-medium text-pearl">Your Founding Member Benefits:</strong>
@@ -140,7 +140,7 @@ export default function SuccessPage() {
               <ul className="list-none p-0 m-0 space-y-2 text-sm text-pearl/70 inline-block text-left">
                 <li className="flex items-center gap-2">
                   <Check size={16} className="text-flame flex-shrink-0" />
-                  <span>£999/month rate locked through December 31, 2026</span>
+                  <span>£999/month rate locked for 12 months</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check size={16} className="text-flame flex-shrink-0" />

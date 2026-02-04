@@ -16,14 +16,15 @@ export default function BrandedPricingSection() {
   const { hero, plans, enterprisePlus } = brandedPricingData
 
   // Get real-time campaign spots from Stripe
-  const campaignSpots = useCampaignSpots('classOf2025')
+  const campaignSpots = useCampaignSpots('classOf2026')
 
-  // Check if Class of 2025 campaign is active
-  const isCampaignActive = typedCampaignData.active === 'classOf2025' && typedCampaignData.classOf2025.enabled
+  // Check if Class of 2026 campaign is active
+  const campaign = (typedCampaignData as any).classOf2026
+  const isCampaignActive = typedCampaignData.active === 'classOf2026' && campaign?.enabled
 
   // Use dynamic spots if available, fallback to static config during loading
   const spotsRemaining = campaignSpots.loading
-    ? typedCampaignData.classOf2025.spotsRemaining
+    ? campaign?.spotsRemaining || 9
     : campaignSpots.spotsRemaining
 
   const handleGetStarted = async (plan: typeof plans[0] | typeof enterprisePlus) => {
@@ -129,10 +130,10 @@ export default function BrandedPricingSection() {
               const isCampaignBusiness = isBusinessPlan && isCampaignActive
 
               // Override stripe price ID for campaign
-              if (isCampaignBusiness && typedCampaignData.classOf2025.pricing.stripePriceId) {
+              if (isCampaignBusiness && campaign?.pricing?.stripePriceId) {
                 currentPlan = {
                   ...currentPlan,
-                  stripePriceId: typedCampaignData.classOf2025.pricing.stripePriceId
+                  stripePriceId: campaign.pricing.stripePriceId
                 }
               }
 
@@ -145,12 +146,12 @@ export default function BrandedPricingSection() {
                 : (currentPlan.popular ? '2px solid #ff6b35' : '1px solid rgba(107, 114, 128, 0.2)')
 
               // Determine pricing
-              const displayPrice = isCampaignBusiness ? typedCampaignData.classOf2025.pricing.amount : currentPlan.price
+              const displayPrice = isCampaignBusiness ? campaign?.pricing?.amount : currentPlan.price
               const originalPrice = isCampaignBusiness ? currentPlan.price : null
 
               // Badge content
               const badgeContent = isCampaignBusiness
-                ? `CLASS OF 2025 - ${spotsRemaining} SPOTS LEFT`
+                ? `CLASS OF 2026 - ${spotsRemaining} SPOTS LEFT`
                 : (currentPlan.popular ? 'Saves Most Time' : null)
 
               return (
@@ -296,7 +297,7 @@ export default function BrandedPricingSection() {
                           letterSpacing: '0.05em',
                           marginTop: '0.5rem'
                         }}>
-                          Save {typedCampaignData.classOf2025.pricing.savings}
+                          Save {campaign?.pricing?.savings}
                         </span>
                       )}
                     </div>
@@ -375,7 +376,7 @@ export default function BrandedPricingSection() {
                         border: '1px solid rgba(255, 107, 53, 0.3)',
                         fontStyle: 'italic'
                       }}>
-                        Lock in this rate for life. Price increases Jan 1, 2026.
+                        Lock in this rate for 12 months. Price increases April 1, 2026.
                       </p>
                     )}
                   </div>

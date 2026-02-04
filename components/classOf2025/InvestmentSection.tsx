@@ -45,10 +45,10 @@ export default function InvestmentSection({
 
         {/* Premium Comparison Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 sm:items-center mb-12 max-w-4xl mx-auto relative">
-          {/* Class of 2025 - Featured */}
+          {/* Class of 2026 - Featured */}
           <div className="relative py-12 px-8 text-center bg-ink text-white border border-ink transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:border-flame hover:shadow-[0_30px_80px_rgba(255,107,53,0.2)] z-20 hover:z-30 sm:border-b-0">
             <div className="text-xs font-medium uppercase tracking-[0.15em] text-flame mb-6">
-              Class of 2025
+              Class of 2026
             </div>
 
             <div className="text-6xl font-extralight leading-none tracking-tight mb-2">
@@ -95,7 +95,7 @@ export default function InvestmentSection({
             {/* Features */}
             <div className="flex flex-col gap-3">
               <span className="text-sm font-light text-ink/60 before:content-['✓_'] before:text-ink/40 before:font-medium before:mr-2">
-                From Jan 2026
+                From April 2026
               </span>
               <span className="text-sm font-light text-ink/60 before:content-['×_'] before:text-ink/40 before:font-medium before:mr-2">
                 3-5 day turnaround

@@ -28,14 +28,69 @@ export function validateCampaignConfig(data: unknown): {
   const config = data as Partial<CampaignConfig>
 
   // Validate active field
-  if (config.active !== null && config.active !== 'classOf2025' && config.active !== 'designForGood') {
+  if (config.active !== null && config.active !== 'classOf2025' && config.active !== 'classOf2026' && config.active !== 'designForGood') {
     errors.push({
       field: 'active',
-      message: 'Must be "classOf2025", "designForGood", or null'
+      message: 'Must be "classOf2025", "classOf2026", "designForGood", or null'
     })
   }
 
-  // Validate classOf2025
+  // Validate classOf2026 (primary campaign)
+  const configAny = config as any
+  if (configAny.classOf2026) {
+    const c = configAny.classOf2026
+
+    if (typeof c.enabled !== 'boolean') {
+      errors.push({ field: 'classOf2026.enabled', message: 'Must be a boolean' })
+    }
+
+    if (typeof c.spotsRemaining !== 'number' || c.spotsRemaining < 0) {
+      errors.push({ field: 'classOf2026.spotsRemaining', message: 'Must be a non-negative number' })
+    }
+
+    if (typeof c.totalSpots !== 'number' || c.totalSpots < 1) {
+      errors.push({ field: 'classOf2026.totalSpots', message: 'Must be a positive number' })
+    }
+
+    if (c.spotsRemaining > c.totalSpots) {
+      errors.push({ field: 'classOf2026.spotsRemaining', message: 'Cannot exceed totalSpots' })
+    }
+
+    // Validate deadline format
+    if (c.deadline) {
+      const date = new Date(c.deadline)
+      if (isNaN(date.getTime())) {
+        errors.push({ field: 'classOf2026.deadline', message: 'Invalid date format (use ISO 8601)' })
+      }
+      // Note: Allow past deadlines for testing purposes, just warn
+      if (date < new Date()) {
+        console.warn('Campaign deadline is in the past:', c.deadline)
+      }
+    } else {
+      errors.push({ field: 'classOf2026.deadline', message: 'Required field missing' })
+    }
+
+    // Validate pricing
+    if (!c.pricing || typeof c.pricing !== 'object') {
+      errors.push({ field: 'classOf2026.pricing', message: 'Required field missing or invalid' })
+    } else {
+      if (!c.pricing.amount) errors.push({ field: 'classOf2026.pricing.amount', message: 'Required' })
+      if (!c.pricing.stripePriceId) errors.push({ field: 'classOf2026.pricing.stripePriceId', message: 'Required' })
+    }
+
+    // Validate banner
+    if (!c.banner || typeof c.banner !== 'object') {
+      errors.push({ field: 'classOf2026.banner', message: 'Required field missing or invalid' })
+    } else {
+      if (!c.banner.text) errors.push({ field: 'classOf2026.banner.text', message: 'Required' })
+      if (!c.banner.cta) errors.push({ field: 'classOf2026.banner.cta', message: 'Required' })
+      if (!c.banner.ctaHref) errors.push({ field: 'classOf2026.banner.ctaHref', message: 'Required' })
+    }
+  } else if (config.active === 'classOf2026') {
+    errors.push({ field: 'classOf2026', message: 'Required configuration missing for active campaign' })
+  }
+
+  // Validate classOf2025 (legacy, optional)
   if (config.classOf2025) {
     const c = config.classOf2025
 
@@ -85,8 +140,8 @@ export function validateCampaignConfig(data: unknown): {
       if (!c.banner.cta) errors.push({ field: 'classOf2025.banner.cta', message: 'Required' })
       if (!c.banner.ctaHref) errors.push({ field: 'classOf2025.banner.ctaHref', message: 'Required' })
     }
-  } else {
-    errors.push({ field: 'classOf2025', message: 'Required configuration missing' })
+  } else if (config.active === 'classOf2025') {
+    errors.push({ field: 'classOf2025', message: 'Required configuration missing for active campaign' })
   }
 
   // Validate designForGood (basic check)

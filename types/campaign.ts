@@ -6,7 +6,7 @@
 /**
  * Available campaign types
  */
-export type CampaignType = 'classOf2025' | 'designForGood' | null
+export type CampaignType = 'classOf2025' | 'classOf2026' | 'designForGood' | null
 
 /**
  * Pricing information for a campaign
@@ -37,9 +37,9 @@ export interface CampaignUrls {
 }
 
 /**
- * Class of 2025 campaign configuration
+ * Class cohort campaign configuration (used for both classOf2025 and classOf2026)
  */
-export interface ClassOf2025Campaign {
+export interface ClassCohortCampaign {
   enabled: boolean
   name: string
   spotsRemaining: number
@@ -49,6 +49,11 @@ export interface ClassOf2025Campaign {
   banner: CampaignBanner
   urls?: CampaignUrls
 }
+
+/**
+ * @deprecated Use ClassCohortCampaign instead
+ */
+export type ClassOf2025Campaign = ClassCohortCampaign
 
 /**
  * Design for Good campaign configuration
@@ -69,7 +74,8 @@ export interface DesignForGoodCampaign {
  */
 export interface CampaignConfig {
   active: CampaignType
-  classOf2025: ClassOf2025Campaign
+  classOf2025?: ClassCohortCampaign
+  classOf2026?: ClassCohortCampaign
   designForGood: DesignForGoodCampaign
 }
 
@@ -80,7 +86,8 @@ export function isCampaignActive(
   config: CampaignConfig,
   campaignType: Exclude<CampaignType, null>
 ): boolean {
-  return config.active === campaignType && config[campaignType].enabled
+  const campaign = (config as any)[campaignType]
+  return config.active === campaignType && campaign?.enabled === true
 }
 
 /**

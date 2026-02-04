@@ -35,7 +35,7 @@ export default function FAQSection({ faqs, discoveryCallUrl }: FAQSectionProps) 
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg font-light text-ink/70">
-            Everything you need to know about Class of 2025
+            Everything you need to know about Class of 2026
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export default function FAQSection({ faqs, discoveryCallUrl }: FAQSectionProps) 
           <h3 className="text-xl sm:text-2xl font-normal text-ink mb-4">More questions?</h3>
           <p className="text-base font-light text-ink/70 mb-6 max-w-2xl mx-auto">
             We'll talk through your specific situation, answer your questions, and help you
-            determine if Class of 2025 is right for your company.
+            determine if Class of 2026 is right for your company.
           </p>
           <a
             href={discoveryCallUrl || 'https://meet.brevo.com/designworksbureau/class-of-2025-discovery-call'}

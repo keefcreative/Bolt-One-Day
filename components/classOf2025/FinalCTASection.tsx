@@ -31,7 +31,7 @@ export default function FinalCTASection({
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight mb-8 text-pearl">
-              Enrollment Closes December 31, 2025
+              Enrollment Closes March 31, 2026
             </h2>
 
             {/* Status Badge */}

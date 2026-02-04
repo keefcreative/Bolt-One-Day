@@ -15,10 +15,10 @@ export async function GET(request: NextRequest) {
 
   try {
     const { searchParams } = new URL(request.url)
-    const campaignId = searchParams.get('campaign') || 'classOf2025'
+    const campaignId = searchParams.get('campaign') || 'classOf2026'
 
     // Get campaign config (only support actual campaign keys, not 'active')
-    if (campaignId !== 'classOf2025' && campaignId !== 'designForGood') {
+    if (campaignId !== 'classOf2025' && campaignId !== 'classOf2026' && campaignId !== 'designForGood') {
       return NextResponse.json({
         available: false,
         spotsRemaining: 0,
@@ -27,7 +27,8 @@ export async function GET(request: NextRequest) {
       })
     }
 
-    const campaign = typedCampaignData[campaignId]
+    const campaignDataAny = typedCampaignData as any
+    const campaign = campaignDataAny[campaignId]
     if (!campaign || !campaign.enabled) {
       return NextResponse.json({
         available: false,
@@ -37,8 +38,8 @@ export async function GET(request: NextRequest) {
       })
     }
 
-    // Only classOf2025 has spot tracking with pricing
-    if (campaignId !== 'classOf2025') {
+    // Only classOf2025/classOf2026 have spot tracking with pricing
+    if (campaignId !== 'classOf2025' && campaignId !== 'classOf2026') {
       return NextResponse.json({
         available: campaign.enabled,
         spotsRemaining: 0,
@@ -47,13 +48,13 @@ export async function GET(request: NextRequest) {
       })
     }
 
-    // Type-narrow to ClassOf2025Campaign (we've validated campaignId above)
-    const classOf2025Campaign = campaign as import('@/types/campaign').ClassOf2025Campaign
+    // Type-narrow to ClassOf2025Campaign (structure is the same for 2026)
+    const campaignWithSpots = campaign as import('@/types/campaign').ClassOf2025Campaign
 
     // Count active subscriptions for this campaign
     // Query by price ID (most reliable method)
     const subscriptions = await stripe.subscriptions.list({
-      price: classOf2025Campaign.pricing.stripePriceId,
+      price: campaignWithSpots.pricing.stripePriceId,
       status: 'active',
       limit: 100, // Should be enough for 10 spots
     })
@@ -61,22 +62,22 @@ export async function GET(request: NextRequest) {
     const activeSubscriptions = subscriptions.data.length
 
     // Calculate remaining spots
-    const spotsRemaining = Math.max(0, classOf2025Campaign.totalSpots - activeSubscriptions)
+    const spotsRemaining = Math.max(0, campaignWithSpots.totalSpots - activeSubscriptions)
     const spotsAvailable = spotsRemaining > 0
 
     // Check if deadline has passed
-    const deadline = new Date(classOf2025Campaign.deadline)
+    const deadline = new Date(campaignWithSpots.deadline)
     const now = new Date()
     const deadlinePassed = now > deadline
 
     return NextResponse.json({
       available: spotsAvailable && !deadlinePassed,
       spotsRemaining,
-      totalSpots: classOf2025Campaign.totalSpots,
+      totalSpots: campaignWithSpots.totalSpots,
       activeSubscriptions,
-      deadline: classOf2025Campaign.deadline,
+      deadline: campaignWithSpots.deadline,
       deadlinePassed,
-      priceId: classOf2025Campaign.pricing.stripePriceId,
+      priceId: campaignWithSpots.pricing.stripePriceId,
       message: !spotsAvailable
         ? 'All spots have been filled'
         : deadlinePassed
@@ -107,7 +108,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json()
-    const { campaignId = 'classOf2025', adminKey } = body as { campaignId?: string; adminKey?: string }
+    const { campaignId = 'classOf2026', adminKey } = body as { campaignId?: string; adminKey?: string }
 
     // Simple admin key check (you should use a real auth system in production)
     if (adminKey !== process.env.ADMIN_API_KEY) {
@@ -118,14 +119,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate campaign ID
-    if (campaignId !== 'classOf2025' && campaignId !== 'designForGood') {
+    if (campaignId !== 'classOf2025' && campaignId !== 'classOf2026' && campaignId !== 'designForGood') {
       return NextResponse.json(
         { error: 'Invalid campaign ID' },
         { status: 400 }
       )
     }
 
-    const campaign = typedCampaignData[campaignId as 'classOf2025' | 'designForGood']
+    const campaignDataAny = typedCampaignData as any
+    const campaign = campaignDataAny[campaignId]
     if (!campaign) {
       return NextResponse.json(
         { error: 'Campaign not found' },
@@ -133,20 +135,20 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Only classOf2025 has pricing/spot tracking
-    if (campaignId !== 'classOf2025') {
+    // Only classOf2025/classOf2026 have pricing/spot tracking
+    if (campaignId !== 'classOf2025' && campaignId !== 'classOf2026') {
       return NextResponse.json(
         { error: 'This campaign does not have spot tracking' },
         { status: 400 }
       )
     }
 
-    // Type-narrow to ClassOf2025Campaign
-    const classOf2025Campaign = campaign as import('@/types/campaign').ClassOf2025Campaign
+    // Type-narrow to ClassOf2025Campaign (structure is the same)
+    const campaignWithSpots = campaign as import('@/types/campaign').ClassOf2025Campaign
 
     // Get all subscriptions for this price
     const subscriptions = await stripe.subscriptions.list({
-      price: classOf2025Campaign.pricing.stripePriceId,
+      price: campaignWithSpots.pricing.stripePriceId,
       limit: 100,
     })
 
@@ -156,11 +158,11 @@ export async function POST(request: NextRequest) {
     )
 
     const activeCount = activeSubscriptions.length
-    const spotsRemaining = Math.max(0, classOf2025Campaign.totalSpots - activeCount)
+    const spotsRemaining = Math.max(0, campaignWithSpots.totalSpots - activeCount)
 
     return NextResponse.json({
       campaignId,
-      totalSpots: classOf2025Campaign.totalSpots,
+      totalSpots: campaignWithSpots.totalSpots,
       activeSubscriptions: activeCount,
       spotsRemaining,
       subscribers: activeSubscriptions.map(sub => ({

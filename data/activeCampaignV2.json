@@ -1,15 +1,15 @@
 {
-  "classOf2025V2": {
+  "classOf2026": {
     "hero": {
-      "eyebrow": "Join the Class of 2025",
-      "headline": "The 2025 Competitive Edge: Design Velocity That Outpaces Your Market",
+      "eyebrow": "Join the Class of 2026",
+      "headline": "The 2026 Competitive Edge: Design Velocity That Outpaces Your Market",
       "subhead": "While your competitors wait 5-7 days for design revisions, you'll ship campaigns the same week. We're building a cohort of 10 companies who treat design as competitive advantage.",
-      "pricing": "£999/month through December 2026.",
-      "enrollmentDeadline": "Enrollment closes December 31st, 2025.",
+      "pricing": "£999/month – rate locked for 12 months.",
+      "enrollmentDeadline": "Enrollment closes March 31st, 2026.",
       "bullets": [
         "48-hour priority turnaround",
         "Monthly strategy sessions with cohort",
-        "Rate locked for 14 months"
+        "Rate locked for 12 months"
       ]
     },
     "problems": [
@@ -53,7 +53,7 @@
       {
         "stage": "MONTH 6",
         "title": "The Unfair Advantage",
-        "description": "You can't imagine going back. While other companies your size spend 2 weeks getting a freelancer's attention, you ship campaigns the same week. Your competitors are still stuck in 2024's design constraints. You've moved on."
+        "description": "You can't imagine going back. While other companies your size spend 2 weeks getting a freelancer's attention, you ship campaigns the same week. Your competitors are still stuck in 2025's design constraints. You've moved on."
       }
     ],
     "benefits": [
@@ -153,7 +153,7 @@
           ]
         },
         {
-          "name": "Class of 2025",
+          "name": "Class of 2026",
           "cost": "£999/month",
           "details": [
             "Unlimited assets",
@@ -185,25 +185,25 @@
     },
     "finalCTA": {
       "lockInNow": [
-        "£999/month through Dec 2026",
-        "14 months guaranteed pricing",
+        "£999/month for 12 months",
+        "12 months guaranteed pricing",
         "48-hour priority turnaround",
         "Monthly strategy sessions included",
-        "Join inaugural cohort",
+        "Join founding cohort",
         "Start building momentum now",
-        { "text": "Save £6,300", "description": "over lock-in period", "bold": true }
+        { "text": "Save £5,400", "description": "over lock-in period", "bold": true }
       ],
-      "waitUntil2026": [
+      "waitUntil2027": [
         "£1,449/month (minimum)",
         "No rate lock guarantee",
         "3-5 day standard turnaround",
         "Strategy calls not included at standard rate",
-        "Miss Class of 2025 cohort",
+        "Miss Class of 2026 cohort",
         "Start 12+ months behind",
         { "text": "Pay £5,400 more", "description": "per year", "bold": true }
       ],
       "afterDeadline": [
-        "Class of 2025 closes permanently",
+        "Class of 2026 closes permanently",
         "Standard rate returns to £1,449/month",
         "No rate lock guarantee for new clients",
         "Monthly strategy sessions not included at standard tier"
@@ -211,20 +211,20 @@
     },
     "faqs": [
       {
-        "question": "What's included in Class of 2025?",
-        "answer": "Five strategic capabilities:\n\n1. Campaign Velocity - Unlimited requests, most completed within 48 hours\n2. Market Agility - Same-week delivery guaranteed, no rush fees\n3. Strategic Partnership - Monthly 1-hour strategy sessions with cohort insights\n4. Institutional Knowledge - Dedicated team that learns your brand deeply\n5. Rate Lock - £999/month through December 31, 2026\n\nPlus: Brand asset management, style guide development, unlimited revisions, and everything your brand needs for consistency at scale."
+        "question": "What's included in Class of 2026?",
+        "answer": "Five strategic capabilities:\n\n1. Campaign Velocity - Unlimited requests, most completed within 48 hours\n2. Market Agility - Same-week delivery guaranteed, no rush fees\n3. Strategic Partnership - Monthly 1-hour strategy sessions with cohort insights\n4. Institutional Knowledge - Dedicated team that learns your brand deeply\n5. Rate Lock - £999/month for 12 months\n\nPlus: Brand asset management, style guide development, unlimited revisions, and everything your brand needs for consistency at scale."
       },
       {
         "question": "How is this different from your standard service?",
-        "answer": "Three material differences:\n\n1. Turnaround - Class of 2025: Same-week guaranteed. Standard: 3-5 days.\n\n2. Strategic Access - Class of 2025: Monthly strategy calls, cohort insights, priority for new capabilities. Standard: Execution-focused.\n\n3. Pricing - Class of 2025: £999/month locked through 2026. Standard: £1,449/month.\n\nBoth get unlimited design and dedicated teams. Class of 2025 gets faster turnaround and strategic partnership."
+        "answer": "Three material differences:\n\n1. Turnaround - Class of 2026: Same-week guaranteed. Standard: 3-5 days.\n\n2. Strategic Access - Class of 2026: Monthly strategy calls, cohort insights, priority for new capabilities. Standard: Execution-focused.\n\n3. Pricing - Class of 2026: £999/month locked for 12 months. Standard: £1,449/month.\n\nBoth get unlimited design and dedicated teams. Class of 2026 gets faster turnaround and strategic partnership."
       },
       {
-        "question": "What happens after December 31, 2026?",
+        "question": "What happens after the 12-month rate lock?",
         "answer": "Three options:\n\nOption 1: Continue at £999/month (most clients choose this)\nNothing changes. Keep the strategic partnership.\n\nOption 2: Renegotiate based on usage\nIf your needs grew significantly or decreased, we can adjust.\n\nOption 3: Part ways\n30 days notice. No penalties. Your rate lock is preserved if you return.\n\nNew clients after signup: £1,449/month minimum, no rate lock."
       },
       {
         "question": "Can I pause or cancel?",
-        "answer": "Complete flexibility:\n\nPause: Anytime with 30 days notice. Your rate is preserved. Resume whenever ready.\n\nCancel: Anytime with 30 days notice. No penalties. Keep all the work.\n\nRate Lock: If you pause or cancel, your locked rate is reserved. Return in 2027? Still at your founding rate.\n\nCompare to agencies (3-6 month contracts), freelancers (lost relationships), or hiring (can't pause employees)."
+        "answer": "Complete flexibility:\n\nPause: Anytime with 30 days notice. Your rate is preserved. Resume whenever ready.\n\nCancel: Anytime with 30 days notice. No penalties. Keep all the work.\n\nRate Lock: If you pause or cancel, your locked rate is reserved. Return later? Still at your founding rate.\n\nCompare to agencies (3-6 month contracts), freelancers (lost relationships), or hiring (can't pause employees)."
       },
       {
         "question": "How do monthly strategy sessions work?",
@@ -232,15 +232,15 @@
       },
       {
         "question": "What's your turnaround time?",
-        "answer": "Same-week delivery guaranteed. Most projects completed within 48 hours.\n\nBreakdown by complexity:\n- Social posts, email templates: 24-36 hours\n- Presentations, landing pages: 36-48 hours\n- Multi-page documents: 48-72 hours\n- Full brand guides: 5-7 days\n\nUrgent requests: Many completed same-day. Just flag it.\n\nWe track this religiously. Q4 2024 average was 36 hours."
+        "answer": "Same-week delivery guaranteed. Most projects completed within 48 hours.\n\nBreakdown by complexity:\n- Social posts, email templates: 24-36 hours\n- Presentations, landing pages: 36-48 hours\n- Multi-page documents: 48-72 hours\n- Full brand guides: 5-7 days\n\nUrgent requests: Many completed same-day. Just flag it.\n\nWe track this religiously. Our average turnaround is 36 hours."
       },
       {
         "question": "How is this different from hiring a designer?",
         "answer": "Three key differences:\n\n1. Capacity - One designer: 15-20 assets/month. Our team: 30-50+ assets/month.\n\n2. Specialization - One designer: Great at brand, weak at motion graphics. Our team: Full spectrum.\n\n3. Risk - Hire for £45K/year, they leave in 8 months, start over. With us: Institutional knowledge stays, cancel anytime.\n\nTrade-off: You don't get someone in your office. You do get more capacity, broader skills, zero turnover risk."
       },
       {
-        "question": "Why lock in now vs waiting for Class of 2026?",
-        "answer": "Let's be honest about trade-offs:\n\nLock in now:\n- £999/month through December 2026 (14 months)\n- Continue at £999 after OR renegotiate\n- £6,300 savings vs standard rate\n- Join inaugural cohort from day one\n\nWait for Class of 2026:\n- Opens mid-2026 at earliest (if we run it)\n- Entry price likely £1,200-1,500\n- Shorter lock-in period\n- Start 6-12 months behind companies building momentum\n\nWaiting costs £450-900/month from January 2026 forward. That's £5,400-10,800 over one year.\n\nLocking in makes sense if you're serious about market positioning in 2025-2026."
+        "question": "Why lock in now vs waiting for Class of 2027?",
+        "answer": "Let's be honest about trade-offs:\n\nLock in now:\n- £999/month for 12 months\n- Continue at £999 after OR renegotiate\n- £5,400 savings vs standard rate\n- Join founding cohort from day one\n\nWait for Class of 2027:\n- Opens mid-2027 at earliest (if we run it)\n- Entry price likely £1,200-1,500\n- Shorter lock-in period\n- Start 6-12 months behind companies building momentum\n\nWaiting costs £450/month from April 2026 forward. That's £5,400 over one year.\n\nLocking in makes sense if you're serious about market positioning in 2026."
       },
       {
         "question": "Is there a minimum commitment?",
@@ -256,7 +256,7 @@
       },
       {
         "question": "What if I have multiple brands?",
-        "answer": "One active request per brand at a time.\n\n2 brands = 2 simultaneous requests for £999/month.\n\n5+ brands = Consider Enterprise tier for that volume.\n\nMost Class of 2025 companies have 1-2 brands."
+        "answer": "One active request per brand at a time.\n\n2 brands = 2 simultaneous requests for £999/month.\n\n5+ brands = Consider Enterprise tier for that volume.\n\nMost Class of 2026 companies have 1-2 brands."
       },
       {
         "question": "How do you maintain quality with unlimited requests?",

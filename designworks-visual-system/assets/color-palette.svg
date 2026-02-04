@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .label { font-family: system-ui, sans-serif; font-size: 12px; fill: #333; }
+    .hex { font-family: monospace; font-size: 11px; fill: #666; }
+    .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1a1a1a; }
+  </style>
+
+  <!-- Title -->
+  <text x="20" y="30" class="title">DesignWorks Bureau — Color Palette</text>
+
+  <!-- Primary Colors -->
+  <text x="20" y="70" class="label" font-weight="bold">Primary Colors</text>
+
+  <!-- Flame Orange -->
+  <rect x="20" y="85" width="120" height="80" fill="#FF6B35" rx="4"/>
+  <text x="20" y="185" class="label">Flame Orange</text>
+  <text x="20" y="200" class="hex">#FF6B35</text>
+  <text x="20" y="215" class="hex">rgb(255, 107, 53)</text>
+
+  <!-- Impact Green -->
+  <rect x="160" y="85" width="120" height="80" fill="#16a34a" rx="4"/>
+  <text x="160" y="185" class="label">Impact Green</text>
+  <text x="160" y="200" class="hex">#16a34a</text>
+  <text x="160" y="215" class="hex">rgb(22, 163, 74)</text>
+
+  <!-- Neutral Colors (Dark Mode) -->
+  <text x="320" y="70" class="label" font-weight="bold">Neutrals (Dark Background)</text>
+
+  <rect x="320" y="85" width="80" height="50" fill="rgba(255,255,255,0.4)" stroke="#333" stroke-width="1" rx="4"/>
+  <text x="320" y="155" class="hex">40% white</text>
+
+  <rect x="410" y="85" width="80" height="50" fill="rgba(255,255,255,0.3)" stroke="#333" stroke-width="1" rx="4"/>
+  <text x="410" y="155" class="hex">30% white</text>
+
+  <rect x="500" y="85" width="80" height="50" fill="rgba(255,255,255,0.2)" stroke="#333" stroke-width="1" rx="4"/>
+  <text x="500" y="155" class="hex">20% white</text>
+
+  <rect x="590" y="85" width="80" height="50" fill="rgba(255,255,255,0.1)" stroke="#333" stroke-width="1" rx="4"/>
+  <text x="590" y="155" class="hex">10% white</text>
+
+  <!-- Neutral Colors (Light Mode) -->
+  <text x="320" y="190" class="label" font-weight="bold">Neutrals (Light Background)</text>
+
+  <rect x="320" y="205" width="80" height="50" fill="rgba(0,0,0,0.3)" rx="4"/>
+  <text x="320" y="275" class="hex">30% black</text>
+
+  <rect x="410" y="205" width="80" height="50" fill="rgba(0,0,0,0.2)" rx="4"/>
+  <text x="410" y="275" class="hex">20% black</text>
+
+  <rect x="500" y="205" width="80" height="50" fill="rgba(0,0,0,0.15)" rx="4"/>
+  <text x="500" y="275" class="hex">15% black</text>
+
+  <rect x="590" y="205" width="80" height="50" fill="rgba(0,0,0,0.08)" rx="4"/>
+  <text x="590" y="275" class="hex">8% black</text>
+
+  <!-- Usage Examples -->
+  <text x="20" y="270" class="label" font-weight="bold">Usage Examples</text>
+
+  <!-- Example: Primary stroke -->
+  <line x1="20" y1="290" x2="120" y2="290" stroke="#FF6B35" stroke-width="1"/>
+  <text x="130" y="294" class="hex">Primary stroke</text>
+
+  <!-- Example: Secondary stroke -->
+  <line x1="20" y1="310" x2="120" y2="310" stroke="rgba(0,0,0,0.2)" stroke-width="1"/>
+  <text x="130" y="314" class="hex">Secondary stroke</text>
+
+  <!-- Example: Node -->
+  <circle cx="40" cy="350" r="6" fill="rgba(255,107,53,0.15)" stroke="#FF6B35" stroke-width="1.5"/>
+  <text x="60" y="354" class="hex">Node with glow fill</text>
+
+  <!-- Example: Grid pattern -->
+  <rect x="200" y="330" width="60" height="40" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
+  <rect x="260" y="330" width="60" height="40" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
+  <text x="200" y="385" class="hex">Grid pattern (0.5px)</text>
+</svg>

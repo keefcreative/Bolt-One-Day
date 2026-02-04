@@ -1,11 +1,11 @@
 {
-  "active": "classOf2025",
-  "classOf2025": {
+  "active": "classOf2026",
+  "classOf2026": {
     "enabled": true,
-    "name": "Class of 2025",
-    "spotsRemaining": 8,
+    "name": "Class of 2026",
+    "spotsRemaining": 9,
     "totalSpots": 10,
-    "deadline": "2025-12-31T23:59:59Z",
+    "deadline": "2026-03-31T23:59:59+00:00",
     "pricing": {
       "amount": "£999",
       "period": "/month",
@@ -14,9 +14,9 @@
       "stripePriceId": "price_1Sc4O7P3PqPfy1jMzrqN0O7L"
     },
     "banner": {
-      "text": "Class of 2025: {spots} spots left – Lock in £999/mo before Dec 31",
+      "text": "Class of 2026: {spots} spots left – Lock in £999/mo before Mar 31",
       "cta": "Apply Now",
-      "ctaHref": "/class-of-2025-v2"
+      "ctaHref": "/class-of-2026"
     },
     "urls": {
       "discoveryCall": "https://meet.brevo.com/designworksbureau/class-of-2025-discovery-call",
@@ -47,7 +47,7 @@
       {
         "icon": "Lock",
         "title": "Locked Pricing",
-        "description": "£999/month guaranteed through December 2025. No price increases, no surprises."
+        "description": "£999/month guaranteed for 12 months. No price increases, no surprises."
       },
       {
         "icon": "Users",
@@ -62,12 +62,12 @@
     ],
     "faqs": [
       {
-        "question": "What's included in the Class of 2025?",
-        "answer": "You get unlimited design requests, 48-hour average turnaround, monthly 1-hour strategy sessions, a dedicated design team, and locked pricing of £999/month through December 2025. This includes all types of design work: branding, web design, marketing materials, social media assets, presentations, and more."
+        "question": "What's included in the Class of 2026?",
+        "answer": "You get unlimited design requests, 48-hour average turnaround, monthly 1-hour strategy sessions, a dedicated design team, and locked pricing of £999/month for 12 months. This includes all types of design work: branding, web design, marketing materials, social media assets, presentations, and more."
       },
       {
         "question": "How is this different from your standard service?",
-        "answer": "Class of 2025 offers significantly discounted pricing (£999 vs £1,449 standard rate), priority turnaround times, guaranteed monthly strategy sessions, and rate protection through the end of 2025. You're also part of an exclusive cohort of 10 forward-thinking businesses."
+        "answer": "Class of 2026 offers significantly discounted pricing (£999 vs £1,449 standard rate), priority turnaround times, guaranteed monthly strategy sessions, and rate protection for 12 months. You're also part of an exclusive cohort of 10 forward-thinking businesses."
       },
       {
         "question": "Can I pause or cancel my subscription?",
@@ -75,19 +75,19 @@
       },
       {
         "question": "What's your typical turnaround time?",
-        "answer": "For Class of 2025 members, average turnaround is 48 hours. Many requests are completed same-day or next-day. Larger projects like full website designs or comprehensive brand systems may take 5-7 days, but you'll always know the timeline upfront."
+        "answer": "For Class of 2026 members, average turnaround is 48 hours. Many requests are completed same-day or next-day. Larger projects like full website designs or comprehensive brand systems may take 5-7 days, but you'll always know the timeline upfront."
       },
       {
         "question": "How do monthly strategy sessions work?",
         "answer": "Each month, you'll have a dedicated 1-hour video call with your design team. We'll review your business goals, upcoming campaigns, market opportunities, and align your design strategy accordingly. These sessions ensure every design decision supports your bigger business objectives."
       },
       {
-        "question": "What happens after December 2025?",
-        "answer": "After December 2025, you have three options: continue at the standard rate (£1,449/month), negotiate a custom enterprise package, or cancel with no penalties. There's no obligation to continue, but many clients choose to stay for the ongoing value."
+        "question": "What happens after the 12-month rate lock?",
+        "answer": "After your 12-month rate lock period, you have three options: continue at the standard rate (£1,449/month), negotiate a custom enterprise package, or cancel with no penalties. There's no obligation to continue, but many clients choose to stay for the ongoing value."
       },
       {
         "question": "Is there a minimum commitment period?",
-        "answer": "No minimum commitment. While the campaign runs through December 2025, you can pause or cancel at any time. However, if you leave and want to rejoin later, you'll pay the current standard rate, not the locked £999/month rate."
+        "answer": "No minimum commitment. While the campaign runs through March 2026, you can pause or cancel at any time. However, if you leave and want to rejoin later, you'll pay the current standard rate, not the locked £999/month rate."
       },
       {
         "question": "What types of design work do you handle?",

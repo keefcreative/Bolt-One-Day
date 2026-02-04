@@ -76,7 +76,7 @@ export default function StickyCountdownBanner() {
   const [isHovering, setIsHovering] = useState(false)
 
   // Get real-time campaign spots
-  const campaignSpots = useCampaignSpots('classOf2025')
+  const campaignSpots = useCampaignSpots('classOf2026')
 
   useEffect(() => {
     setIsMounted(true)
@@ -85,18 +85,19 @@ export default function StickyCountdownBanner() {
   useEffect(() => {
     if (!isMounted) return
 
+    const campaign = (typedCampaignData as any).classOf2026
     console.log('🎯 Campaign Banner Debug:', {
       active: typedCampaignData.active,
-      enabled: typedCampaignData.classOf2025.enabled,
-      deadline: typedCampaignData.classOf2025.deadline
+      enabled: campaign?.enabled,
+      deadline: campaign?.deadline
     })
 
-    if (typedCampaignData.active !== 'classOf2025' || !typedCampaignData.classOf2025.enabled) {
+    if (typedCampaignData.active !== 'classOf2026' || !campaign?.enabled) {
       console.warn('❌ Campaign not active or not enabled')
       return
     }
 
-    const deadlineDate = new Date(typedCampaignData.classOf2025.deadline)
+    const deadlineDate = new Date(campaign.deadline)
     const now = new Date()
     if (deadlineDate < now) {
       console.warn('❌ Campaign deadline has passed:', deadlineDate, 'Current:', now)
@@ -151,7 +152,7 @@ export default function StickyCountdownBanner() {
     return null
   }
 
-  const campaign = typedCampaignData.classOf2025
+  const campaign = (typedCampaignData as any).classOf2026
 
   // Use dynamic spots if available, fallback to static config
   const spotsRemaining = campaignSpots.loading ? campaign.spotsRemaining : campaignSpots.spotsRemaining
@@ -162,17 +163,17 @@ export default function StickyCountdownBanner() {
   }
 
   // Parse banner text and replace {spots} placeholder
-  const bannerText = campaign.banner?.text || 'Class of 2025: {spots} spots left – Lock in £999/mo before Dec 31'
+  const bannerText = campaign.banner?.text || 'Class of 2026: {spots} spots left – Lock in £999/mo before Mar 31'
   const bannerTextWithSpots = bannerText.replace('{spots}', spotsRemaining.toString())
 
   const handleBannerClick = () => {
-    window.location.href = campaign.banner?.ctaHref || '/class-of-2025-v2'
+    window.location.href = campaign.banner?.ctaHref || '/class-of-2026'
   }
 
   return (
     <div
       role="banner"
-      aria-label="Class of 2025 campaign announcement - Click to learn more"
+      aria-label="Class of 2026 campaign announcement - Click to learn more"
       onClick={handleBannerClick}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}

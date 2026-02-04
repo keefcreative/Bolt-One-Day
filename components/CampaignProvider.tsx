@@ -55,7 +55,8 @@ export default function CampaignProvider({ children }: CampaignProviderProps) {
   }
 
   const typedCampaignData = validation.data as CampaignConfig
-  const isCampaignActive = typedCampaignData.active === 'classOf2025' && typedCampaignData.classOf2025.enabled
+  const campaign = (typedCampaignData as any).classOf2026
+  const isCampaignActive = typedCampaignData.active === 'classOf2026' && campaign?.enabled
 
   return (
     <>

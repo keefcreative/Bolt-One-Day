@@ -7,8 +7,8 @@ export default function ClassOf2025Redirect() {
   const router = useRouter()
 
   useEffect(() => {
-    // Redirect to the V2 campaign page
-    router.replace('/class-of-2025-v2')
+    // Redirect to the Class of 2026 campaign page
+    router.replace('/class-of-2026')
   }, [router])
 
   return null

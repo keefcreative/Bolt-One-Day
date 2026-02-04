@@ -456,46 +456,4 @@ export interface BrandVoiceProfile {
   };
 }
 
-// Export all types for easy importing
-export type {
-  BaseContent,
-  ButtonContent,
-  ImageContent,
-  HeroData,
-  ServicesData,
-  PricingData,
-  TeamData,
-  TestimonialsData,
-  PortfolioData,
-  FAQData,
-  ContactData,
-  NavigationData,
-  DesignForGoodData,
-  LogoCarouselData,
-  LegalData,
-  ContentAnalysisResult,
-  ContentIssue,
-  ContentImprovement,
-  ContentWorkflowStatus,
-  ContentValidationResult,
-  BrandVoiceProfile
-};
-
-// Default export for the main content types
-export default {
-  BaseContent,
-  ButtonContent,
-  ImageContent,
-  HeroData,
-  ServicesData,
-  PricingData,
-  TeamData,
-  TestimonialsData,
-  PortfolioData,
-  FAQData,
-  ContactData,
-  NavigationData,
-  DesignForGoodData,
-  ContentAnalysisResult,
-  ContentWorkflowStatus
-};
+// All types are already exported where defined above
